@@ -1,4 +1,4 @@
-/node_modules
+g/node_modules
 /public/hot
 /public/storage
 /storage/*.key
