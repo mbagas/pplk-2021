@@ -19,6 +19,7 @@ class CreateOrmawasTable extends Migration
             $table->string('namaSingkatan', 10);
             $table->foreignId('kategoris_id');
             $table->foreign('kategoris_id')->references('id')->on('kategoris');
+            $table->timestamps();
         });
     }
 

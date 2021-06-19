@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Artikel extends Model
 {
     use HasFactory;
-    
-    protected $table = 'kategoris';
-    protected $fillable = ['kategori'];
+    protected $table = 'artikels';
+    protected $fillable = ['body', 'ormawas_id'];
 
     public function ormawas(){
-        return $this->hasMany(Ormawa::class, 'kategoris_id');
+        return $this->belongsTo(Ormawa::class, 'ormawas_id');
     }
 }

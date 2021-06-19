@@ -28,9 +28,9 @@
                     <span class="nav-text">Dashboard </span>
                 </a>
             </li>
-            <li><a href="#" class="ai-icon" aria-expanded="false">
+            <li><a href="{{ route('dashboard.prodi') }}" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-user-9"></i>
-                    <span class="nav-text">Data Mahasiswa </span>
+                    <span class="nav-text">Data Prodi </span>
                 </a>
             </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">

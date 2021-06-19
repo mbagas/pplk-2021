@@ -10,7 +10,7 @@ class Ormawa extends Model
     use HasFactory;
     protected $table = 'ormawas';
     protected $fillable = [
-        'namaLengkap', 'namaSingkatan', 'kategoris_id'
+        'id', 'namaLengkap', 'namaSingkatan', 'kategoris_id'
     ];
 
     public function kategoris(){
@@ -19,6 +19,10 @@ class Ormawa extends Model
 
     public function prodis(){
         return $this->hasOne(Prodi::class, 'ormawas_id');
+    }
+
+    public function artikels(){
+        return $this->hasOne(Artikel::class, 'ormawas_id');
     }
 
 }

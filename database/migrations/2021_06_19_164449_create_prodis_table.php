@@ -25,7 +25,6 @@ class CreateProdisTable extends Migration
             $table->foreignId('jurusans_id');
             $table->foreign('ormawas_id')->references('id')->on('ormawas');
             $table->foreign('jurusans_id')->references('id')->on('jurusans');
-
             $table->timestamps();
         });
     }
