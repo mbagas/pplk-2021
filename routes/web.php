@@ -21,5 +21,9 @@ Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::middleware(['Admin'])->group(function () {
+    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+});
 
-Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
