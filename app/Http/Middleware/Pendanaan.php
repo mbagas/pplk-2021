@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Pendanaan
 {
@@ -16,6 +17,14 @@ class Pendanaan
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (Auth::check()) {
+            if (Auth::user()->roles_id == 4) {
+                return $next($request);
+            } else {
+                return abort(403);
+            }
+        } else {
+            return redirect('login');
+        }
     }
 }
