@@ -22,8 +22,24 @@ Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['Admin'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role SuperAdmin
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 });
 
+Route::middleware(['Tugas'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role Tugas
+});
+
+Route::middleware(['DaplokMentor'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role DaplokMentor
+});
+
+Route::middleware(['Pendanaan'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role Pendanaan
+});
+
+Route::middleware(['Maba'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role Maba
+});
