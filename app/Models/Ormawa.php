@@ -25,4 +25,8 @@ class Ormawa extends Model
         return $this->hasOne(Artikel::class, 'ormawas_id');
     }
 
+    public function ukms(){
+        return $this->hasOne(Ukm::class, 'ormawas_id');
+    }
+
 }

@@ -26,14 +26,24 @@
                 </a>
             </li>
             <li class=""><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-041-graph"></i>
-                <span class="nav-text">Prodi</span>
-            </a>
-            <ul aria-expanded="false" class="mm-collapse">
-                <li><a href="{{ route('dashboard.prodi') }}">Data Prodi</a></li>
-                <li><a href="{{ route('createProdi') }}">Tambah Prodi</a></li>
-            </ul>
-        </li>
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">Prodi</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.prodi') }}">Data Prodi</a></li>
+                    <li><a href="{{ route('createProdi') }}">Tambah Prodi</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">UKM</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.ukm') }}">Data UKM</a></li>
+                    <li><a href="{{ route('createUKM') }}">Tambah UKM</a></li>
+                </ul>
+            </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-file"></i>
                     <span class="nav-text">Tugas </span>

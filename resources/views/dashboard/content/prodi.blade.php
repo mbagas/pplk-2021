@@ -21,8 +21,8 @@
                         <table class="table table-responsive-md">
                             <thead>
                                 <tr>
-                                    <th style="width:80px;"><strong>Kode</strong></th>
-                                    <th class="text-center"><strong>Nama Singkat</strong></th>
+                                    <th style="width:80px;"><strong>Nama Singkat</strong></th>
+                                    <th class="text-center"><strong>Nama Lengkap</strong></th>
                                     <th class="text-center"><strong>Kepala Prodi</strong></th>
                                     <th class="text-center"><strong>Akreditasi</strong></th>
                                     <th class="text-center"><strong>Jumlah Mahasiswa</strong></th>
