@@ -116,9 +116,9 @@ class prodiController extends Controller
      */
     public function update(Request $request)
     {
-        $id = $request->id;
         try{
-            $ormawa = Ormawa::find($id)->firstOrFail();
+            $id = $request->id;
+            $ormawa = Ormawa::where('id', $id)->firstOrFail();
             $ormawa->namaLengkap = $request->nama;
             $ormawa->namaSingkat = $request->namaSingkat;
             $ormawa->save();
@@ -157,7 +157,7 @@ class prodiController extends Controller
             $artikel = Artikel::where('ormawas_id', $id)->first();
             $artikel->delete();
 
-            $ormawa = Ormawa::find($id)->first();
+            $ormawa = Ormawa::where('id', $id)->first();
             $ormawa->delete();
         } catch(Exception $ex){
             return redirect('dashboard/prodi')->with('error', 'Gagal Hapus Data!');

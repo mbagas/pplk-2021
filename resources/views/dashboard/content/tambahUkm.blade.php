@@ -1,14 +1,14 @@
 @extends('layouts.master')
-@section('title', 'Tambah Prodi')
+@section('title', 'Tambah UKM')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Tambah Prodi</h4>
+                    <h4 class="card-title">Tambah UKM</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storeProdi') }}">
+                    <form method="POST" action="{{ route('storeUKM') }}">
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
@@ -24,45 +24,22 @@
                         </div>
                     
                         <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Jurusan</label>
+                        <label class="col-sm-2 col-form-label col-form-label-lg">Pembina</label>
                         <div class="col-sm-10">
-                            <select name="jurusan" class="nice-select default-select form-control wide mb-3" tabindex="0" required>
-                                <option>Pilih Jurusan</option>
-                                @foreach ($jurusans as $data)
-                                <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
-                                @endforeach
-                                
-                            </select>
+                            <input type="text" name="pembina" class="form-control form-control-lg"required>
                         </div>
                         </div>
                         <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Kepala Prodi</label>
+                        <label class="col-sm-2 col-form-label col-form-label-lg">Ketua Umum</label>
                         <div class="col-sm-10">
-                            <input type="text" name="kepalaProdi" class="form-control form-control-lg"required>
+                            <input type="text" name="ketuaUmum" class="form-control form-control-lg" required>
                         </div>
                         </div>
-                        <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Akreditasi Prodi</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="akreditasi" class="form-control form-control-lg" required>
-                        </div>
-                        </div>
-                        <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Ruang Prodi</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="ruangProdi" class="form-control form-control-lg" required>
-                        </div>
-                        </div>
+                        
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Tahun Berdiri</label>
                         <div class="col-sm-10">
                             <input type="number" name="tahunBerdiri" class="form-control form-control-lg" required>
-                        </div>
-                        </div>
-                        <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
-                        <div class="col-sm-10">
-                            <input type="number" name="jumlahMahasiswa" class="form-control form-control-lg" required>
                         </div>
                         </div>
 

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Artikel;
+use App\Models\Ormawa;
 use App\Models\Ukm;
+use Exception;
 use Illuminate\Http\Request;
 
 class ukmController extends Controller
@@ -25,7 +28,7 @@ class ukmController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.content.tambahUkm');
     }
 
     /**
@@ -36,7 +39,31 @@ class ukmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $ormawa = new Ormawa();
+            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaSingkat = $request->namaSingkat;
+            $ormawa->kategoris_id = 3;
+            $ormawa->save();
+
+            $ukm = new Ukm();
+            $ukm->pembina = $request->pembina;
+            $ukm->ketuaUmum = $request->ketuaUmum;
+            $ukm->tahunBerdiri = $request->tahunBerdiri;
+            $ukm->logo = 'logotes.jpg';
+            $ukm->filosofiLogo = 'tester logo';
+            $ukm->barcode = 'barcode.jpg';
+            $ormawa->ukms()->save($ukm);
+
+
+            $artikel = new Artikel();
+            $artikel->body = $request->artikel;
+            $ormawa->artikels()->save($artikel);
+        } catch(Exception $ex){
+            return redirect('dashboard/ukm')->with('error', 'Gagal Menambahkan Data!');
+        }
+
+        return redirect('dashboard/ukm')->with('sukses', 'Berhasil Menambahkan Data!');
     }
 
     /**
@@ -58,7 +85,14 @@ class ukmController extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.updateUkm', compact('result', 'artikel'));
+        } catch(Exception $ex){
+            return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+        }
+        
     }
 
     /**
@@ -68,9 +102,29 @@ class ukmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try{
+            $id = $request->id;
+
+            $ormawa = Ormawa::where('id', $id)->firstOrFail();
+            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaSingkat = $request->namaSingkat;
+            $ormawa->save();
+
+            $ukm = Ukm::where('ormawas_id', $id)->first();
+            $ukm->pembina = $request->pembina;
+            $ukm->ketuaUmum = $request->ketuaUmum;
+            $ukm->tahunBerdiri = $request->tahunBerdiri;
+            $ukm->save();
+
+            $artikel = Artikel::where('ormawas_id', $id)->first();
+            $artikel->body = $request->artikel;
+            $artikel->save();
+        } catch(Exception $ex){
+            return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+        }
+        return redirect('dashboard/ukm')->with('sukses', 'Berhasil Edit Data!');
     }
 
     /**
@@ -81,6 +135,19 @@ class ukmController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+
+            $ukm = Ukm::where('ormawas_id', $id)->first();
+            $ukm->delete();
+
+            $artikel = Artikel::where('ormawas_id', $id)->first();
+            $artikel->delete();
+
+            $ormawa = Ormawa::where('id', $id)->first();
+            $ormawa->delete();
+        } catch(Exception $ex){
+            return redirect('dashboard/ukm')->with('error', 'Gagal Hapus Data!');
+        }
+        return redirect('dashboard/ukm')->with('sukses', 'Berhasil Hapus Data!');
     }
 }
