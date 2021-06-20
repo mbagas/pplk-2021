@@ -23,8 +23,8 @@ class CreateProdisTable extends Migration
             $table->string('diagramAlir', 50);
             $table->foreignId('ormawas_id');
             $table->foreignId('jurusans_id');
-            $table->foreign('ormawas_id')->references('id')->on('ormawas');
-            $table->foreign('jurusans_id')->references('id')->on('jurusans');
+            $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('dascade');
+            $table->foreign('jurusans_id')->references('id')->on('jurusans')->onDelete('dascade');
             $table->timestamps();
         });
     }
