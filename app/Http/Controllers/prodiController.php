@@ -136,7 +136,7 @@ class prodiController extends Controller
             $artikel->body = $request->artikel;
             $artikel->save();
         } catch(Exception $ex){
-            return $ex;
+            return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
         }
         return redirect('dashboard/prodi')->with('sukses', 'Berhasil Edit Data!');
     }
@@ -149,6 +149,18 @@ class prodiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $ormawa = Ormawa::find($id)->first();
+            $ormawa->delete();
+
+            $prodi = Prodi::where('ormawas_id', $id)->first();
+            $prodi->delete();
+
+            $artikel = Artikel::where('ormawas_id', $id)->first();
+            $artikel->delete();
+        } catch(Exception $ex){
+            return redirect('dashboard/prodi')->with('error', 'Gagal Hapus Data!');
+        }
+        return redirect('dashboard/prodi')->with('sukses', 'Berhasil Hapus Data!');
     }
 }

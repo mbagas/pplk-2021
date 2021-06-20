@@ -32,6 +32,7 @@ Route::middleware(['Admin'])->group(function () {
     Route::post('dashboard/prodi/create', [prodiController::class, 'store'])->name('storeProdi');
     Route::get('dashboard/prodi/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
     Route::post('dashboard/prodi/edit/', [prodiController::class, 'update'])->name('updateProdi');
+    Route::get('dashboard/prodi/delete/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 

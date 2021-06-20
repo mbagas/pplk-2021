@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title', 'Data Prodi')
+@section('title', 'Update Prodi')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Tambah Prodi</h4>
+                    <h4 class="card-title">Update Prodi</h4>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('updateProdi') }}">
@@ -74,7 +74,7 @@
                             <textarea type="text" name="artikel" class="form-control form-control-lg" required>{{ $artikel->body }}</textarea>
                         </div>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
+                        <button type="submit" class="btn btn-lg btn-primary">Update</button>
 
                     </form>
                 

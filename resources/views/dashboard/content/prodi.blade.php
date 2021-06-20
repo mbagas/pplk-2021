@@ -44,7 +44,7 @@
                                                 </button>
                                                 <div class="dropdown-menu" style="margin: 0px;">
                                                     <a class="dropdown-item" href="prodi/edit/{{ $data->ormawas->id }}">Edit</a>
-                                                    <a class="dropdown-item" href="#">Delete</a>
+                                                    <a class="dropdown-item" href="prodi/delete/{{ $data->ormawas->id }}">Hapus</a>
                                                 </div>
                                             </div>
                                         </td>
