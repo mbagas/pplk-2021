@@ -36,11 +36,11 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('dashboard/prodi/delete/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
 
     Route::get('dashboard/ukm', [ukmController::class, 'index'])->name('dashboard.ukm');
-    Route::get('dashboard/prodi/create', [ukmController::class, 'create'])->name('createUKM');
-    Route::post('dashboard/prodi/create', [ukmController::class, 'store'])->name('storeUKM');
-    Route::get('dashboard/prodi/edit/{id}', [ukmController::class, 'edit'])->name('editUKM');
-    Route::post('dashboard/prodi/edit/', [ukmController::class, 'update'])->name('updateUKM');
-    Route::get('dashboard/prodi/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
+    Route::get('dashboard/ukm/create', [ukmController::class, 'create'])->name('createUKM');
+    Route::post('dashboard/ukm/create', [ukmController::class, 'store'])->name('storeUKM');
+    Route::get('dashboard/ukm/edit/{id}', [ukmController::class, 'edit'])->name('editUKM');
+    Route::post('dashboard/ukm/edit/', [ukmController::class, 'update'])->name('updateUKM');
+    Route::get('dashboard/ukm/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
