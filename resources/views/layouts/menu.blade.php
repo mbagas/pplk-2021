@@ -4,10 +4,7 @@
             <li class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                     <img src="{{ asset('assets') }}/images/profile/pic1.jpg" width="20" alt=""/>
-                    <div class="header-info ms-3">
-                        <span class="font-w600 ">Hi,<b>{{ $result['nama'] }}</b></span>
-                        <small class="text-end font-w400">{{ $result['email'] }}</small>
-                    </div>
+                    
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a href="#" class="dropdown-item ai-icon">
@@ -28,11 +25,15 @@
                     <span class="nav-text">Dashboard </span>
                 </a>
             </li>
-            <li><a href="{{ route('dashboard.prodi') }}" class="ai-icon" aria-expanded="false">
-                <i class="flaticon-381-user-9"></i>
-                    <span class="nav-text">Data Prodi </span>
-                </a>
-            </li>
+            <li class=""><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <i class="flaticon-041-graph"></i>
+                <span class="nav-text">Prodi</span>
+            </a>
+            <ul aria-expanded="false" class="mm-collapse">
+                <li><a href="{{ route('dashboard.prodi') }}">Data Prodi</a></li>
+                <li><a href="{{ route('createProdi') }}">Tambah Prodi</a></li>
+            </ul>
+        </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-file"></i>
                     <span class="nav-text">Tugas </span>

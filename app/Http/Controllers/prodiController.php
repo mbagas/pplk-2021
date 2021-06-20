@@ -7,7 +7,10 @@ use App\Models\Jurusan;
 use App\Models\Kategori;
 use App\Models\Ormawa;
 use App\Models\Prodi;
+use Exception;
 use Illuminate\Http\Request;
+
+use function GuzzleHttp\Promise\exception_for;
 
 class prodiController extends Controller
 {
@@ -20,9 +23,8 @@ class prodiController extends Controller
     {
         //
         $result = Prodi::with('ormawas')->paginate(10);
-        $jurusans = Jurusan::get();
 
-        return view('dashboard.content.prodi', compact('result', 'jurusans'));
+        return view('dashboard.content.prodi', compact('result'));
     }
 
     /**
@@ -32,7 +34,8 @@ class prodiController extends Controller
      */
     public function create()
     {
-        //
+        $jurusans = Jurusan::get();
+        return view('dashboard.content.tambahProdi', compact('jurusans'));
     }
 
     /**
@@ -92,8 +95,16 @@ class prodiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        try{
+            $jurusans = Jurusan::get();
+            $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
+            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.updateProdi', compact('result', 'artikel', 'jurusans'));
+        } catch(Exception $ex){
+            return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
+        }
+        
     }
 
     /**
@@ -103,9 +114,31 @@ class prodiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $id = $request->id;
+        try{
+            $ormawa = Ormawa::find($id)->firstOrFail();
+            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaSingkat = $request->namaSingkat;
+            $ormawa->save();
+
+            $prodi = Prodi::where('ormawas_id', $id)->firstOrFail();
+            $prodi->kepalaProdi = $request->kepalaProdi;
+            $prodi->akreditasi = $request->akreditasi;
+            $prodi->jurusans_id = $request->jurusan;
+            $prodi->tahunBerdiri = $request->tahunBerdiri;
+            $prodi->ruangProdi = $request->ruangProdi;
+            $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
+            $prodi->save();
+
+            $artikel = Artikel::where('ormawas_id', $id)->first();
+            $artikel->body = $request->artikel;
+            $artikel->save();
+        } catch(Exception $ex){
+            return $ex;
+        }
+        return redirect('dashboard/prodi')->with('sukses', 'Berhasil Edit Data!');
     }
 
     /**

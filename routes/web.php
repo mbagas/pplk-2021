@@ -28,8 +28,10 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
     Route::get('dashboard/prodi', [prodiController::class, 'index'])->name('dashboard.prodi');
-    Route::post('dashboard/prodi', [prodiController::class, 'store'])->name('storeProdi');
-
+    Route::get('dashboard/prodi/create', [prodiController::class, 'create'])->name('createProdi');
+    Route::post('dashboard/prodi/create', [prodiController::class, 'store'])->name('storeProdi');
+    Route::get('dashboard/prodi/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
+    Route::post('dashboard/prodi/edit/', [prodiController::class, 'update'])->name('updateProdi');
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
