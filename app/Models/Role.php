@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
-    protected $table = 'Roles';
+    protected $table = 'roles';
     protected $fillable = ['id','role'];
+
+    public function ormawas(){
+        return $this->belongsTo(Ormawa::class, 'ormawas_id');
+    }
 }
