@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Senat extends Model
 {
     use HasFactory;
-    protected $table = 'Roles';
-    protected $fillable = ['id','role'];
+    protected $table = 'senats';
+    protected $fillable = ['ketua', 'deskripsi', 'website', 'youtube', 'instagram'];
 }
