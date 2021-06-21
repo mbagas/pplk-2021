@@ -27,12 +27,10 @@ class dashboardController extends Controller
     public function index()
     {
         $user = User::with('roles', 'prodis')->where('id', Auth::user()->id)->firstOrFail();
-        $prodi = Prodi::with('ormawas')->firstorFail();
         $result = [
             'nama' => $user->nama,
             'email' => $user->email,
-            'nim' => $user->nim,
-            'prodis' => $prodi->ormawas->namaLengkap
+            'nim' => $user->nim
             
         ];
         return view('dashboard.index', compact('result'));
