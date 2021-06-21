@@ -11,7 +11,7 @@ class Role extends Model
     protected $table = 'roles';
     protected $fillable = ['id','role'];
 
-    public function ormawas(){
-        return $this->belongsTo(Ormawa::class, 'ormawas_id');
+    public function users(){
+        return $this->hasMany(User::class, 'roles_id');
     }
 }
