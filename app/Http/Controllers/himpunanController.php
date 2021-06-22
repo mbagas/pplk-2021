@@ -205,7 +205,7 @@ class himpunanController extends Controller
       $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
       $artikel->body = $request->artikel;
 
-      // $artikel->save();
+      $artikel->save();
     } catch (Exception $err) {
       return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
     }
