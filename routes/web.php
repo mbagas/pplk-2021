@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
 use Illuminate\Support\Facades\Route;
@@ -42,9 +43,15 @@ Route::middleware(['Admin'])->group(function () {
     Route::post('dashboard/ukm/edit/', [ukmController::class, 'update'])->name('updateUKM');
     Route::get('dashboard/ukm/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
 
+    Route::get('dashboard/himpunan', [himpunanController::class, 'index'])->name('dashboard.himpunan');
+    Route::get('dashboard/himpunan/create', [himpunanController::class, 'create'])->name('createHimpunan');
+    Route::post('dashboard/himpunan/create', [himpunanController::class, 'store'])->name('storeHimpunan');
+    Route::get('dashboard/himpunan/edit/{id}', [himpunanController::class, 'edit'])->name('editHimpunan');
+    Route::post('dashboard/himpunan/edit/', [himpunanController::class, 'update'])->name('updateHimpunan');
+    Route::get('dashboard/himpunan/delete/{id}', [himpunanController::class, 'destroy'])->name('deleteHimpunan');
+
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
-
 });
 
 Route::middleware(['Tugas'])->group(function () {
