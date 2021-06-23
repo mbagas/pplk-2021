@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\uptController;
 use App\Http\Controllers\pplkController;
 use App\Http\Controllers\FunFactController;
 use App\Http\Controllers\himpunanController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
 use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +33,14 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
     // Ini Route yang hanya bisa diakses Role SuperAdmin
+
+    Route::get('dashboard/upt', [uptController::class, 'index'])->name('dashboard.upt');
+    Route::get('dashboard/upt/create', [uptController::class, 'create'])->name('createUPT');
+    Route::post('dashboard/upt/create', [uptController::class, 'store'])->name('storeUPT');
+    Route::get('dashboard/upt/edit/{id}', [uptController::class, 'edit'])->name('editUPT');
+    Route::post('dashboard/upt/edit/', [uptController::class, 'update'])->name('updateUPT');
+    Route::get('dashboard/upt/delete/{id}', [uptController::class, 'destroy'])->name('deleteUPT');
+
     Route::get('/', [dashboardController::class, 'index'])->name('index');
 
     Route::resource('prodi', prodiController::class)->except(['show']);
@@ -50,6 +60,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
 
     Route::resource('jurusan', jurusanController::class)->except(['show']);
+
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');

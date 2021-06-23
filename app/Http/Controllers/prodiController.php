@@ -7,11 +7,8 @@ use App\Models\Jurusan;
 use App\Models\Kategori;
 use App\Models\Ormawa;
 use App\Models\Prodi;
-use App\Models\SocialMedia;
-use App\Models\VisiMisi;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 use function GuzzleHttp\Promise\exception_for;
 
@@ -50,23 +47,7 @@ class prodiController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'nama' => 'required',
-            'namaSingkat' => 'required',
-            'kepalaProdi' => 'required',
-            'akreditasi' => 'required|max:2',
-            'ruangProdi' => 'required',
-            'jumlahMahasiswa' => 'required',
-            'artikel' => 'required',
-            'visi' =>'required',
-            'misi' => 'required',
-            'diagramAlir' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:1024'
-        ]);
-
         try{
-            $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
-            $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
-
             $ormawa = new Ormawa();
             $ormawa->namaLengkap = $request->nama;
             $ormawa->namaSingkat = $request->namaSingkat;
@@ -79,26 +60,15 @@ class prodiController extends Controller
             $prodi->tahunBerdiri = $request->tahunBerdiri;
             $prodi->ruangProdi = $request->ruangProdi;
             $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
+            $prodi->kepalaProdi = $request->kepalaProdi;
             $prodi->jurusans_id = $request->jurusan;
-            $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
+            $prodi->diagramAlir = 'alir.jpg';
             $ormawa->prodis()->save($prodi);
 
 
             $artikel = new Artikel();
             $artikel->body = $request->artikel;
             $ormawa->artikels()->save($artikel);
-
-            $visiMisi = new VisiMisi();
-            $visiMisi->visi = $request->visi;
-            $visiMisi->misi = $request->misi;
-            $ormawa->visimisis()->save($visiMisi);
-
-            $socialMedia = new SocialMedia();
-            $socialMedia->website = $request->website;
-            $socialMedia->instagram = $request->instagram;
-            $socialMedia->youtube = $request->youtube;
-            $ormawa->socialmedias()->save($socialMedia);
-
         } catch(Exception $ex){
             return redirect('dashboard/prodi')->with('error', 'Gagal Menambahkan Data!');
         }
@@ -130,9 +100,7 @@ class prodiController extends Controller
             $jurusans = Jurusan::get();
             $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
             $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            return view('dashboard.content.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
+            return view('dashboard.content.updateProdi', compact('result', 'artikel', 'jurusans'));
         } catch(Exception $ex){
             return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
         }
@@ -148,21 +116,6 @@ class prodiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama' => 'required',
-            'namaSingkat' => 'required',
-            'kepalaProdi' => 'required',
-            'akreditasi' => 'required|max:2',
-            'ruangProdi' => 'required',
-            'jumlahMahasiswa' => 'required',
-            'artikel' => 'required',
-            'visi' =>'required',
-            'misi' => 'required',
-            'diagramAlir' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
-
-        ]);
-
-
         try{
             $ormawa = Ormawa::where('id', $id)->firstOrFail();
             $ormawa->namaLengkap = $request->nama;
@@ -176,32 +129,13 @@ class prodiController extends Controller
             $prodi->tahunBerdiri = $request->tahunBerdiri;
             $prodi->ruangProdi = $request->ruangProdi;
             $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
-
-            if($request->diagramAlir != NULL){
-                $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
-                $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
-                $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
-            }
             $prodi->save();
 
-
-            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+            $artikel = Artikel::where('ormawas_id', $id)->first();
             $artikel->body = $request->artikel;
             $artikel->save();
-
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi->visi = $request->visi;
-            $visiMisi->misi = $request->misi;
-            $visiMisi->save();
-
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia->website = $request->website;
-            $socialMedia->instagram = $request->instagram;
-            $socialMedia->youtube = $request->youtube;
-            $socialMedia->save();
-
         } catch(Exception $ex){
-            return $ex;
+            return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
         }
         return redirect('dashboard/prodi')->with('sukses', 'Berhasil Edit Data!');
     }
@@ -215,23 +149,15 @@ class prodiController extends Controller
     public function destroy($id)
     {
         try{
-            $prodi = Prodi::where('ormawas_id', $id)->firstOrFail();
-            Storage::delete($prodi->diagramAlir);
+
+            $prodi = Prodi::where('ormawas_id', $id)->first();
             $prodi->delete();
 
-            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+            $artikel = Artikel::where('ormawas_id', $id)->first();
             $artikel->delete();
-
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia->delete();
-
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi->delete();
 
             $ormawa = Ormawa::where('id', $id)->first();
             $ormawa->delete();
-
-
         } catch(Exception $ex){
             return redirect('dashboard/prodi')->with('error', 'Gagal Hapus Data!');
         }

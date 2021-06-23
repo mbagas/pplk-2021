@@ -102,6 +102,16 @@
                     <li><a href="{{ route('createPPLK') }}">Tambah PPLK</a></li>
                 </ul>
             </li>
+            <li class="">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">UPT</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.upt') }}">Data UPT</a></li>
+                    <li><a href="{{ route('createUPT') }}">Tambah UPT</a></li>
+                </ul>
+            </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-file"></i>
                     <span class="nav-text">Tugas </span>
