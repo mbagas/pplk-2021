@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
+use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,13 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('dashboard/himpunan/edit/{id}', [himpunanController::class, 'edit'])->name('editHimpunan');
     Route::post('dashboard/himpunan/edit/', [himpunanController::class, 'update'])->name('updateHimpunan');
     Route::get('dashboard/himpunan/delete/{id}', [himpunanController::class, 'destroy'])->name('deleteHimpunan');
+
+    Route::get('dashboard/jurusan', [jurusanController::class, 'index'])->name('dashboard.jurusan');
+    Route::get('dashboard/jurusan/create', [jurusanController::class, 'create'])->name('createJurusan');
+    Route::post('dashboard/jurusan/create', [jurusanController::class, 'store'])->name('storeJurusan');
+    Route::get('dashboard/jurusan/edit/{id}', [jurusanController::class, 'edit'])->name('editJurusan');
+    Route::post('dashboard/jurusan/edit/', [jurusanController::class, 'update'])->name('updateJurusan');
+    Route::get('dashboard/jurusan/delete/{id}', [jurusanController::class, 'destroy'])->name('deleteJurusan');
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
