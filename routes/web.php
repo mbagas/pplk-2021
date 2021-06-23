@@ -3,8 +3,12 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\pplkController;
+use App\Http\Controllers\FunFactController;
+use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
+use App\Http\Controllers\jurusanController;
+use App\Http\Controllers\senatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,23 +29,27 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['Admin'])->group(function () {
+Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
     // Ini Route yang hanya bisa diakses Role SuperAdmin
-    Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [dashboardController::class, 'index'])->name('index');
 
-    Route::get('dashboard/prodi', [prodiController::class, 'index'])->name('dashboard.prodi');
-    Route::get('dashboard/prodi/create', [prodiController::class, 'create'])->name('createProdi');
-    Route::post('dashboard/prodi/create', [prodiController::class, 'store'])->name('storeProdi');
-    Route::get('dashboard/prodi/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
-    Route::post('dashboard/prodi/edit/', [prodiController::class, 'update'])->name('updateProdi');
-    Route::get('dashboard/prodi/delete/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
+    Route::resource('prodi', prodiController::class)->except(['show']);
+    Route::resource('ukm', ukmController::class)->except(['show']);
+    Route::resource('himpunan', himpunanController::class)->except(['show']);
+    Route::resource('funfact', FunFactController::class)->except(['show']);
 
-    Route::get('dashboard/ukm', [ukmController::class, 'index'])->name('dashboard.ukm');
-    Route::get('dashboard/ukm/create', [ukmController::class, 'create'])->name('createUKM');
-    Route::post('dashboard/ukm/create', [ukmController::class, 'store'])->name('storeUKM');
-    Route::get('dashboard/ukm/edit/{id}', [ukmController::class, 'edit'])->name('editUKM');
-    Route::post('dashboard/ukm/edit/', [ukmController::class, 'update'])->name('updateUKM');
-    Route::get('dashboard/ukm/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
+//    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+//    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+  
+    // Bagian Senat
+    Route::get('dashboard/senat', [senatController::class, 'index'])->name('senat');
+    Route::get('dashboard/senat/create', [senatController::class, 'create'])->name('createSenat');
+    Route::post('dashboard/senat/create', [senatController::class, 'store'])->name('storeSenat');
+    Route::get('dashboard/senat/edit/{id}', [senatController::class, 'edit'])->name('editSenat');
+    Route::post('dashboard/senat/edit/', [senatController::class, 'update'])->name('updateSenat');
+    Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
+
+    Route::resource('jurusan', jurusanController::class)->except(['show']);
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
@@ -54,6 +62,7 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('dashboard/pplk/delete/{id}',[pplkController::class, 'destroy'])->name('deletePPLK');
     
 });
+
 
 Route::middleware(['Tugas'])->group(function () {
     // Ini Route yang hanya bisa diakses Role Tugas

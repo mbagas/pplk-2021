@@ -9,5 +9,6 @@ class Senat extends Model
 {
     use HasFactory;
     protected $table = 'senats';
+    // protected $primaryKey = 'id';
     protected $fillable = ['ketua', 'deskripsi', 'website', 'youtube', 'instagram'];
 }
