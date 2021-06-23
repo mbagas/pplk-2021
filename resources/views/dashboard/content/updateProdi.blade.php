@@ -8,10 +8,9 @@
                     <h4 class="card-title">Update Prodi</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('updateProdi') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('dashboard.prodi.update',$result->ormawas->id) }}" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
-
-                        <input name="id" value="{{ $result->ormawas->id }}" type="hidden">
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
                         <div class="col-sm-10">
@@ -24,7 +23,7 @@
                             <input type="text" name="namaSingkat" class="form-control form-control-lg" value="{{ $result->ormawas->namaSingkat }}" required>
                         </div>
                         </div>
-                    
+
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Jurusan</label>
                         <div class="col-sm-10">
@@ -33,7 +32,7 @@
                                 @foreach ($jurusans as $data)
                                 <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
                                 @endforeach
-                                
+
                             </select>
                         </div>
                         </div>
@@ -119,10 +118,10 @@
                         <button type="submit" class="btn btn-lg btn-primary">Update</button>
 
                     </form>
-                
+
                 </div>
             </div>
         </div>
     </div>
-    
+
 @endsection

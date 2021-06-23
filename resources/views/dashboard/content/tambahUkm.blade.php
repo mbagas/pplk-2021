@@ -8,7 +8,8 @@
                     <h4 class="card-title">Tambah UKM</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storeUKM') }}">
+                    <form method="POST" action="{{ route('dashboard.ukm.store') }}">
+                        @method('POST')
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
@@ -22,7 +23,7 @@
                             <input type="text" name="namaSingkat" class="form-control form-control-lg" required>
                         </div>
                         </div>
-                    
+
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Pembina</label>
                         <div class="col-sm-10">
@@ -35,7 +36,7 @@
                             <input type="text" name="ketuaUmum" class="form-control form-control-lg" required>
                         </div>
                         </div>
-                        
+
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Tahun Berdiri</label>
                         <div class="col-sm-10">
@@ -94,10 +95,10 @@
                         <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
 
                     </form>
-                
+
                 </div>
             </div>
         </div>
     </div>
-    
+
 @endsection

@@ -8,7 +8,7 @@
         <h4 class="card-title">Tambah Himpunan</h4>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('storeHimpunan') }}">
+        <form method="POST" action="{{ route('dashboard.himpunan.store') }}">
           @csrf
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
