@@ -171,11 +171,9 @@ class himpunanController extends Controller
     // Artikels
         artikel
   */
-  public function update(Request $request)
+  public function update(Request $request, $id)
   {
     try {
-      //Ormawas ID
-      $id = $request->id;
 
       $ormawa = Ormawa::where('id', $id)->firstOrFail();
       $ormawa->namaLengkap = $request->namaLengkap;

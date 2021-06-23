@@ -56,8 +56,12 @@
                       </svg>
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
-                      <a class="dropdown-item" href="himpunan/edit/{{ $data->ormawas->id }}">Edit</a>
-                      <a class="dropdown-item" href="himpunan/delete/{{ $data->ormawas->id }}">Hapus</a>
+                        <a class="dropdown-item" href="{{route('dashboard.himpunan.edit', $data->ormawas->id)}}">Edit</a>
+                        <form action="{{route('dashboard.himpunan.destroy', $data->ormawas->id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <input type="submit" class="dropdown-item" value="Hapus">
+                        </form>
                     </div>
                   </div>
                 </td>

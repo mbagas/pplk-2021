@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\FunFactController;
 use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
@@ -31,13 +32,14 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     // Ini Route yang hanya bisa diakses Role SuperAdmin
     Route::get('/', [dashboardController::class, 'index'])->name('index');
 
-    Route::get('dashboard/prodi', [prodiController::class, 'index'])->name('prodi');
-    Route::get('dashboard/prodi/create', [prodiController::class, 'create'])->name('createProdi');
-    Route::post('dashboard/prodi/create', [prodiController::class, 'store'])->name('storeProdi');
-    Route::get('dashboard/prodi/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
-    Route::post('dashboard/prodi/edit/', [prodiController::class, 'update'])->name('updateProdi');
-    Route::get('dashboard/prodi/delete/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
+    Route::resource('prodi', prodiController::class)->except(['show']);
+    Route::resource('ukm', ukmController::class)->except(['show']);
+    Route::resource('himpunan', himpunanController::class)->except(['show']);
+    Route::resource('funfact', FunFactController::class)->except(['show']);
 
+//    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+//    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+  
     // Bagian Senat
     Route::get('dashboard/senat', [senatController::class, 'index'])->name('senat');
     Route::get('dashboard/senat/create', [senatController::class, 'create'])->name('createSenat');
@@ -46,31 +48,13 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::post('dashboard/senat/edit/', [senatController::class, 'update'])->name('updateSenat');
     Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
 
-    Route::get('dashboard/ukm', [ukmController::class, 'index'])->name('ukm');
-    Route::get('dashboard/ukm/create', [ukmController::class, 'create'])->name('createUKM');
-    Route::post('dashboard/ukm/create', [ukmController::class, 'store'])->name('storeUKM');
-    Route::get('dashboard/ukm/edit/{id}', [ukmController::class, 'edit'])->name('editUKM');
-    Route::post('dashboard/ukm/edit/', [ukmController::class, 'update'])->name('updateUKM');
-    Route::get('dashboard/ukm/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
-
-    Route::get('dashboard/himpunan', [himpunanController::class, 'index'])->name('himpunan');
-    Route::get('dashboard/himpunan/create', [himpunanController::class, 'create'])->name('createHimpunan');
-    Route::post('dashboard/himpunan/create', [himpunanController::class, 'store'])->name('storeHimpunan');
-    Route::get('dashboard/himpunan/edit/{id}', [himpunanController::class, 'edit'])->name('editHimpunan');
-    Route::post('dashboard/himpunan/edit/', [himpunanController::class, 'update'])->name('updateHimpunan');
-    Route::get('dashboard/himpunan/delete/{id}', [himpunanController::class, 'destroy'])->name('deleteHimpunan');
-
-    Route::get('dashboard/jurusan', [jurusanController::class, 'index'])->name('jurusan');
-    // Route::get('dashboard/jurusan/create', [jurusanController::class, 'create'])->name('createJurusan');
-    // Route::post('dashboard/jurusan/create', [jurusanController::class, 'store'])->name('storeJurusan');
-    // Route::get('dashboard/jurusan/edit/{id}', [jurusanController::class, 'edit'])->name('editJurusan');
-    // Route::post('dashboard/jurusan/edit/', [jurusanController::class, 'update'])->name('updateJurusan');
-    // Route::get('dashboard/jurusan/delete/{id}', [jurusanController::class, 'destroy'])->name('deleteJurusan');
     Route::resource('jurusan', jurusanController::class)->except(['show']);
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+
 });
+
 
 Route::middleware(['Tugas'])->group(function () {
     // Ini Route yang hanya bisa diakses Role Tugas

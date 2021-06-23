@@ -125,7 +125,7 @@ class prodiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {   
+    {
         try{
             $jurusans = Jurusan::get();
             $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
@@ -136,7 +136,7 @@ class prodiController extends Controller
         } catch(Exception $ex){
             return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
         }
-        
+
     }
 
     /**
@@ -146,7 +146,7 @@ class prodiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nama' => 'required',
@@ -164,7 +164,6 @@ class prodiController extends Controller
 
 
         try{
-            $id = $request->id;
             $ormawa = Ormawa::where('id', $id)->firstOrFail();
             $ormawa->namaLengkap = $request->nama;
             $ormawa->namaSingkat = $request->namaSingkat;
