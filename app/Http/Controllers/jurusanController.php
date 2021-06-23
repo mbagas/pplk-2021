@@ -98,7 +98,7 @@ class jurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         //
         $request->validate([
@@ -109,7 +109,7 @@ class jurusanController extends Controller
         ]);
 
         try{
-            $id = $request->id;
+            
             $jurusan = Jurusan::where('id', $id)->firstOrFail();
             $jurusan->namaSingkat = $request->namaSingkat;
             $jurusan->namaLengkap = $request->namaLengkap;

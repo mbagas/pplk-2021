@@ -48,8 +48,12 @@
                       </svg>
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
-                      <a class="dropdown-item" href="jurusan/edit/{{ $data->id }}">Edit</a>
-                      <a class="dropdown-item" href="jurusan/delete/{{ $data->id }}">Hapus</a>
+                      <a class="dropdown-item" href="{{route('dashboard.jurusan.edit', $data->id)}}">Edit</a>
+                      <form action="{{route('dashboard.jurusan.destroy', $data->id)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <input type="submit" class="dropdown-item" name="" id="" value="Hapus">
+                      </form>
                     </div>
                   </div>
                 </td>

@@ -8,7 +8,8 @@
         <h4 class="card-title">Perbarui Himpunan</h4>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('updateJurusan') }}" enctype='multipart/form-data'>
+        <form method="POST" action="{{ route('dashboard.jurusan.update', $result->id) }}" enctype='multipart/form-data'>
+          @method('PUT')
           @csrf
 
           <input name="id" value="{{ $result->id }}" type="hidden">

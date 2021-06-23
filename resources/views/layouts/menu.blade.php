@@ -20,7 +20,7 @@
                     </a>
                 </div>
             </li>
-            <li><a href="{{ route('dashboard') }}" class="ai-icon" aria-expanded="true">
+            <li><a href="{{ route('dashboard.index') }}" class="ai-icon" aria-expanded="true">
                 <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Dashboard </span>
                 </a>
@@ -31,7 +31,7 @@
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
                     <li><a href="{{ route('dashboard.prodi') }}">Data Prodi</a></li>
-                    <li><a href="{{ route('createProdi') }}">Tambah Prodi</a></li>
+                    <li><a href="{{ route('dashboard.createProdi') }}">Tambah Prodi</a></li>
                 </ul>
             </li>
             <!-- Ini bagian senat -->
@@ -41,7 +41,7 @@
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
                     <li><a href="{{ route('dashboard.senat') }}">Data Senat</a></li>
-                    <li><a href="{{ route('createSenat') }}">Tambah Data Senat</a></li>
+                    <li><a href="{{ route('dashboard.createSenat') }}">Tambah Data Senat</a></li>
                 </ul>
             </li>
             <!-- Ending Bagian senat  -->
@@ -52,7 +52,17 @@
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
                     <li><a href="{{ route('dashboard.ukm') }}">Data UKM</a></li>
-                    <li><a href="{{ route('createUKM') }}">Tambah UKM</a></li>
+                    <li><a href="{{ route('dashboard.createUKM') }}">Tambah UKM</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">Jurusan</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.jurusan.index') }}">Data Jurusan</a></li>
+                    <li><a href="{{ route('dashboard.jurusan.create') }}">Tambah Jurusan</a></li>
                 </ul>
             </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">
