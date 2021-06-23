@@ -34,24 +34,22 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
     // Ini Route yang hanya bisa diakses Role SuperAdmin
 
-    Route::get('dashboard/upt', [uptController::class, 'index'])->name('dashboard.upt');
-    Route::get('dashboard/upt/create', [uptController::class, 'create'])->name('createUPT');
-    Route::post('dashboard/upt/create', [uptController::class, 'store'])->name('storeUPT');
-    Route::get('dashboard/upt/edit/{id}', [uptController::class, 'edit'])->name('editUPT');
-    Route::post('dashboard/upt/edit/', [uptController::class, 'update'])->name('updateUPT');
-    Route::get('dashboard/upt/delete/{id}', [uptController::class, 'destroy'])->name('deleteUPT');
-
+    // SUDAH DI OPTIMIZE (routing)
     Route::get('/', [dashboardController::class, 'index'])->name('index');
 
     Route::resource('prodi', prodiController::class)->except(['show']);
     Route::resource('ukm', ukmController::class)->except(['show']);
     Route::resource('himpunan', himpunanController::class)->except(['show']);
     Route::resource('funfact', FunFactController::class)->except(['show']);
+    Route::resource('jurusan', jurusanController::class)->except(['show']);
+
+    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
 //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
 //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
   
-    // Bagian Senat
+    // BELUM DI OPTIMIZE (routing)
     Route::get('dashboard/senat', [senatController::class, 'index'])->name('senat');
     Route::get('dashboard/senat/create', [senatController::class, 'create'])->name('createSenat');
     Route::post('dashboard/senat/create', [senatController::class, 'store'])->name('storeSenat');
@@ -59,13 +57,14 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::post('dashboard/senat/edit/', [senatController::class, 'update'])->name('updateSenat');
     Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
 
-    Route::resource('jurusan', jurusanController::class)->except(['show']);
+    Route::get('dashboard/upt', [uptController::class, 'index'])->name('upt');
+    Route::get('dashboard/upt/create', [uptController::class, 'create'])->name('createUPT');
+    Route::post('dashboard/upt/create', [uptController::class, 'store'])->name('storeUPT');
+    Route::get('dashboard/upt/edit/{id}', [uptController::class, 'edit'])->name('editUPT');
+    Route::post('dashboard/upt/edit/', [uptController::class, 'update'])->name('updateUPT');
+    Route::get('dashboard/upt/delete/{id}', [uptController::class, 'destroy'])->name('deleteUPT');
 
-
-    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
-
-    Route::get('dashboard/pplk', [pplkController::class, 'index'])->name('dashboard.PPLK');
+    Route::get('dashboard/pplk', [pplkController::class, 'index'])->name('PPLK');
     Route::get('dashboard/pplk/create', [pplkController::class, 'create'])->name('createPPLK');
     Route::post('dashboard/pplk/create',[pplkController::class, 'store'])->name('storePPLK');
     Route::get('dashboard/pplk/edit/{id}', [pplkController::class, 'edit'])->name('editPPLK');
