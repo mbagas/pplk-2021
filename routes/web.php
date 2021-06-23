@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\pplkController;
 use App\Http\Controllers\FunFactController;
 use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
@@ -53,6 +54,13 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
+    Route::get('dashboard/pplk', [pplkController::class, 'index'])->name('dashboard.PPLK');
+    Route::get('dashboard/pplk/create', [pplkController::class, 'create'])->name('createPPLK');
+    Route::post('dashboard/pplk/create',[pplkController::class, 'store'])->name('storePPLK');
+    Route::get('dashboard/pplk/edit/{id}', [pplkController::class, 'edit'])->name('editPPLK');
+    Route::post('dashboard/pplk/edit/', [pplkController::class, 'update'])->name('updatePPLK');
+    Route::get('dashboard/pplk/delete/{id}',[pplkController::class, 'destroy'])->name('deletePPLK');
+    
 });
 
 
@@ -71,3 +79,4 @@ Route::middleware(['Pendanaan'])->group(function () {
 Route::middleware(['Maba'])->group(function () {
     // Ini Route yang hanya bisa diakses Role Maba
 });
+
