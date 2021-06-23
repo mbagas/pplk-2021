@@ -34,6 +34,17 @@
                     <li><a href="{{ route('createProdi') }}">Tambah Prodi</a></li>
                 </ul>
             </li>
+            <!-- Ini bagian senat -->
+            <li class=""><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">Senat</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.senat') }}">Data Senat</a></li>
+                    <li><a href="{{ route('createSenat') }}">Tambah Data Senat</a></li>
+                </ul>
+            </li>
+            <!-- Ending Bagian senat  -->
             <li class="">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-041-graph"></i>
