@@ -11,7 +11,7 @@
                     <form method="POST" action="{{ route('updateProdi') }}">
                         @csrf
 
-                        <input name="id" value="{{ $result->ormawas->id }}" type="hidden">
+                        {{-- <input name="id" value="{{ $result->ormawas->id }}" type="hidden"> --}}
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
                         <div class="col-sm-10">
