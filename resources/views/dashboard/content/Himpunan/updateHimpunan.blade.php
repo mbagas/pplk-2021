@@ -51,7 +51,7 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Logo</label>
             <div class="col-sm-10">
-              <input type="text" name="logo" class="form-control form-control-lg" value="{{ $himpunan->logo }}" required>
+              <input type="file" name="logo" class="form-control form-control-lg" value="{{ $himpunan->logo }}" required>
             </div>
           </div>
           <div class="mb-3 row">

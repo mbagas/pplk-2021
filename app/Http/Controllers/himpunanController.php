@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Himpunan;
 use App\Models\Ormawa;
 use App\Models\Artikel;
@@ -77,8 +78,11 @@ class himpunanController extends Controller
       $himpunan->pembina = $request->pembina;
       $himpunan->ketuaHimpunan = $request->ketuaHimpunan;
       $himpunan->tahunBerdiri = $request->tahunBerdiri;
-      $himpunan->logo = $request->logo;
       $himpunan->filosofiLogo = $request->filosofiLogo;
+
+      $logo = $this->SaveFiles($request);
+
+      $himpunan->logo = 'Himpunan/' . $logo;
 
       $ormawa->himpunans()->save($himpunan);
 
@@ -182,7 +186,15 @@ class himpunanController extends Controller
       $himpunan->ketuaHimpunan = $request->ketuaHimpunan;
       $himpunan->pembina = $request->pembina;
       $himpunan->tahunBerdiri = $request->tahunBerdiri;
-      $himpunan->logo = $request->logo;
+
+
+      if ($request->logo !== null) {
+        $logo = $this->SaveFiles($request);
+
+        $himpunan->logo = 'Himpunan/' . $logo;
+      }
+
+
       $himpunan->filosofiLogo = $request->filosofiLogo;
 
       $himpunan->save();
@@ -220,6 +232,7 @@ class himpunanController extends Controller
   public function destroy($id)
   {
     $himpunan = Himpunan::where('ormawas_id', $id)->firstOrFail();
+    Storage::delete($himpunan->logo);
     $himpunan->delete();
 
     $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
@@ -235,5 +248,13 @@ class himpunanController extends Controller
     $ormawa->delete();
 
     return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Menghapus Data!');
+  }
+
+  public function SaveFiles(Request $request)
+  {
+    $namaFiles = $request->namaSingkat . '.' . $request->logo->extension();
+    $request->logo->storeAs(('Himpunan'), $namaFiles);
+
+    return $namaFiles;
   }
 }

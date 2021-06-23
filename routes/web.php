@@ -6,6 +6,8 @@ use App\Http\Controllers\FunFactController;
 use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
+use App\Http\Controllers\jurusanController;
+use App\Http\Controllers\senatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +31,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
     // Ini Route yang hanya bisa diakses Role SuperAdmin
     Route::get('/', [dashboardController::class, 'index'])->name('index');
+
     Route::resource('prodi', prodiController::class)->except(['show']);
     Route::resource('ukm', ukmController::class)->except(['show']);
     Route::resource('himpunan', himpunanController::class)->except(['show']);
@@ -36,6 +39,20 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
 //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
 //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+  
+    // Bagian Senat
+    Route::get('dashboard/senat', [senatController::class, 'index'])->name('senat');
+    Route::get('dashboard/senat/create', [senatController::class, 'create'])->name('createSenat');
+    Route::post('dashboard/senat/create', [senatController::class, 'store'])->name('storeSenat');
+    Route::get('dashboard/senat/edit/{id}', [senatController::class, 'edit'])->name('editSenat');
+    Route::post('dashboard/senat/edit/', [senatController::class, 'update'])->name('updateSenat');
+    Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
+
+    Route::resource('jurusan', jurusanController::class)->except(['show']);
+
+    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+
 });
 
 
