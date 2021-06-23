@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
+use App\Http\Controllers\uptController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,15 +43,16 @@ Route::middleware(['Admin'])->group(function () {
     Route::post('dashboard/ukm/edit/', [ukmController::class, 'update'])->name('updateUKM');
     Route::get('dashboard/ukm/delete/{id}', [ukmController::class, 'destroy'])->name('deleteProdi');
 
-    Route::get('dashboard/himpunan', [himpunanController::class, 'index'])->name('dashboard.himpunan');
-    Route::get('dashboard/himpunan/create', [himpunanController::class, 'create'])->name('createHimpunan');
-    Route::post('dashboard/himpunan/create', [himpunanController::class, 'store'])->name('storeHimpunan');
-    Route::get('dashboard/himpunan/edit/{id}', [himpunanController::class, 'edit'])->name('editHimpunan');
-    Route::post('dashboard/himpunan/edit/', [himpunanController::class, 'update'])->name('updateHimpunan');
-    Route::get('dashboard/himpunan/delete/{id}', [himpunanController::class, 'destroy'])->name('deleteHimpunan');
+    Route::get('dashboard/upt', [uptController::class, 'index'])->name('dashboard.upt');
+    Route::get('dashboard/upt/create', [uptController::class, 'create'])->name('createUPT');
+    Route::post('dashboard/upt/create', [uptController::class, 'store'])->name('storeUPT');
+    Route::get('dashboard/upt/edit/{id}', [uptController::class, 'edit'])->name('editUPT');
+    Route::post('dashboard/upt/edit/', [uptController::class, 'update'])->name('updateUPT');
+    Route::get('dashboard/upt/delete/{id}', [uptController::class, 'destroy'])->name('deleteUPT');
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+
 });
 
 Route::middleware(['Tugas'])->group(function () {

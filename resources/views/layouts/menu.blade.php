@@ -4,7 +4,7 @@
             <li class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
                     <img src="{{ asset('assets') }}/images/profile/pic1.jpg" width="20" alt=""/>
-                    
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a href="#" class="dropdown-item ai-icon">
@@ -42,6 +42,16 @@
                 <ul aria-expanded="false" class="mm-collapse">
                     <li><a href="{{ route('dashboard.ukm') }}">Data UKM</a></li>
                     <li><a href="{{ route('createUKM') }}">Tambah UKM</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">UPT</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.upt') }}">Data UPT</a></li>
+                    <li><a href="{{ route('createUPT') }}">Tambah UPT</a></li>
                 </ul>
             </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">
