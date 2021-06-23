@@ -8,7 +8,15 @@
                     <h4 class="card-title">Tambah Prodi</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storeProdi') }}">
+
+                    @if($errors->any())
+                        @foreach($errors->all() as $data)
+                            <div class="alert alert-danger">
+                                {{ $data }}
+                            </div>
+                        @endforeach
+                    @endif
+                    <form method="POST" action="{{ route('storeProdi') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Lengkap</label>
@@ -64,6 +72,13 @@
                         <div class="col-sm-10">
                             <input type="number" name="jumlahMahasiswa" class="form-control form-control-lg" required>
                         </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label col-form-label-lg">Diagram Alir</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="diagramAlir" class="form-control form-control-lg" required>
+                            </div>
                         </div>
 
                         <div class="mb-3 row">
