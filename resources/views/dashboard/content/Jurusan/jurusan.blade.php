@@ -5,7 +5,7 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Data Himpunan</h4>
+        <h4 class="card-title">Data Jurusan</h4>
       </div>
       <div class="card-body">
         @if (session('sukses'))
@@ -23,26 +23,18 @@
               <tr>
                 <th style="width:80px;"><strong>Nama Singkat</strong></th>
                 <th class="text-center"><strong>Nama Lengkap</strong></th>
-                <th class="text-center"><strong>Kode Warna</strong></th>
-                <th class="text-center"><strong>Ketua Himpunan</strong></th>
-                <th class="text-center"><strong>Pembina</strong></th>
-                <th class="text-center"><strong>Berdiri</strong></th>
-                <th class="text-center"><strong>Logo</strong></th>
-                <th class="text-center"><strong>Filosofi Logo</strong></th>
+                <th class="text-center"><strong>Kepala Jurusan</strong></th>
+                <th class="text-center"><strong>Ruang Jurusan</strong></th>
                 <th class="text-center"><strong>ACTION</strong></th>
               </tr>
             </thead>
             <tbody>
               @foreach ($result as $data )
               <tr>
-                <td class="text-center">{{$data->ormawas->namaSingkat}}</td>
-                <td class="text-center">{{$data->ormawas->namaLengkap}}</td>
-                <td class="text-center">{{$data->kodeWarna}}</td>
-                <td class="text-center">{{$data->ketuaHimpunan}}</td>
-                <td class="text-center">{{$data->pembina}}</td>
-                <td class="text-center">{{$data->tahunBerdiri}}</td>
-                <td class="text-center">{{$data->logo}}</td>
-                <td class="text-center">{{$data->filosofiLogo}}</td>
+                <td class="text-center">{{$data->namaSingkat}}</td>
+                <td class="text-center">{{$data->namaLengkap}}</td>
+                <td class="text-center">{{$data->kepalaJurusan}}</td>
+                <td class="text-center">{{$data->ruangJurusan}}</td>
                 <td class="text-center">
                   <div class="dropdown">
                     <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,12 +48,12 @@
                       </svg>
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
-                        <a class="dropdown-item" href="{{route('dashboard.himpunan.edit', $data->ormawas->id)}}">Edit</a>
-                        <form action="{{route('dashboard.himpunan.destroy', $data->ormawas->id)}}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <input type="submit" class="dropdown-item" value="Hapus">
-                        </form>
+                      <a class="dropdown-item" href="{{route('dashboard.jurusan.edit', $data->id)}}">Edit</a>
+                      <form action="{{route('dashboard.jurusan.destroy', $data->id)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <input type="submit" class="dropdown-item" name="" id="" value="Hapus">
+                      </form>
                     </div>
                   </div>
                 </td>
