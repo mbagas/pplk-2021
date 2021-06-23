@@ -46,7 +46,7 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
-    Route::get('dashboard/pplk', [pplkController::class, 'index'])->name('dashboard.pplk');
+    Route::get('dashboard/pplk', [pplkController::class, 'index'])->name('dashboard.PPLK');
     Route::get('dashboard/pplk/create', [pplkController::class, 'create'])->name('createPPLK');
     Route::post('dashboard/pplk/create',[pplkController::class, 'store'])->name('storePPLK');
     Route::get('dashboard/pplk/edit/{id}', [pplkController::class, 'edit'])->name('editPPLK');

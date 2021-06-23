@@ -8,12 +8,12 @@
                     <h4 class="card-title">Tambah PPLK</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storePPLK') }}">
+                    <form method="POST" action="{{ route('storePPLK') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Logo</label>
                         <div class="col-sm-10">
-                            <input type="text" name="logo" class="form-control form-control-lg" required>
+                            <input type="file" name="logo" class="form-control form-control-lg" required>
                         </div>
                         </div>
                         <div class="mb-3 row">

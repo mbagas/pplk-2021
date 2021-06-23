@@ -41,7 +41,10 @@ class pplkController extends Controller
         //
         try{
             $pplks = new Pplk();
-            $pplks->logo = $request->logo;
+
+            $namaFile = time().'.'.$request->logo->extension();
+            $request->logo->storeAs('logo', $namaFile);
+            $pplks->logo = 'pplk/'.$namaFile;
             $pplks->visi = $request->visi;
             $pplks->misi = $request->misi;
             $pplks->save();
@@ -90,8 +93,14 @@ class pplkController extends Controller
         //
         try{
             $id = $request->id;
+            
             $pplks = Pplk::where('id', $id)->firstOrFail();
-            $pplks->logo = $request->logo;
+            if ($request->logo !== null) {
+                $namaFile = time().'.'.$request->logo->extension();
+                $request->logo->storeAs('logo', $namaFile);
+                $pplks->logo = 'pplk/' . $namaFile;
+              }
+        
             $pplks->visi = $request->visi;
             $pplks->misi = $request->misi;
             $pplks->save();
