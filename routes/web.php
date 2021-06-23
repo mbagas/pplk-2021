@@ -6,6 +6,7 @@ use App\Http\Controllers\himpunanController;
 use App\Http\Controllers\prodiController;
 use App\Http\Controllers\ukmController;
 use App\Http\Controllers\jurusanController;
+use App\Http\Controllers\senatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,14 @@ Route::middleware(['Admin'])->group(function () {
     Route::get('dashboard/prodi/edit/{id}', [prodiController::class, 'edit'])->name('editProdi');
     Route::post('dashboard/prodi/edit/', [prodiController::class, 'update'])->name('updateProdi');
     Route::get('dashboard/prodi/delete/{id}', [prodiController::class, 'destroy'])->name('deleteProdi');
+
+    // Bagian Senat
+    Route::get('dashboard/senat', [senatController::class, 'index'])->name('dashboard.senat');
+    Route::get('dashboard/senat/create', [senatController::class, 'create'])->name('createSenat');
+    Route::post('dashboard/senat/create', [senatController::class, 'store'])->name('storeSenat');
+    Route::get('dashboard/senat/edit/{id}', [senatController::class, 'edit'])->name('editSenat');
+    Route::post('dashboard/senat/edit/', [senatController::class, 'update'])->name('updateSenat');
+    Route::get('dashboard/senat/delete/{id}', [senatController::class, 'destroy'])->name('deleteSenat');
 
     Route::get('dashboard/ukm', [ukmController::class, 'index'])->name('dashboard.ukm');
     Route::get('dashboard/ukm/create', [ukmController::class, 'create'])->name('createUKM');
