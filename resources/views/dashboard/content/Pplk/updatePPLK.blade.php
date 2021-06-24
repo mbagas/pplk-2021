@@ -1,34 +1,39 @@
 @extends('layouts.master')
-@section('title', 'Tambah PPLK')
+@section('title', 'Update PPLK')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Tambah PPLK</h4>
+                    <h4 class="card-title">Update PPLK</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storePPLK') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('dashboard.pplk.update', $pplks->id) }}" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
+
+                        <input name="id" value="{{ $pplks->id }}" type="hidden">
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Logo</label>
                         <div class="col-sm-10">
-                            <input type="file" name="logo" class="form-control form-control-lg" required>
+                            <input type="file" name="logo" class="form-control form-control-lg" value="{{ $pplks->logo }}" required>
                         </div>
                         </div>
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Visi</label>
                         <div class="col-sm-10">
-                            <input type="text" name="visi" class="form-control form-control-lg" required>
+                            <input type="text" name="visi" class="form-control form-control-lg" value="{{ $pplks->visi }}" required>
                         </div>
                         </div>
+                    
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Misi</label>
                         <div class="col-sm-10">
-                            <input type="text" name="misi" class="form-control form-control-lg"required>
+                            <input type="text" name="misi" class="form-control form-control-lg" value="{{ $pplks->misi }}" required>
                         </div>
                         </div>
-                        <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
+                        
+                        <button type="submit" class="btn btn-lg btn-primary">Update</button>
 
                     </form>
                 

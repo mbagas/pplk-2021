@@ -19,12 +19,12 @@ class uptController extends Controller
         //
         $result = Upt::paginate(10);
 
-        return view('dashboard.content.upt', compact('result'));
+        return view('dashboard.content.Upt.upt', compact('result'));
     }
 
     public function create()
     {
-        return view('dashboard.content.tambahUpt');
+        return view('dashboard.content.Upt.tambahUpt');
     }
 
     public function store(Request $request)
@@ -52,7 +52,7 @@ class uptController extends Controller
     {
         try{
             $result = Upt::where('id', $id)->firstOrFail();
-            return view('dashboard.content.updateUpt', compact('result'));
+            return view('dashboard.content.Upt.updateUpt', compact('result'));
         } catch(Exception $ex){
             return redirect('dashboard/upt')->with('error', 'Gagal Edit Data!');
         }

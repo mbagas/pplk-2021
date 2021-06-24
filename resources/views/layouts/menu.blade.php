@@ -42,8 +42,8 @@
                     <span class="nav-text">Senat</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="{{ route('dashboard.senat') }}">Data Senat</a></li>
-                    <li><a href="{{ route('dashboard.createSenat') }}">Tambah Data Senat</a></li>
+                    <li><a href="{{ route('dashboard.senat.index') }}">Data Senat</a></li>
+                    <li><a href="{{ route('dashboard.senat.create') }}">Tambah Data Senat</a></li>
                 </ul>
             </li>
             <!-- Ending Bagian senat  -->
@@ -98,8 +98,8 @@
                     <span class="nav-text">PPLK</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="{{ route('dashboard.PPLK') }}">Data PPLK</a></li>
-                    <li><a href="{{ route('createPPLK') }}">Tambah PPLK</a></li>
+                    <li><a href="{{ route('dashboard.pplk.index') }}">Data PPLK</a></li>
+                    <li><a href="{{ route('dashboard.pplk.create') }}">Tambah PPLK</a></li>
                 </ul>
             </li>
             <li class="">
@@ -108,8 +108,18 @@
                     <span class="nav-text">UPT</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="{{ route('dashboard.upt') }}">Data UPT</a></li>
-                    <li><a href="{{ route('createUPT') }}">Tambah UPT</a></li>
+                    <li><a href="{{ route('dashboard.upt.index') }}">Data UPT</a></li>
+                    <li><a href="{{ route('dashboard.upt.create') }}">Tambah UPT</a></li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-041-graph"></i>
+                    <span class="nav-text">Kamus Gaul LPG</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="{{ route('dashboard.kamusGaul.index') }}">Data Kamus Gaul</a></li>
+                    <li><a href="{{ route('dashboard.kamusGaul.create') }}">Tambah Bahasa Gaul Lampung</a></li>
                 </ul>
             </li>
             <li><a href="dataTugas.html" class="ai-icon" aria-expanded="false">

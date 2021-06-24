@@ -17,7 +17,7 @@ class FunFactController extends Controller
     public function index(): View
     {
         $funFacts = Funfact::all();
-        return view('dashboard.funfact.index', compact('funFacts'));
+        return view('dashboard.content.funfact.index', compact('funFacts'));
     }
 
     /**
@@ -27,7 +27,7 @@ class FunFactController extends Controller
      */
     public function create(): View
     {
-        return view('dashboard.funfact.create');
+        return view('dashboard.content.funfact.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class FunFactController extends Controller
     {
         $funFact = Funfact::query()->create($request->validated());
         if ($funFact){
-            return redirect()->route('dashboard.funfact.index')->with('sukses', ' Success Inserted '.$funFact->body);
+            return redirect()->route('dashboard.content.funfact.index')->with('sukses', ' Success Inserted '.$funFact->body);
         }
         return redirect()->back()->withErrors("Failed Insert");
     }
@@ -53,7 +53,7 @@ class FunFactController extends Controller
      */
     public function edit(Funfact $funfact):View
     {
-        return view('dashboard.funfact.edit', compact('funfact'));
+        return view('dashboard.content.funfact.edit', compact('funfact'));
     }
 
     /**
@@ -66,7 +66,7 @@ class FunFactController extends Controller
     public function update(StoreFunFactRequest $request, Funfact $funfact)
     {
         if ($funfact->update($request->validated())){
-            return redirect()->route('dashboard.funfact.index')->with('sukses', $funfact->body.' Updated Success ');
+            return redirect()->route('dashboard.content.funfact.index')->with('sukses', $funfact->body.' Updated Success ');
         }
         return redirect()->back()->withErrors('Update Failed');
     }
@@ -80,7 +80,7 @@ class FunFactController extends Controller
     public function destroy(Funfact $funfact)
     {
         if ($funfact->delete()){
-            return redirect()->route('dashboard.funfact.index')->with('sukses', $funfact->body.' Deleted ');
+            return redirect()->route('dashboard.content.funfact.index')->with('sukses', $funfact->body.' Deleted ');
         }
         return redirect()->back()->withErrors('Delete Failed');
     }

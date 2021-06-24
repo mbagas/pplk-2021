@@ -8,7 +8,8 @@
                     <h4 class="card-title">Update Data Senat</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('updateSenat') }}">
+                    <form method="POST" action="{{ route('dashboard.senat.update', $result->id) }}">
+                        @method('PUT')
                         @csrf
                         <input name="id" value="{{ $result->id }}" type="hidden">
                         <div class="mb-3 row">

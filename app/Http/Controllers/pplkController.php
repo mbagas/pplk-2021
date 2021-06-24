@@ -16,7 +16,7 @@ class pplkController extends Controller
     public function index()
     {
         $pplks = Pplk::all();
-        return view('dashboard.content.pplk', compact('pplks'));
+        return view('dashboard.content.Pplk.pplk', compact('pplks'));
     }
 
     /**
@@ -27,7 +27,7 @@ class pplkController extends Controller
     public function create()
     {
         $pplks = Pplk::get();
-        return view('dashboard.content.tambahPPLK', compact('pplks'));
+        return view('dashboard.content.Pplk.tambahPPLK', compact('pplks'));
     }
 
     /**
@@ -43,8 +43,8 @@ class pplkController extends Controller
             $pplks = new Pplk();
 
             $namaFile = time().'.'.$request->logo->extension();
-            $request->logo->storeAs('logo', $namaFile);
-            $pplks->logo = 'pplk/'.$namaFile;
+            $request->logo->storeAs('logoPplk', $namaFile);
+            $pplks->logo = 'logoPplk/'.$namaFile;
             $pplks->visi = $request->visi;
             $pplks->misi = $request->misi;
             $pplks->save();
@@ -78,7 +78,7 @@ class pplkController extends Controller
     {
         //
         $pplks = Pplk::where('id', $id)->firstOrFail();
-        return view('dashboard.content.updatePPLK', compact('pplks'));
+        return view('dashboard.content.Pplk.updatePPLK', compact('pplks'));
     }
 
     /**
@@ -97,8 +97,8 @@ class pplkController extends Controller
             $pplks = Pplk::where('id', $id)->firstOrFail();
             if ($request->logo !== null) {
                 $namaFile = time().'.'.$request->logo->extension();
-                $request->logo->storeAs('logo', $namaFile);
-                $pplks->logo = 'pplk/' . $namaFile;
+                $request->logo->storeAs('logoPplk', $namaFile);
+                $pplks->logo = 'logoPplk/' . $namaFile;
               }
         
             $pplks->visi = $request->visi;

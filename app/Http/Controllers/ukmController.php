@@ -18,7 +18,7 @@ class ukmController extends Controller
     public function index()
     {
         $result = Ukm::with('ormawas')->paginate(10);
-        return view('dashboard.content.ukm', compact('result'));
+        return view('dashboard.content.Ukm.ukm', compact('result'));
     }
 
     /**
@@ -28,7 +28,7 @@ class ukmController extends Controller
      */
     public function create()
     {
-        return view('dashboard.content.tambahUkm');
+        return view('dashboard.content.Ukm.tambahUkm');
     }
 
     /**
@@ -88,7 +88,7 @@ class ukmController extends Controller
         try{
             $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
             $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-            return view('dashboard.content.updateUkm', compact('result', 'artikel'));
+            return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel'));
         } catch(Exception $ex){
             return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
         }

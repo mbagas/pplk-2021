@@ -8,7 +8,7 @@
                     <h4 class="card-title">Tambah Data Senat</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('storeSenat') }}">
+                    <form method="POST" action="{{ route('dashboard.senat.store') }}">
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama Ketua</label>

@@ -18,7 +18,7 @@ class senatController extends Controller
     {
         $result = Senat::all();
 
-        return view('dashboard.content.senat', compact('result'));
+        return view('dashboard.content.Senat.senat', compact('result'));
     }
 
     /**
@@ -29,7 +29,7 @@ class senatController extends Controller
     public function create()
     {
         $result = Senat::get();
-        return view('dashboard.content.tambahSenat',compact('result'));
+        return view('dashboard.content.Senat.tambahSenat',compact('result'));
     }
 
     /**
@@ -76,7 +76,7 @@ class senatController extends Controller
     {
         try{
             $result = Senat::where('id', $id)->firstOrFail();
-            return view('dashboard.content.updateSenat',compact('result'));
+            return view('dashboard.content.Senat.updateSenat',compact('result'));
         } catch(Exception $ex){
             return redirect('dashboard/senat')->with('error', 'Gagal Edit Data!');
         }
