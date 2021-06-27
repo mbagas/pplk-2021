@@ -11,6 +11,7 @@ use App\Http\Controllers\ukmController;
 use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
 use App\Http\Controllers\kamusGaulController;
+use App\Http\Controllers\kabinetController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::resource('pplk', pplkController::class)->except('show');
     Route::resource('upt', uptController::class)->except('show');
     Route::resource('kamusGaul', kamusGaulController::class)->except('show');
+    Route::resource('kabinet', kabinetController::class)->except('show');
 
     Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
     Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
