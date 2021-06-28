@@ -3,8 +3,15 @@
         <ul class="metismenu" id="menu">
             <li class="dropdown header-profile">
                 <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                    <img src="{{ asset('assets') }}/images/profile/pic1.jpg" width="20" alt=""/>
-
+                    <div class="media me-2">
+                        <div class="media me-2 media-info">
+                            HB
+                        </div>
+                    </div>
+                    <div class="header-info ms-3">
+                        <span class="font-w600 ">Hi,<b>Hafizul Bagaskara</b></span>
+                        <small class="text-end font-w400">hfzul.b@gmail.com</small>
+                    </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a href="#" class="dropdown-item ai-icon">
@@ -20,8 +27,10 @@
                     </a>
                 </div>
             </li>
-            <li><a href="{{ route('dashboard.index') }}" class="ai-icon" aria-expanded="true">
-                <i class="flaticon-025-dashboard"></i>
+            
+            <li>
+                <a href="{{ route('dashboard.index') }}" class="ai-icon" aria-expanded="true">
+                    <i class="flaticon-025-dashboard"></i>
                     <span class="nav-text">Dashboard </span>
                 </a>
             </li>
@@ -71,7 +80,6 @@
                     <li><a href="{{ route('dashboard.ukm.create') }}">Tambah UKM</a></li>
                 </ul>
             </li>
-
             <li class="">
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-041-graph"></i>
