@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisiMisisTable extends Migration
+class CreateParameterNilaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateVisiMisisTable extends Migration
      */
     public function up()
     {
-        Schema::create('visi_misis', function (Blueprint $table) {
+        Schema::create('parameter_nilais', function (Blueprint $table) {
             $table->id();
-            $table->text('visi')->nullable();
-            $table->text('misi')->nullable();
-            $table->foreignId('ormawas_id');
-            $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');
+            $table->string('nama')->nullable();
+            $table->integer('persen')->nullable();
+            $table->foreignId('tugas_id')->nullable();
+            $table->foreign('tugas_id')->references('id')->on('tugas');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateVisiMisisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visi_misis');
+        Schema::dropIfExists('parameter_nilais');
     }
 }

@@ -15,12 +15,12 @@ class CreateUkmsTable extends Migration
     {
         Schema::create('ukms', function (Blueprint $table) {
             $table->id();
-            $table->string('pembina', 30);
-            $table->string('ketuaUmum', 30);
-            $table->integer('tahunBerdiri');
-            $table->string('logo', 50);
-            $table->text('filosofiLogo');
-            $table->string('barcode', 30);
+            $table->string('pembina', 30)->nullable();
+            $table->string('ketuaUmum', 30)->nullable();
+            $table->integer('tahunBerdiri')->nullable();
+            $table->string('logo', 50)->nullable();
+            $table->text('filosofiLogo')->nullable();
+            $table->string('barcode', 30)->nullable();
             $table->foreignId('ormawas_id');
             $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');
             $table->timestamps();

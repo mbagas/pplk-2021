@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKabinetsTable extends Migration
+class CreateTugasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateKabinetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kabinets', function (Blueprint $table) {
+        Schema::create('tugas', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 30)->nullable();
-            $table->string('presiden', 30)->nullable();
-            $table->string('sekjen', 30)->nullable();
-            $table->string('organigram', 50)->nullable();
-            $table->string('logo', 50)->nullable();
-            $table->text('filosofiLogo')->nullable();
+            $table->string('judul', 100)->nullable();
             $table->text('deskripsi')->nullable();
+            $table->string('format', 30)->nullable();
+            $table->string('file', 50)->nullable();
+            $table->dateTime('start_time')->nullable();
+            $table->dateTime('end_time')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ class CreateKabinetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kabinets');
+        Schema::dropIfExists('tugas');
     }
 }

@@ -15,14 +15,14 @@ class CreateProdisTable extends Migration
     {
         Schema::create('prodis', function (Blueprint $table) {
             $table->id();
-            $table->string('kepalaProdi', 50);
+            $table->string('kepalaProdi', 50)->nullable();
             $table->string('akreditasi', 2)->nullable();
-            $table->integer('tahunBerdiri');
+            $table->integer('tahunBerdiri')->nullable();
             $table->string('ruangProdi', 10)->nullable();
             $table->integer('jumlahMahaSiswa')->nullable();
-            $table->string('diagramAlir', 50);
-            $table->foreignId('ormawas_id');
-            $table->foreignId('jurusans_id');
+            $table->string('diagramAlir', 50)->nullable();
+            $table->foreignId('ormawas_id')->nullable();
+            $table->foreignId('jurusans_id')->nullable();
             $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');
             $table->foreign('jurusans_id')->references('id')->on('jurusans')->onDelete('cascade');
             $table->timestamps();
