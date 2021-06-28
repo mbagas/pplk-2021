@@ -33,14 +33,14 @@ function getUrlParams(dParam)
     } */
 	
 	dezSettingsOptions = {
-			typography: "cairo",
+			typography: "ubuntu",
 			version: "light",
 			layout: "vertical",
 			primary: "color_1",
 			navheaderBg: "color_1",
 			sidebarBg: "color_1",
 			sidebarStyle: "full",
-			sidebarPosition: "fixed",
+			sidebarPosition: "full",
 			headerPosition: "fixed",
 			containerLayout: "full",
 		};

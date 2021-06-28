@@ -14,11 +14,11 @@
 	<!-- PAGE TITLE HERE -->
 	<title>PPLK 2021 - @yield('title')</title>
 	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-	<link href="{{ asset('assets') }}/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
-	
+    <link href="{{ asset('assets') }}/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets') }}/vendor/nouislider/nouislider.min.css">
 </head>
 <body>
 
@@ -39,6 +39,8 @@
         ***********************************-->
         <div class="nav-header">
             <a href="{{ route('login') }}" class="brand-logo">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" width="50" height="50" viewBox="0 0 50 50">
+                <h3 class="brand-title">PPLK 2021</h3>
             </a>
             <div class="nav-control">
                 <div class="hamburger">
