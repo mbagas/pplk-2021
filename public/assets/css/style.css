@@ -30111,3 +30111,64 @@ h6{
 .header {
   box-shadow: 0 4px 8px -1px rgba(0,0,0,.2);
 }
+
+.container-login{
+  background-color: #fff;
+}
+
+#custom-login-bg{
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+}
+#custom-login-bg img {
+  position: absolute; 
+  top: 0; 
+  left: -75%; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  width: 150%;
+  height: 220%;
+  opacity:0.5;
+}
+@media (max-width: 576px) {
+  #custom-login-bg img{
+    width: 300%;
+    height: 200%;
+  }
+}
+@media (max-width: 768px) {
+  #custom-login-bg img{
+    width: 300%;
+    height: 200%;
+  }  
+}
+@media (max-width: 992px) {
+  #custom-login-bg img{
+    width: 200%;
+    height: 200%;
+  }
+}
+@media (max-width: 1200px) {
+  #custom-login-bg img{
+    width: 200%;
+    height: 200%;
+  }
+}
+@media (min-width: 1440) {
+  #custom-login-bg img{
+    top: 0; 
+    left: -1500px !important; 
+    right: 0; 
+    bottom: 0; 
+    width: 200%;
+    height: 200%;
+  }
+}
+.wrap-login{
+  border: none;
+  box-shadow: 4px 4px 4px 6px rgba(0,0,0,.2);
+}
