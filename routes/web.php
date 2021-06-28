@@ -12,7 +12,7 @@ use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
 use App\Http\Controllers\kamusGaulController;
 use App\Http\Controllers\kabinetController;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +38,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
     // SUDAH DI OPTIMIZE (routing)
     Route::get('/', [dashboardController::class, 'index'])->name('index');
-
+    Auth::routes();
     Route::resource('prodi', prodiController::class)->except(['show']);
     Route::resource('ukm', ukmController::class)->except(['show']);
     Route::resource('himpunan', himpunanController::class)->except(['show']);
@@ -50,8 +50,8 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::resource('kamusGaul', kamusGaulController::class)->except('show');
     Route::resource('kabinet', kabinetController::class)->except('show');
 
-    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+    // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+    // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
 //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
 //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
