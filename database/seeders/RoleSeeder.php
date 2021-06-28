@@ -34,6 +34,10 @@ class RoleSeeder extends Seeder
             [
                 'id' => 5,
                 'role' => 'Maba'
+            ],
+            [
+                'id' => 6,
+                'role' => 'Ormawa'
             ]
         ];
         Role::query()->insert($roles);

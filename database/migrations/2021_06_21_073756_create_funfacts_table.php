@@ -15,7 +15,7 @@ class CreateFunfactsTable extends Migration
     {
         Schema::create('funfacts', function (Blueprint $table) {
             $table->id();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }

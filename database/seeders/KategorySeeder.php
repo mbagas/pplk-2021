@@ -15,7 +15,7 @@ class KategorySeeder extends Seeder
     public function run()
     {
         $kategories = [
-            ['kategori'=>'prodi'],
+            ['kategori'=>'Prodi'],
             ['kategori'=>'Himpunan'],
             ['kategori'=>'UKM'],
             ['kategori'=>'Komunitas'],
