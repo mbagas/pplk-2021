@@ -10,8 +10,7 @@
 	
 	<!-- PAGE TITLE HERE -->
 	<title>Login CMS - PPLK 2021</title>
-	
-	<!-- FAVICONS ICON -->
+    
 	<link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
     <link href="{{ asset('assets') }}/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
