@@ -34,6 +34,17 @@
                     <span class="nav-text">Dashboard </span>
                 </a>
             </li>
+            <!-- Akun Mahasiswa -->
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="nav-text">User</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="#">Data User</a></li>
+                    <li><a href="{{ route('dashboard.register') }}">Tambah User</a></li>
+                </ul>
+            </li>
             <!-- ITERA -->
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -45,16 +56,6 @@
                     <li><a href="{{ route('dashboard.upt.index') }}">Kelola Data UPT ITERA</a></li>
                 </ul>
             </li>    
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="fa fa-id-card" aria-hidden="true"></i>
-                    <span class="nav-text">User</span>
-                </a>
-                <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="#">Data User</a></li>
-                    <li><a href="{{ route('dashboard.register') }}">Tambah User</a></li>
-                </ul>
-            </li>
             <!-- Jurusan -->
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -121,17 +122,6 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('dashboard.pplk.create') }}">Masukkan Data PPLK</a></li>
                     <li><a href="{{ route('dashboard.pplk.index') }}">Kelola Data PPLK</a></li>
-                </ul>
-            </li>
-            <!-- Akun Mahasiswa -->
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span class="nav-text">Akun Mahasiswa</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="{{ route('dashboard.prodi.create') }}">Buat Akun Mahasiswa</a></li>
-                    <li><a href="{{ route('dashboard.prodi.index') }}">Kelola Akun Mahasiswa</a></li>
                 </ul>
             </li>
             <!-- Fun Fact -->
