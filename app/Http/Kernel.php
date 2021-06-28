@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'DaplokMentor' => \App\Http\Middleware\DaplokMentor::class,
         'Pendanaan' => \App\Http\Middleware\Pendanaan::class,
         'Maba' => \App\Http\Middleware\Maba::class,
+        'Ormawa' => \App\Http\Middleware\Ormawa::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
