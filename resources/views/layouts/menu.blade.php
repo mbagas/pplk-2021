@@ -44,6 +44,16 @@
                     <li><a href="{{ route('dashboard.upt.create') }}">Masukkan Data UPT ITERA</a></li>
                     <li><a href="{{ route('dashboard.upt.index') }}">Kelola Data UPT ITERA</a></li>
                 </ul>
+            </li>    
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                    <span class="nav-text">User</span>
+                </a>
+                <ul aria-expanded="false" class="mm-collapse">
+                    <li><a href="#">Data User</a></li>
+                    <li><a href="{{ route('dashboard.register') }}">Tambah User</a></li>
+                </ul>
             </li>
             <!-- Jurusan -->
             <li>
