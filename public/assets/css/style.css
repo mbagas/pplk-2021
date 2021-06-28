@@ -73,7 +73,7 @@
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
-  --rgba-primary-1: #110f58;
+  --rgba-primary-1: #7872ec;
   --rgba-primary-2: rgba(91, 207, 197, 0.2);
   --rgba-primary-3: rgba(91, 207, 197, 0.3);
   --rgba-primary-4: rgba(91, 207, 197, 0.4);
@@ -12323,7 +12323,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         color: var(--primary);
         font-weight: 600;
         box-shadow: none;
-        background: var(--rgba-primary-1); }
+        background: #7872ec !important; }
         .dlabnav .metismenu > li.mm-active > a i {
           font-weight: 100; }
         .dlabnav .metismenu > li.mm-active > a g [fill] {
@@ -14599,7 +14599,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 :root {
   --nav-headbg: #f9f8f8;
-  --sidebar-bg: #0c0a3e;
+  --sidebar-bg: #484597;
   --headerbg: #f9f8f8; 
   --font-color-menu: #f9f8f8}
 
