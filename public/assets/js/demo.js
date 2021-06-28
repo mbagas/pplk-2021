@@ -75,7 +75,7 @@ function deleteAllCookie(reload = true)
 	/* Dlab Theme Demo Settings  */
 	
 	var dezThemeSet0 = { /* Default Theme */
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_1",
@@ -88,7 +88,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet1 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_1",
@@ -101,7 +101,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet2 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_4",
@@ -115,7 +115,7 @@ function deleteAllCookie(reload = true)
 	
 	
 	var dezThemeSet3 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_7",
@@ -128,7 +128,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet4 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "dark",
 		layout: "vertical",
 		primary: "color_1",
@@ -141,7 +141,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet5 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "horizontal",
 		primary: "color_5",
@@ -154,7 +154,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet6 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_10",
@@ -167,7 +167,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet7 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_6",
@@ -180,7 +180,7 @@ function deleteAllCookie(reload = true)
 	};
 	
 	var dezThemeSet8 = {
-		typography: "cairo",
+		typography: "ubuntu",
 		version: "light",
 		layout: "vertical",
 		primary: "color_15",
