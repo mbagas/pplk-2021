@@ -30107,8 +30107,16 @@ h6{
   font-size: 2rem;
   text-align: center;
   color: red;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
-
+td{
+  font-weight:400 !important;
+}
 /* Custom shadow buat navbar class:header */
 .header {
   box-shadow: 0 4px 8px -1px rgba(0,0,0,.2);
