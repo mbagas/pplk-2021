@@ -2920,10 +2920,10 @@ textarea.form-control-lg {
   padding: 0.5rem 0;
   margin: 0;
   font-size: 0.875rem;
-  color: #f9f8f8;
+  color: #020202;
   text-align: left;
   list-style: none;
-  background-color: #0c0a3e;
+  background-color: #484597;
   background-clip: padding-box;
   border: px solid rgb(255, 255, 255);
   border-radius: 0.75rem; }
@@ -12323,7 +12323,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         color: var(--primary);
         font-weight: 600;
         box-shadow: none;
-        background: #7872ec !important; }
+        background: var(--rgba-primary-1); }
         .dlabnav .metismenu > li.mm-active > a i {
           font-weight: 100; }
         .dlabnav .metismenu > li.mm-active > a g [fill] {
@@ -12701,7 +12701,9 @@ The smaller device rules always should write below the bigger device rules
 Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
 */
 [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu > li {
-  padding: 0 20px !important; }
+  padding: 0 20px !important; 
+  margin-bottom: 10px;
+}
   [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu > li > a {
     font-size: 18px;
     padding: 22px 20px;
@@ -12781,7 +12783,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       border-radius: 6px;
       margin-left: 0;
       border: 0;
-      background: #0c0a3e; }
+      background: #484597; }
       [direction="rtl"][data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu li > ul {
         left: auto;
         right: 5rem; }
