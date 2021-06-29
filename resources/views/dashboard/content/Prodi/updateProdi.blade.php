@@ -52,13 +52,13 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Visi</label>
                         <div class="col-sm-9">
-                            <input type="text" name="visi" class="form-control" value="{{ $result->ormawas->visi }}" id="visi" required disabled>
+                            <input type="text" name="visi" class="form-control" alue="{{ $visiMisi->visi }}" id="visi" required disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
-                            <textarea type="text" name="misi" class="form-control" value="{{ $result->ormawas->misi }}" id="misi" required disabled></textarea>
+                            <textarea type="text" name="misi" class="form-control" id="misi" required disabled>{{ $visiMisi->visi }}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">

@@ -35,7 +35,7 @@
           <tbody>
             @foreach ($result as $data )
             <tr>
-              <td>1</td>
+              <td>{{$data->ormawas->id}}</td>
               <td>{{$data->ormawas->namaLengkap}}</td>
               <td>{{$data->pembina}}</td>
               <td>{{$data->ketuaHimpunan}}</td>

@@ -37,7 +37,7 @@
             <tr>
               <td>{{$data->ormawas->id}}</td>
               <td>{{$data->ormawas->namaLengkap}}</td>
-              <td>{{$data->jurusan}}</td>
+              <td>{{$data->jurusans->namaLengkap}}</td>
               <td>{{$data->kepalaProdi}}</td>
               <td>{{$data->akreditasi}}</td>
               <td>{{$data->visi}}</td>
