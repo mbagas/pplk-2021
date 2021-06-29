@@ -15,13 +15,13 @@ class CreateKabinetsTable extends Migration
     {
         Schema::create('kabinets', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 30);
-            $table->string('presiden', 30);
-            $table->string('sekjen', 30);
-            $table->string('organigram', 50);
-            $table->string('logo', 50);
-            $table->text('filosofiLogo');
-            $table->text('deskripsi');
+            $table->string('nama', 30)->nullable();
+            $table->string('presiden', 30)->nullable();
+            $table->string('sekjen', 30)->nullable();
+            $table->string('organigram', 50)->nullable();
+            $table->string('logo', 50)->nullable();
+            $table->text('filosofiLogo')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

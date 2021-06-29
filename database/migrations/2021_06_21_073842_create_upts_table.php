@@ -15,8 +15,8 @@ class CreateUptsTable extends Migration
     {
         Schema::create('upts', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->text('deskripsi');
+            $table->string('nama')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

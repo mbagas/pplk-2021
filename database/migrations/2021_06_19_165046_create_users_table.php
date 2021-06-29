@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->foreignId('roles_id');
             $table->string('nim', 12)->nullable()->unique();
-            $table->integer('kelompok');
+            $table->integer('kelompok')->nullable();
             $table->string('instagram', 50)->nullable();
             $table->foreignId('prodis_id');
             $table->foreign('roles_id')->references('id')->on('roles');

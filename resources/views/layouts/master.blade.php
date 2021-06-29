@@ -14,31 +14,17 @@
 	<!-- PAGE TITLE HERE -->
 	<title>PPLK 2021 - @yield('title')</title>
 	
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-	<link href="{{ asset('assets') }}/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
-	
+    <link href="{{ asset('assets') }}/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets') }}/vendor/nouislider/nouislider.min.css">
 </head>
 <body>
 
     <!--*******************
         Preloader start
     ********************-->
-    <div id="preloader">
-        <div class="waviy">
-		   <span style="--i:1">L</span>
-		   <span style="--i:2">o</span>
-		   <span style="--i:3">a</span>
-		   <span style="--i:4">d</span>
-		   <span style="--i:5">i</span>
-		   <span style="--i:6">n</span>
-		   <span style="--i:7">g</span>
-		   <span style="--i:8">.</span>
-		   <span style="--i:9">.</span>
-		   <span style="--i:10">.</span>
-		</div>
-    </div>
     <!--*******************
         Preloader end
     ********************-->
@@ -53,6 +39,8 @@
         ***********************************-->
         <div class="nav-header">
             <a href="{{ route('login') }}" class="brand-logo">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" width="50" height="50" viewBox="0 0 50 50">
+                <h3 class="brand-title">PPLK 2021</h3>
             </a>
             <div class="nav-control">
                 <div class="hamburger">
@@ -136,9 +124,7 @@
         ***********************************-->
         <div class="content-body">
             <!-- row -->
-			<div class="container-fluid">
                     @yield('content')
-            </div>
         </div>
         <!--**********************************
             Content body end
@@ -177,8 +163,14 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{ asset('assets') }}/vendor/global/global.min.js"></script>
+    <script src="{{ asset('assets') }}/js/dashboard/dashboard-1.js"></script>
 	<script src="{{ asset('assets') }}/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
     <script src="{{ asset('assets') }}/js/custom.min.js"></script>
 	<script src="{{ asset('assets') }}/js/dlabnav-init.js"></script>
+    <script src="{{ asset('assets') }}/js/demo.js"></script>
+    <!-- Datatable -->
+    <script src="{{ asset('assets') }}/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('assets') }}/js/plugins-init/datatables.init.js"></script>
+    @yield('script')
 </body>
 </html>
