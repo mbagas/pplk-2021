@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <div class="basic-form">
-                <form method="POST" action="{{ route('dashboard.pplk.update', $pplks->id) }}"
+                <form method="POST" action="{{ route('dashboard.pplk.update', $pplks->id) }} "
                     enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
@@ -58,7 +58,9 @@
 <script>
     function editData() {   
       document.getElementById('logo').disabled = false;
-                document.getElementById('visi').disabled = false;
-                document.getElementById('misi').disabled = false;
+      document.getElementById('visi').disabled = false;
+      document.getElementById('misi').disabled = false;
+    }    
 </script>
+
 @endsection

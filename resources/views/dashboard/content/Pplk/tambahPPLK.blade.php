@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <div class="basic-form">
-                <form method="POST" action="{{ route('dashboard.pplk.store') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('dashboard.pplk.store') }}">
                     @csrf
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Logo</label>
