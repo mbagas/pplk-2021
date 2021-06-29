@@ -124,9 +124,7 @@
         ***********************************-->
         <div class="content-body">
             <!-- row -->
-			<div class="container-fluid">
                     @yield('content')
-            </div>
         </div>
         <!--**********************************
             Content body end
@@ -173,5 +171,6 @@
     <!-- Datatable -->
     <script src="{{ asset('assets') }}/vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('assets') }}/js/plugins-init/datatables.init.js"></script>
+    @yield('script')
 </body>
 </html>
