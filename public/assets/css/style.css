@@ -73,7 +73,7 @@
   --secondary: #709fba;
   --primary-hover: #38bfb3;
   --primary-dark: #217069;
-  --rgba-primary-1: #110f58;
+  --rgba-primary-1: #7872ec;
   --rgba-primary-2: rgba(91, 207, 197, 0.2);
   --rgba-primary-3: rgba(91, 207, 197, 0.3);
   --rgba-primary-4: rgba(91, 207, 197, 0.4);
@@ -2920,10 +2920,10 @@ textarea.form-control-lg {
   padding: 0.5rem 0;
   margin: 0;
   font-size: 0.875rem;
-  color: #f9f8f8;
+  color: #020202;
   text-align: left;
   list-style: none;
-  background-color: #0c0a3e;
+  background-color: #484597;
   background-clip: padding-box;
   border: px solid rgb(255, 255, 255);
   border-radius: 0.75rem; }
@@ -12701,7 +12701,9 @@ The smaller device rules always should write below the bigger device rules
 Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
 */
 [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu > li {
-  padding: 0 20px !important; }
+  padding: 0 20px !important; 
+  margin-bottom: 10px;
+}
   [data-sidebar-style="full"][data-layout="vertical"] .dlabnav .metismenu > li > a {
     font-size: 18px;
     padding: 22px 20px;
@@ -12781,7 +12783,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       border-radius: 6px;
       margin-left: 0;
       border: 0;
-      background: #0c0a3e; }
+      background: #484597; }
       [direction="rtl"][data-sidebar-style="full"][data-layout="vertical"] .menu-toggle .dlabnav .metismenu li > ul {
         left: auto;
         right: 5rem; }
@@ -14599,7 +14601,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 :root {
   --nav-headbg: #f9f8f8;
-  --sidebar-bg: #0c0a3e;
+  --sidebar-bg: #484597;
   --headerbg: #f9f8f8; 
   --font-color-menu: #f9f8f8}
 
@@ -30097,6 +30099,12 @@ h6{
   font-size: 2rem;
   text-align: center;
   color:#0c0a3e;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 .delete-button{
   height: 50px;
@@ -30105,9 +30113,78 @@ h6{
   font-size: 2rem;
   text-align: center;
   color: red;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
-
+td{
+  font-weight:400 !important;
+}
 /* Custom shadow buat navbar class:header */
 .header {
   box-shadow: 0 4px 8px -1px rgba(0,0,0,.2);
+}
+
+.container-login{
+  background-color: #fff;
+}
+
+#custom-login-bg{
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  min-width: 100%;
+  min-height: 100%;
+}
+#custom-login-bg img {
+  position: absolute; 
+  top: 0; 
+  left: -75%; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  width: 150%;
+  height: 220%;
+  opacity:0.5;
+}
+@media (max-width: 576px) {
+  #custom-login-bg img{
+    width: 300%;
+    height: 200%;
+  }
+}
+@media (max-width: 768px) {
+  #custom-login-bg img{
+    width: 300%;
+    height: 200%;
+  }  
+}
+@media (max-width: 992px) {
+  #custom-login-bg img{
+    width: 200%;
+    height: 200%;
+  }
+}
+@media (max-width: 1200px) {
+  #custom-login-bg img{
+    width: 200%;
+    height: 200%;
+  }
+}
+@media (min-width: 1440) {
+  #custom-login-bg img{
+    top: 0; 
+    left: -1500px !important; 
+    right: 0; 
+    bottom: 0; 
+    width: 200%;
+    height: 200%;
+  }
+}
+.wrap-login{
+  border: none;
+  box-shadow: 4px 4px 4px 6px rgba(0,0,0,.2);
 }

@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/vendor/nouislider/nouislider.min.css">
 </head>
 <body>
-    <div id="login" class="w-100 m-auto">
+    <div id="login" class="w-100 m-auto ">
         <div class="container-login  w-100 d-flex min-vh-100 flex-wrap justify-content-center align-content-center p-3">
+            <div id="custom-login-bg">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
+            </div>
             <div class="wrap-login modal-content width400 overflow-hidden d-flex flex-wrap justify-content-between p-5">
                 <div class="login-pic width250 m-sm-auto">
                     <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" class="w-100" alt="IMG">
