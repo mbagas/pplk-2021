@@ -15,11 +15,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                            <select class="form-control wide" name="namaLengkap" id="namaLengkap" required>
-                                <option value="">Jurusan Sains</option>
-                                <option value="">Jurusan Teknologi Infrastruktur dan Kewilayahan</option>
-                                <option value="">Jurusan Teknologi Produksi dan Industri</option>
-                            </select>
+                        	<input type="text" placeholder="Nama Lengkap" name="namaLengkap" class="form-control form-control-lg" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
