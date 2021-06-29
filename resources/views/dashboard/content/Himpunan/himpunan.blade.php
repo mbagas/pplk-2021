@@ -44,7 +44,7 @@
               <td>{{$data->misi}}</td>
               <td>{{$data->tahunBerdiri}}</td>
               <td class="manage-row">
-                  <a href="{{route('dashboard.jurusan.edit', $data->id)}}" class="edit-button">
+                  <a href="{{route('dashboard.himpunan.edit', $data->ormawas->id)}}" class="edit-button">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                   </a>
                   <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm">
@@ -60,7 +60,7 @@
                               </div>
                               <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                               <div class="modal-footer">
-                                <form action="{{route('dashboard.jurusan.destroy', $data->id)}}" method="POST">
+                                <form action="{{route('dashboard.himpunan.destroy', $data->ormawas->id)}}" method="POST">
                                   @method('DELETE')
                                   @csrf
                                   <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
