@@ -26,8 +26,7 @@
                   <th>Jurusan</th>
                   <th>Kepala Prodi</th>
                   <th>Akreditasi</th>
-                  <th>Visi</th>
-                  <th>Misi</th>
+                  <th>jumlah MahaSiswa</th>
                   <th>Tahun Berdiri</th>
                   <th>More</th>
               </tr>
@@ -40,8 +39,7 @@
               <td>{{$data->jurusans->namaLengkap}}</td>
               <td>{{$data->kepalaProdi}}</td>
               <td>{{$data->akreditasi}}</td>
-              <td>{{$data->visi}}</td>
-              <td>{{$data->misi}}</td>
+              <td>{{$data->jumlahMahaSiswa}}</td>
               <td>{{$data->tahunBerdiri}}</td>
               <td class="manage-row">
                 <a href="{{route('dashboard.prodi.edit', $data->ormawas->id)}}" class="edit-button">

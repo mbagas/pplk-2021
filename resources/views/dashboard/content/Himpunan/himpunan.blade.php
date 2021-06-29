@@ -26,8 +26,8 @@
             <th>Pembina</th>
             <th>Ketua Himpunan</th>											
             <th>Logo</th>
-            <th>Visi</th>
-            <th>Misi</th>
+            <th>Filosofi Logo</th>
+            <th>Kode Warna</th>
             <th>Tahun Berdiri</th>
             <th>More</th>
           </tr>
@@ -40,8 +40,8 @@
               <td>{{$data->pembina}}</td>
               <td>{{$data->ketuaHimpunan}}</td>
               <td>{{$data->logo}}</td>
-              <td>{{$data->visi}}</td>
-              <td>{{$data->misi}}</td>
+              <td>{{$data->filosofiLogo}}</td>
+              <td>{{$data->kodeWarna}}</td>
               <td>{{$data->tahunBerdiri}}</td>
               <td class="manage-row">
                   <a href="{{route('dashboard.himpunan.edit', $data->ormawas->id)}}" class="edit-button">
