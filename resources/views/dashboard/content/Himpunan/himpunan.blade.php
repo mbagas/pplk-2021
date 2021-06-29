@@ -37,12 +37,12 @@
             <tr>
               <td>1</td>
               <td>{{$data->ormawas->namaLengkap}}</td>
-			  <td>{{$data->pembina}}</td>
+              <td>{{$data->pembina}}</td>
               <td>{{$data->ketuaHimpunan}}</td>
               <td>{{$data->logo}}</td>
-			  <td>{{$data->visi}}</td>
-			  <td>{{$data->misi}}</td>
-			  <td>{{$data->tahunBerdiri}}</td>
+              <td>{{$data->visi}}</td>
+              <td>{{$data->misi}}</td>
+              <td>{{$data->tahunBerdiri}}</td>
               <td class="manage-row">
                   <a href="{{route('dashboard.jurusan.edit', $data->id)}}" class="edit-button">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
