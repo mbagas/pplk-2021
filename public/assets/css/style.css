@@ -30099,6 +30099,12 @@ h6{
   font-size: 2rem;
   text-align: center;
   color:#0c0a3e;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 .delete-button{
   height: 50px;
