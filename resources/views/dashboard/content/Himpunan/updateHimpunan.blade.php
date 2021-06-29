@@ -63,13 +63,13 @@
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Logo</label>
 				<div class="col-sm-9">
-					<input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $himpunan->logo }}" disabled required >
+					<input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $himpunan->logo }}" disabled  >
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Filosofi Logo</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" value="{{ $himpunan->filosofiLogo }}" disabled required>
+					<input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" value="{{ $himpunan->filosofiLogo }}" disabled >
 				</div>
 			</div>                                    
 			<div class="mb-3 row">
