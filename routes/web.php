@@ -48,8 +48,8 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     Route::resource('upt', uptController::class)->except('show');
     Route::resource('kamusGaul', kamusGaulController::class)->except('show');
 
-    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+    // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+    // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
 //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
 //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
