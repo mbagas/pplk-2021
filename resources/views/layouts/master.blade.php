@@ -124,9 +124,7 @@
         ***********************************-->
         <div class="content-body">
             <!-- row -->
-			<div class="container-fluid">
                     @yield('content')
-            </div>
         </div>
         <!--**********************************
             Content body end

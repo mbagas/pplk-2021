@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Data Jurusan')
 @section('content')
-<div class="row">
+
           <!-- Tabel manage data jurusan -->
   <div class="col-xl-12 col-lg-12 form-wrapper">
     <h1 class="content-title">Kelola Data Jurusan</h1>
@@ -77,5 +77,5 @@
     </div>
   </div>
           <!-- Tabel manage data jurusan -->
-</div>
+
 @endsection
