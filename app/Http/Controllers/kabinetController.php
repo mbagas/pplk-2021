@@ -17,7 +17,7 @@ class kabinetController extends Controller
         //
         $result = Kabinet::all();
 
-        return view('dashboard.content.Kabinet.Kabinet', compact('result'));
+        return view('dashboard.content.Kabinet.kabinet', compact('result'));
     }
 
     /**
