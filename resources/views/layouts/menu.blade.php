@@ -41,8 +41,8 @@
                     <span class="nav-text">User</span>
                 </a>
                 <ul aria-expanded="false" class="mm-collapse">
-                    <li><a href="#">Data User</a></li>
-                    <li><a href="{{ route('dashboard.register') }}">Tambah User</a></li>
+                <li><a href="{{ route('dashboard.register') }}">Tambah User</a></li>
+                    <li><a href="#">Kelola Data User</a></li>
                 </ul>
             </li>
             <!-- ITERA -->
