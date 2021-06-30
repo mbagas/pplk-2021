@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
+@section('title', 'Register Akun')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -100,7 +100,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label col-form-label-lg">Instagram</label>
                             <div class="col-sm-10">
-                                <input type="text" name="instagram" class="form-control form-control-lg" value="" placeholder="pplk@student.itera.ac.id" required>
+                                <input type="text" name="instagram" class="form-control  " value="" placeholder="pplk@student.itera.ac.id" required>
                             </div>
                         </div>
 

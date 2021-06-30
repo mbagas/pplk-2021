@@ -15,7 +15,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                          <input type="text" name="namaLengkap" class="form-control form-control-lg" value="{{ $result->namaLengkap }}" id="namaLengkap" required disabled>
+                          <input type="text" name="namaLengkap" class="form-control  " value="{{ $result->namaLengkap }}" id="namaLengkap" required disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
