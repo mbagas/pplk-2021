@@ -10,6 +10,7 @@ use App\Models\Artikel;
 use App\Models\VisiMisi;
 use App\Models\SocialMedia;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class himpunanController extends Controller
 {
@@ -129,16 +130,34 @@ class himpunanController extends Controller
    */
   public function edit($id)
   {
-    try {
-      $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-      $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-      $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-      $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+    $user =Auth::user();
+    if($user->roles_id=='6'){
+      try {
+        $ormawa = Ormawa::where('namaSingkat', $user->nama)->firstOrFail();
+        $id = $ormawa->id;
+        $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+        $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
+        $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
+        $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
 
-      return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
-    } catch (Exception $err) {
-      return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
+        return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
+      } catch (Exception $err) {
+        return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
+      }
     }
+
+    if($user->roles_id=='1'){
+      try {
+        $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+        $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
+        $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
+        $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+
+        return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
+      } catch (Exception $err) {
+        return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
+      }
+  }
   }
 
   /**
@@ -217,10 +236,20 @@ class himpunanController extends Controller
 
       $artikel->save();
     } catch (Exception $err) {
-      return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
+      if(Auth::user()->roles_id == 1){
+        return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
+      }
+      elseif(Auth::user()->roles_id == 6){
+        return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');
+      }
     }
 
-    return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
+    if(Auth::user()->roles_id == 1){
+      return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
+    }
+    elseif(Auth::user()->roles_id == 6){
+      return redirect('dashboardOrmawa/0')->with('sukses', 'Berhasil Edit Data!');
+    }
   }
 
   /**

@@ -7,6 +7,7 @@ use App\Models\Ormawa;
 use App\Models\Ukm;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ukmController extends Controller
 {
@@ -85,14 +86,28 @@ class ukmController extends Controller
      */
     public function edit($id)
     {
-        try{
-            $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-            return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel'));
-        } catch(Exception $ex){
-            return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+        $user = Auth::user();
+        if($user->roles_id=='6'){
+            try{
+                $ormawa = Ormawa::where('namaSingkat', $user->nama)->firstOrFail();
+                $id = $ormawa->id;
+                $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+                return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel'));
+            } catch(Exception $ex){
+                return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+            }
         }
 
+        if($user->roles_id=='1'){
+            try{
+                $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+                return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel'));
+            } catch(Exception $ex){
+                return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+            }
+        }
     }
 
     /**
@@ -121,9 +136,19 @@ class ukmController extends Controller
             $artikel->body = $request->artikel;
             $artikel->save();
         } catch(Exception $ex){
-            return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+            if(Auth::user()->roles_id == 1){
+                return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+            }
+            elseif(Auth::user()->roles_id == 6){
+                return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');
+            }
         }
-        return redirect('dashboard/ukm')->with('sukses', 'Berhasil Edit Data!');
+        if(Auth::user()->roles_id == 1){
+            return redirect('dashboard/ukm')->with('sukses', 'Berhasil Edit Data!');
+        }
+        elseif(Auth::user()->roles_id == 6){
+            return redirect('dashboardOrmawa/0')->with('sukses', 'Berhasil Edit Data!');
+        }
     }
 
     /**
