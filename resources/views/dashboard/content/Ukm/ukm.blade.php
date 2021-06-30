@@ -6,7 +6,7 @@
     <h1 class="content-title">Masukkan Data UKM/Komunitas</h1>
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Data UKM/Komunitas</h4>
+            <h4 class="card-title">UKM/Komunitas</h4>
         </div>
         <div class="card-body">
             @if (session('sukses'))
@@ -26,7 +26,7 @@
                             <th>Nama</th>
                             <th>Nama Pembina</th>
                             <th>Ketua Umum</th>
-                            <th>Logo</th>
+                            <th>Tahun Berdiri</th>
                             <th>Prestasi</th>
                             <th>More</th>
                         </tr>
@@ -38,10 +38,10 @@
                             <td>{{$data->ormawas->namaLengkap}}</td>
                             <td>{{$data->pembina}}</td>
                             <td>{{$data->ketuaUmum}}</td>
-                            <td>{{$data->logo}}</td>
+                            <td>{{$data->tahunBerdiri}}</td>
                             <td>{{$data->prestasi}}</td>
                             <td class="manage-row">
-                                <a href="{{route('dashboard.ukm.edit', $data->id)}}" class="edit-button">
+                                <a href="{{route('dashboard.ukm.edit', $data->ormawas->id)}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"

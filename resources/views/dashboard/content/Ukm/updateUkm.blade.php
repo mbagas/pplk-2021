@@ -54,7 +54,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $result->ormawas->visi }}" required
+                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $result->ormawas->visiMisis->visi }}" required
                             disabled>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     <label class="col-sm-3 col-form-label">Misi</label>
                     <div class="col-sm-9">
                         <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi"
-                            value="{{ $result->ormawas->misi }}" required disabled></textarea>
+                            value="{{ $result->ormawas->visiMisis->misi }}" required disabled></textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -97,7 +97,7 @@
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
                         <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi"
-                            id="deskripsi" value="{{ $result->deskripsi }}" required disabled></textarea>
+                            id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -115,21 +115,21 @@
                                     <label class="col-sm-3 col-form-label">Website</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Website" name="website"
-                                            id="website" value="{{ $result->ormawas->website }}" required disabled>
+                                            id="website" value="{{ $result->ormawas->socialMedias->website }}" required disabled>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Instagram</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Instagram" name="instagram"
-                                            id="instagram" value="{{ $result->ormawas->instagram }}"  required disabled>
+                                            id="instagram" value="{{ $result->ormawas->socialMedias->instagram }}"  required disabled>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Youtube</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Youtube" name="youtube"
-                                            id="youtube" value="{{ $result->ormawas->youtube }}" required disabled>
+                                            id="youtube" value="{{ $result->ormawas->socialMedias->youtube }}" required disabled>
                                     </div>
                                 </div>
                             </div>

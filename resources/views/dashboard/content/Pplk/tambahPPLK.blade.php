@@ -6,7 +6,7 @@
     <h1 class="content-title">Masukkan Data PPLK</h1>
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title"> PPLK</h4>
+            <h4 class="card-title">PPLK</h4>
         </div>
         <div class="card-body">
             <div class="basic-form">
@@ -29,7 +29,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Misi" name="misi" class="form-control" required>
+                            <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" required></textarea>
                         </div>
                     </div>
 

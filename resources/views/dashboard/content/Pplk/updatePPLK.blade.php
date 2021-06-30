@@ -15,7 +15,7 @@
                     @method('PUT')
                     @csrf
 
-                    
+                    <input name="id" value="{{ $pplks->id }}" type="hidden">
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Logo</label>
                         <div class="col-sm-9">

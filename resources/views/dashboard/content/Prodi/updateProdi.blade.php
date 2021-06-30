@@ -16,67 +16,72 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaLengkap" class="form-control form-control-lg" value="{{ $prodi->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="namaLengkap" class="form-control  " value="{{ $prodi->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaSingkat" class="form-control form-control-lg" value="{{ $prodi->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
+                        <input type="text" name="namaSingkat" class="form-control  " value="{{ $prodi->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <input type="text" name="jurusan" class="form-control form-control-lg" value="{{ $prodi->jurusan }}" id="jurusan" required disabled>
+                        <select name="jurusan" class="nice-select default-select form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
+                            <option value="{{ $result->jurusans->id }}">{{ $result->jurusans->namaLengkap }} ({{ $result->jurusans->namaSingkat }})</option>
+                            @foreach ($jurusans as $data)
+                            <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>                    
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Kepala Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="kepalaProdi" class="form-control form-control-lg" value="{{ $prodi->kepalaProdi }}" id="kepalaProdi" required disabled>
+                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $prodi->kepalaProdi }}" id="kepalaProdi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="number" name="tahunBerdiri" class="form-control form-control-lg" value="{{ $prodi->tahunBerdiri }}" id="tahunBerdiri" required disabled>
+                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $prodi->tahunBerdiri }}" id="tahunBerdiri" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Akreditasi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="akreditasi" class="form-control form-control-lg" value="{{ $prodi->akreditasi }}" id="akreditasi" required disabled>
+                        <input type="text" name="akreditasi" class="form-control  " value="{{ $prodi->akreditasi }}" id="akreditasi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control form-control-lg" value="{{ $visiMisi->visi }}" id="visi" required disabled>
+                        <input type="text" name="visi" class="form-control  " value="{{ $visiMisi->visi }}" id="visi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control form-control-lg" id="misi" required disabled>{{ $visiMisi->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $visiMisi->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ruangProdi" class="form-control form-control-lg" value="{{ $prodi->ruangProdi }}" id="ruangProdi" required disabled>
+                        <input type="text" name="ruangProdi" class="form-control  " value="{{ $prodi->ruangProdi }}" id="ruangProdi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" name="jumlahMahasiswa form-control-lg" class="form-control" value="{{ $prodi->jumlahMahasiswa }}" id="jumlahMahasiswa" required disabled>
+                        <input type="number" name="jumlahMahasiswa  " class="form-control" value="{{ $prodi->jumlahMahasiswa }}" id="jumlahMahasiswa" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" name="diagramAlir" class="form-control form-control-lg" value="{{ $prodi->diagramAlir }}" id="diagramAlir" disabled>
+                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $prodi->diagramAlir }}" id="diagramAlir" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">

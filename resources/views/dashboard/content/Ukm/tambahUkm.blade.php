@@ -6,7 +6,7 @@
     <h1 class="content-title">Masukkan Data UKM/Komunitas</h1>
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Data UKM/Komunitas</h4>
+            <h4 class="card-title">UKM/Komunitas</h4>
         </div>
         <div class="basic-form">
             <div class="card-body">
@@ -46,7 +46,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Tahun Berdiri</label>
                         <div class="col-sm-9">
-                            <input type="date" name="tahunBerdiri" class="form-control" required>
+                            <input type="number" name="tahunBerdiri" class="form-control" required>
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Logo</label>
                         <div class="col-sm-9">
-                            <input type="file" accept="image/*" class="form-control" name="logo" required>
+                            <input type="file" accept="image/*" class="form-control" name="logo" >
                         </div>
                     </div>
 
@@ -82,8 +82,7 @@
                     <div class="mb-3 row">
 						<label class="col-sm-3 col-form-label">Barcode</label>
 						<div class="col-sm-9">
-						    <input type="file" accept="image/*" class="form-control" name="barcode"
-								required>
+						    <input type="file" accept="image/*" class="form-control" name="barcode" >
 							</div>
 					</div>
 
@@ -117,22 +116,19 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Website</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Website" name="website"
-                                                required>
+                                            <input type="text" class="form-control" placeholder="Website" name="website" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Instagram</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Instagram"
-                                                name="instagram" required>
+                                            <input type="text" class="form-control" placeholder="Instagram" name="instagram" required>
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Youtube</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Youtube" name="youtube"
-                                                required>
+                                            <input type="text" class="form-control" placeholder="Youtube" name="youtube" required>
                                         </div>
                                     </div>
                                 </div>

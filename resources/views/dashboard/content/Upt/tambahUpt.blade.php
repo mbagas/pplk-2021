@@ -14,14 +14,14 @@
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nama" class="form-control form-control-lg" required>
+                            <input type="text" name="nama" class="form-control  " required>
                         </div>
                         </div>
 
                         <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
                         <div class="col-sm-10">
-                            <textarea type="text" name="deskripsi" class="form-control form-control-lg" required></textarea>
+                            <textarea type="text" name="deskripsi" class="form-control  " required></textarea>
                         </div>
                         </div>
                         <button type="submit" class="btn btn-lg btn-primary">Tambah</button>

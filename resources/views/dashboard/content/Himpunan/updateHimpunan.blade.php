@@ -51,13 +51,13 @@
 		<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Visi</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $visiMisi->visi }}" disabled required >
+					<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $himpunan->ormawas->visiMisi->visi }}" disabled required >
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Misi</label>
 				<div class="col-sm-9">
-					<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled required >{{ $visiMisi->misi }}</textarea>
+					<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled required >{{ $himpunan->ormawas->visiMisi->misi }}</textarea>
 				</div>
 			</div>
 			<div class="mb-3 row">
@@ -75,7 +75,7 @@
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Deskripsi</label>
 				<div class="col-sm-9 ">
-					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel" id="deskripsi" disabled required >{{ $artikel->body }}</textarea>
+					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel" id="deskripsi" disabled required >{{ $himpunan->ormawas->artikels->body }}</textarea>
 				</div>
 			</div>
 			<div class="accordion accordion-danger-solid" id="accordion-two">
@@ -89,19 +89,19 @@
 						<div class="mb-3 row">
 							<label class="col-sm-3 col-form-label">Website</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" placeholder="Website" name="website" id="website" value="{{ $socialMedia->website }}" disabled >
+								<input type="text" class="form-control" placeholder="Website" name="website" id="website" value="{{ $himpunan->ormawas->socialMedias->website }}" disabled >
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-3 col-form-label">Instagram</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" placeholder="Instagram" name="instagram" id="instagram" value="{{ $socialMedia->instagram }}" disabled>
+								<input type="text" class="form-control" placeholder="Instagram" name="instagram" id="instagram" value="{{ $himpunan->ormawas->socialMedias->instagram }}" disabled>
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-3 col-form-label">Youtube</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" placeholder="Youtube" name="youtube" id="youtube" value="{{ $socialMedia->youtube }}" disabled>
+								<input type="text" class="form-control" placeholder="Youtube" name="youtube" id="youtube" value="{{ $himpunan->ormawas->socialMedias->youtube }}" disabled>
 							</div>
 						</div>
 						</div>
