@@ -12,6 +12,7 @@ use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
 use App\Http\Controllers\kamusGaulController;
 use App\Http\Controllers\tugasController;
+use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +55,9 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
   Route::resource('tugas', tugasController::class)->except('show');
+  Route::resource('maba', mengerjakanController::class)->except('show')->parameters(
+    ['create' => 'id']
+  );
 });
 
 
