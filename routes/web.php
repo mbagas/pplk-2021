@@ -58,6 +58,15 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
 });
 
+Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
+    // Ini Route yang hanya bisa diakses Role Ormawa
+
+ 
+    Route::get('/{id}', [prodiController::class, 'edit'])->name('');
+    Route::resource('prodi', prodiController::class)->only(['update']);
+    Route::resource('ukm', ukmController::class)->only(['edit','update']);
+    Route::resource('himpunan', himpunanController::class)->only(['edit','update']);
+});
 
 Route::middleware(['Tugas'])->group(function () {
     // Ini Route yang hanya bisa diakses Role Tugas
