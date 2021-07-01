@@ -2,6 +2,7 @@
 @section('title', 'Update Himpunan')
 @section('content')
 
+
 <div class="col-lg-12col-lg-12 form-wrapper">
 <h1 class="content-title">Perbarui Himpunan</h1>
 <div class="card">
@@ -9,9 +10,14 @@
 	<h4 class="card-title">Himpunan</h4>
 	</div>
 	<div class="card-body">
-	<form method="POST" action="{{ route('dashboard.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
-		@method('PUT')
-		@csrf
+	 @if (Auth::user()->roles_id == '1')
+          <form method="POST" action="{{ route('dashboard.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
+        @else
+          <form method="POST" action="{{ route('dashboardOrmawa.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
+        @endif
+          
+          @method('PUT')
+          @csrf
 		<div class="mb-3 row">
 		<label class="col-sm-3 col-form-label">Nama Lengkap</label>
 		<div class="col-sm-9">
