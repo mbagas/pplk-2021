@@ -44,7 +44,7 @@ class ukmController extends Controller
     {
         try{
             $ormawa = new Ormawa();
-            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaLengkap = $request->namaLengkap;
             $ormawa->namaSingkat = $request->namaSingkat;
             $ormawa->kategoris_id = 3;
             $ormawa->save();
@@ -60,7 +60,7 @@ class ukmController extends Controller
 
 
             $artikel = new Artikel();
-            $artikel->body = $request->artikel;
+            $artikel->body = $request->deskripsi;
             $ormawa->artikels()->save($artikel);
 
             $visiMisi = new VisiMisi();
@@ -124,7 +124,7 @@ class ukmController extends Controller
         try{
 
             $ormawa = Ormawa::where('id', $id)->firstOrFail();
-            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaLengkap = $request->namaLengkap;
             $ormawa->namaSingkat = $request->namaSingkat;
             $ormawa->save();
 
@@ -135,7 +135,7 @@ class ukmController extends Controller
             $ukm->save();
 
             $artikel = Artikel::where('ormawas_id', $id)->first();
-            $artikel->body = $request->artikel;
+            $artikel->body = $request->deskripsi;
             $artikel->save();
 
             $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
@@ -150,7 +150,7 @@ class ukmController extends Controller
             $socialMedia->save();
         } catch(Exception $ex){
             if(Auth::user()->roles_id == 1){
-                return redirect('dashboard/ukm')->with('error', 'Gagal Edit Data!');
+                return $ex;
             }
             elseif(Auth::user()->roles_id == 6){
                 return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');

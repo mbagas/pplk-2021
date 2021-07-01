@@ -20,14 +20,14 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="nama" class="form-control  " value="{{ $prodi->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="nama" class="form-control  " value="{{ $result->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaSingkat" class="form-control  " value="{{ $prodi->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
+                        <input type="text" name="namaSingkat" class="form-control  " value="{{ $result->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -44,61 +44,61 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Kepala Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $prodi->kepalaProdi }}" id="kepalaProdi" required disabled>
+                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $result->kepalaProdi }}" id="kepalaProdi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $prodi->tahunBerdiri }}" id="tahunBerdiri" required disabled>
+                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $result->tahunBerdiri }}" id="tahunBerdiri" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Akreditasi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="akreditasi" class="form-control  " value="{{ $prodi->akreditasi }}" id="akreditasi" required disabled>
+                        <input type="text" name="akreditasi" class="form-control  " value="{{ $result->akreditasi }}" id="akreditasi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control  " value="{{ $prodi->ormawas->visiMisi->visi }}" id="visi" required disabled>
+                        <input type="text" name="visi" class="form-control  " value="{{ $result->ormawas->visiMisis->visi }}" id="visi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $prodi->ormawas->visiMisi->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $result->ormawas->visiMisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ruangProdi" class="form-control  " value="{{ $prodi->ruangProdi }}" id="ruangProdi" required disabled>
+                        <input type="text" name="ruangProdi" class="form-control  " value="{{ $result->ruangProdi }}" id="ruangProdi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" name="jumlahMahasiswa  " class="form-control" value="{{ $prodi->jumlahMahasiswa }}" id="jumlahMahasiswa" required disabled>
+                        <input type="number" name="jumlahMahasiswa" class="form-control" value="{{ $result->jumlahMahaSiswa }}" id="jumlahMahasiswa" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $prodi->diagramAlir }}" id="diagramAlir" required disabled>
+                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $result->diagramAlir }}" id="diagramAlir" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Prestasi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="prestasi" id="prestasi" required disabled>{{ $prodi->prestasi }}</textarea>
+                        <textarea class="form-control custom-txt-area" name="prestasi" id="prestasi" required disabled>{{ $result->prestasi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="artikel" id="deskripsi" required disabled>{{ $prodi->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" name="artikel" id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -112,20 +112,20 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Website</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="website" class="form-control" value="{{ $prodi->ormawas->socialMedias->website }}" id="website" disabled>
+                                    <input type="text" name="website" class="form-control" value="{{ $result->ormawas->socialMedias->website }}" id="website" disabled>
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Instagram</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="instagram" class="form-control" value="{{ $prodi->ormawas->socialMedias->instagram }}" id="instagram" disabled>
+                                    <input type="text" name="instagram" class="form-control" value="{{ $result->ormawas->socialMedias->instagram }}" id="instagram" disabled>
                                 </div>
 
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Youtube</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="youtube" class="form-control" value="{{ $prodi->ormawas->socialMedias->youtube }}" id="youtube" disabled>
+                                    <input type="text" name="youtube" class="form-control" value="{{ $result->ormawas->socialMedias->youtube }}" id="youtube" disabled>
                                 </div>
                             </div>                            
                         </div>
