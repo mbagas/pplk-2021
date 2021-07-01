@@ -60,7 +60,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Misi" name="misi" class="form-control" required>
+                            <textarea type="text" placeholder="Misi" name="misi" class="form-control custom-txt-area misi" required></textarea>
                         </div>
                     </div>
 
