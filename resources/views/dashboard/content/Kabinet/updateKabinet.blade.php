@@ -20,45 +20,45 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Nama Kabinet</label>
             <div class="col-sm-10">
-              <input type="text" name="nama" class="form-control form-control-lg" value="{{ $result->nama }}" required>
+              <input type="text" name="nama" class="form-control  " value="{{ $result->nama }}" required>
             </div>
           </div>
 
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Presiden</label>
             <div class="col-sm-10">
-              <input type="text" name="presiden" class="form-control form-control-lg" value="{{ $result->presiden }}" required>
+              <input type="text" name="presiden" class="form-control  " value="{{ $result->presiden }}" required>
             </div>
           </div>
 
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Sekjen</label>
             <div class="col-sm-10">
-              <input type="text" name="sekjen" class="form-control form-control-lg" value="{{ $result->sekjen }}" required>
+              <input type="text" name="sekjen" class="form-control  " value="{{ $result->sekjen }}" required>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Organigram</label>
             <div class="col-sm-10">
-              <input type="file" name="organigram" class="form-control form-control-lg" value="{{ $result->organigram }}">
+              <input type="file" name="organigram" class="form-control  " value="{{ $result->organigram }}">
             </div>
           </div>          
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Logo</label>
             <div class="col-sm-10">
-              <input type="file" name="logo" class="form-control form-control-lg" value="{{ $result->logo }}">
+              <input type="file" name="logo" class="form-control  " value="{{ $result->logo }}">
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Filosofi Logo</label>
             <div class="col-sm-10">
-              <input type="text" name="filosofiLogo" class="form-control form-control-lg" value="{{ $result->filosofiLogo }}" required>
+              <input type="text" name="filosofiLogo" class="form-control  " value="{{ $result->filosofiLogo }}" required>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
             <div class="col-sm-10">
-              <input type="text" name="deskripsi" class="form-control form-control-lg" value="{{ $result->deskripsi }}" required>
+              <input type="text" name="deskripsi" class="form-control  " value="{{ $result->deskripsi }}" required>
             </div>
           </div>
 

@@ -15,7 +15,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                        	<input type="text" placeholder="Nama Lengkap" name="namaLengkap" class="form-control form-control-lg" required>
+                        	<input type="text" placeholder="Nama Lengkap" name="namaLengkap" class="form-control  " required>
                         </div>
                     </div>
                     <div class="mb-3 row">
