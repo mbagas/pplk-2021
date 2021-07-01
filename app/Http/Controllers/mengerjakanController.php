@@ -108,7 +108,7 @@ class mengerjakanController extends Controller
       $tugas = Tugas::where('id', $id)->firstOrFail();
       $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
       //Check time for accessing data
-      if ($now < new DateTime($tugas->end_time)) {
+      if ($now > new DateTime($tugas->end_time)) {
         $tugas->pass = true;
       }
 
@@ -138,9 +138,6 @@ class mengerjakanController extends Controller
 
       $submissions->jawaban = $request->jawaban;
       $submissions->status = false;
-
-      $submissions->users_id = $uid;
-      $submissions->tugas_id = $request->id;
 
       $submissions->save();
     } catch (Exception $err) {
