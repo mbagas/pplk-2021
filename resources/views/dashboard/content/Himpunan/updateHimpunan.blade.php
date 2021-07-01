@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="col-lg-12col-lg-12 form-wrapper">
-<h1 class="content-title">Masukkan Data Himpunan</h1>
+<h1 class="content-title">Perbarui Himpunan</h1>
 <div class="card">
 	<div class="card-header">
-	<h4 class="card-title">Perbarui Himpunan</h4>
+	<h4 class="card-title">Himpunan</h4>
 	</div>
 	<div class="card-body">
 	<form method="POST" action="{{ route('dashboard.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>

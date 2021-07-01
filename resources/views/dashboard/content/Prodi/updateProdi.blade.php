@@ -57,13 +57,13 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control  " value="{{ $visiMisi->visi }}" id="visi" required disabled>
+                        <input type="text" name="visi" class="form-control  " value="{{ $prodi->ormawas->visiMisi->visi }}" id="visi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $visiMisi->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $prodi->ormawas->visiMisi->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -93,7 +93,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="artikel" id="deskripsi" required disabled>{{ $artikel->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" name="artikel" id="deskripsi" required disabled>{{ $prodi->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -107,19 +107,19 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Website</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="website" class="form-control" value="{{ $socialMedia->website }}" id="website" disabled>
+                                    <input type="text" name="website" class="form-control" value="{{ $prodi->ormawas->socialMedias->website }}" id="website" disabled>
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Instagram</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="instagram" class="form-control" value="{{ $socialMedia->instagram }}" id="instagram" disabled>
+                                    <input type="text" name="instagram" class="form-control" value="{{ $prodi->ormawas->socialMedias->instagram }}" id="instagram" disabled>
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Youtube</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="youtube" class="form-control" value="{{ $socialMedia->youtube }}" id="youtube" disabled>
+                                    <input type="text" name="youtube" class="form-control" value="{{ $prodi->ormawas->socialMedias->youtube }}" id="youtube" disabled>
                                 </div>
                             </div>                            
                         </div>
