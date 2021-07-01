@@ -78,15 +78,15 @@ class mengerjakanController extends Controller
 
     //Check if the submission exists
     if ($submissions->count() == 1) {
-      $now = new DateTime();
+      $now = new DateTime('now');
 
       //Check time for accessing data
-      if ($now <= new DateTime($tugas->end_time)) {
+      if ($now < new DateTime($tugas->end_time)) {
         //Redirect to edit
-        return redirect('dashboard/maba/' . $id . '/edit')->with('error', 'Data sudah ada');
+        return redirect('dashboard/maba/' . $id . '/edit');
       } else {
-        // Redirect to first page
-        return redirect('dashboard/maba')->with('error', 'Tenggat waktu telah terlewati!');
+        // Redirect to submission details page
+        return redirect('dashboard/maba/' . $id . '/edit');
       }
     }
 
@@ -101,11 +101,16 @@ class mengerjakanController extends Controller
    */
   public function edit($id)
   {
-    $UID = Auth::id();
-
     try {
+      $UID = Auth::id();
+      $now = new DateTime('now');
+
       $tugas = Tugas::where('id', $id)->firstOrFail();
       $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
+      //Check time for accessing data
+      if ($now < new DateTime($tugas->end_time)) {
+        $tugas->pass = true;
+      }
 
       return view('tugas.maba.updateTugas', compact('tugas', 'submission'));
     } catch (Exception $err) {

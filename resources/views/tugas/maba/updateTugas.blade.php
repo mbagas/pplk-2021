@@ -54,17 +54,20 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">File</label>
             <div class="col-sm-10">
-              <input type="file" name="file" class="form-control form-control-lg" required>
+              <input type="file" name="file" class="form-control form-control-lg" disabled={{$tugas->pass}}>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Jawaban</label>
             <div class="col-sm-10">
-              <textarea type="numeric" name="jawaban" class="form-control form-control-lg" required>{{$submission->jawaban}}</textarea>
+              <textarea type="text" name="jawaban" class="form-control form-control-lg" required readonly={{$tugas->pass}}>{{$submission->jawaban}}</textarea>
             </div>
           </div>
 
+          @if($tugas->pass){
           <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+          }
+          @endif
 
         </form>
 
