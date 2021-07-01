@@ -52,8 +52,13 @@
                       </svg>
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
-                      <a class="dropdown-item" href="{{route('dashboard.maba.create', ['id' => $data->id])}}">Kerjakan</a>
-                      <!-- <form action="{{route('dashboard.tugas.destroy', $data->id)}}" method="POST">
+                      <!-- Use to show details -->
+                      <a class="dropdown-item" href="{{route('dashboard.maba.show', $data->id)}}">Details</a>
+                      <!-- Use to edit submissions -->
+                      @if (new DateTime() <= new DateTime($data->end_time))
+                        <a class="dropdown-item" href="{{route('dashboard.maba.edit', $data->id)}}">Edits</a>
+                        @endif
+                        <!-- <form action="{{route('dashboard.tugas.destroy', $data->id)}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <input type="submit" class="dropdown-item" value="Hapus">

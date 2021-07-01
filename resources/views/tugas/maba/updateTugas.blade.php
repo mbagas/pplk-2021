@@ -8,9 +8,18 @@
         <h4 class="card-title">Tugas</h4>
       </div>
       <div class="card-body">
-        <form method="POST" action="{{ route('dashboard.maba.store') }}" enctype="multipart/form-data">
+        @if (session('sukses'))
+        <div class="alert alert-success">
+          {{ session('sukses') }}
+        </div>
+        @elseif (session('error'))
+        <div class="alert alert-danger">
+          {{ session('error') }}
+        </div>
+        @endif
+        <form method="POST" action="{{ route('dashboard.maba.update', $tugas->id) }}" enctype="multipart/form-data">
+          @method('PUT')
           @csrf
-          <input name="id" value="{{ $tugas->id }}" type="hidden">
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Judul</label>
             <div class="col-sm-10">
@@ -51,7 +60,7 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Jawaban</label>
             <div class="col-sm-10">
-              <textarea type="numeric" name="jawaban" class="form-control form-control-lg" required></textarea>
+              <textarea type="numeric" name="jawaban" class="form-control form-control-lg" required>{{$submission->jawaban}}</textarea>
             </div>
           </div>
 
