@@ -62,13 +62,13 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control  " value="{{ $result->visi }}" id="visi" required disabled>
+                        <input type="text" name="visi" class="form-control  " value="{{ $result->ormawas->visiMisis->visi }}" id="visi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $result->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" required disabled>{{ $result->ormawas->visiMisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -80,7 +80,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" name="jumlahMahasiswa  " class="form-control" value="{{ $result->jumlahMahasiswa }}" id="jumlahMahasiswa" required disabled>
+                        <input type="number" name="jumlahMahasiswa" class="form-control" value="{{ $result->jumlahMahaSiswa }}" id="jumlahMahasiswa" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">

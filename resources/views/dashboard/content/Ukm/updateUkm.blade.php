@@ -52,7 +52,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" name="tahunBerdiri" id="tahunBerdiri"
+                        <input type="text" class="form-control" name="tahunBerdiri" id="tahunBerdiri"
                             value="{{ $result->tahunBerdiri }}" required disabled>
                     </div>
                 </div>
