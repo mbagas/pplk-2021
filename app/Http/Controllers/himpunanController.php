@@ -130,23 +130,7 @@ class himpunanController extends Controller
    */
   public function edit($id)
   {
-    $user =Auth::user();
-    if($user->roles_id=='6'){
-      try {
-        $ormawa = Ormawa::where('namaSingkat', $user->nama)->firstOrFail();
-        $id = $ormawa->id;
-        $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-        $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-        $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-        $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
 
-        return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
-      } catch (Exception $err) {
-        return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
-      }
-    }
-
-    if($user->roles_id=='1'){
       try {
         $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
         $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
@@ -157,7 +141,7 @@ class himpunanController extends Controller
       } catch (Exception $err) {
         return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
       }
-  }
+  
   }
 
   /**

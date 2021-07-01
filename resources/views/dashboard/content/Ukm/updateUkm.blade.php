@@ -74,14 +74,14 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label col-form-label-lg">Visi</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="visi" class="form-control form-control-lg" value="{{visiMisi->visi}}" required>
+                                    <input type="text" name="visi" class="form-control form-control-lg" value="{{ $visiMisi->visi}}" required>
                                 </div>
                             </div>
 
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label col-form-label-lg">Misi</label>
                                 <div class="col-sm-10">
-                                    <textarea type="text" name="Misi" class="form-control form-control-lg" required>{{ visiMisi->misi }}</textarea>
+                                    <textarea type="text" name="Misi" class="form-control form-control-lg" required>{{ $visiMisi->misi }}</textarea>
                                 </div>
                             </div>
 

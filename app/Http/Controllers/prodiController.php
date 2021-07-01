@@ -113,36 +113,18 @@ class prodiController extends Controller
      */
     public function edit($id)
     {
-        $user = Auth::user();
-        if($user->roles_id == '6'){
-            try{
-                
-                $jurusans = Jurusan::get();
-                $ormawa = Ormawa::where('namaSingkat', $user->nama)->firstOrFail();
-                $id = $ormawa->id;
-                $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
-                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-                $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-                $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
-            } catch(Exception $ex){
-                return $ex;
-            }
-        }
-        if($user->roles_id =='1'){
-            try{
-                $jurusans = Jurusan::get();
-                $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
-                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-                $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-                $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
-            } catch(Exception $ex){
-                return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
-            }
+
+        try{
+            $jurusans = Jurusan::get();
+            $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
+            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
+            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
+        } catch(Exception $ex){
+            return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
         }
         
-
     }
 
     /**
