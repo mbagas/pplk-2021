@@ -10,15 +10,20 @@
         </div>
         <div class="card-body">
             
-            <form method="POST" action="{{ route('dashboard.prodi.update', $prodi->ormawas->id) }}" enctype="multipart/form-data">
-                @method('PUT')
-                @csrf
+            @if (Auth::user()->roles_id == '1')
+                    <form method="POST" action="{{ route('dashboard.prodi.update',$result->ormawas->id) }}" enctype="multipart/form-data">
+                @else
+                    <form method="POST" action="{{ route('dashboardOrmawa.prodi.update',$result->ormawas->id) }}" enctype="multipart/form-data">
+                @endif
+                        @method('PUT')
+                        @csrf
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaLengkap" class="form-control  " value="{{ $prodi->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="nama" class="form-control  " value="{{ $prodi->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
                     </div>
                 </div>
+
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
@@ -115,6 +120,7 @@
                                 <div class="col-sm-9">
                                     <input type="text" name="instagram" class="form-control" value="{{ $prodi->ormawas->socialMedias->instagram }}" id="instagram" disabled>
                                 </div>
+
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Youtube</label>

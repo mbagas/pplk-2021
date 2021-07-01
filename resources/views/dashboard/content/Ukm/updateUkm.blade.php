@@ -10,9 +10,14 @@
         </div>
         <div class="card-body">
         <div class="basic-form">
-            <form method="POST" action="{{ route('dashboard.ukm.update', $result->ormawas->id) }}" enctype='multipart/form-data'>
-                @method('PUT')
-                @csrf
+            @if (Auth::user()->roles_id == '1')
+                    <form method="POST" action="{{ route('dashboard.ukm.update', $result->ormawas->id) }}">
+                    @else
+                    <form method="POST" action="{{ route('dashboardOrmawa.ukm.update', $result->ormawas->id) }}">
+                    @endif
+
+                        @method('PUT')
+                        @csrf
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nama Singkat</label>
@@ -131,6 +136,7 @@
                                         <input type="text" class="form-control" placeholder="Youtube" name="youtube"
                                             id="youtube" value="{{ $result->ormawas->socialMedias->youtube }}" required disabled>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

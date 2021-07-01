@@ -12,6 +12,7 @@ use App\Http\Controllers\jurusanController;
 use App\Http\Controllers\senatController;
 use App\Http\Controllers\kamusGaulController;
 use App\Http\Controllers\kabinetController;
+use App\Http\Controllers\ormawaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,15 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
 });
 
+Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
+    // Ini Route yang hanya bisa diakses Role Ormawa
+
+ 
+    Route::get('/', [ormawaController::class, 'index'])->name('');
+    Route::resource('prodi', prodiController::class)->only(['update']);
+    Route::resource('ukm', ukmController::class)->only(['update']);
+    Route::resource('himpunan', himpunanController::class)->only(['update']);
+});
 
 Route::middleware(['Tugas'])->group(function () {
     // Ini Route yang hanya bisa diakses Role Tugas
