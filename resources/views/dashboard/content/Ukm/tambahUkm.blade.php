@@ -98,7 +98,7 @@
                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                         <div class="col-sm-9">
                             <textarea class="form-control custom-txt-area " placeholder="Deskripsi"
-							name="deskripsi" required></textarea>
+							name="artikel" required></textarea>
                         </div>
                     </div>
 

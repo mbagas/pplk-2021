@@ -101,7 +101,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi"
+                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel"
                             id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
