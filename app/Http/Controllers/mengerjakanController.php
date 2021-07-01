@@ -42,22 +42,28 @@ class mengerjakanController extends Controller
   public function store(Request $request)
   {
     try {
-      $uid = Auth::id();
+      //Get Current User Id
+      $UID = Auth::id();
 
+      //Create new Submission Entries
       $submissions = new Mengerjakan();
+
+      //Check if the users upload a file or not
       if ($request->file !== null) {
         $submissions->file = $this->SaveFiles($request);
       }
+
       $submissions->jawaban = $request->jawaban;
       $submissions->status = false;
 
-      $submissions->users_id = $uid;
+      $submissions->users_id = $UID;
       $submissions->tugas_id = $request->id;
 
       $submissions->save();
     } catch (Exception $err) {
       return redirect('dashboard/maba')->with('error', 'Gagal Menambahkan Data!');
     }
+
     return redirect('dashboard/maba')->with('sukses', 'Sukses Menambahkan Data!');
   }
 
@@ -72,22 +78,16 @@ class mengerjakanController extends Controller
     //Get Tugas Informations
     $tugas = Tugas::where('id', $id)->firstOrFail();
 
-    //Check if already submitted
+    //Get Current User Id
     $UID = Auth::id();
+
+    //Get Submissions
     $submissions = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id);
 
-    //Check if the submission exists
+    //If there is a submissions
+    //  Redirect to edit views
     if ($submissions->count() == 1) {
-      $now = new DateTime('now');
-
-      //Check time for accessing data
-      if ($now < new DateTime($tugas->end_time)) {
-        //Redirect to edit
-        return redirect('dashboard/maba/' . $id . '/edit');
-      } else {
-        // Redirect to submission details page
-        return redirect('dashboard/maba/' . $id . '/edit');
-      }
+      return redirect('dashboard/maba/' . $id . '/edit');
     }
 
     return view('tugas.maba.submitTugas', compact('tugas'));
@@ -102,14 +102,23 @@ class mengerjakanController extends Controller
   public function edit($id)
   {
     try {
+      //Get Current User Id
       $UID = Auth::id();
+
+      //Get Current Time
+      //  For comparisons in deadline
       $now = new DateTime('now');
 
+      //Get Tugas Informations
       $tugas = Tugas::where('id', $id)->firstOrFail();
+
+      //Get Current User Submissions
       $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
-      //Check time for accessing data
+
+      //Check the time for accessing data
+      // return Details views only
       if ($now > new DateTime($tugas->end_time)) {
-        $tugas->pass = true;
+        return view('tugas.maba.detailTugas', compact('tugas', 'submission'))->with('error', 'Tenggat waktu terlewati');
       }
 
       return view('tugas.maba.updateTugas', compact('tugas', 'submission'));
@@ -128,16 +137,15 @@ class mengerjakanController extends Controller
   public function update(Request $request, $id)
   {
     try {
-      $uid = Auth::id();
+      $UID = Auth::id();
 
-      $submissions = Mengerjakan::where('users_id', $uid)->where('tugas_id', $id)->firstOrFail();
+      $submissions = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
 
       if ($request->file !== null) {
         $submissions->file = $this->SaveFiles($request);
       }
 
       $submissions->jawaban = $request->jawaban;
-      $submissions->status = false;
 
       $submissions->save();
     } catch (Exception $err) {
@@ -160,9 +168,9 @@ class mengerjakanController extends Controller
 
   public function SaveFiles(Request $request)
   {
-    $uid = Auth::id();
+    $UID = Auth::id();
 
-    $namaFiles = $uid . '_' . $request->id . '.' . $request->file->extension();
+    $namaFiles = $UID . '_' . $request->id . '.' . $request->file->extension();
     $request->file->storeAs(('Submissions'), $namaFiles);
 
     return $namaFiles;
