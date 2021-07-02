@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Update Prodi')
+@section('title', 'Update UPT')
 @section('content')
         <div class="col-xl-12 col-lg-12 form-wrapper">
             <h1 class="content-title">Perbarui Data UPT</h1>

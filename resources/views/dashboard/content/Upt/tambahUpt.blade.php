@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title', 'Tambah UKM')
+@section('title', 'Tambah UPT')
 @section('content')
         <div class="col-xl-12 col-lg-12 form-wrapper">
             <h1 class="content-title">Masukkan Data UPT</h1>
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">UPT ITERA</h4>
+                    <h4 class="card-title">UPT</h4>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('dashboard.upt.store') }}">
