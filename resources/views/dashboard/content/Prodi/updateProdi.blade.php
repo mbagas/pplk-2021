@@ -33,7 +33,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <select name="jurusan" class="nice-select default-select form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
+                        <select name="jurusan" class="form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
                             <option value="{{ $result->jurusans->id }}">{{ $result->jurusans->namaLengkap }} ({{ $result->jurusans->namaSingkat }})</option>
                             @foreach ($jurusans as $data)
                             <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
@@ -86,7 +86,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $result->diagramAlir }}" id="diagramAlir" required disabled>
+                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $result->diagramAlir }}" id="diagramAlir" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">

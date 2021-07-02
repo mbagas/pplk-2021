@@ -20,7 +20,7 @@
                         <label class="col-sm-3 col-form-label">Logo</label>
                         <div class="col-sm-9">
                             <input type="file" accept="image/*" class="form-control" placeholder="Logo" name="logo"
-                                id="logo" value="{{ $pplks->logo }}" required disabled>
+                                id="logo" value="{{ $pplks->logo }}" disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">

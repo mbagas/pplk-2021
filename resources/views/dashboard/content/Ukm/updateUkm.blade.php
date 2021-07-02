@@ -67,7 +67,7 @@
                     <label class="col-sm-3 col-form-label">Misi</label>
                     <div class="col-sm-9">
                         <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi"
-                            value="{{ $result->ormawas->visiMisis->misi }}" required disabled></textarea>
+                            required disabled>{{ $result->ormawas->visiMisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -88,7 +88,7 @@
                     <label class="col-sm-3 col-form-label">Barcode</label>
                     <div class="col-sm-9">
                         <input type="file" accept="image/*" class="form-control" name="barcode" id="barcode"
-                            value="{{ $result->barcode }}" required disabled>
+                            value="{{ $result->barcode }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -101,7 +101,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi"
+                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel"
                             id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
