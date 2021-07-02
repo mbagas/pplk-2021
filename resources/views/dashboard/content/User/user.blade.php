@@ -25,6 +25,7 @@
                                     <th class="text-center"><strong>Email</strong></th>
                                     <th class="text-center"><strong>Kelompok</strong></th>
                                     <th class="text-center"><strong>Prodi</strong></th>
+                                    <th class="text-center"><strong>Role</strong></th>
                                     <th class="text-center"><strong>ACTION</strong></th>
                                 </tr>
                             </thead>
@@ -35,6 +36,7 @@
                                         <td class="text-center">{{$data->email}}</td>
                                         <td class="text-center">{{$data->kelompok}}</td>
                                         <td class="text-center">{{$data->prodi}}</td>
+                                        <td class="text-center">{{$data->roles->role}}</td>
                                         <td class="text-center">
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">

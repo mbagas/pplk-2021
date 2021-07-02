@@ -91,7 +91,7 @@ class userController extends Controller
             $prodi = Prodi::with('ormawas')->get();
             return view('dashboard.content.User.updateUser', compact('result', 'role', 'prodi'));
         } catch(Exception $ex){
-            return redirect('dashboard/user')->with('error', 'Gagal Edit Data!');?
+            return redirect('dashboard/user')->with('error', 'Gagal Edit Data!');
         }
     }
 
