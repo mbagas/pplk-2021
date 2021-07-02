@@ -47,10 +47,10 @@
                   <a href="{{route('dashboard.himpunan.edit', $data->ormawas->id)}}" class="edit-button">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                   </a>
-                  <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm">
+                  <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->ormawas->id}}">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </a>
-                  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal fade bd-example-modal-sm{{$data->ormawas->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog modal-sm">
                           <div class="modal-content">
                               <div class="modal-header">
