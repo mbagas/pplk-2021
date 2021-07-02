@@ -33,7 +33,7 @@ class ormawaController extends Controller
                 $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
                 return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
             } catch(Exception $ex){
-                return $ex;
+                return redirect('dashboard/prodi')->with('error', 'Gagal Menyunting Data!');
             }
         }
         elseif($kategori == '2'){
@@ -56,7 +56,7 @@ class ormawaController extends Controller
                 $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
                 return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel', 'socialMedia', 'visiMisi'));
             } catch(Exception $ex){
-                return $ex;
+                return redirect('dashboard/ukm')->with('error', 'Gagal Menyunting Data!');
             }
         }
     }

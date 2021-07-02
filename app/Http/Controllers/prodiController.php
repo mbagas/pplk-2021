@@ -89,7 +89,7 @@ class prodiController extends Controller
             $socialMedia->youtube = $request->youtube;
             $ormawa->socialmedias()->save($socialMedia);
         } catch(Exception $ex){
-            return $ex;
+            return redirect('dashboard/prodi')->with('error', 'Gagal Menambahkan Data!');
         }
 
         return redirect('dashboard/prodi')->with('sukses', 'Berhasil Menambahkan Data!');
@@ -140,8 +140,13 @@ class prodiController extends Controller
     {
         try{
             $ormawa = Ormawa::where('id', $id)->firstOrFail();
-            $ormawa->namaLengkap = $request->nama;
-            $ormawa->namaSingkat = $request->namaSingkat;
+            if($request->namaLengkap !== NULL){
+                $ormawa->namaLengkap = $request->namaLengkap;
+            }
+            if($request->namaSingkat !== NULL){
+                $ormawa->namaSingkat = $request->namaSingkat;
+            }
+            
             $ormawa->save();
 
             $prodi = Prodi::where('ormawas_id', $id)->firstOrFail();
@@ -177,7 +182,7 @@ class prodiController extends Controller
                 return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
             }
             elseif(Auth::user()->roles_id == 6){
-                return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');
+                return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
             }
             
         }
@@ -185,7 +190,7 @@ class prodiController extends Controller
             return redirect('dashboard/prodi')->with('sukses', 'Berhasil Edit Data!');
         }
         elseif(Auth::user()->roles_id == 6){
-            return redirect('dashboardOrmawa/0')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
         }
         
     }

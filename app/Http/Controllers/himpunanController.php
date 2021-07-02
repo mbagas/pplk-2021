@@ -182,9 +182,13 @@ class himpunanController extends Controller
     try {
 
       $ormawa = Ormawa::where('id', $id)->firstOrFail();
-      $ormawa->namaLengkap = $request->namaLengkap;
-      $ormawa->namaSingkat = $request->namaSingkat;
-
+      if($request->namaLengkap !== NULL){
+          $ormawa->namaLengkap = $request->namaLengkap;
+      }
+      if($request->namaSingkat !== NULL){
+          $ormawa->namaSingkat = $request->namaSingkat;
+      }
+      
       $ormawa->save();
 
       $himpunan = Himpunan::where('ormawas_id', $id)->firstOrFail();
@@ -227,7 +231,7 @@ class himpunanController extends Controller
         return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
       }
       elseif(Auth::user()->roles_id == 6){
-        return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');
+        return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
       }
     }
 
@@ -235,7 +239,7 @@ class himpunanController extends Controller
       return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
     }
     elseif(Auth::user()->roles_id == 6){
-      return redirect('dashboardOrmawa/0')->with('sukses', 'Berhasil Edit Data!');
+      return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
     }
   }
 

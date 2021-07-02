@@ -11,7 +11,7 @@
                         </span>
                         <div class="media-body text-white text-end">
                             <p class="mb-1">Total Mahasiswa</p>
-                            <h3 class="text-white">1000</h3>
+                            <h3 class="text-white">{{$totalMahasiswa}}</h3>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         </span>
                         <div class="media-body text-white text-end">
                             <p class="mb-1">Total Stok</p>
-                            <h3 class="text-white">100</h3>
+                            <h3 class="text-white">0</h3>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         </span>
                         <div class="media-body text-white text-end">
                             <p class="mb-1">Total Tugas Terkumpul</p>
-                            <h3 class="text-white">200</h3>
+                            <h3 class="text-white">0</h3>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                         </span>
                         <div class="media-body text-white text-end">
                             <p class="mb-1">Total Pesanan</p>
-                            <h3 class="text-white">100</h3>
+                            <h3 class="text-white">0</h3>
                         </div>
                     </div>
                 </div>

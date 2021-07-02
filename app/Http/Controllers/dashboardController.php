@@ -26,6 +26,7 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $totalMahasiswa = User::where('roles_id', 5)->count();
+        return view('dashboard.index', compact('totalMahasiswa'));
     }
 }

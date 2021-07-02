@@ -21,12 +21,25 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    public function redirectTo()
+    {
+        if (auth()->user()->roles_id == 1) {
+            return '/dashboard';
+        } else if (auth()->user()->roles_id == 6) {
+            return '/dashboardOrmawa';
+        } else {
+            return '/home';
+        }
+    }
+    
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+    }
 
     /**
      * Create a new controller instance.

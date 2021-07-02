@@ -33,34 +33,34 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Pembina</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Pembina" name="pembina" class="form-control" required>
+                            <input type="text" placeholder="Pembina" name="pembina" class="form-control" >
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Ketua Umum</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Ketua Umum" name="ketuaUmum" class="form-control" required>
+                            <input type="text" placeholder="Ketua Umum" name="ketuaUmum" class="form-control" >
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Tahun Berdiri</label>
                         <div class="col-sm-9">
-                            <input type="number" name="tahunBerdiri" class="form-control" required>
+                            <input type="number" name="tahunBerdiri" class="form-control" >
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Visi</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Visi" name="visi" class="form-control" required>
+                            <input type="text" placeholder="Visi" name="visi" class="form-control" >
                         </div>
                     </div>
 
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
-                            <textarea type="text" placeholder="Misi" name="misi" class="form-control custom-txt-area misi" required></textarea>
+                            <textarea type="text" placeholder="Misi" name="misi" class="form-control custom-txt-area misi" ></textarea>
                         </div>
                     </div>
 
@@ -74,8 +74,7 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Filosofi Logo</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Filosofi Logo" name="filosofiLogo" class="form-control"
-                                required>
+                            <input type="text" placeholder="Filosofi Logo" name="filosofiLogo" class="form-control">
                         </div>
                     </div>
 
@@ -90,7 +89,7 @@
                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                         <div class="col-sm-9">
                             <textarea class="form-control custom-txt-area " placeholder="Deskripsi"
-							name="deskripsi" required></textarea>
+							name="deskripsi"></textarea>
                         </div>
                     </div>
 
@@ -108,19 +107,19 @@
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Website</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Website" name="website" required>
+                                            <input type="text" class="form-control" placeholder="Website" name="website">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Instagram</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Instagram" name="instagram" required>
+                                            <input type="text" class="form-control" placeholder="Instagram" name="instagram">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
                                         <label class="col-sm-3 col-form-label">Youtube</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" placeholder="Youtube" name="youtube" required>
+                                            <input type="text" class="form-control" placeholder="Youtube" name="youtube">
                                         </div>
                                     </div>
                                 </div>

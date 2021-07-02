@@ -44,11 +44,6 @@ class ukmController extends Controller
     {
         try{
 
-            $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
-            $request->logo->storeAs(('ukm'), $namaFile);
-
-            $namaFilee = $request->namaSingkat.'.'.$request->barcode->extension();
-            $request->barcode->storeAs(('barcode'), $namaFile);
 
             $ormawa = new Ormawa();
             $ormawa->namaLengkap = $request->namaLengkap;
@@ -60,9 +55,17 @@ class ukmController extends Controller
             $ukm->pembina = $request->pembina;
             $ukm->ketuaUmum = $request->ketuaUmum;
             $ukm->tahunBerdiri = $request->tahunBerdiri;
-            $ukm->logo = $namaFile;
+            if($request->logo !== NULL){
+                $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
+                $request->logo->storeAs(('ukm'), $namaFile);
+                $ukm->logo = $namaFile;
+            }
             $ukm->filosofiLogo = $request->filosofiLogo;
-            $ukm->barcode = $namaFilee;
+            if($request->barcode !== NULL){
+                $namaFilee = $request->namaSingkat.'.'.$request->barcode->extension();
+                $request->barcode->storeAs(('barcode'), $namaFile);
+                $ukm->barcode = $namaFilee;
+            }
             $ormawa->ukms()->save($ukm);
 
 
@@ -131,8 +134,13 @@ class ukmController extends Controller
         try{
 
             $ormawa = Ormawa::where('id', $id)->firstOrFail();
-            $ormawa->namaLengkap = $request->namaLengkap;
-            $ormawa->namaSingkat = $request->namaSingkat;
+            if($request->namaLengkap !== NULL){
+                $ormawa->namaLengkap = $request->namaLengkap;
+            }
+            if($request->namaSingkat !== NULL){
+                $ormawa->namaSingkat = $request->namaSingkat;
+            }
+            
             $ormawa->save();
 
             $ukm = Ukm::where('ormawas_id', $id)->first();
@@ -160,14 +168,14 @@ class ukmController extends Controller
                 return $ex;
             }
             elseif(Auth::user()->roles_id == 6){
-                return redirect('dashboardOrmawa/0')->with('error', 'Gagal Edit Data!');
+                return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
             }
         }
         if(Auth::user()->roles_id == 1){
             return redirect('dashboard/ukm')->with('sukses', 'Berhasil Edit Data!');
         }
         elseif(Auth::user()->roles_id == 6){
-            return redirect('dashboardOrmawa/0')->with('sukses', 'Berhasil Edit Data!');
+            return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
         }
     }
 

@@ -28,8 +28,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <select name="jurusan" class="form-control wide" tabindex="0" id="jurusan" required >
-                            <option>Pilih Jurusan</option>
+                        <select name="jurusan" class="form-control wide" tabindex="0" id="jurusan">
                             @foreach ($jurusans as $data)
                             <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
                             @endforeach
@@ -39,43 +38,43 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Kepala Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Kepala Prodi" name="kepalaProdi" class="form-control  " id="kepalaProdi" required>
+                        <input type="text" placeholder="Kepala Prodi" name="kepalaProdi" class="form-control  " id="kepalaProdi">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="number" placeholder="Tahun Berdiri" name="tahunBerdiri" class="form-control  " id="tahunBerdiri" required>
+                        <input type="number" placeholder="Tahun Berdiri" name="tahunBerdiri" class="form-control  " id="tahunBerdiri">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Akreditasi</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Akreditasi" name="akreditasi" class="form-control  " id="akreditasi" required>
+                        <input type="text" placeholder="Akreditasi" name="akreditasi" class="form-control  " id="akreditasi">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Visi" name="visi" class="form-control  " id="visi" required>
+                        <input type="text" placeholder="Visi" name="visi" class="form-control" id="visi">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" class="form-control  " id="misi" required></textarea>
+                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" class="form-control" id="misi"></textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Ruang Prodi" name="ruangProdi" class="form-control  " id="ruangProdi"required>
+                        <input type="text" placeholder="Ruang Prodi" name="ruangProdi" class="form-control" id="ruangProdi">
                     </div>
                 </div>                    
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" placeholder="Jumlah Mahasiswa" name="jumlahMahasiswa" class="form-control  " id="jumlahMahasiswa"required>
+                        <input type="number" placeholder="Jumlah Mahasiswa" name="jumlahMahasiswa" class="form-control" id="jumlahMahasiswa">
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -88,7 +87,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" class="form-control  " id="deskripsi" required></textarea>
+                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" class="form-control" id="deskripsi"></textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -102,19 +101,19 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Website</label>
                                 <div class="col-sm-9">
-                                    <input type="text" placeholder="Website" name="website" class="form-control  " id="website" required>
+                                    <input type="text" placeholder="Website" name="website" class="form-control" id="website">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Instagram</label>
                                 <div class="col-sm-9">
-                                    <input type="text" placeholder="Instagram" name="instagram" class="form-control  " id="instagram" required>
+                                    <input type="text" placeholder="Instagram" name="instagram" class="form-control" id="instagram">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Youtube</label>
                                 <div class="col-sm-9">
-                                    <input type="text" placeholder="Youtube" name="youtube" class="form-control  " id="youtube" required>
+                                    <input type="text" placeholder="Youtube" name="youtube" class="form-control" id="youtube">
                                 </div>
                             </div>                            
                         </div>

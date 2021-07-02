@@ -13,7 +13,16 @@
 	 @if (Auth::user()->roles_id == '1')
           <form method="POST" action="{{ route('dashboard.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
         @else
-          <form method="POST" action="{{ route('dashboardOrmawa.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
+			@if (session('sukses'))
+            	<div class="alert alert-success">
+            	    {{ session('sukses') }}
+            	</div>
+            @elseif (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+          	<form method="POST" action="{{ route('dashboardOrmawa.himpunan.update', $himpunan->ormawas->id) }}" enctype='multipart/form-data'>
         @endif
           
           @method('PUT')
@@ -33,55 +42,55 @@
 		<div class="mb-3 row">
 		<label class="col-sm-3 col-form-label">Pembina</label>
 		<div class="col-sm-9">
-			<input type="text" class="form-control" placeholder="Pembina" name="pembina" id="pembina" value="{{ $himpunan->pembina }}" required disabled>
+			<input type="text" class="form-control" placeholder="Pembina" name="pembina" id="pembina" value="{{ $himpunan->pembina }}" disabled>
 		</div>
 		</div>
 		<div class="mb-3 row">
 		<label class="col-sm-3 col-form-label">Ketua Himpunan</label>
 		<div class="col-sm-9">
-			<input type="text" class="form-control" placeholder="Ketua Heimpunan" name="ketuaHimpunan" id="ketuaHimpunan" value="{{ $himpunan->ketuaHimpunan }}" disabled required >
+			<input type="text" class="form-control" placeholder="Ketua Heimpunan" name="ketuaHimpunan" id="ketuaHimpunan" value="{{ $himpunan->ketuaHimpunan }}" disabled>
 		</div>
 		</div>
 		<div class="mb-3 row">
 			<label class="col-sm-3 col-form-label">Tahun Berdiri</label>
 			<div class="col-sm-9">
-				<input type="number" class="form-control" name="tahunBerdiri" id="tahunBerdiri" value="{{ $himpunan->tahunBerdiri }}" disabled required >
+				<input type="number" class="form-control" name="tahunBerdiri" id="tahunBerdiri" value="{{ $himpunan->tahunBerdiri }}" disabled>
 			</div>
 		</div>
 		<div class="mb-3 row">
 			<label class="col-sm-3 col-form-label" >Kode Warna</label>
 			<div class="col-sm-9">
-				<input type="text" name="kodeWarna" class="form-control" value="{{ $himpunan->kodeWarna }}" id="kodeWarna" disabled required>
+				<input type="text" name="kodeWarna" class="form-control" value="{{ $himpunan->kodeWarna }}" id="kodeWarna" disabled>
 			</div>
 		</div>
 		<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Visi</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $himpunan->ormawas->visiMisis->visi }}" disabled required >
+					<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $himpunan->ormawas->visiMisis->visi }}" disabled>
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Misi</label>
 				<div class="col-sm-9">
-					<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled required >{{ $himpunan->ormawas->visiMisis->misi }}</textarea>
+					<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $himpunan->ormawas->visiMisis->misi }}</textarea>
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Logo</label>
 				<div class="col-sm-9">
-					<input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $himpunan->logo }}" disabled  >
+					<input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $himpunan->logo }}" disabled>
 				</div>
 			</div>
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Filosofi Logo</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" value="{{ $himpunan->filosofiLogo }}" disabled >
+					<input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" value="{{ $himpunan->filosofiLogo }}" disabled>
 				</div>
 			</div>                                    
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Deskripsi</label>
 				<div class="col-sm-9 ">
-					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled required>{{ $himpunan->ormawas->artikels->body }}</textarea>
+					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled>{{ $himpunan->ormawas->artikels->body }}</textarea>
 				</div>
 			</div>
 			<div class="accordion accordion-danger-solid" id="accordion-two">
@@ -127,6 +136,7 @@
 
 @endsection
 @section('script')
+@if (Auth::user()->roles_id == '1')
 <script>
 	function editData() {   
 		document.getElementById('namaLengkap').disabled = false;
@@ -145,4 +155,22 @@
 		document.getElementById('youtube').disabled = false;
 	}
 </script>
+@else
+<script>
+	function editData() {   
+		document.getElementById('pembina').disabled = false;
+		document.getElementById('ketuaHimpunan').disabled = false;
+		document.getElementById('tahunBerdiri').disabled = false;
+		document.getElementById('kodeWarna').disabled = false;
+		document.getElementById('visi').disabled = false;
+		document.getElementById('misi').disabled = false;
+		document.getElementById('logo').disabled = false;
+		document.getElementById('filosofiLogo').disabled = false;
+		document.getElementById('deskripsi').disabled = false;
+		document.getElementById('website').disabled = false;
+		document.getElementById('instagram').disabled = false;
+		document.getElementById('youtube').disabled = false;
+	}
+</script>
+@endif
 @endsection

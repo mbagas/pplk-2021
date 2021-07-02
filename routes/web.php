@@ -13,6 +13,7 @@ use App\Http\Controllers\senatController;
 use App\Http\Controllers\kamusGaulController;
 use App\Http\Controllers\kabinetController;
 use App\Http\Controllers\ormawaController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
     // SUDAH DI OPTIMIZE (routing)
     Route::get('/', [dashboardController::class, 'index'])->name('index');
     Auth::routes();
+    Route::resource('user', userController::class)->except('show');
     Route::resource('prodi', prodiController::class)->except(['show']);
     Route::resource('ukm', ukmController::class)->except(['show']);
     Route::resource('himpunan', himpunanController::class)->except(['show']);
@@ -63,7 +65,7 @@ Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa
     // Ini Route yang hanya bisa diakses Role Ormawa
 
  
-    Route::get('/', [ormawaController::class, 'index'])->name('');
+    Route::get('/', [ormawaController::class, 'index'])->name('index');
     Route::resource('prodi', prodiController::class)->only(['update']);
     Route::resource('ukm', ukmController::class)->only(['update']);
     Route::resource('himpunan', himpunanController::class)->only(['update']);
