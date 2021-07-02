@@ -32,7 +32,7 @@
                                     <td>{{$funFact->id}}</td>
                                     <td>{{$funFact->body}}</td>
                                     <td class="manage-row">
-                                        <a href="{{route('dashboard.funFact.edit', $data->id)}}" class="edit-button">
+                                        <a href="{{route('dashboard.funfact.edit', $funFact->id)}}" class="edit-button">
                                           <i class="fa fa-pencil" aria-hidden="true"></i>
                                         </a>
                                         <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm">
@@ -48,7 +48,7 @@
                                                     </div>
                                                     <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                     <div class="modal-footer">
-                                                      <form action="{{route('dashboard.funFact.destroy', $data->id)}}" method="POST">
+                                                      <form action="{{route('dashboard.funfact.destroy', $funFact->id)}}" method="POST">
                                                         @method('DELETE')
                                                         @csrf
                                                         <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
