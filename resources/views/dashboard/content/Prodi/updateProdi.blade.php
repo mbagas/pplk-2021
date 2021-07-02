@@ -74,7 +74,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ruangProdi" class="form-control  " value="{{ $result->ruangProdi }}" id="ruangProdi" required disabled>
+                        <input type="text" name="ruangProdi" class="form-control" value="{{ $result->ruangProdi }}" id="ruangProdi" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -89,16 +89,11 @@
                         <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $result->diagramAlir }}" id="diagramAlir" disabled>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label col-form-label-lg">Prestasi</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="prestasi" id="prestasi" required disabled>{{ $result->prestasi }}</textarea>
-                    </div>
-                </div>
+                
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="artikel" id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -161,7 +156,6 @@
         document.getElementById('ruangProdi').disabled = false;
         document.getElementById('jumlahMahasiswa').disabled = false;
         document.getElementById('diagramAlir').disabled = false;
-        document.getElementById('prestasi').disabled = false;
         document.getElementById('deskripsi').disabled = false;
         document.getElementById('website').disabled = false;
         document.getElementById('instagram').disabled = false;

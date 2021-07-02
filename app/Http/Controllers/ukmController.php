@@ -43,6 +43,13 @@ class ukmController extends Controller
     public function store(Request $request)
     {
         try{
+
+            $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
+            $request->logo->storeAs(('ukm'), $namaFile);
+
+            $namaFilee = $request->namaSingkat.'.'.$request->barcode->extension();
+            $request->barcode->storeAs(('barcode'), $namaFile);
+
             $ormawa = new Ormawa();
             $ormawa->namaLengkap = $request->namaLengkap;
             $ormawa->namaSingkat = $request->namaSingkat;
@@ -53,9 +60,9 @@ class ukmController extends Controller
             $ukm->pembina = $request->pembina;
             $ukm->ketuaUmum = $request->ketuaUmum;
             $ukm->tahunBerdiri = $request->tahunBerdiri;
-            $ukm->logo = 'logotes.jpg';
-            $ukm->filosofiLogo = 'tester logo';
-            $ukm->barcode = 'barcode.jpg';
+            $ukm->logo = $namaFile;
+            $ukm->filosofiLogo = $request->filosofiLogo;
+            $ukm->barcode = $namaFilee;
             $ormawa->ukms()->save($ukm);
 
 

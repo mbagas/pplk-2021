@@ -27,7 +27,6 @@
                             <th>Nama Pembina</th>
                             <th>Ketua Umum</th>
                             <th>Tahun Berdiri</th>
-                            <th>Prestasi</th>
                             <th>More</th>
                         </tr>
                     </thead>
@@ -39,7 +38,6 @@
                             <td>{{$data->pembina}}</td>
                             <td>{{$data->ketuaUmum}}</td>
                             <td>{{$data->tahunBerdiri}}</td>
-                            <td>{{$data->prestasi}}</td>
                             <td class="manage-row">
                                 <a href="{{route('dashboard.ukm.edit', $data->ormawas->id)}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>

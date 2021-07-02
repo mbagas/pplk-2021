@@ -101,7 +101,7 @@ class himpunanController extends Controller
       $ormawa->visimisis()->save($visiMisi);
 
       $artikel = new Artikel();
-      $artikel->body = $request->artikel;
+      $artikel->body = $request->deskripsi;
 
       $ormawa->artikels()->save($artikel);
     } catch (Exception $err) {
@@ -216,7 +216,7 @@ class himpunanController extends Controller
       $visiMisi->save();
 
       $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-      $artikel->body = $request->artikel;
+      $artikel->body = $request->deskripsi;
 
       $artikel->save();
     } catch (Exception $err) {

@@ -91,18 +91,12 @@
                             value="{{ $result->barcode }}" disabled>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Prestasi</label>
-                    <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area prestasi" placeholder="Prestasi" name="prestasi"
-                            id="prestasi" value="{{ $result->prestasi }}" required disabled></textarea>
-                    </div>
-                </div>
+                
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel"
-                            id="deskripsi" required disabled>{{ $result->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi"
+                            id="deskripsi" required disabled>{{ $artikel->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -170,7 +164,6 @@
 			document.getElementById('logo').disabled = false;
 			document.getElementById('filosofiLogo').disabled = false;
 			document.getElementById('barcode').disabled = false;
-			document.getElementById('prestasi').disabled = false;
 			document.getElementById('deskripsi').disabled = false;
 			document.getElementById('website').disabled = false;
 			document.getElementById('instagram').disabled = false;

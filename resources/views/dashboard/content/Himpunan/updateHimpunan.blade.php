@@ -49,9 +49,9 @@
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label" >Kode Warna</label>
-			<div class="col-sm-10">
-				<input type="text" name="kodeWarna" class="form-control" value="{{ $himpunan->kodeWarna }}" disabled required>
+			<label class="col-sm-3 col-form-label" >Kode Warna</label>
+			<div class="col-sm-9">
+				<input type="text" name="kodeWarna" class="form-control" value="{{ $himpunan->kodeWarna }}" id="kodeWarna" disabled required>
 			</div>
 		</div>
 		<div class="mb-3 row">
@@ -81,7 +81,7 @@
 			<div class="mb-3 row">
 				<label class="col-sm-3 col-form-label">Deskripsi</label>
 				<div class="col-sm-9 ">
-					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="artikel" id="deskripsi" disabled required >{{ $himpunan->ormawas->artikels->body }}</textarea>
+					<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled required>{{ $himpunan->ormawas->artikels->body }}</textarea>
 				</div>
 			</div>
 			<div class="accordion accordion-danger-solid" id="accordion-two">
