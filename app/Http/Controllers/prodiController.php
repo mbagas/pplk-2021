@@ -157,7 +157,7 @@ class prodiController extends Controller
             $prodi->save();
 
             $artikel = Artikel::where('ormawas_id', $id)->first();
-            $artikel->body = $request->artikel;
+            $artikel->body = $request->deskripsi;
             $artikel->save();
 
             $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();

@@ -10,7 +10,7 @@
         </div>
         <div class="basic-form">
             <div class="card-body">
-                <form method="POST" action="{{ route('dashboard.ukm.store') }}">
+                <form method="POST" action="{{ route('dashboard.ukm.store') }}" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
 
@@ -87,18 +87,10 @@
 					</div>
 
                     <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Prestasi</label>
-                        <div class="col-sm-9">
-                            <textarea class="form-control custom-txt-area prestasi" placeholder="Prestasi"
-							name="prestasi" required></textarea>
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Deskripsi</label>
                         <div class="col-sm-9">
                             <textarea class="form-control custom-txt-area " placeholder="Deskripsi"
-							name="artikel" required></textarea>
+							name="deskripsi" required></textarea>
                         </div>
                     </div>
 

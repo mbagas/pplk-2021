@@ -84,12 +84,7 @@
                         <input type="file" accept="image/*" name="diagramAlir" class="form-control  " id="diagramAlir" >
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Prestasi</label>
-                    <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Prestasi" name="prestasi" class="form-control  " id="prestasi" required></textarea>
-                    </div>
-                </div>                                    
+                                                
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
