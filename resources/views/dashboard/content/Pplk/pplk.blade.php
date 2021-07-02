@@ -32,7 +32,7 @@
                     <tbody>
                         @foreach ($pplks as $data )
                         <tr>
-                            <td>1</td>
+                            <td>{{$data->id}}</td>
                             <td>{{$data->logo}}</td>
                             <td>{{$data->visi}}</td>
                             <td>{{$data->misi}}</td>
@@ -42,10 +42,10 @@
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
-                                    data-bs-target=".bd-example-modal-sm">
+                                    data-bs-target=".bd-example-modal-sm{{$data->id}}">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                                <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">
