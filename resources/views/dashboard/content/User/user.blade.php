@@ -1,8 +1,9 @@
 @extends('layouts.master')
 @section('title', 'Data User')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
+
+        <div class="col-lg-12 col-lg-12 form-wrapper">
+            <h1 class="content-title">Kelola Data User</h1>
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Data User</h4>
@@ -18,37 +19,54 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-responsive-md">
+                    <table id="example4" class="display" style="min-width: 845px">
                             <thead>
                                 <tr>
-                                    <th style="width:80px;"><strong>Nama</strong></th>
-                                    <th class="text-center"><strong>Email</strong></th>
-                                    <th class="text-center"><strong>Kelompok</strong></th>
-                                    <th class="text-center"><strong>Prodi</strong></th>
-                                    <th class="text-center"><strong>Role</strong></th>
-                                    <th class="text-center"><strong>ACTION</strong></th>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>Kelompok</th>
+                                    <th>NIM</th>
+                                    <th>Role</th>
+                                    <th>Instagram</th>
+                                    <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($result as $data )
                                     <tr>
-                                        <td class="text-center">{{$data->nama}}</td>
-                                        <td class="text-center">{{$data->email}}</td>
-                                        <td class="text-center">{{$data->kelompok}}</td>
-                                        <td class="text-center">{{$data->prodi}}</td>
-                                        <td class="text-center">{{$data->roles->role}}</td>
-                                        <td class="text-center">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                                </button>
-                                                <div class="dropdown-menu" style="margin: 0px;">
-                                                    <a class="dropdown-item" href="{{route('dashboard.user.edit', $data->id)}}">Edit</a>
-                                                    <form action="{{route('dashboard.user.destroy', $data->id)}}" method="POST">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <input type="submit" class="dropdown-item" value="Hapus">
-                                                    </form>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->nama}}</td>
+                                        <td>{{$data->email}}</td>
+                                        <td>{{$data->kelompok}}</td>
+                                        <td>{{$data->nim}}</td>
+                                        <td>{{$data->roles->role}}</td>
+                                        <td>{{$data->instagram}}</td>
+                                        <td class="manage-row">
+                                            <a href="{{route('dashboard.user.edit', $data->id)}}" class="edit-button">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                            <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"><strong>Hapus Data</strong></h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
+                                                        <div class="modal-footer">
+                                                        <form action="{{route('dashboard.user.destroy', $data->id)}}" method="POST">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
+                                                        </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>
@@ -61,6 +79,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 @endsection

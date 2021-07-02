@@ -2,8 +2,12 @@
 @section('title', 'Tambah User')
 @section('content')
 <div class="col-lg-12 col-lg-12 form-wrapper">
-    <h1 class="content-title">Data User</h1>
+    <h1 class="content-title">Masukkan Data User</h1>
     <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">User</h4>
+        </div>
+
         <div class="card-body">
             <form method="POST" action="{{ route('dashboard.user.store') }}">
                 @method('POST')
