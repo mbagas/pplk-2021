@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Data UPT')
 @section('content')
-        <div class="col-xl-12 col-lg-12 form-wrapper">
+<div class="col-xl-12 col-lg-12 form-wrapper">
   <h1 class="content-title">Kelola Data UPT</h1>
             <div class="card">
                 <div class="card-header">
