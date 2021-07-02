@@ -9,6 +9,7 @@ class Jurusan extends Model
 {
     use HasFactory;
     protected $table = 'jurusans';
+    public $timestamps = false;
     protected $fillable = ['namaLengkap', 'namaSingkat', 'kepalaJurusan', 'ruangJurusan'];
 
     public function prodis(){
