@@ -80,7 +80,7 @@ class FunFactController extends Controller
     public function destroy(Funfact $funfact)
     {
         if ($funfact->delete()){
-            return redirect()->route('dashboard.content.funfact.index')->with('sukses', $funfact->body.' Deleted ');
+            return redirect()->route('dashboard.funfact.index')->with('sukses', $funfact->body.' Deleted ');
         }
         return redirect()->back()->withErrors('Delete Failed');
     }
