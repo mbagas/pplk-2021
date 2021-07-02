@@ -14,49 +14,49 @@
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Nama Lengkap</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap" id="namaLengkap" required >
+						<input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap" id="namaLengkap" required>
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Nama Singkat</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Nama Singkat" name="namaSingkat" id="namaSingkat" required >
+						<input type="text" class="form-control" placeholder="Nama Singkat" name="namaSingkat" id="namaSingkat" required>
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Pembina</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Pembina" name="pembina" id="pembina" required >
+						<input type="text" class="form-control" placeholder="Pembina" name="pembina" id="pembina" >
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Ketua Himpunan</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Ketua Heimpunan" name="ketuaHimpunan" id="ketuaHimpunan" required >
+						<input type="text" class="form-control" placeholder="Ketua Heimpunan" name="ketuaHimpunan" id="ketuaHimpunan"  >
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Tahun Berdiri</label>
 					<div class="col-sm-9">
-						<input type="number" class="form-control" name="tahunBerdiri" id="tahunBerdiri" required >
+						<input type="number" class="form-control" name="tahunBerdiri" id="tahunBerdiri"  >
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Kode Warna</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Kode Warna" name="kodeWarna" id="kodeWarna" required >
+						<input type="text" class="form-control" placeholder="Kode Warna" name="kodeWarna" id="kodeWarna"  >
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Visi</label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" required >
+						<input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" >
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Misi</label>
 					<div class="col-sm-9">
-						<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" required ></textarea>
+						<textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi"  ></textarea>
 					</div>
 				</div>
 				<div class="mb-3 row">
@@ -74,7 +74,7 @@
 				<div class="mb-3 row">
 					<label class="col-sm-3 col-form-label">Deskripsi</label>
 					<div class="col-sm-9 ">
-						<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" required ></textarea>
+						<textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi"  ></textarea>
 					</div>
 				</div>
 				<div class="accordion accordion-danger-solid" id="accordion-two">

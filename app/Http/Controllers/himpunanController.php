@@ -68,6 +68,7 @@ class himpunanController extends Controller
   public function store(Request $request)
   {
     try {
+
       $ormawa = new Ormawa();
       $ormawa->namaLengkap = $request->namaLengkap;
       $ormawa->namaSingkat = $request->namaSingkat;
@@ -81,9 +82,11 @@ class himpunanController extends Controller
       $himpunan->tahunBerdiri = $request->tahunBerdiri;
       $himpunan->filosofiLogo = $request->filosofiLogo;
 
-      $logo = $this->SaveFiles($request);
-
-      $himpunan->logo = 'Himpunan/' . $logo;
+      if($request->logo !== NULL){
+        $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
+        $request->logo->storeAs(('Himpunan'), $namaFile);
+        $himpunan->logo = 'Himpunan/' . $namaFile;
+      }
 
       $ormawa->himpunans()->save($himpunan);
 

@@ -2,7 +2,7 @@
 @section('title', 'Register Akun')
 @section('content')
 <div class="col-lg-12 col-lg-12 form-wrapper">
-    <h1 class="content-title">Masukkan Data Himpunan</h1>
+    <h1 class="content-title">Data User</h1>
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">{{ __('Register') }}</h4>
@@ -107,9 +107,9 @@
                     <label class="col-sm-3 col-form-label">Prodi</label>
                     <div class="col-sm-9">
                         <select name="prodis_id" class="form-control wide" tabindex="0" required>
-                            <option value="1">Teknik Informatika</option>
-                            <option value="2">Teknik Sipil</option>
-                            <option value="3">Teknik Elektro</option>
+                            @foreach ($prodi as $data)
+                                <option value="{{$data->id}}">{{$data->ormawas->namaLengkap}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

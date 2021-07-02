@@ -51,9 +51,7 @@ class prodiController extends Controller
     {
         //
         try{
-            $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
-            $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
-
+            
             $ormawa = new Ormawa();
             $ormawa->namaLengkap = $request->namaLengkap;
             $ormawa->namaSingkat = $request->namaSingkat;
@@ -68,7 +66,11 @@ class prodiController extends Controller
             $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
             $prodi->kepalaProdi = $request->kepalaProdi;
             $prodi->jurusans_id = $request->jurusan;
-            $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
+            if($request->diagramAlir !== NULL){
+                $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
+                $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
+                $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
+            }
             $ormawa->prodis()->save($prodi);
 
 

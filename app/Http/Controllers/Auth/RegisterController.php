@@ -41,6 +41,12 @@ class RegisterController extends Controller
         // $this->middleware('Admin');
     }
 
+    public function showRegistrationForm()
+    {
+        $prodi = Prodi::with('ormawas')->get();
+        return view('auth.register', compact('prodi'));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
