@@ -33,7 +33,7 @@
                     <tbody>
                         @foreach ($result as $data )
                         <tr>
-                            <td>1</td>
+                            <td>{{$data->ormawas->id}}</td>
                             <td>{{$data->ormawas->namaLengkap}}</td>
                             <td>{{$data->pembina}}</td>
                             <td>{{$data->ketuaUmum}}</td>
@@ -43,10 +43,10 @@
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
-                                    data-bs-target=".bd-example-modal-sm">
+                                    data-bs-target=".bd-example-modal-sm{{$data->ormawas->id}}">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                                <div class="modal fade bd-example-modal-sm{{$data->ormawas->id}}" tabindex="-1" role="dialog"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">

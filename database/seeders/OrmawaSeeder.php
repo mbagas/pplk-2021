@@ -18,7 +18,7 @@ class OrmawaSeeder extends Seeder
         Ormawa::query()->create([
             'id'=>1,
             'namaLengkap'=>'Test Ormawa',
-            'namaSingkatan'=>'TO',
+            'namaSingkat'=>'TO',
             'kategoris_id'=>1
         ]);
 //        $ormawa->sync(Kategori::find(1));

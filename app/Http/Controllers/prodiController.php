@@ -197,12 +197,11 @@ class prodiController extends Controller
     public function destroy($id)
     {
         try{
-
-            $prodi = Prodi::where('ormawas_id', $id)->first();
-            $prodi->delete();
-
             $artikel = Artikel::where('ormawas_id', $id)->first();
             $artikel->delete();
+            
+            $prodi = Prodi::where('ormawas_id', $id)->first();
+            $prodi->delete();
 
             $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
             $socialMedia->delete();
@@ -213,7 +212,7 @@ class prodiController extends Controller
             $ormawa = Ormawa::where('id', $id)->first();
             $ormawa->delete();
         } catch(Exception $ex){
-            return redirect('dashboard/prodi')->with('error', 'Gagal Hapus Data!');
+            return $ex;
         }
         return redirect('dashboard/prodi')->with('sukses', 'Berhasil Hapus Data!');
     }
