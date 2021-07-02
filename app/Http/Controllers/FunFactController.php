@@ -40,7 +40,7 @@ class FunFactController extends Controller
     {
         $funFact = Funfact::query()->create($request->validated());
         if ($funFact){
-            return redirect()->route('dashboard.content.funfact.index')->with('sukses', ' Success Inserted '.$funFact->body);
+            return redirect()->route('dashboard.funfact.index')->with('sukses', ' Success Inserted '.$funFact->body);
         }
         return redirect()->back()->withErrors("Failed Insert");
     }
@@ -66,7 +66,7 @@ class FunFactController extends Controller
     public function update(StoreFunFactRequest $request, Funfact $funfact)
     {
         if ($funfact->update($request->validated())){
-            return redirect()->route('dashboard.content.funfact.index')->with('sukses', $funfact->body.' Updated Success ');
+            return redirect()->route('dashboard.funfact.index')->with('sukses', $funfact->body.' Updated Success ');
         }
         return redirect()->back()->withErrors('Update Failed');
     }

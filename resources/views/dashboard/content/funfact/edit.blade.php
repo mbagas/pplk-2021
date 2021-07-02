@@ -23,7 +23,7 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Fun Fact</label>
                                 <div class="col-sm-9">
-                                    <textarea name="body" class="form-control custom-txt-area" placeholder="Fun Fact" id="body" value="{{$funfact->body}}" required disabled></textarea>
+                                    <textarea name="body" class="form-control custom-txt-area" placeholder="Fun Fact" id="body" value="" required disabled>{{$funfact->body}}</textarea>
                                 </div>
                                 @error('body')
                                 <span class="text-danger">{{ $message }}</span>
