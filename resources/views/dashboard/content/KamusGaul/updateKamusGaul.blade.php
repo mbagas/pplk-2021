@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('title', 'Update Kamus Gaul')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="col-xl-12 col-lg-12 form-wrapper">
+            <h1 class="content-title">Perbarui Kamus Gaul</h1>
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Kata Gaul</h4>
@@ -40,7 +40,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @section('script')
