@@ -56,7 +56,7 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Deskripsi</label>
             <div class="col-sm-9">
-              <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="{{ $result->deskripsi }}" required disabled>
+            <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" required disabled>{{ $result->deskripsi }}</textarea>
             </div>
           </div>
           <div class="mb-3 row">
