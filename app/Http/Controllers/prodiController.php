@@ -55,7 +55,7 @@ class prodiController extends Controller
             $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
 
             $ormawa = new Ormawa();
-            $ormawa->namaLengkap = $request->nama;
+            $ormawa->namaLengkap = $request->namaLengkap;
             $ormawa->namaSingkat = $request->namaSingkat;
             $ormawa->kategoris_id = 1;
             $ormawa->save();
@@ -73,7 +73,7 @@ class prodiController extends Controller
 
 
             $artikel = new Artikel();
-            $artikel->body = $request->artikel;
+            $artikel->body = $request->deskripsi;
             $ormawa->artikels()->save($artikel);
 
             $visiMisi = new VisiMisi();
@@ -87,7 +87,7 @@ class prodiController extends Controller
             $socialMedia->youtube = $request->youtube;
             $ormawa->socialmedias()->save($socialMedia);
         } catch(Exception $ex){
-            return redirect('dashboard/prodi')->with('error', 'Gagal Menambahkan Data!');
+            return $ex;
         }
 
         return redirect('dashboard/prodi')->with('sukses', 'Berhasil Menambahkan Data!');
