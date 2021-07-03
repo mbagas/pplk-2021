@@ -21,7 +21,7 @@ class himpunanController extends Controller
    */
   public function index()
   {
-    $result = Himpunan::with("ormawas")->paginate(10);
+    $result = Himpunan::with("ormawas")->get();
 
     return view("dashboard.content.Himpunan.himpunan", compact('result'));
   }

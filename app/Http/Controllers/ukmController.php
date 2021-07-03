@@ -20,7 +20,7 @@ class ukmController extends Controller
      */
     public function index()
     {
-        $result = Ukm::with('ormawas')->paginate(10);
+        $result = Ukm::with('ormawas')->get();
         return view('dashboard.content.Ukm.ukm', compact('result'));
     }
 

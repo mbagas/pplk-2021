@@ -25,7 +25,7 @@ class prodiController extends Controller
     public function index()
     {
         //
-        $result = Prodi::with('ormawas')->paginate(10);
+        $result = Prodi::with('ormawas')->get();
 
         return view('dashboard.content.Prodi.prodi', compact('result'));
     }

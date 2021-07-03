@@ -23,11 +23,11 @@ class userController extends Controller
         $user = Auth::user();
         if($user->roles_id == 3){
             $kelompok = $user->kelompok;
-            $result = User::where('kelompok', $kelompok)->paginate(10);
+            $result = User::where('kelompok', $kelompok)->get();
             return view('dashboard.content.User.user', compact('result'));
         }
         
-        $result = User::paginate(10);
+        $result = User::all();
         return view('dashboard.content.User.user', compact('result'));
     }
 
