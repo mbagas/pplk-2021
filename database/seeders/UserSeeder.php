@@ -21,7 +21,6 @@ class UserSeeder extends Seeder
             'nim' => 120140044,
             'kelompok' => 44,
             'roles_id' => 1,
-            'prodis_id' => 1,
             'instagram' => 'instagram.com/yaelahfal_'
         ]);
     }
