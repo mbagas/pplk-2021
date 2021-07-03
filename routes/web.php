@@ -71,12 +71,17 @@ Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa
     Route::resource('himpunan', himpunanController::class)->only(['update']);
 });
 
-Route::middleware(['Tugas'])->group(function () {
-    // Ini Route yang hanya bisa diakses Role Tugas
+Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('dashboardDaplokMentor')->group(function () {
+    // Ini Route yang hanya bisa diakses Role DaplokMentor
+
+    Route::get('/', [userController::class, 'index'])->name('index');
+    Route::resource('user', userController::class)->except('show');
+
 });
 
-Route::middleware(['DaplokMentor'])->group(function () {
-    // Ini Route yang hanya bisa diakses Role DaplokMentor
+
+Route::middleware(['Tugas'])->group(function () {
+    // Ini Route yang hanya bisa diakses Role Tugas
 });
 
 Route::middleware(['Pendanaan'])->group(function () {

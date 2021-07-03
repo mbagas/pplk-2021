@@ -169,6 +169,23 @@
                         <span class="nav-text">Dashboard </span>
                     </a>
                 </li>
+            @elseif(Auth::user()->roles_id == 3)
+                <li>
+                    <a href="{{ route('dashboardDaplokMentor.index') }}" class="ai-icon" aria-expanded="true">
+                        <i class="flaticon-025-dashboard"></i>
+                        <span class="nav-text">Dashboard </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span class="nav-text">User</span>
+                    </a>
+                    <ul aria-expanded="false" class="mm-collapse">
+                        <li><a href="{{ route('dashboardDaplokMentor.user.create') }}">Tambah User</a></li>
+                        <li><a href="{{ route('dashboardDaplokMentor.user.index') }}">Kelola Data User</a></li>
+                    </ul>
+                </li>
             @endif
                 
             <div class="copyright">

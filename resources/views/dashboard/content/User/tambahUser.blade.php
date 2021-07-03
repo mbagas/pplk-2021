@@ -9,7 +9,11 @@
         </div>
 
         <div class="card-body">
+        @if (Auth::user()->roles_id == '1')
             <form method="POST" action="{{ route('dashboard.user.store') }}">
+        @else
+            <form method="POST" action="{{ route('dashboardDaplokMentor.user.store') }}">
+        @endif
                 @method('POST')
                 @csrf
 
@@ -90,10 +94,14 @@
                     <label class="col-sm-3 col-form-label">Kelompok</label>
                     <div class="col-md-9">
                         <select name="kelompok" class="form-control wide" tabindex="0" required>
-                            <option value="">Pilih Kelompok </option>
-                            @for ($i = 1; $i <= 100; $i++)
-                                <option value="{{$i}}">{{$i}} </option>
-                            @endfor
+                            @if(Auth::user()->roles_id == 1)
+                                <option value="">Pilih Kelompok </option>
+                                @for ($i = 1; $i <= 100; $i++)
+                                    <option value="{{$i}}">{{$i}} </option>
+                                @endfor
+                            @else
+                            <option value="{{$kelompok}}">{{$kelompok}} </option>
+                            @endif
                         </select>
                     </div>
                 </div>

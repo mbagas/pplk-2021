@@ -20,6 +20,13 @@ class userController extends Controller
     public function index()
     {
         //
+        $user = Auth::user();
+        if($user->roles_id == 3){
+            $kelompok = $user->kelompok;
+            $result = User::where('kelompok', $kelompok)->paginate(10);
+            return view('dashboard.content.User.user', compact('result'));
+        }
+        
         $result = User::paginate(10);
         return view('dashboard.content.User.user', compact('result'));
     }
@@ -33,7 +40,14 @@ class userController extends Controller
     {
         //
         $prodi = Prodi::with('ormawas')->get();
-        $role = Role::all();
+        if(Auth::user()->roles_id == 1){
+            $role = Role::all();
+        } else{
+            $role = Role::where('id', 5)->get();
+            $kelompok = Auth::user()->kelompok;
+            return view('dashboard.content.User.tambahUser', compact('prodi', 'role', 'kelompok'));
+        }
+        
         return view('dashboard.content.User.tambahUser', compact('prodi', 'role'));
     }
 
@@ -59,7 +73,13 @@ class userController extends Controller
             $user->save();
 
         } catch(Exception $ex){
+            if(Auth::user()->roles_id == 3){
+                return redirect('dashboardDaplokMentor/user')->with('error', 'Gagal Menambahkan User!');
+            }
             return redirect('dashboard/user')->with('error', 'Gagal Menambahkan User!');
+        }
+        if(Auth::user()->roles_id == 3){
+            return redirect('dashboardDaplokMentor/user')->with('sukses', 'Sukses Menambahkan User!');
         }
         return redirect('dashboard/user')->with('sukses', 'Sukses Menambahkan User!');
         
@@ -96,6 +116,7 @@ class userController extends Controller
             
             $role = Role::get();
             $prodi = Prodi::with('ormawas')->get();
+            
             return view('dashboard.content.User.updateUser', compact('result', 'role', 'prodi'));
         } catch(Exception $ex){
             // return redirect('dashboard/user')->with('error', 'Gagal Edit Data!');
@@ -128,7 +149,13 @@ class userController extends Controller
             $user->instagram = $request->instagram;
             $user->save();
         } catch(Exception $ex){
+            if(Auth::user()->roles_id == 3){
+                return redirect('dashboardDaplokMentor/user')->with('error', 'Gagal Update User!');
+            }
             return redirect('dashboard/user')->with('error', 'Gagal Update User!');
+        }
+        if(Auth::user()->roles_id == 3){
+            return redirect('dashboardDaplokMentor/user')->with('sukses', 'Sukses Update User!');
         }
         return redirect('dashboard/user')->with('sukses', 'Sukses Update User!');
     }
@@ -145,7 +172,13 @@ class userController extends Controller
             $user = User::where('id', $id)->firstOrFail();
             $user->delete();
         } catch(Exception $ex){
+            if(Auth::user()->roles_id == 3){
+                return redirect('dashboardDaplokMentor/user')->with('error', 'Gagal Hapus User!');
+            }
             return redirect('dashboard/user')->with('error', 'Gagal Hapus User!');
+        }
+        if(Auth::user()->roles_id == 3){
+            return redirect('dashboardDaplokMentor/user')->with('sukses', 'Sukses Hapus User!');
         }
         return redirect('dashboard/user')->with('sukses', 'Sukses Hapus User!');
     }

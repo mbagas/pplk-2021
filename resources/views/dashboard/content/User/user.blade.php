@@ -59,7 +59,11 @@
                                                         </div>
                                                         <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                         <div class="modal-footer">
+                                                    @if (Auth::user()->roles_id == '1')
                                                         <form action="{{route('dashboard.user.destroy', $data->id)}}" method="POST">
+                                                    @else
+                                                        <form action="{{route('dashboardDaplokMentor.user.destroy', $data->id)}}" method="POST">
+                                                    @endif
                                                             @method('DELETE')
                                                             @csrf
                                                             <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
