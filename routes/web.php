@@ -54,7 +54,10 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
   //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
-  Route::resource('tugas', tugasController::class)->except('show');
+
+  Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
+
+  Route::resource('tugas', tugasController::class);
   Route::resource('maba', mengerjakanController::class);
 });
 

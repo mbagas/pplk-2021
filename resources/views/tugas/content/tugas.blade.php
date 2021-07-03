@@ -52,11 +52,13 @@
                       </svg>
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
+                      <a class="dropdown-item" href="{{route('dashboard.tugas.show', $data->id)}}">Details</a>
+                      <a class="dropdown-item" href="{{route('dashboard.tugas.submissions', $data->id)}}">Submissions</a>
                       <a class="dropdown-item" href="{{route('dashboard.tugas.edit', $data->id)}}">Edit</a>
                       <form action="{{route('dashboard.tugas.destroy', $data->id)}}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <input type="submit" class="dropdown-item" value="Hapus">
+                        <input type="submit" class="dropdown-item" value="Delete">
                       </form>
                     </div>
                   </div>

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mengerjakan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Tugas;
 use Exception;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\DB;
 
 class tugasController extends Controller
 {
@@ -79,7 +82,41 @@ class tugasController extends Controller
    */
   public function show($id)
   {
-    //
+    //Get Tugas Informations
+    $tugas = Tugas::where('id', $id)->firstOrFail();
+
+    return view('tugas.content.detailTugas', compact('tugas'));
+  }
+
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function pengerjaan($id)
+  {
+    //Get Any Submissions Informations
+    // $submissions = Mengerjakan::all()->where('tugas_id', $id);
+
+    $submissions = DB::table('mengerjakans')->join('users', 'users_id', '=', 'users.id')->select('*')->get();
+
+    if ($submissions != null) {
+      foreach ($submissions as $data) {
+        error_log($data->nilai);
+      }
+    }
+
+    // $filtered[] = [];
+
+    // foreach ($submissions as $subs) {
+    //   $users = User::where('id', $subs->users_id)->firstOrFail();
+
+    //   if ($users != null)
+    //     error_log($users->id);
+    // }
+
+    return view('tugas.content.submissions', compact('submissions'));
   }
 
   /**

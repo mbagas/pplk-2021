@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title', 'Tugas')
+@section('title', 'Detail Pengerjaan')
 @section('content')
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title">Tugas</h4>
+        <h4 class="card-title">Detail Pengerjaan</h4>
       </div>
       <div class="card-body">
         @if (session('sukses'))
@@ -17,14 +17,16 @@
           {{ session('error') }}
         </div>
         @endif
-        <form method="POST" action="{{ route('dashboard.maba.update', $tugas->id) }}" enctype="multipart/form-data">
-          @csrf
+        @if (new DateTime() < new DateTime($tugas->end_time) && !$submission->status)
+          <a class="dropdown-item" href="{{route('dashboard.maba.edit', $tugas->id)}}">Edit</a>
+          @endif
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Judul</label>
             <div class="col-sm-10">
               <input type="text" class="form-control form-control-lg" value="{{$tugas->judul}}" readonly>
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
             <div class="col-sm-10">
@@ -38,24 +40,28 @@
               <input type="text" class="form-control form-control-lg" value="{{$tugas->format}}" readonly>
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Start Time</label>
             <div class="col-sm-10">
               {{$tugas->start_time}}
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">End Time</label>
             <div class="col-sm-10">
               {{$tugas->end_time}}
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">File</label>
             <div class="col-sm-10">
-              <input type="file" class="form-control form-control-lg" disabled>
+              <input type="text" class="form-control form-control-lg" value="{{$submission->file}}" readonly>
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Jawaban</label>
             <div class="col-sm-10">
@@ -69,8 +75,6 @@
               <input type="text" class="form-control form-control-lg" value="{{$submission->nilai}}" readonly />
             </div>
           </div>
-
-        </form>
 
       </div>
     </div>

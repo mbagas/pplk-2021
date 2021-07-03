@@ -82,12 +82,12 @@ class mengerjakanController extends Controller
     $UID = Auth::id();
 
     //Get Submissions
-    $submissions = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id);
+    $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
 
     //If there is a submissions
-    //  Redirect to edit views
-    if ($submissions->count() == 1) {
-      return redirect('dashboard/maba/' . $id . '/edit');
+    //  Redirect to details views
+    if ($submission->count() == 1) {
+      return view('tugas.maba.detailTugas', compact('tugas', 'submission'));
     }
 
     return view('tugas.maba.submitTugas', compact('tugas'));
@@ -115,11 +115,8 @@ class mengerjakanController extends Controller
       //Get Current User Submissions
       $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
 
-      //Check the time for accessing data
-      // return Details views only
-      if ($now > new DateTime($tugas->end_time)) {
-        return view('tugas.maba.detailTugas', compact('tugas', 'submission'))->with('error', 'Tenggat waktu terlewati');
-      }
+      if ($submission->status)
+        return redirect('dashboard/maba/' . $id)->with('error', 'Telah dinilai!');
 
       return view('tugas.maba.updateTugas', compact('tugas', 'submission'));
     } catch (Exception $err) {
