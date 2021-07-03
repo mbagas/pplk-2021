@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Dashboard')
 @section('content')
-    <div class="row">
+<div class="col-xl-12 col-lg-12 form-wrapper">
         <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
             <div class="widget-stat card bg-success">
                 <div class="card-body p-4">

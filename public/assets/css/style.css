@@ -30134,7 +30134,7 @@ h6{
   background-color: Transparent;
 }
 .logout-text{
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight:600;  
 }
 .user-icon{
@@ -30181,6 +30181,15 @@ td{
     width: 300%;
     height: 200%;
   }  
+  .user-icon{
+    font-size: 3rem !important;
+  }
+  .logout-icon{
+    font-size: 1.5rem;
+  }
+  .logout-text{
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 992px) {
   #custom-login-bg img{
