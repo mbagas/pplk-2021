@@ -29,7 +29,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="nama" class="form-control" value="{{ $result->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="namaLengkap" class="form-control" value="{{ $result->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
                     </div>
                 </div>
 
@@ -152,7 +152,7 @@
 @endsection
 
 @section('script')
-@if (Auth::user()->roles_id == '1')
+@if(Auth::user()->roles_id == '1')
 <script>
     function editData() {   
         document.getElementById('namaLengkap').disabled = false;
