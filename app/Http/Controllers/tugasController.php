@@ -97,24 +97,8 @@ class tugasController extends Controller
   public function pengerjaan($id)
   {
     //Get Any Submissions Informations
-    // $submissions = Mengerjakan::all()->where('tugas_id', $id);
 
     $submissions = DB::table('mengerjakans')->join('users', 'users_id', '=', 'users.id')->select('*')->get();
-
-    if ($submissions != null) {
-      foreach ($submissions as $data) {
-        error_log($data->nilai);
-      }
-    }
-
-    // $filtered[] = [];
-
-    // foreach ($submissions as $subs) {
-    //   $users = User::where('id', $subs->users_id)->firstOrFail();
-
-    //   if ($users != null)
-    //     error_log($users->id);
-    // }
 
     return view('tugas.content.submissions', compact('submissions'));
   }
@@ -203,7 +187,12 @@ class tugasController extends Controller
 
   public function SaveFiles(Request $request)
   {
-    $namaFiles = $request->judul . '.' . $request->file->extension();
+    $namaFiles = $request->file->getClientOriginalName();
+
+    if (!Storage::exists('Tugas')) {
+      Storage::makeDirectory('Tugas');
+    }
+
     $request->file->storeAs(('Tugas'), $namaFiles);
 
     return $namaFiles;

@@ -8,6 +8,7 @@ use App\Models\Mengerjakan;
 use App\Models\Tugas;
 use DateTime;
 use Exception;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class mengerjakanController extends Controller
@@ -166,9 +167,15 @@ class mengerjakanController extends Controller
   public function SaveFiles(Request $request)
   {
     $UID = Auth::id();
+    $users = User::where('id', $UID)->firstOrFail();
 
-    $namaFiles = $UID . '_' . $request->id . '.' . $request->file->extension();
-    $request->file->storeAs(('Submissions'), $namaFiles);
+    $namaFiles = $request->file->getClientOriginalName();
+
+    if (!Storage::exists('Submissions/' . $users->nim)) {
+      Storage::makeDirectory('Submissions/' . $users->nim);
+    }
+
+    $request->file->storeAs('Submissions/' . $users->nim, $namaFiles);
 
     return $namaFiles;
   }

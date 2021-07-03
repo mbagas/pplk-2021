@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\FileManager;
 use App\Http\Controllers\uptController;
 use App\Http\Controllers\pplkController;
 use App\Http\Controllers\FunFactController;
@@ -54,6 +55,8 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
   //    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   //    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+
+  Route::get('/files/{types}/{id}', [FileManager::class, 'DownloadFile'])->name('file.Download');
 
   Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
 

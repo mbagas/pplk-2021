@@ -35,7 +35,7 @@
         <div class="mb-3 row">
           <label class="col-sm-2 col-form-label col-form-label-lg">File</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control form-control-lg" value="{{$tugas->file}}" readonly>
+            <a href="{{route('dashboard.file.Download', ['Tugas', $tugas->file])}}">{{$tugas->file}}</a>
           </div>
         </div>
 

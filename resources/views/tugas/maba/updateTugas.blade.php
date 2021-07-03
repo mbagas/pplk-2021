@@ -26,10 +26,18 @@
               <input type="text" class="form-control form-control-lg" value="{{$tugas->judul}}" readonly>
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
             <div class="col-sm-10">
               <textarea type="numeric" class="form-control form-control-lg" readonly>{{$tugas->deskripsi}}</textarea>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Tugas</label>
+            <div class="col-sm-10">
+              <a href="{{route('dashboard.file.Download', ['Tugas', $tugas->file])}}">{{$tugas->file}}</a>
             </div>
           </div>
 
@@ -39,6 +47,7 @@
               <input type="text" class="form-control form-control-lg" value="{{$tugas->format}}" readonly>
             </div>
           </div>
+
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Start Time</label>
             <div class="col-sm-10">
