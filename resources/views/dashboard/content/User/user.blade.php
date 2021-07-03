@@ -43,9 +43,14 @@
                                         <td>{{$data->roles->role}}</td>
                                         <td>{{$data->instagram}}</td>
                                         <td class="manage-row">
-                                            <a href="{{route('dashboard.user.edit', $data->id)}}" class="edit-button">
+                                            @if (Auth::user()->roles_id == '1')
+                                                <a href="{{route('dashboard.user.edit', $data->id)}}" class="edit-button">
+                                            @else
+                                                <a href="{{route('dashboardDaplokMentor.user.edit', $data->id)}}" class="edit-button">
+                                            @endif
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                             </a>
+                                            
                                             <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                             </a>

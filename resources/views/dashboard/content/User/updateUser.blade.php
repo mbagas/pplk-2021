@@ -9,7 +9,11 @@
         </div>
 
         <div class="card-body">
+            @if (Auth::user()->roles_id == '1')
             <form method="POST" action="{{ route('dashboard.user.update', $result->id) }}">
+            @else
+            <form method="POST" action="{{ route('dashboardDaplokMentor.user.update', $result->id) }}">
+            @endif
                 @method('PUT')
                 @csrf
 
