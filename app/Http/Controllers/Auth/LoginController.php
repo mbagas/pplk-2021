@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -20,12 +21,22 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
+    
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+    
     public function redirectTo()
     {
-        if (auth()->user()->roles_id == 1) {
+        if (Auth::user()->roles_id == 1) {
             return '/dashboard';
-        } else if (auth()->user()->roles_id == 6) {
+        } else if (Auth::user()->roles_id == 6) {
             return '/dashboardOrmawa';
         } else {
             return '/home';
@@ -49,5 +60,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        if(Auth::user()->roles){
+            return $this->redirectPath();
+        }
     }
 }
