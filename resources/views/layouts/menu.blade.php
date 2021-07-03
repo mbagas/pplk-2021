@@ -9,8 +9,8 @@
                         </div>
                     </div>
                     <div class="header-info ms-3">
-                        <span class="font-w600 ">Hi,<b>Hafizul Bagaskara</b></span>
-                        <small class="text-end font-w400">hfzul.b@gmail.com</small>
+                        <span class="font-w600 ">Hi,<b>{{Auth::user()->nama}}</b></span>
+                        <small class="text-end font-w400">{{Auth::user()->email}}</small>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
