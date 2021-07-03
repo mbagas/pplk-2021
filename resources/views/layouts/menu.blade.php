@@ -9,7 +9,7 @@
                         </div>
                     </div>
                     <div class="header-info ms-3">
-                        <span class="font-w600 ">Hi,<b>{{Auth::user()->nama}}</b></span>
+                        <span class="font-w600 ">Hi, <b>{{Auth::user()->nama}}</b> !</span>
                         <small class="text-end font-w400">{{Auth::user()->email}}</small>
                     </div>
                 </a>
