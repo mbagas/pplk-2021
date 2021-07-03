@@ -106,7 +106,7 @@
                     <label class="col-sm-3 col-form-label">Prodi</label>
                     <div class="col-sm-9">
                         <select name="prodis_id" class="form-control wide" tabindex="0" disabled id="prodi">
-                            <option value="{{ $result->prodis_id }}">{{ $result->prodis->ormawas->namaLengkap }}</option>
+                            <option value="{{ $result->prodis_id }}">{{ $result->namaProdi }}</option>
                             @foreach ($prodi as $data)
                                 <option value="{{$data->id}}">{{$data->ormawas->namaLengkap}}</option>
                             @endforeach

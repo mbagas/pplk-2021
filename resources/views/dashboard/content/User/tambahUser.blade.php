@@ -90,6 +90,7 @@
                     <label class="col-sm-3 col-form-label">Kelompok</label>
                     <div class="col-md-9">
                         <select name="kelompok" class="form-control wide" tabindex="0" required>
+                            <option value="">Pilih Kelompok </option>
                             @for ($i = 1; $i <= 100; $i++)
                                 <option value="{{$i}}">{{$i}} </option>
                             @endfor
@@ -108,6 +109,7 @@
                     <label class="col-sm-3 col-form-label">Prodi</label>
                     <div class="col-sm-9">
                         <select name="prodis_id" class="form-control wide" tabindex="0">
+                            <option value="">Pilih Prodi </option>
                             @foreach ($prodi as $data)
                                 <option value="{{$data->id}}">{{$data->ormawas->namaLengkap}}</option>
                             @endforeach
