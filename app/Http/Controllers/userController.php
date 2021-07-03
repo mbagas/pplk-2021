@@ -105,6 +105,23 @@ class userController extends Controller
     public function update(Request $request, $id)
     {
         //
+        try{
+            $user = User::where('id', $id)->firstOrFail();
+            $user->nama = $request->nama;
+            $user->email = $request->email;
+            if($request->password !== $user->password){
+                $user->password = Hash::make($request->password);
+            }
+            $user->roles_id = $request->roles_id;
+            $user->nim = $request->nim;
+            $user->kelompok = $request->kelompok;
+            $user->prodis_id = $request->prodis_id;
+            $user->instagram = $request->instagram;
+            $user->save();
+        } catch(Exception $ex){
+            return redirect('dashboard/user')->with('error', 'Gagal Update User!');
+        }
+        return redirect('dashboard/user')->with('sukses', 'Sukses Update User!');
     }
 
     /**
