@@ -3316,8 +3316,10 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0;
-  list-style: none; }
+  margin-bottom: auto;
+  align-items:center;
+  list-style: none; 
+}
   .navbar-nav .nav-link {
     padding-right: 0;
     padding-left: 0; }
@@ -30120,6 +30122,24 @@ h6{
   overflow: hidden;
   outline:none;
 }
+.logout-menu{
+  display:flex;
+  margin:auto;
+  align-items:center;
+}
+.logout-icon{
+  font-size: 2rem;
+  text-align: center;
+  color: red;
+  background-color: Transparent;
+}
+.logout-text{
+  font-size: 2rem;
+  font-weight:600;  
+}
+.user-icon{
+  font-size: 3rem;
+}
 td{
   font-weight:400 !important;
 }
@@ -30161,6 +30181,15 @@ td{
     width: 300%;
     height: 200%;
   }  
+  .user-icon{
+    font-size: 3rem !important;
+  }
+  .logout-icon{
+    font-size: 1.5rem;
+  }
+  .logout-text{
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 992px) {
   #custom-login-bg img{
