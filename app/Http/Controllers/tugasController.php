@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mengerjakan;
+use App\Models\Parameter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Tugas;
@@ -67,6 +68,13 @@ class tugasController extends Controller
       $tugas->end_time = $request->end_time;
 
       $tugas->save();
+
+      for ($i = 0; $i < count($request->nama_params); $i++) {
+        $params = new Parameter();
+        $params->nama = $request->nama_params[$i];
+        $params->persen = $request->persen[$i];
+        $params->nama = $tugas->parameters()->save($params);
+      }
     } catch (Exception $err) {
       return redirect('dashboard/tugas')->with('error', 'Gagal Menambahkan Data!');
     }

@@ -19,7 +19,7 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
             <div class="col-sm-10">
-              <textarea type="numeric" name="deskripsi" class="form-control form-control-lg" required></textarea>
+              <textarea type="number" name="deskripsi" class="form-control form-control-lg" required></textarea>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">File</label>
             <div class="col-sm-10">
-              <input type="file" name="file" class="form-control form-control-lg">
+              <input type="file" name="file" class="form-control form-control-lg" required>
             </div>
           </div>
           <div class="mb-3 row">
@@ -47,6 +47,49 @@
               <input type="datetime-local" name="end_time" class="form-control form-control-lg" required>
             </div>
           </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Nama Parameter</label>
+            <div class="col-sm-10">
+              <input type="text" name="nama_params[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Persentase Penilaian</label>
+            <div class="col-sm-10">
+              <input type="number" name="persen[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Nama Parameter</label>
+            <div class="col-sm-10">
+              <input type="text" name="nama_params[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Persentase Penilaian</label>
+            <div class="col-sm-10">
+              <input type="number" name="persen[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Nama Parameter</label>
+            <div class="col-sm-10">
+              <input type="text" name="nama_params[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label col-form-label-lg">Persentase Penilaian</label>
+            <div class="col-sm-10">
+              <input type="number" name="persen[]" class="form-control form-control-lg" required>
+            </div>
+          </div>
+
           <button type="submit" class="btn btn-lg btn-primary">Tambah</button>
 
         </form>

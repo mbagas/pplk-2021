@@ -58,9 +58,9 @@ class mengerjakanController extends Controller
       $submissions->status = false;
 
       $submissions->users_id = $UID;
-      $submissions->tugas_id = $request->id;
 
-      $submissions->save();
+      $tugas = Tugas::where('id', $request->id)->firstOrFail();
+      $tugas->mengerjakans()->save($submissions);
     } catch (Exception $err) {
       return redirect('dashboard/maba')->with('error', 'Gagal Menambahkan Data!');
     }
@@ -83,11 +83,11 @@ class mengerjakanController extends Controller
     $UID = Auth::id();
 
     //Get Submissions
-    $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
+    $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->first();
 
     //If there is a submissions
     //  Redirect to details views
-    if ($submission->count() == 1) {
+    if ($submission != null && $submission->count() == 1) {
       return view('tugas.maba.detailTugas', compact('tugas', 'submission'));
     }
 
