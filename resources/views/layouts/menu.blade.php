@@ -174,11 +174,11 @@
                     </ul>
                 </li>
             @endif
-                
             <div class="copyright">
                 <p><strong>Content Management System PPLK 2021</strong> © 2021 All Rights Reserved</p>
-                <p class="fs-12">Made with <span class="heart"></span> by Abhinaksa</p>
+                <p class="fs-12">Made with <span><i class="fa fa-heart" aria-hidden="true"></i></span> by Abhinaksa</p>
             </div>
+        
         </ul>
     </div>
 </div>

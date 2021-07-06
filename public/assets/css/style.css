@@ -12223,7 +12223,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   100% {
     transform: rotate(0); } }
 .dlabnav {
-  width: 25rem;
+  width: 23rem;
   padding-bottom: 0;
   height: 100%;
   position: absolute;
@@ -12243,13 +12243,13 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       height: 100%; } }
   @media only screen and (max-width: 767px) {
     .dlabnav {
-      width: 25rem; } }
+      width: 23rem; } }
   .dlabnav .dlabnav-scroll {
     position: relative;
     height: 100%; }
   @media only screen and (max-width: 1400px) {
     .dlabnav {
-      width: 25rem; } }
+      width: 23rem; } }
   .dlabnav ul {
     padding: 0;
     margin: 0;
@@ -12457,13 +12457,16 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       padding: 8px 24px; }
 
 .copyright {
-  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  bottom:0;
+  padding: 15px 30px 15px 30px;
   color: var(--font-color-menu);
-  margin-top: 30px; }
+  position:relative; }
   .copyright p {
     font-size: 12px; }
   .copyright strong {
-    display: block;
+    display: flex;
     font-size: 14px; }
 
 @media only screen and (max-width: 1023px) {
@@ -13864,7 +13867,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     [data-sidebar-style="overlay"] .dlabnav .metismenu ul a:before {
       left: 25px; }
   [direction="rtl"][data-sidebar-style="overlay"] .dlabnav {
-    left: auto;
+    left: 0;
     right: -100%; }
   @media only screen and (max-width: 767px) {
     [data-sidebar-style="overlay"] .dlabnav .metismenu > li > a {
