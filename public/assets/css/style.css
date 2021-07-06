@@ -30196,11 +30196,23 @@ td{
     width: 200%;
     height: 200%;
   }
+  .logout-icon{
+    font-size: 1.5rem;
+  }
+  .logout-text{
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 1200px) {
   #custom-login-bg img{
     width: 200%;
     height: 200%;
+  }
+  .logout-icon{
+    font-size: 1.5rem;
+  }
+  .logout-text{
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1440) {
