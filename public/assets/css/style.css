@@ -12243,7 +12243,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       height: 100%; } }
   @media only screen and (max-width: 767px) {
     .dlabnav {
-      width: 25rem; } }
+      width: 18rem; } }
   .dlabnav .dlabnav-scroll {
     position: relative;
     height: 100%; }
