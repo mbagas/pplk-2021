@@ -12243,13 +12243,13 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       height: 100%; } }
   @media only screen and (max-width: 767px) {
     .dlabnav {
-      width: 18rem; } }
+      width: 20rem; } }
   .dlabnav .dlabnav-scroll {
     position: relative;
     height: 100%; }
   @media only screen and (max-width: 1400px) {
     .dlabnav {
-      width: 25rem; } }
+      width: 20rem; } }
   .dlabnav ul {
     padding: 0;
     margin: 0;
