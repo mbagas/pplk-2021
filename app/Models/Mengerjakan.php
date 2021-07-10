@@ -15,4 +15,8 @@ class Mengerjakan extends Model
     public function tugas(){
         return $this->belongsTo(Tugas::class, 'tugas_id');
     }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

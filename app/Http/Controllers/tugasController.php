@@ -106,7 +106,7 @@ class tugasController extends Controller
   {
     //Get Any Submissions Informations
 
-    $submissions = DB::table('mengerjakans')->join('users', 'users_id', '=', 'users.id')->select('*')->get();
+    $submissions = Mengerjakan::all();
 
     return view('tugas.content.submissions', compact('submissions'));
   }
