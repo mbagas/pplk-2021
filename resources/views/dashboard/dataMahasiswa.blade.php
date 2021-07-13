@@ -22,13 +22,13 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-2 col-form-label col-form-label-lg">Nama</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="nama" class="form-control form-control-lg" value="" placeholder="Naufal Taufiq Ridwan" required>
+                                                    <input type="text" name="nama" class="form-control  " value="" placeholder="Naufal Taufiq Ridwan" required>
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
                                                 <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" name="email" class="form-control form-control-lg" value="" placeholder="pplk@student.itera.ac.id" required>
+                                                    <input type="email" name="email" class="form-control  " value="" placeholder="pplk@student.itera.ac.id" required>
                                                 </div>
                                             </div>
                                         
@@ -56,7 +56,7 @@
                                             <div class="mb-3 row">
                                                 <label class="col-sm-2 col-form-label col-form-label-lg">Passsword</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" name="password" class="form-control form-control-lg" value="" placeholder="********" required>
+                                                    <input type="password" name="password" class="form-control  " value="" placeholder="********" required>
                                                 </div>
                                             </div>
                                         

@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title', 'Data UPT')
+@section('title', 'Data Kamus Gaul')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
+    <div class="col-xl-12 col-lg-12 form-wrapper">
+        <h1 class="content-title">Kelola Data Kamus Gaul</h1>
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Kamus Gaul Lampung</h4>
+                    <h4 class="card-title">Kamus Gaul Lampung</h4>
                 </div>
                 <div class="card-body">
                     @if (session('sukses'))
@@ -18,31 +18,46 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-responsive-md">
+                        <table id="example4" class="display" style="min-width: 845px">
                             <thead>
                                 <tr>
-                                    <th style="width:80px;"><strong>Gaul</strong></th>
-                                    <th class="text-center"><strong>Asli</strong></th>
-                                    <th class="text-center"><strong>ACTION</strong></th>
+                                    <th>No</th>
+                                    <th>Gaul</th>
+                                    <th>Asli</th>
+                                    <th>More</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($result as $data )
                                     <tr>
-                                        <td class="text-center">{{$data->gaul}}</td>
-                                        <td class="text-center">{{$data->asli}}</td>
-                                        <td class="text-center">
-                                            <div class="dropdown">
-                                                <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-                                                </button>
-                                                <div class="dropdown-menu" style="margin: 0px;">
-                                                    <a class="dropdown-item" href="{{ route('dashboard.kamusGaul.edit', $data->id) }}">Edit</a>
-                                                    <form action="{{route('dashboard.kamusGaul.destroy', $data->id)}}" method="POST">
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <input type="submit" class="dropdown-item" name="" id="" value="Hapus">
-                                                    </form>
+                                        <td>{{$data->id}}</td>
+                                        <td>{{$data->gaul}}</td>
+                                        <td>{{$data->asli}}</td>
+                                        <td class="manage-row">
+                                            <a href="{{route('dashboard.kamusGaul.edit', $data->id)}}" class="edit-button">
+                                              <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </a>
+                                            <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                                              <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                            <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"><strong>Hapus Data</strong></h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
+                                                        <div class="modal-footer">
+                                                            <form action="{{route('dashboard.kamusGaul.destroy', $data->id)}}" method="POST">
+                                                                @method('DELETE')
+                                                                @csrf
+                                                                <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
+                                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </td>
@@ -54,7 +69,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-
 @endsection

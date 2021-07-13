@@ -17,7 +17,7 @@ class uptController extends Controller
     public function index()
     {
         //
-        $result = Upt::paginate(10);
+        $result = Upt::all();
 
         return view('dashboard.content.Upt.upt', compact('result'));
     }

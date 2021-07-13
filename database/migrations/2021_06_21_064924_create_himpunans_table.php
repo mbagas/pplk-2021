@@ -15,12 +15,12 @@ class CreateHimpunansTable extends Migration
     {
         Schema::create('himpunans', function (Blueprint $table) {
             $table->id();
-            $table->string('kodeWarna', 30);
-            $table->string('pembina', 30);
-            $table->string('ketuaHimpunan', 30);
-            $table->integer('tahunBerdiri');
-            $table->string('logo', 50);
-            $table->text('filosofiLogo');
+            $table->string('kodeWarna', 30)->nullable();
+            $table->string('pembina', 30)->nullable();
+            $table->string('ketuaHimpunan', 30)->nullable();
+            $table->integer('tahunBerdiri')->nullable();
+            $table->string('logo', 50)->nullable();
+            $table->text('filosofiLogo')->nullable();
             $table->foreignId('ormawas_id');
             $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');
             $table->timestamps();

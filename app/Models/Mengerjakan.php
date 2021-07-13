@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Mengerjakan extends Model
 {
     use HasFactory;
-    
     protected $table = 'mengerjakans';
     protected $fillable = ['file', 'jawaban', 'nilai', 'status', 'users_id', 'tugas_id'];
 
@@ -16,7 +15,7 @@ class Mengerjakan extends Model
         return $this->belongsTo(Tugas::class, 'tugas_id');
     }
 
-    public function user(){
-        return $this->belongsTo(User::class, 'user_id');
+    public function users(){
+        return $this->belongsTo(User::class, 'users_id');
     }
 }

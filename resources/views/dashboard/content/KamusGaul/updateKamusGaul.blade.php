@@ -1,38 +1,52 @@
 @extends('layouts.master')
-@section('title', 'Update Prodi')
+@section('title', 'Update Kamus Gaul')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
+        <div class="col-xl-12 col-lg-12 form-wrapper">
+            <h1 class="content-title">Perbarui Kamus Gaul</h1>
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Update Kamus Gaul Lampung</h4>
+                    <h4 class="card-title">Kata Gaul</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('dashboard.kamusGaul.update', $result->id) }}">
-                        @method('PUT')
-                        @csrf
+                   <div class="basic-form">
+                        <form method="POST" action="{{ route('dashboard.kamusGaul.update', $result->id) }}">
+                            @method('PUT')
+                            @csrf
 
-                        <input name="id" value="{{ $result->id }}" type="hidden">
-                        <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Nama</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="gaul" class="form-control form-control-lg" value="{{ $result->gaul }}" required>
-                        </div>
-                        </div>
+                            <input name="id" value="{{ $result->id }}" type="hidden">
+                            <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Nama</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="gaul" id="gaul" class="form-control" value="{{ $result->gaul }}" required disabled>
+                            </div>
+                            </div>
 
-                        <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label col-form-label-lg">Deskripsi</label>
-                        <div class="col-sm-10">
-                            <textarea type="text" name="asli" class="form-control form-control-lg" required>{{ $result->asli }}</textarea>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-primary">Update</button>
+                            <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Deskripsi</label>
+                            <div class="col-sm-9">
+                                <textarea type="text" name="asli" id="asli" class="form-control" required disabled>{{ $result->asli }}</textarea>
+                            </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-primary " >Simpan</button>
+                                    <button type="button" class="btn btn-outline-primary " onclick="editData()">Edit</button>
+                                </div>
+                            </div>
 
-                    </form>
-
+                        </form>
+                   </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
 
+@section('script')
+<script>
+    function editData() {   
+        document.getElementById('gaul').disabled = false;
+        document.getElementById('asli').disabled = false;
+    }
+</script>
 @endsection

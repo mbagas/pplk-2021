@@ -14,12 +14,27 @@ class JurusanSeeder extends Seeder
      */
     public function run()
     {
-        Jurusan::query()->create([
-            'namaLengkap'=>'Jurusan Tester',
-            'namaSingkat'=>'JT',
-            'kepalaJurusan'=>'Kepala tester',
-            'ruangJurusan'=>001
-        ]);
+       $jurusan = [
+            [
+                'namaLengkap' => 'Jurusan Teknologi Infrastruktur dan Kewilayahan',
+                'namaSingkat' => 'JTIK',
+                'kepalaJurusan' => 'Kepala tester',
+                'ruangJurusan' => 001
+            ],
+            [
+                'namaLengkap' => 'Jurusan Teknologi Produksi dan Industri',
+                'namaSingkat' => 'JTPI',
+                'kepalaJurusan' => 'Kepala tester',
+                'ruangJurusan' => 001
+            ],
+            [
+                'namaLengkap' => 'Jurusan Sains',
+                'namaSingkat' => 'JS',
+                'kepalaJurusan' => 'Kepala tester',
+                'ruangJurusan' => 001
+            ]
+        ];
+        Jurusan::query()->insert($jurusan);
 
     }
 }

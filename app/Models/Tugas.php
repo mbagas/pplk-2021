@@ -17,6 +17,6 @@ class Tugas extends Model
     }
 
     public function parameters(){
-        return $this->hasMany(Mengerjakan::class, 'tugas_id');
+        return $this->hasMany(Parameter::class, 'tugas_id');
     }
 }

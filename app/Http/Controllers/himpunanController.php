@@ -10,6 +10,7 @@ use App\Models\Artikel;
 use App\Models\VisiMisi;
 use App\Models\SocialMedia;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class himpunanController extends Controller
 {
@@ -20,7 +21,7 @@ class himpunanController extends Controller
    */
   public function index()
   {
-    $result = Himpunan::with("ormawas")->paginate(10);
+    $result = Himpunan::with("ormawas")->get();
 
     return view("dashboard.content.Himpunan.himpunan", compact('result'));
   }
@@ -67,6 +68,7 @@ class himpunanController extends Controller
   public function store(Request $request)
   {
     try {
+
       $ormawa = new Ormawa();
       $ormawa->namaLengkap = $request->namaLengkap;
       $ormawa->namaSingkat = $request->namaSingkat;
@@ -80,9 +82,11 @@ class himpunanController extends Controller
       $himpunan->tahunBerdiri = $request->tahunBerdiri;
       $himpunan->filosofiLogo = $request->filosofiLogo;
 
-      $logo = $this->SaveFiles($request);
-
-      $himpunan->logo = 'Himpunan/' . $logo;
+      if($request->logo !== NULL){
+        $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
+        $request->logo->storeAs(('Himpunan'), $namaFile);
+        $himpunan->logo = 'Himpunan/' . $namaFile;
+      }
 
       $ormawa->himpunans()->save($himpunan);
 
@@ -100,7 +104,7 @@ class himpunanController extends Controller
       $ormawa->visimisis()->save($visiMisi);
 
       $artikel = new Artikel();
-      $artikel->body = $request->artikel;
+      $artikel->body = $request->deskripsi;
 
       $ormawa->artikels()->save($artikel);
     } catch (Exception $err) {
@@ -129,16 +133,18 @@ class himpunanController extends Controller
    */
   public function edit($id)
   {
-    try {
-      $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-      $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-      $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-      $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
 
-      return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
-    } catch (Exception $err) {
-      return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
-    }
+      try {
+        $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+        $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
+        $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
+        $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+
+        return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
+      } catch (Exception $err) {
+        return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
+      }
+  
   }
 
   /**
@@ -176,9 +182,13 @@ class himpunanController extends Controller
     try {
 
       $ormawa = Ormawa::where('id', $id)->firstOrFail();
-      $ormawa->namaLengkap = $request->namaLengkap;
-      $ormawa->namaSingkat = $request->namaSingkat;
-
+      if($request->namaLengkap !== NULL){
+          $ormawa->namaLengkap = $request->namaLengkap;
+      }
+      if($request->namaSingkat !== NULL){
+          $ormawa->namaSingkat = $request->namaSingkat;
+      }
+      
       $ormawa->save();
 
       $himpunan = Himpunan::where('ormawas_id', $id)->firstOrFail();
@@ -213,14 +223,24 @@ class himpunanController extends Controller
       $visiMisi->save();
 
       $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-      $artikel->body = $request->artikel;
+      $artikel->body = $request->deskripsi;
 
       $artikel->save();
     } catch (Exception $err) {
-      return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
+      if(Auth::user()->roles_id == 1){
+        return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
+      }
+      elseif(Auth::user()->roles_id == 6){
+        return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
+      }
     }
 
-    return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
+    if(Auth::user()->roles_id == 1){
+      return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
+    }
+    elseif(Auth::user()->roles_id == 6){
+      return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
+    }
   }
 
   /**

@@ -15,7 +15,7 @@ class CreateArtikelsTable extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->id();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->foreignId('ormawas_id');
             $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');
             $table->timestamps();
