@@ -90,9 +90,9 @@ class ukmController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UkmUpdateRequest $request, $id)
+    public function update(UkmUpdateRequest $request, Ormawa $ukm)
     {
-        dd($id);
+        dd($ukm);
         DB::transaction(function () use ($ukm, $request){
             $ukmData = Ukm::where('ormawas_id', $ukm->id)->first();
 
