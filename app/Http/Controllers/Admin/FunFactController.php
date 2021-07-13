@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreFunFactRequest;
 use App\Models\Funfact;
 use Illuminate\Contracts\View\View;

@@ -11,7 +11,16 @@
         <div class="card-body">
         <div class="basic-form">
             @if (Auth::user()->roles_id == '1')
-                <form method="POST" action="{{ route('dashboard.ukm.update', $result->ormawas->id) }}">
+                @if (session('sukses'))
+                    <div class="alert alert-success">
+                        {{ session('sukses') }}
+                    </div>
+                @elseif (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                <form method="POST" action="{{ route('dashboard.ukm.update', $ukm->id) }}" enctype="multipart/form-data">
             @else
                 @if (session('sukses'))
                     <div class="alert alert-success">

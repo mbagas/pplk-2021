@@ -1,19 +1,19 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\uptController;
-use App\Http\Controllers\pplkController;
-use App\Http\Controllers\FunFactController;
-use App\Http\Controllers\himpunanController;
-use App\Http\Controllers\prodiController;
-use App\Http\Controllers\ukmController;
-use App\Http\Controllers\jurusanController;
-use App\Http\Controllers\senatController;
-use App\Http\Controllers\kamusGaulController;
-use App\Http\Controllers\kabinetController;
-use App\Http\Controllers\ormawaController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\Admin\dashboardController;
+use App\Http\Controllers\Admin\uptController;
+use App\Http\Controllers\Admin\pplkController;
+use App\Http\Controllers\Admin\FunFactController;
+use App\Http\Controllers\Admin\himpunanController;
+use App\Http\Controllers\Admin\prodiController;
+use App\Http\Controllers\Admin\ukmController;
+use App\Http\Controllers\Admin\jurusanController;
+use App\Http\Controllers\Admin\senatController;
+use App\Http\Controllers\Admin\kamusGaulController;
+use App\Http\Controllers\Admin\kabinetController;
+use App\Http\Controllers\Admin\ormawaController;
+use App\Http\Controllers\Admin\userController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -61,15 +61,15 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
 });
 
-Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
-    // Ini Route yang hanya bisa diakses Role Ormawa
+// Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
+//     // Ini Route yang hanya bisa diakses Role Ormawa
 
  
-    Route::get('/', [ormawaController::class, 'index'])->name('index');
-    Route::resource('prodi', prodiController::class)->only(['update']);
-    Route::resource('ukm', ukmController::class)->only(['update']);
-    Route::resource('himpunan', himpunanController::class)->only(['update']);
-});
+//     Route::get('/', [ormawaController::class, 'index'])->name('index');
+//     Route::resource('prodi', prodiController::class)->only(['update']);
+//     Route::resource('ukm', ukmController::class)->only(['update']);
+//     Route::resource('himpunan', himpunanController::class)->only(['update']);
+// });
 
 Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('dashboardDaplokMentor')->group(function () {
     // Ini Route yang hanya bisa diakses Role DaplokMentor
