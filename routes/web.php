@@ -61,15 +61,15 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
 });
 
-// Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
-//     // Ini Route yang hanya bisa diakses Role Ormawa
+Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
+    // Ini Route yang hanya bisa diakses Role Ormawa
 
  
-//     Route::get('/', [ormawaController::class, 'index'])->name('index');
-//     Route::resource('prodi', prodiController::class)->only(['update']);
-//     Route::resource('ukm', ukmController::class)->only(['update']);
-//     Route::resource('himpunan', himpunanController::class)->only(['update']);
-// });
+    Route::get('/', [ormawaController::class, 'index'])->name('index');
+    Route::resource('prodi', prodiController::class)->only(['update']);
+    Route::resource('ukm', ukmController::class)->only(['update']);
+    Route::resource('himpunan', himpunanController::class)->only(['update']);
+});
 
 Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('dashboardDaplokMentor')->group(function () {
     // Ini Route yang hanya bisa diakses Role DaplokMentor
