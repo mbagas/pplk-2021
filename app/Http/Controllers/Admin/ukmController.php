@@ -92,7 +92,7 @@ class ukmController extends Controller
      */
     public function update(UkmUpdateRequest $request, Ormawa $ukm)
     {
-        dd($ukm);
+        
         DB::transaction(function () use ($ukm, $request){
             $ukmData = Ukm::where('ormawas_id', $ukm->id)->first();
 

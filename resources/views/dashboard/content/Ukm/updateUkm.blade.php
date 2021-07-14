@@ -9,6 +9,13 @@
             <h4 class="card-title">UKM/Komunitas</h4>
         </div>
         <div class="card-body">
+            @if($errors->any())
+                        @foreach($errors->all() as $data)
+                            <div class="alert alert-danger">
+                                {{ $data }}
+                            </div>
+                        @endforeach
+                    @endif
         <div class="basic-form">
             @if (Auth::user()->roles_id == '1')
                 @if (session('sukses'))
@@ -20,7 +27,7 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('dashboard.ukm.update', $ukm->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('dashboard.ukm.update', $ukm) }}" enctype="multipart/form-data">
             @else
                 @if (session('sukses'))
                     <div class="alert alert-success">
