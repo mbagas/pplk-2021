@@ -38,7 +38,7 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('dashboardOrmawa.ukm.update', $result->ormawas->id) }}">
+                <form method="POST" action="{{ route('dashboardOrmawa.ukm.update', $ukmData->ormawas->id) }}">
             @endif
 
                         @method('PUT')
@@ -48,7 +48,7 @@
                     <label class="col-sm-3 col-form-label">Nama Singkat</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Nama Singkat" name="namaSingkat"
-                            id="namaSingkat" value="{{ $result->ormawas->namaSingkat }}" required disabled>
+                            id="namaSingkat" value="{{ $ukmData->ormawas->namaSingkat }}" required disabled>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                     <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap"
-                            id="namaLengkap" value="{{ $result->ormawas->namaLengkap }}" required disabled>
+                            id="namaLengkap" value="{{ $ukmData->ormawas->namaLengkap }}" required disabled>
                     </div>
                 </div>
 
@@ -64,62 +64,62 @@
                     <label class="col-sm-3 col-form-label">Pembina</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Pembina" name="pembina" id="pembina"
-                            value="{{ $result->pembina }}" disabled>
+                            value="{{ $ukmData->pembina }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Ketua Umum</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Ketua Umum" name="ketuaUmum" id="ketuaUmum"
-                            value="{{ $result->ketuaUmum }}" disabled>
+                            value="{{ $ukmData->ketuaUmum }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Tahun Berdiri</label>
                     <div class="col-sm-9">
                         <input type="number" class="form-control" name="tahunBerdiri" id="tahunBerdiri"
-                            value="{{ $result->tahunBerdiri }}" disabled>
+                            value="{{ $ukmData->tahunBerdiri }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $result->ormawas->visiMisis->visi }}" disabled>
+                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $ukmData->ormawas->visiMisis->visi }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Misi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $result->ormawas->visiMisis->misi }}</textarea>
+                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $ukmData->ormawas->visiMisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Logo</label>
-                    <img class="img-thumbnail w-25" src="{{ $result->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+                    <img class="img-thumbnail w-25" src="{{ $ukmData->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
                     
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $result->logo }}" disabled>
+                        <input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $ukmData->logo }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Filosofi Logo</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo"
-                            id="filosofiLogo" value="{{ $result->filosofiLogo }}" disabled>
+                            id="filosofiLogo" value="{{ $ukmData->filosofiLogo }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Barcode</label>
                     <div class="col-sm-9">
                         <input type="file" accept="image/*" class="form-control" name="barcode" id="barcode"
-                            value="{{ $result->barcode }}" disabled>
+                            value="{{ $ukmData->barcode }}" disabled>
                     </div>
                 </div>
                 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9 ">
-                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled>{{ $artikel->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled>{{ $ukmData->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -137,21 +137,21 @@
                                     <label class="col-sm-3 col-form-label">Website</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Website" name="website"
-                                            id="website" value="{{ $result->ormawas->socialMedias->website }}" disabled>
+                                            id="website" value="{{ $ukmData->ormawas->socialMedias->website }}" disabled>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Instagram</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Instagram" name="instagram"
-                                            id="instagram" value="{{ $result->ormawas->socialMedias->instagram }}" disabled>
+                                            id="instagram" value="{{ $ukmData->ormawas->socialMedias->instagram }}" disabled>
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label">Youtube</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" placeholder="Youtube" name="youtube"
-                                            id="youtube" value="{{ $result->ormawas->socialMedias->youtube }}" disabled>
+                                            id="youtube" value="{{ $ukmData->ormawas->socialMedias->youtube }}" disabled>
                                     </div>
 
                                 </div>

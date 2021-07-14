@@ -51,11 +51,8 @@ class ukmController extends Controller
     public function edit(Ormawa $ukm)
     {
 
-        $result = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
-        $artikel = Artikel::where('ormawas_id', $ukm->id)->firstOrFail();
-        $socialMedia = SocialMedia::where('ormawas_id', $ukm->id)->firstOrFail();
-        $visiMisi = VisiMisi::where('ormawas_id', $ukm->id)->firstOrFail();
-        return view('dashboard.content.Ukm.edit', compact('ukm','result', 'artikel', 'socialMedia', 'visiMisi'));
+        $ukmData = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
+        return view('dashboard.content.Ukm.edit', compact('ukm','ukmData'));
 
     }
 
@@ -98,7 +95,9 @@ class ukmController extends Controller
             }
 
             if ($request->has('visi') or $request->has('misi')) {
-                VisiMisi::create(
+                $visiMisiData = VisiMisi::where('ormawas_id', $ukm->id)->first();
+
+                $visiMisiData->update(
                     [
                         'visi'          => $request->visi,
                         'misi'          => $request->misi,
