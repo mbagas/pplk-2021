@@ -15,8 +15,8 @@ class CreateKamusgaulsTable extends Migration
     {
         Schema::create('kamusgauls', function (Blueprint $table) {
             $table->id();
-            $table->string('gaul', 50)->nullable();
-            $table->string('asli', 50)->nullable();
+            $table->string('gaul')->nullable();
+            $table->string('asli')->nullable();
             $table->timestamps();
         });
     }

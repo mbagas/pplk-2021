@@ -15,7 +15,7 @@ class CreatePplksTable extends Migration
     {
         Schema::create('pplks', function (Blueprint $table) {
             $table->id();
-            $table->string('logo', 50);
+            $table->string('logo');
             $table->text('visi');
             $table->text('misi');
             $table->timestamps();

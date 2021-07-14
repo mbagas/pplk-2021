@@ -15,8 +15,8 @@ class CreateSocialMediaTable extends Migration
     {
         Schema::create('social_medias', function (Blueprint $table) {
             $table->id();
-            $table->string('website', 100)->nullable();
-            $table->string('instagram', 30)->nullable();
+            $table->string('website')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('youtube')->nullable();
             $table->foreignId('ormawas_id');
             $table->foreign('ormawas_id')->references('id')->on('ormawas')->onDelete('cascade');

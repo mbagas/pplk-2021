@@ -95,6 +95,8 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Logo</label>
+                    <img class="img-thumbnail w-25" src="{{ $result->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+                    
                     <div class="col-sm-9">
                         <input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $result->logo }}" disabled>
                     </div>

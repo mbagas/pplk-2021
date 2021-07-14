@@ -17,33 +17,19 @@ use Illuminate\Support\Facades\DB;
 
 class ukmController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $ukms = Ukm::with('ormawas')->get();
-        return view('dashboard.content.Ukm.ukm', compact('ukms'));
+        return view('dashboard.content.Ukm.index', compact('ukms'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        return view('dashboard.content.Ukm.tambahUkm');
+        return view('dashboard.content.Ukm.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(UkmStoreRequest $request)
     {
         $ormawa = Ormawa::create(
@@ -62,34 +48,18 @@ class ukmController extends Controller
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Ormawa $ukm)
     {
 
-        try{
-            $result = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
-            $artikel = Artikel::where('ormawas_id', $ukm->id)->firstOrFail();
-            $socialMedia = SocialMedia::where('ormawas_id', $ukm->id)->firstOrFail();
-            $visiMisi = VisiMisi::where('ormawas_id', $ukm->id)->firstOrFail();
-            return view('dashboard.content.Ukm.updateUkm', compact('ukm','result', 'artikel', 'socialMedia', 'visiMisi'));
-        } catch(Exception $ex){
-            return $ex;
-        }
-        
+        $result = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
+        $artikel = Artikel::where('ormawas_id', $ukm->id)->firstOrFail();
+        $socialMedia = SocialMedia::where('ormawas_id', $ukm->id)->firstOrFail();
+        $visiMisi = VisiMisi::where('ormawas_id', $ukm->id)->firstOrFail();
+        return view('dashboard.content.Ukm.edit', compact('ukm','result', 'artikel', 'socialMedia', 'visiMisi'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(UkmUpdateRequest $request, Ormawa $ukm)
     {
         
@@ -160,27 +130,11 @@ class ukmController extends Controller
         
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        try{
-
-            $ukm = Ukm::where('ormawas_id', $id)->first();
-            $ukm->delete();
-
-            $artikel = Artikel::where('ormawas_id', $id)->first();
-            $artikel->delete();
-
-            $ormawa = Ormawa::where('id', $id)->first();
-            $ormawa->delete();
-        } catch(Exception $ex){
-            return redirect('dashboard/ukm')->with('error', 'Gagal Hapus Data!');
-        }
+        $ormawa = Ormawa::where('id', $id)->first();
+        $ormawa->delete();
+ 
         return redirect('dashboard/ukm')->with('sukses', 'Berhasil Hapus Data!');
     }
 }

@@ -15,10 +15,10 @@ class CreateJurusansTable extends Migration
     {
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
-            $table->string('namaLengkap', 100);
-            $table->string('namaSingkat', 10);
-            $table->string('kepalaJurusan', 50);
-            $table->string('ruangJurusan', 10);
+            $table->string('namaLengkap');
+            $table->string('namaSingkat');
+            $table->string('kepalaJurusan');
+            $table->string('ruangJurusan');
         });
     }
 
