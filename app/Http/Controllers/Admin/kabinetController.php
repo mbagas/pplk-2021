@@ -2,31 +2,24 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\KabinetStoreRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Kabinet;
 use Exception;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class kabinetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
-        $result = Kabinet::all();
+        $kabinets = Kabinet::all();
 
-        return view('dashboard.content.Kabinet.kabinet', compact('result'));
+        return view('dashboard.content.Kabinet.index', compact('kabinets'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
@@ -39,110 +32,79 @@ class kabinetController extends Controller
          return redirect('dashboard/kabinet/' . $id . '/edit')->with('error', 'Data sudah tersedia!');
         }
 
-        return view('dashboard.content.Kabinet.tambahKabinet',compact('result'));
+        return view('dashboard.content.Kabinet.create',compact('result'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(KabinetStoreRequest $request)
     {
-        //
-        try{
-            $namaFile = 'logoKabinet'.'.'.$request->logo->extension();
-            $request->logo->storeAs(('kabinet'), $namaFile);
-            $namaOrganigram = 'organigramKabinet'.'.'.$request->organigram->extension();
-            $request->organigram->storeAs(('kabinet'), $namaOrganigram);
+        Kabinet::create(
+            [
+                'nama'          => $request->nama,
+                'presiden'      => $request->presiden,
+                'sekjen'        => $request->sekjen,
+                'organigram'    => url($request->file('organigram')->move('kabinet','organigram' . '.' . $request->file('organigram')->extension())),
+                'logo'          => url($request->file('logo')->move('kabinet','logo' . '.' . $request->file('logo')->extension())),
+                'filosofiLogo'  => $request->filosofiLogo,
+                'deskripsi'     => $request->deskripsi,
+            ]
+        );
 
-            $kabinet = new Kabinet();
-            $kabinet->nama = $request->nama;
-            $kabinet->presiden = $request->presiden;
-            $kabinet->sekjen = $request->sekjen;
-            $kabinet->organigram = 'kabinet/'.$namaOrganigram;
-            $kabinet->logo = 'kabinet/'.$namaFile;
-            $kabinet->filosofiLogo = $request->filosofiLogo;
-            $kabinet->deskripsi = $request->deskripsi;
-            $kabinet->save();
-        }catch(Exception $ex){
-            return $ex;
-        }
+        
 
-        return redirect('dashboard/kabinet')->with('sukses','Berhasil Menambahkan Data!');
+        return redirect()->route('dashboard.kabinet.index')->with('sukses','Berhasil Menambahkan Data!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Kabinet $kabinet)
     {
         //
         try{
-            $result = Kabinet::where('id', $id)->firstOrFail();
-            return view('dashboard.content.Kabinet.updateKabinet',compact('result'));
+            $result = Kabinet::where('id', $kabinet->id)->firstOrFail();
+            return view('dashboard.content.Kabinet.edit',compact('result','kabinet'));
         } catch(Exception $ex){
             return redirect('dashboard/kabinet')->with('error', 'Gagal Edit Data!');
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(KabinetStoreRequest $request, Kabinet $kabinet)
     {
-        //
-        try{
-            
-            $kabinet = Kabinet::where('id', $id)->firstOrFail();
-            $kabinet->nama = $request->nama;
-            $kabinet->presiden = $request->presiden;
-            $kabinet->sekjen = $request->sekjen;
-            $kabinet->organigram = $request->organigram;
-            if($request->organigram != NULL){
-                $namaOrganigram = 'organigramKabinet'.'.'.$request->organigram->extension();
-                $request->organigram->storeAs(('kabinet'), $namaOrganigram);
-                $kabinet->organigram = 'kabinet/'.$namaOrganigram;
+        DB::transaction(function () use ($kabinet, $request){
+            $kabinetData = Kabinet::where('id', $kabinet->id)->first();
+
+            $kabinetData->update(
+                [
+                    'nama'          => $request->nama,
+                    'presiden'     => $request->presiden,
+                    'sekjen'        => $request->sekjen,
+                    'filosofiLogo'  => $request->filosofiLogo,
+                    'deksripsi'     => $request->deskripsi
+                ]
+            );
+
+            if($request->hasFile('organigram')){
+                $kabinetData->update(
+                    [
+                        'organigram' => url($request->file('organigram')->move('kabinet','organigram' . '.' . $request->file('organigram')->extension()))
+                    ]
+                );
             }
-            if($request->logo != NULL){
-                $namaFile = 'logoKabinet'.'.'.$request->logo->extension();
-                $request->logo->storeAs(('kabinet'), $namaFile);
-                $kabinet->logo = 'kabinet/'.$namaFile;
+
+            if($request->hasFile('logo')){
+                $kabinetData->update(
+                    [
+                        'logo' => url($request->file('logo')->move('kabinet','logo' . '.' . $request->file('logo')->extension()))
+                    ]
+                );
             }
-            $kabinet->filosofiLogo = $request->filosofiLogo;
-            $kabinet->deskripsi = $request->deskripsi;
-            $kabinet->save();
-        }catch(Exception $ex){
-            return redirect('dashboard/kabinet')->with('error', 'Gagal Edit Data!');
-        }
-        return redirect('dashboard/kabinet')->with('sukses', 'Berhasil Edit Data!');
+        });
+        return redirect()->route('dashboard.kabinet.index')->with('sukses', 'Berhasil Edit Data!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //
