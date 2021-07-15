@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SenatStoreRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Senat;
 use Exception;
 
@@ -17,9 +18,9 @@ class senatController extends Controller
    */
   public function index()
   {
-    $result = Senat::all();
+    $senats = Senat::all();
 
-    return view('dashboard.content.Senat.senat', compact('result'));
+    return view('dashboard.content.Senat.index', compact('senats'));
   }
 
   /**
@@ -30,14 +31,14 @@ class senatController extends Controller
   public function create()
   {
     $counts = Senat::count();
-    $result = Senat::get();
+    $senats = Senat::get();
 
     if ($counts == 1) {
-      $id = $result->first()->id;
+      $id = $senats->first()->id;
       // return view('dashboard.content.Senat.updateSenat', compact('result'));
       return redirect('dashboard/senat/' . $id . '/edit')->with('error', 'Data sudah tersedia!');
     }
-    return view('dashboard.content.Senat.tambahSenat', compact('result'));
+    return view('dashboard.content.Senat.create', compact('senats'));
   }
 
   /**
@@ -46,21 +47,19 @@ class senatController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(SenatStoreRequest $request)
   {
-    try {
-      $senat = new Senat();
-      $senat->ketua = $request->ketua;
-      $senat->deskripsi = $request->deskripsi;
-      $senat->website = $request->website;
-      $senat->youtube = $request->youtube;
-      $senat->instagram = $request->instagram;
-      $senat->save();
-    } catch (Exception $ex) {
-      return redirect('dashboard/senat')->with('error', 'Gagal Menambahkan Data!');
-    }
+    Senat::create(
+      [
+        'ketua'     => $request->ketua,
+        'deskripsi' => $request->deskripsi,
+        'website'   => $request->website,
+        'youtube'   => $request->youtube,
+        'instagram' => $request->instagram
+      ]
+    );
 
-    return redirect('dashboard/senat')->with('sukses', 'Berhasil Menambahkan Data!');
+    return redirect()->route('dashboard.senat.index')->with('sukses', 'Berhasil Menambahkan Data!');
   }
 
   /**
@@ -79,13 +78,13 @@ class senatController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+  public function edit(Senat $senat)
   {
     try {
-      $result = Senat::where('id', $id)->firstOrFail();
-      return view('dashboard.content.Senat.updateSenat', compact('result'));
+      $result = Senat::where('id', $senat->id)->firstOrFail();
+      return view('dashboard.content.Senat.update', compact('result'));
     } catch (Exception $ex) {
-      return redirect('dashboard/senat')->with('error', 'Gagal Edit Data!');
+      return redirect()->route('dashboard.senat.index')->with('error', 'Gagal Edit Data!');
     }
   }
 
@@ -96,21 +95,22 @@ class senatController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request)
+  public function update(SenatStoreRequest $request, Senat $senat)
   {
-    try {
-      $id = $request->id;
-      $senat = Senat::where('id', $id)->firstOrFail();
-      $senat->ketua = $request->ketua;
-      $senat->deskripsi = $request->deskripsi;
-      $senat->website = $request->website;
-      $senat->youtube = $request->youtube;
-      $senat->instagram = $request->instagram;
-      $senat->save();
-    } catch (Exception $ex) {
-      return $ex;
-    }
-    return redirect('dashboard/senat')->with('sukses', 'Berhasil Edit Data!');
+    DB::transaction(function () use ($senat,$request){
+        $senatData = Senat::where('id',$senat->id)->first();
+
+        $senatData->update(
+            [
+              'ketua'     => $request->ketua,
+              'deskripsi' => $request->deskripsi,
+              'website'   => $request->website,
+              'youtube'   => $request->youtube,
+              'instagram' => $request->instagram
+            ]
+        );
+    });
+    return redirect()->route('dashboard.senat.index')->with('sukses', 'Berhasil Edit Data!');
   }
 
   /**
@@ -123,9 +123,9 @@ class senatController extends Controller
   {
     Senat::destroy($id);
     try {
-      return redirect('dashboard/senat')->with('sukses', 'Berhasil Hapus Data!');
+      return redirect()->route('dashboard.senat.index')->with('sukses', 'Berhasil Hapus Data!');
     } catch (Exception $ex) {
-      return redirect('dashboard/senat')->with('error', 'Gagal Hapus Data!');
+      return redirect()->route('dashboard.senat.index')->with('error', 'Gagal Hapus Data!');
     }
   }
 }

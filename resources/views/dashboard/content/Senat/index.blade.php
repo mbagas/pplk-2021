@@ -30,21 +30,21 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($result as $data )
+            @foreach ($senats as $senat )
             <tr>
-              <td>{{$data->ketua}}</td>
-              <td>{{$data->deskripsi}}</td>
-              <td>{{$data->website}}</td>
-              <td>{{$data->youtube}}</td>
-              <td>{{$data->instagram}}</td>
+              <td>{{$senat->ketua}}</td>
+              <td>{{$senat->deskripsi}}</td>
+              <td>{{$senat->website}}</td>
+              <td>{{$senat->youtube}}</td>
+              <td>{{$senat->instagram}}</td>
               <td class="manage-row">
-                <a href="{{route('dashboard.senat.edit', $data->id)}}" class="edit-button">
+                <a href="{{route('dashboard.senat.edit', $senat->id)}}" class="edit-button">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
-                <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$senat->id}}">
                   <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
-                <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal fade bd-example-modal-sm{{$senat->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                             <div class="modal-footer">
-                              <form action="{{route('dashboard.senat.destroy', $data->id)}}" method="POST">
+                              <form action="{{route('dashboard.senat.destroy', $senat->id)}}" method="POST">
                                 @method('DELETE')
                                 @csrf
                                 <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
