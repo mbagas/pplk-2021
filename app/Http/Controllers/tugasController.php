@@ -2,45 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TugasStoreRequest;
+use App\Http\Requests\TugasUpdateRequest;
 use App\Models\Mengerjakan;
 use App\Models\Parameter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Tugas;
 use Exception;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Support\Facades\DB;
 
 class tugasController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function index()
   {
-    $result = Tugas::all();
+    $tugass = Tugas::all();
 
-    return view('tugas.content.tugas', compact('result'));
+    return view('tugas.content.index', compact('tugass'));
   }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function create()
   {
-    return view('tugas.content.tambahTugas');
+    return view('tugas.content.create');
   }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
 
   /*
     Request:
@@ -52,90 +36,56 @@ class tugasController extends Controller
         start_time
         end_time
   */
-  public function store(Request $request)
+  public function store(TugasStoreRequest $request)
   {
-    try {
-      $tugas = new Tugas();
-      $tugas->judul = $request->judul;
-      $tugas->deskripsi = $request->deskripsi;
-      $tugas->format = $request->format;
+    $tugas = Tugas::create(
+      $request->validated() + [
+        'judul' => $request->judul,
+        'deskripsi' => $request->deskripsi,
+        'format' => $request->format,
+        'file' => url($request->file('file')->move('Tugas', $request->file('file')->getClientOriginalName())),
+        'start_time' => $request->start_time,
+        'end_time' => $request->end_time,
+      ]
+    );
 
-      $file = $this->SaveFiles($request);
-
-      $tugas->file = $file;
-
-      $tugas->start_time = $request->start_time;
-      $tugas->end_time = $request->end_time;
-
-      $tugas->save();
-
-      for ($i = 0; $i < count($request->nama_params); $i++) {
-        $params = new Parameter();
-        $params->nama = $request->nama_params[$i];
-        $params->persen = $request->persen[$i];
-        $params->nama = $tugas->parameters()->save($params);
-      }
-    } catch (Exception $err) {
-      return redirect('dashboard/tugas')->with('error', 'Gagal Menambahkan Data!');
+    for ($i = 0; $i < count($request->nama_params); $i++) {
+      Parameter::create([
+        'nama' => $request->nama_params[$i],
+        'persen' => $request->persen[$i],
+        'tugas_id' => $tugas->id,
+      ]);
     }
 
-    return redirect('dashboard/tugas')->with('sukses', 'Berhasil Menambahkan Data!');
+    return redirect()->route('dashboard.tugas.index')->with('sukses', 'Berhasil Menambahkan Data!');
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function show($id)
   {
     //Get Tugas Informations
-    $tugas = Tugas::where('id', $id)->firstOrFail();
+    $tugas = Tugas::where('id', $id)->first();
 
-    return view('tugas.content.detailTugas', compact('tugas'));
+    return view('tugas.content.show', compact('tugas'));
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function pengerjaan($id)
   {
     //Get Any Submissions Informations
-
-    $submissions = Mengerjakan::all();
+    $submissions = Mengerjakan::all()->where('id', $id);
 
     return view('tugas.content.submissions', compact('submissions'));
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function edit($id)
   {
-
     try {
       $tugas = Tugas::where('id', $id)->firstOrFail();
 
-      return view('tugas.content.updateTugas', compact('tugas'));
+      return view('tugas.content.edit', compact('tugas'));
     } catch (Exception $err) {
-      return redirect('dashboard/tugas')->with('error', 'Gagal Menyunting Data!');
+      return redirect()->route('dashboard.tugas.index')->with('error', 'Gagal Menyunting Data!');
     }
   }
-
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
 
   /*
     Request:
@@ -147,62 +97,53 @@ class tugasController extends Controller
         start_time
         end_time
   */
-  public function update(Request $request, $id)
+  public function update(TugasUpdateRequest $request, $id)
   {
-    try {
-      $tugas = Tugas::where('id', $id)->firstOrFail();
-      $tugas->judul = $request->judul;
-      $tugas->deskripsi = $request->deskripsi;
-      $tugas->format = $request->format;
+    DB::transaction(
+      function () use ($request, $id) {
+        $tugas = Tugas::where('id', $id)->firstOrFail();
 
-      if ($request->file !== null) {
-        $file = $this->SaveFiles($request);
+        $tugas->update([
+          'judul' => $request->judul,
+          'deskripsi' => $request->deskripsi,
+          'format' => $request->format,
+        ]);
 
-        $tugas->file = $file;
+        if ($request->start_time !== null) {
+          $tugas->update([
+            'start_time' => $request->start_time,
+          ]);
+        }
+
+        if ($request->end_time !== null) {
+          $tugas->update([
+            'end_time' => $request->end_time,
+          ]);
+        }
+
+        if ($request->hasFile('file')) {
+          $tugas->update([
+            'file' => url($request->file('file')->move('Tugas', $request->file('file')->getClientOriginalName())),
+          ]);
+        }
       }
+    );
 
-      error_log('Start : ' . $request->start_time);
-      error_log('End : ' . $request->end_time);
-
-      if ($request->start_time !== null) {
-        $tugas->start_time = $request->start_time;
-      }
-
-      if ($request->start_time !== null) {
-        $tugas->end_time = $request->end_time;
-      }
-
-      $tugas->save();
-    } catch (Exception $err) {
-      return redirect('dashboard/tugas')->with('error', 'Gagal Memperbarui Data!');
-    }
-
-    return redirect('dashboard/tugas')->with('sukses', 'Berhasil Memperbarui Data!');
+    return redirect()->route('dashboard.tugas.index')->with('sukses', 'Berhasil Memperbarui Data!');
   }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
+
   public function destroy($id)
   {
     $tugas = Tugas::where('id', $id)->firstOrFail();
-    Storage::delete($tugas->file);
+    $tugas->parameters()->delete();
+    $tugas->mengerjakans()->delete();
     $tugas->delete();
-  }
 
-  public function SaveFiles(Request $request)
-  {
-    $namaFiles = $request->file->getClientOriginalName();
-
-    if (!Storage::exists('Tugas')) {
-      Storage::makeDirectory('Tugas');
+    try {
+      return redirect()->route('dashboard.tugas.index')->with('sukses', 'Berhasil Menghapus Tugas!');
+    } catch (Exception $err) {
+      return redirect()->route('dashboard.tugas.index')->with('error', 'Gagal Menghapus Tugas!');
     }
-
-    $request->file->storeAs(('Tugas'), $namaFiles);
-
-    return $namaFiles;
   }
 }

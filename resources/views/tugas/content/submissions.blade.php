@@ -28,11 +28,11 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($submissions as $key => $data )
+              @foreach ($submissions as $submission )
               <tr>
-                <td class="text-center">{{$data->nim}}</td>
-                <td class="text-center">{{$data->nama}}</td>
-                <td class="text-center">{{$data->nilai}}</td>
+                <td class="text-center">{{$submission->users->nim}}</td>
+                <td class="text-center">{{$submission->users->nama}}</td>
+                <td class="text-center">{{$submission->nilai}}</td>
               </tr>
               @endforeach
             </tbody>

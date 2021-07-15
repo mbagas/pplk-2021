@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TugasMabaStoreRequest;
+use App\Http\Requests\TugasMabaUpdateRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Mengerjakan;
 use App\Models\Tugas;
@@ -13,67 +16,35 @@ use Illuminate\Support\Facades\Auth;
 
 class mengerjakanController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function index()
   {
-    $result =  Tugas::all();
-    return view("tugas.maba.tugas", compact('result'));
+    $tugass =  Tugas::all();
+    return view("tugas.maba.index", compact('tugass'));
   }
 
-  /**
-   * Show the form for creating a new resource.
-   * @return \Illuminate\Http\Response
-   */
   public function create()
   {
-
-    //
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request)
+  public function store(TugasMabaStoreRequest $request)
   {
-    try {
-      //Get Current User Id
-      $UID = Auth::id();
+    //Get Current User Id
+    $UID = Auth::id();
+    $users = User::where('id', $UID)->first();
 
-      //Create new Submission Entries
-      $submissions = new Mengerjakan();
+    $tugas = Mengerjakan::create(
+      $request->validated() + [
+        'file' => url($request->file('file')->move('Submissions/' . $users->nim . $request->id, $request->file('file')->getClientOriginalName())),
+        'jawaban' => $request->jawaban,
+        'status' => false,
+        'users_id' => $UID,
+        'tugas_id' => $request->id,
+      ]
+    );
 
-      //Check if the users upload a file or not
-      if ($request->file !== null) {
-        $submissions->file = $this->SaveFiles($request);
-      }
-
-      $submissions->jawaban = $request->jawaban;
-      $submissions->status = false;
-
-      $submissions->users_id = $UID;
-
-      $tugas = Tugas::where('id', $request->id)->firstOrFail();
-      $tugas->mengerjakans()->save($submissions);
-    } catch (Exception $err) {
-      return redirect('dashboard/maba')->with('error', 'Gagal Menambahkan Data!');
-    }
-
-    return redirect('dashboard/maba')->with('sukses', 'Sukses Menambahkan Data!');
+    return redirect()->route('dashboard.maba.index')->with('sukses', 'Sukses Menambahkan Data!');
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function show($id)
   {
     //Get Tugas Informations
@@ -83,23 +54,17 @@ class mengerjakanController extends Controller
     $UID = Auth::id();
 
     //Get Submissions
-    $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->first();
+    $submission = Mengerjakan::where('tugas_id', $id)->where('users_id', $UID)->first();
 
     //If there is a submissions
     //  Redirect to details views
-    if ($submission != null && $submission->count() == 1) {
-      return view('tugas.maba.detailTugas', compact('tugas', 'submission'));
+    if ($submission !== null) {
+      return view('tugas.maba.show', compact('tugas', 'submission'));
     }
 
-    return view('tugas.maba.submitTugas', compact('tugas'));
+    return view('tugas.maba.create', compact('tugas'));
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function edit($id)
   {
     try {
@@ -108,57 +73,48 @@ class mengerjakanController extends Controller
 
       //Get Current Time
       //  For comparisons in deadline
-      $now = new DateTime('now');
+      $now = new DateTime();
 
       //Get Tugas Informations
-      $tugas = Tugas::where('id', $id)->firstOrFail();
+      $tugas = Tugas::where('id', $id)->first();
 
       //Get Current User Submissions
-      $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
+      $submission = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->first();
 
       if ($submission->status)
-        return redirect('dashboard/maba/' . $id)->with('error', 'Telah dinilai!');
+        return redirect()->route('dashboard.maba.show', $id)->with('error', 'Telah dinilai!');
 
-      return view('tugas.maba.updateTugas', compact('tugas', 'submission'));
+      return view('tugas.maba.edit', compact('tugas', 'submission'));
     } catch (Exception $err) {
-      return redirect('dashboard/maba')->with('error', 'Gagal Menyunting Data!');
+      return redirect()->route('dashboard.maba.index')->with('error', 'Gagal Menyunting Data!');
     }
   }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function update(Request $request, $id)
+  public function update(TugasMabaUpdateRequest $request, $id)
   {
-    try {
-      $UID = Auth::id();
+    //Get Current User Id
+    DB::transaction(
+      function () use ($request, $id) {
+        $UID = Auth::id();
+        $users = User::where('id', $UID)->firstOrFail();
 
-      $submissions = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
+        $submissions = Mengerjakan::where('users_id', $UID)->where('tugas_id', $id)->firstOrFail();
 
-      if ($request->file !== null) {
-        $submissions->file = $this->SaveFiles($request);
+        $submissions->update([
+          'jawaban' => $request->jawaban,
+        ]);
+
+        if ($request->hasFile('file')) {
+          $submissions->update([
+            'file' => url($request->file('file')->move('Submissions/' . $users->nim . $request->id, $request->file('file')->getClientOriginalName())),
+          ]);
+        }
       }
+    );
 
-      $submissions->jawaban = $request->jawaban;
-
-      $submissions->save();
-    } catch (Exception $err) {
-      return redirect('dashboard/maba')->with('error', 'Gagal Memperbarui Data!');
-    }
-
-    return redirect('dashboard/maba')->with('sukses', 'Berhasil Memperbarui Data!');
+    return redirect()->route('dashboard.maba.index')->with('sukses', 'Berhasil Memperbarui Data!');
   }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function destroy($id)
   {
     //

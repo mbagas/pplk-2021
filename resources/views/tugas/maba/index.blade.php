@@ -31,14 +31,14 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($result as $data )
+              @foreach ($tugass as $tugas )
               <tr>
-                <td class="text-center">{{$data->judul}}</td>
-                <td class="text-center">{{$data->deskripsi}}</td>
-                <td class="text-center">{{$data->file}}</td>
-                <td class="text-center">{{$data->format}}</td>
-                <td class="text-center">{{$data->start_time}}</td>
-                <td class="text-center">{{$data->end_time}}</td>
+                <td class="text-center">{{$tugas->judul}}</td>
+                <td class="text-center">{{$tugas->deskripsi}}</td>
+                <td class="text-center">{{$tugas->file}}</td>
+                <td class="text-center">{{$tugas->format}}</td>
+                <td class="text-center">{{$tugas->start_time}}</td>
+                <td class="text-center">{{$tugas->end_time}}</td>
                 <td class="text-center">
                   <div class="dropdown">
                     <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,12 +53,12 @@
                     </button>
                     <div class="dropdown-menu" style="margin: 0px;">
                       <!-- Use to show details -->
-                      <a class="dropdown-item" href="{{route('dashboard.maba.show', $data->id)}}">Details</a>
+                      <a class="dropdown-item" href="{{route('dashboard.maba.show', $tugas->id)}}">Details</a>
                       <!-- Use to edit submissions -->
-                      @if (new DateTime() <= new DateTime($data->end_time))
-                        <a class="dropdown-item" href="{{route('dashboard.maba.edit', $data->id)}}">Edits</a>
+                      @if (new DateTime() < new DateTime($tugas->end_time))
+                        <a class="dropdown-item" href="{{route('dashboard.maba.edit', $tugas->id)}}">Edits</a>
                         @endif
-                        <!-- <form action="{{route('dashboard.tugas.destroy', $data->id)}}" method="POST">
+                        <!-- <form action="{{route('dashboard.tugas.destroy', $tugas->id)}}" method="POST">
                         @method('DELETE')
                         @csrf
                         <input type="submit" class="dropdown-item" value="Hapus">
