@@ -9,24 +9,37 @@
             <h4 class="card-title">PPLK</h4>
         </div>
         <div class="card-body">
+            @if($errors->any())
+                @foreach($errors->all() as $data)
+                <div class="alert alert-danger">
+                    {{ $data }}
+                </div>
+            @endforeach
+        @endif
+        @if (session('error'))
+        <div class="alert alert-danger">
+          {{ session('error') }}
+        </div>
+        @endif
+
             <div class="basic-form">
-                <form method="POST" action="{{ route('dashboard.pplk.update', $pplks->id) }} "
+                <form method="POST" action="{{ route('dashboard.pplk.update', $pplk) }} "
                     enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
 
-                    <input name="id" value="{{ $pplks->id }}" type="hidden">
+                    <input name="id" value="{{ $result->id }}" type="hidden">
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Logo</label>
                         <div class="col-sm-9">
                             <input type="file" accept="image/*" class="form-control" placeholder="Logo" name="logo"
-                                id="logo" value="{{ $pplks->logo }}" disabled>
+                                id="logo" value="{{ $result->logo }}" required disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Visi</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $pplks->visi }}"
+                            <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $result->visi }}"
                                 required disabled>
                         </div>
                     </div>
@@ -34,7 +47,7 @@
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
                             <input class="form-control" placeholder="Misi" name="misi" id="misi"
-                            value="{{ $pplks->misi }}" required disabled>
+                            value="{{ $result->misi }}" required disabled>
                         </div>
                     </div>
 
