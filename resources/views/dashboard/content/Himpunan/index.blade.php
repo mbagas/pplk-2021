@@ -44,7 +44,7 @@
               <td>{{$himpunan->kodeWarna}}</td>
               <td>{{$himpunan->tahunBerdiri}}</td>
               <td class="manage-row">
-                <a href="{{route('dashboard.himpunan.edit', $himpunan->ormawas->id)}}" class="edit-button">
+                <a href="{{route('dashboard.himpunan.edit', ['himpunan' => $himpunan->ormawas])}}" class="edit-button">
                   <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
                 <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$himpunan->ormawas->id}}">

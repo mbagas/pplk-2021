@@ -23,6 +23,15 @@ class HimpunanUpdateRequest extends FormRequest
    */
   public function rules()
   {
-    return [];
+    return [
+      'namaSingkat' => ['string', 'nullable'],
+      'namaLengkap' => ['string', 'nullable'],
+      'kodeWarna' => ['string', 'nullable'],
+      'ketuaHimpunan' => ['string', 'nullable'],
+      'pembina' => ['string', 'nullable'],
+      'tahunBerdiri' => ['integer', 'min:2012', 'max:2020', 'nullable'],
+      'filosofiLogo' => ['string', 'nullable'],
+      'logo' => ['file', 'max:1024', 'nullable'],
+    ];
   }
 }
