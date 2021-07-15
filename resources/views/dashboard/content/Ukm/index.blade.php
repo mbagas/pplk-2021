@@ -31,22 +31,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($result as $data )
+                        @foreach ($ukms as $ukm )
                         <tr>
-                            <td>{{$data->ormawas->id}}</td>
-                            <td>{{$data->ormawas->namaLengkap}}</td>
-                            <td>{{$data->pembina}}</td>
-                            <td>{{$data->ketuaUmum}}</td>
-                            <td>{{$data->tahunBerdiri}}</td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$ukm->ormawas->namaLengkap}}</td>
+                            <td>{{$ukm->pembina}}</td>
+                            <td>{{$ukm->ketuaUmum}}</td>
+                            <td>{{$ukm->tahunBerdiri}}</td>
                             <td class="manage-row">
-                                <a href="{{route('dashboard.ukm.edit', $data->ormawas->id)}}" class="edit-button">
+                                <a href="{{route('dashboard.ukm.edit', ['ukm' => $ukm->ormawas])}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
-                                    data-bs-target=".bd-example-modal-sm{{$data->ormawas->id}}">
+                                    data-bs-target=".bd-example-modal-sm{{$ukm->ormawas->id}}">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <div class="modal fade bd-example-modal-sm{{$data->ormawas->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade bd-example-modal-sm{{$ukm->ormawas->id}}" tabindex="-1" role="dialog"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">
@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                             <div class="modal-footer">
-                                                <form action="{{route('dashboard.ukm.destroy', $data->ormawas->id)}}"
+                                                <form action="{{route('dashboard.ukm.destroy', $ukm->ormawas->id)}}"
                                                     method="POST">
                                                     @method('DELETE')
                                                     @csrf

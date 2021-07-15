@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Ormawa;
 use App\Models\Prodi;
 use App\Models\Ukm;
@@ -50,11 +51,12 @@ class ormawaController extends Controller
         }
         elseif($kategori == '3'){
             try{
+                $ukm = $ormawa;
                 $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
                 $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
                 $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
                 $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                return view('dashboard.content.Ukm.updateUkm', compact('result', 'artikel', 'socialMedia', 'visiMisi'));
+                return view('dashboard.content.Ukm.edit', compact('result', 'artikel', 'socialMedia', 'visiMisi'));
             } catch(Exception $ex){
                 return redirect('dashboard/ukm')->with('error', 'Gagal Menyunting Data!');
             }

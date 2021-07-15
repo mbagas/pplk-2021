@@ -33,24 +33,24 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($result as $data )
+              @foreach ($kabinets as $kabinet )
               <tr>
-                <td>{{$data->id}}</td>
-                <td>{{$data->nama}}</td>
-                <td>{{$data->presiden}}</td>
-                <td>{{$data->sekjen}}</td>
-                <td>{{$data->organigram}}</td>
-                <td>{{$data->logo}}</td>
-                <td>{{$data->filosofiLogo}}</td>
-                <td>{{$data->deskripsi}}</td>
+                <td>{{$kabinet->id}}</td>
+                <td>{{$kabinet->nama}}</td>
+                <td>{{$kabinet->presiden}}</td>
+                <td>{{$kabinet->sekjen}}</td>
+                <td>{{$kabinet->organigram}}</td>
+                <td>{{$kabinet->logo}}</td>
+                <td>{{$kabinet->filosofiLogo}}</td>
+                <td>{{$kabinet->deskripsi}}</td>
                 <td class="manage-row">
-                  <a href="{{route('dashboard.kabinet.edit', $data->id)}}" class="edit-button">
+                  <a href="{{route('dashboard.kabinet.edit', ['kabinet' => $kabinet])}}" class="edit-button">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                   </a>
-                  <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                  <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$kabinet->id}}">
                    <i class="fa fa-trash" aria-hidden="true"></i>
                   </a>
-                  <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal fade bd-example-modal-sm{{$kabinet->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -60,7 +60,7 @@
                         </div>
                         <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                         <div class="modal-footer">
-                          <form action="{{route('dashboard.kabinet.destroy', $data->id)}}" method="POST">
+                          <form action="{{route('dashboard.kabinet.destroy', $kabinet->id)}}" method="POST">
                             @method('DELETE')
                             @csrf
                             <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">

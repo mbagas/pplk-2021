@@ -8,12 +8,19 @@
         <h4 class="card-title">Kabinet</h4>
       </div>
       <div class="card-body">
+        @if($errors->any())
+          @foreach($errors->all() as $data)
+            <div class="alert alert-danger">
+              {{ $data }}
+            </div>
+          @endforeach
+        @endif
         @if (session('error'))
         <div class="alert alert-danger">
           {{ session('error') }}
         </div>
         @endif
-        <form method="POST" action="{{ route('dashboard.kabinet.update', $result->id) }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('dashboard.kabinet.update', $kabinet) }}" enctype="multipart/form-data">
           @method('PUT')
           @csrf
           <input name="id" value="{{ $result->id }}" type="hidden">

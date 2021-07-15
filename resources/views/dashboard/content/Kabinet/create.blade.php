@@ -8,6 +8,13 @@
       <h4 class="card-title">Kabinet</h4>
     </div>
     <div class="card-body">
+      @if($errors->any())
+        @foreach($errors->all() as $data)
+          <div class="alert alert-danger">
+            {{ $data }}
+          </div>
+        @endforeach
+      @endif
       <div class="basic-form">
         <form method="POST" action="{{ route('dashboard.kabinet.store') }}" enctype="multipart/form-data">
         @csrf

@@ -30,22 +30,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($pplks as $data )
+                        @foreach ($pplks as $pplk )
                         <tr>
-                            <td>{{$data->id}}</td>
-                            <td>{{$data->logo}}</td>
-                            <td>{{$data->visi}}</td>
-                            <td>{{$data->misi}}</td>
+                            <td>{{$pplk->id}}</td>
+                            <td>{{$pplk->logo}}</td>
+                            <td>{{$pplk->visi}}</td>
+                            <td>{{$pplk->misi}}</td>
 
                             <td class="manage-row">
-                                <a href="{{route('dashboard.pplk.edit', $data->id)}}" class="edit-button">
+                                <a href="{{route('dashboard.pplk.edit', ['pplk' => $pplk])}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
-                                    data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                                    data-bs-target=".bd-example-modal-sm{{$pplk->id}}">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade bd-example-modal-sm{{$pplk->id}}" tabindex="-1" role="dialog"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">
@@ -56,7 +56,7 @@
                                             </div>
                                             <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                             <div class="modal-footer">
-                                                <form action="{{route('dashboard.pplk.destroy', $data->id)}}"
+                                                <form action="{{route('dashboard.pplk.destroy', $pplk->id)}}"
                                                     method="POST">
                                                     @method('DELETE')
                                                     @csrf

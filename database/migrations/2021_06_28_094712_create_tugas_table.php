@@ -15,10 +15,10 @@ class CreateTugasTable extends Migration
   {
     Schema::create('tugas', function (Blueprint $table) {
       $table->id();
-      $table->string('judul', 255)->nullable();
+      $table->string('judul')->nullable();
       $table->text('deskripsi')->nullable();
-      $table->string('format', 255)->nullable();
-      $table->string('file', 255)->nullable();
+      $table->string('format')->nullable();
+      $table->string('file')->nullable();
       $table->dateTime('start_time')->nullable();
       $table->dateTime('end_time')->nullable();
       $table->timestamps();
