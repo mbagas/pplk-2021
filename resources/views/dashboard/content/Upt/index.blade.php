@@ -28,19 +28,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($result as $data )
+                                @foreach ($upts as $upt )
                                     <tr>
-                                        <td>{{$data->id}}</td>
-                                        <td>{{$data->nama}}</td>
-                                        <td>{{$data->deskripsi}}</td>
+                                        <td>{{$upt->id}}</td>
+                                        <td>{{$upt->nama}}</td>
+                                        <td>{{$upt->deskripsi}}</td>
                                         <td class="manage-row">
-                                            <a href="{{route('dashboard.upt.edit', $data->id)}}" class="edit-button">
+                                            <a href="{{route('dashboard.upt.edit', ['upt'=>$upt->id])}}" class="edit-button">
                                             <i class="fa fa-pencil" aria-hidden="true"></i>
                                             </a>
-                                            <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">
+                                            <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$upt->id}}">
                                             <i class="fa fa-trash" aria-hidden="true"></i>
                                             </a>
-                                            <div class="modal fade bd-example-modal-sm{{$data->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal fade bd-example-modal-sm{{$upt->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog modal-sm">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -50,7 +50,7 @@
                                                         </div>
                                                         <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                                         <div class="modal-footer">
-                                                        <form action="{{route('dashboard.upt.destroy', $data->id)}}" method="POST">
+                                                        <form action="{{route('dashboard.upt.destroy', $upt->id)}}" method="POST">
                                                             @method('DELETE')
                                                             @csrf
                                                             <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">

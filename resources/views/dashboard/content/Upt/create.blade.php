@@ -8,7 +8,7 @@
                     <h4 class="card-title">UPT</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('dashboard.upt.store') }}">
+                    <form method="POST" action="{{ route('dashboard.upt.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label col-form-label-lg">Nama</label>

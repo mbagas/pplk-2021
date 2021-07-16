@@ -8,12 +8,24 @@
                     <h4 class="card-title">UPT</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('dashboard.upt.update', $result->id) }}">
+                    @if($errors->any())
+                    @foreach($errors->all() as $data)
+                        <div class="alert alert-danger">
+                        {{ $data }}
+                        </div>
+                    @endforeach
+                    @endif
+                    @if (session('error'))
+                    <div class="alert alert-danger">
+                    {{ session('error') }}
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('dashboard.upt.update', $upt) }}" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
 
-                        <input name="id" value="{{ $result->id }}" type="hidden">
-                        
+                        <input name="id" value="{{ $upt->id }}" type="hidden">
+
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Nama</label>
                             <div class="col-sm-9">
@@ -43,7 +55,7 @@
 
 @section('script')
 <script>
-    function editData() {   
+    function editData() {
         document.getElementById('namaUpt').disabled = false;
         document.getElementById('deskripsiUpt').disabled = false;
     }
