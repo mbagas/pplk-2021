@@ -20,7 +20,7 @@
                 <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">{{ __('Nama') }}</label>
                     <div class="col-md-9">
-                        <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama" name="nama" value="{{ old('name') }}" required autocomplete="off">
+                        <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama" name="nama" value="{{ old('nama') }}" required autocomplete="off">
                         @error('nama')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -61,7 +61,12 @@
                     <label for="password-confirm" class="col-sm-3 col-form-label">{{ __('Confirm Password') }}</label>
 
                     <div class="col-md-9">
-                        <input id="password-confirm" type="password" class="form-control" placeholder="********" name="password_confirmation" required autocomplete="off">
+                        <input id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="********" name="password_confirmation" required autocomplete="off">
+                        @error('password_confirmation')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
@@ -69,7 +74,7 @@
                     <label for="nim" class="col-sm-3 col-form-label">NIM</label>
 
                     <div class="col-md-9">
-                        <input id="nim" type="nim" class="form-control @error('nim') is-invalid @enderror" placeholder="NIM" name="nim" value="" >
+                        <input id="nim" type="nim" class="form-control @error('nim') is-invalid @enderror" placeholder="NIM" name="nim" value="{{ old('nim') }}" >
 
                         @error('nim')
                             <span class="invalid-feedback" role="alert">
@@ -83,10 +88,15 @@
                     <label class="col-sm-3 col-form-label">Role</label>
                     <div class="col-md-9">
                         <select name="roles_id" class="form-control wide" tabindex="0" required>
-                            @foreach ($role as $data)
+                            @foreach ($roles as $data)
                             <option value="{{$data->id}}">{{$data->role}} </option>
                             @endforeach
                         </select>
+                        @error('roles_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
@@ -103,6 +113,11 @@
                             <option value="{{$kelompok}}">{{$kelompok}} </option>
                             @endif
                         </select>
+                        @error('kelompok')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
@@ -118,10 +133,15 @@
                     <div class="col-sm-9">
                         <select name="prodis_id" class="form-control wide" tabindex="0">
                             <option value="">Pilih Prodi </option>
-                            @foreach ($prodi as $data)
+                            @foreach ($prodis as $data)
                                 <option value="{{$data->id}}">{{$data->ormawas->namaLengkap}}</option>
                             @endforeach
                         </select>
+                        @error('prodis_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 

@@ -33,7 +33,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($result as $data )
+                                @foreach ($users as $data )
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->nama}}</td>
