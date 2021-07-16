@@ -23,13 +23,23 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Nama Lengkap" name="namaLengkap" class="form-control  " id="namaLengkap" required>
+                        <input type="text" placeholder="Nama Lengkap" name="namaLengkap" class="form-control @error('namaLengkap') is-invalid @enderror" value="{{ old('namaLengkap') }}" id="namaLengkap" required>
+                        @error('namaLengkap')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>            
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="Nama Singkat" name="namaSingkat" class="form-control  " id="namaSingkat" required>
+                        <input type="text" placeholder="Nama Singkat" name="namaSingkat" class="form-control @error('namaSingkat') is-invalid @enderror" value="{{ old('namaSingkat') }}" id="namaSingkat" required>
+                        @error('namaSingkat')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">

@@ -29,80 +29,140 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaLengkap" class="form-control" value="{{ $prodiData->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="namaLengkap" class="form-control @error('namaLengkap') is-invalid @enderror" value="{{ $prodiData->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        @error('namaLengkap')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaSingkat" class="form-control" value="{{ $prodiData->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
+                        <input type="text" name="namaSingkat" class="form-control @error('namaSingkat') is-invalid @enderror" value="{{ $prodiData->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
+                        @error('namaSingkat')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <select name="jurusans_id" class="form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
+                        <select name="jurusans_id" class="form-control wide mb-3 @error('jurusans_id') is-invalid @enderror" tabindex="0" id="jurusan" required disabled>
                             <option value="{{ $prodiData->jurusans->id }}">{{ $prodiData->jurusans->namaLengkap }} ({{ $prodiData->jurusans->namaSingkat }})</option>
                             @foreach ($jurusans as $data)
                             <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
                             @endforeach
                         </select>
+                        @error('jurusans_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>                    
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Kepala Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $prodiData->kepalaProdi }}" id="kepalaProdi" disabled>
+                        <input type="text" name="kepalaProdi" class="form-control @error('kepalaProdi') is-invalid @enderror" value="{{ $prodiData->kepalaProdi }}" id="kepalaProdi" disabled>
+                        @error('kepalaProdi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $prodiData->tahunBerdiri }}" id="tahunBerdiri" disabled>
+                        <input type="number" name="tahunBerdiri" class="form-control @error('tahinBerdiri') is-invalid @enderror" value="{{ $prodiData->tahunBerdiri }}" id="tahunBerdiri" disabled>
+                        @error('tahunBerdiri')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Akreditasi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="akreditasi" class="form-control  " value="{{ $prodiData->akreditasi }}" id="akreditasi" disabled>
+                        <input type="text" name="akreditasi" class="form-control @error('akreditasi') is-invalid @enderror" value="{{ $prodiData->akreditasi }}" id="akreditasi" disabled>
+                        @error('akreditasi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control  " value="{{ $prodiData->ormawas->visiMisis->visi }}" id="visi" disabled>
+                        <input type="text" name="visi" class="form-control @error('visi') is-invalid @enderror" value="{{ $prodiData->ormawas->visiMisis->visi }}" id="visi" disabled>
+                        @error('visi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" disabled>{{ $prodiData->ormawas->visiMisis->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi @error('misi') is-invalid @enderror" id="misi" disabled>{{ $prodiData->ormawas->visiMisis->misi }}</textarea>
+                        @error('misi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ruangProdi" class="form-control" value="{{ $prodiData->ruangProdi }}" id="ruangProdi" disabled>
+                        <input type="text" name="ruangProdi" class="form-control @error('ruangProdi') is-invalid @enderror" value="{{ $prodiData->ruangProdi }}" id="ruangProdi" disabled>
+                        @error('ruangProdi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" name="jumlahMahasiswa" class="form-control" value="{{ $prodiData->jumlahMahaSiswa }}" id="jumlahMahasiswa" disabled>
+                        <input type="number" name="jumlahMahasiswa" class="form-control @error('jumlahMahasiswa') is-invalid @enderror" value="{{ $prodiData->jumlahMahaSiswa }}" id="jumlahMahasiswa" disabled>
+                        @error('jumlahMahasiswa')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $prodiData->diagramAlir }}" id="diagramAlir" disabled>
+                        <input type="file" accept="image/*" name="diagramAlir" class="form-control @error('diagramAlir') is-invalid @enderror" value="{{ $prodiData->diagramAlir }}" id="diagramAlir" disabled>
+                        @error('diagramAlir')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" disabled>{{ $prodiData->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" disabled>{{ $prodiData->ormawas->artikels->body }}</textarea>
+                        @error('deskripsi')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">

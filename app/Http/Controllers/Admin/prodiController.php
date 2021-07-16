@@ -54,8 +54,7 @@ class prodiController extends Controller
     public function update(ProdiUpdateRequest $request, Ormawa $prodi){
         DB::transaction(function () use($prodi, $request) {
             $prodiData = Prodi::where('ormawas_id', $prodi->id)->first();
-            $prodiData->update(
-                [
+            $prodiData->update([
                     'kepalaProdi'       => $request->kepalaProdi,
                     'akreditasi'        => $request->akreditasi,
                     'tahunBerdiri'      => $request->tahunBerdiri,
