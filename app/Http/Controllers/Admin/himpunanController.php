@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\HimpunanStoreRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\HimpunanUpdateRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Himpunan;
 use App\Models\Ormawa;
@@ -15,267 +18,102 @@ use Illuminate\Support\Facades\Auth;
 
 class himpunanController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function index()
   {
-    $result = Himpunan::with("ormawas")->get();
+    $himpunans = Himpunan::with("ormawas")->get();
 
-    return view("dashboard.content.Himpunan.himpunan", compact('result'));
+    return view("dashboard.content.Himpunan.index", compact('himpunans'));
   }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
   public function create()
   {
-    return view('dashboard.content.Himpunan.tambahHimpunan');
+    return view('dashboard.content.Himpunan.create');
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-
-  /*
-    Request:
-    // Ormawa
-        namaLengkap
-        namaSingkat
-    // Himpunan
-        kodeWarna
-        ketuaHimpunan
-        pembina
-        tahunBerdiri
-        logo
-        filosofiLogo
-    // Social Media
-        website
-        youtube
-        instagram
-    // VisiMisi
-        visi
-        misi
-    // Artikels
-        artikel
-    */
-  public function store(Request $request)
+  public function store(HimpunanStoreRequest $request)
   {
-    try {
+    $ormawa = Ormawa::create($request->validated() + [
+      'namaLengkap' => $request->namaLengkap,
+      'namaSingkat' => $request->namaSingkat,
+      'kategoris_id' => 2,
+    ]);
 
-      $ormawa = new Ormawa();
-      $ormawa->namaLengkap = $request->namaLengkap;
-      $ormawa->namaSingkat = $request->namaSingkat;
-      $ormawa->kategoris_id = 2;
-      $ormawa->save();
+    Himpunan::create(['ormawas_id' => $ormawa->id,]);
+    SocialMedia::create(['ormawas_id' => $ormawa->id,]);
+    VisiMisi::create(['ormawas_id' => $ormawa->id,]);
+    Artikel::create(['ormawas_id' => $ormawa->id,]);
 
-      $himpunan = new Himpunan();
-      $himpunan->kodeWarna = $request->kodeWarna;
-      $himpunan->pembina = $request->pembina;
-      $himpunan->ketuaHimpunan = $request->ketuaHimpunan;
-      $himpunan->tahunBerdiri = $request->tahunBerdiri;
-      $himpunan->filosofiLogo = $request->filosofiLogo;
-
-      if($request->logo !== NULL){
-        $namaFile = $request->namaSingkat.'.'.$request->logo->extension();
-        $request->logo->storeAs(('Himpunan'), $namaFile);
-        $himpunan->logo = 'Himpunan/' . $namaFile;
-      }
-
-      $ormawa->himpunans()->save($himpunan);
-
-      $socialMedia = new SocialMedia();
-      $socialMedia->website = $request->website;
-      $socialMedia->youtube = $request->youtube;
-      $socialMedia->instagram = $request->instagram;
-
-      $ormawa->socialmedias()->save($socialMedia);
-
-      $visiMisi = new VisiMisi();
-      $visiMisi->visi = $request->visi;
-      $visiMisi->misi = $request->misi;
-
-      $ormawa->visimisis()->save($visiMisi);
-
-      $artikel = new Artikel();
-      $artikel->body = $request->deskripsi;
-
-      $ormawa->artikels()->save($artikel);
-    } catch (Exception $err) {
-      return redirect('dashboard/himpunan')->with('error', 'Gagal Menambahkan Data!');
-    }
-
-    return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Menambahkan Data!');
+    return redirect()->route('dashboard.himpunan.index')->with('sukses', 'Berhasil Menambahkan Data!');
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function show($id)
   {
     //
   }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-  public function edit($id)
+  public function edit(Ormawa $himpunan)
   {
 
-      try {
-        $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-        $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-        $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-        $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
+    $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
 
-        return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
-      } catch (Exception $err) {
-        return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
-      }
-  
+    return view('dashboard.content.Himpunan.edit', compact('himpunan', 'dataHimpunan'));
   }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
-
-  /*
-    Request:
-    // Ormawa
-        namaLengkap
-        namaSingkat
-    // Himpunan
-        kodeWarna
-        ketuaHimpunan
-        pembina
-        tahunBerdiri
-        logo
-        filosofiLogo
-    // Social Media
-        website
-        youtube
-        instagram
-    // VisiMisi
-        visi
-        misi
-    // Artikels
-        artikel
-  */
-  public function update(Request $request, $id)
+  public function update(HimpunanUpdateRequest $request, Ormawa $himpunan)
   {
-    try {
+    DB::transaction(function () use ($himpunan, $request) {
+      $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $himpunan->id)->first();
 
-      $ormawa = Ormawa::where('id', $id)->firstOrFail();
-      if($request->namaLengkap !== NULL){
-          $ormawa->namaLengkap = $request->namaLengkap;
+      $himpunan->update([
+        'namaSingkat' => $request->namaSingkat,
+        'namaLengkap' => $request->namaLengkap,
+      ]);
+
+      $dataHimpunan->update([
+        'kodeWarna' => $request->kodeWarna,
+        'ketuaHimpunan' => $request->ketuaHimpunan,
+        'pembina' => $request->pembina,
+        'tahunBerdiri' => $request->tahunBerdiri,
+        'filosofiLogo' => $request->filosofiLogo,
+      ]);
+
+      $himpunan->visimisis()->update([
+        'visi' => $request->visi,
+        'misi' => $request->misi,
+      ]);
+
+      if ($request->hasFile('logo')) {
+        $dataHimpunan->update([
+          'logo' => url($request->file('logo')->move('Himpunan', $himpunan->namaSingkat . '.' . $request->file('logo')->extension())),
+        ]);
       }
-      if($request->namaSingkat !== NULL){
-          $ormawa->namaSingkat = $request->namaSingkat;
-      }
-      
-      $ormawa->save();
 
-      $himpunan = Himpunan::where('ormawas_id', $id)->firstOrFail();
-      $himpunan->kodeWarna = $request->kodeWarna;
-      $himpunan->ketuaHimpunan = $request->ketuaHimpunan;
-      $himpunan->pembina = $request->pembina;
-      $himpunan->tahunBerdiri = $request->tahunBerdiri;
+      $himpunan->socialmedias()->update([
+        'website' => $request->website,
+        'instagram' => $request->instagram,
+        'youtube' => $request->youtube,
+      ]);
 
+      $himpunan->artikels()->update([
+        'body' => $request->deskripsi,
+      ]);
+    });
 
-      if ($request->logo !== null) {
-        $logo = $this->SaveFiles($request);
-
-        $himpunan->logo = 'Himpunan/' . $logo;
-      }
-
-
-      $himpunan->filosofiLogo = $request->filosofiLogo;
-
-      $himpunan->save();
-
-      $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-      $socialMedia->website = $request->website;
-      $socialMedia->instagram = $request->instagram;
-      $socialMedia->youtube = $request->youtube;
-
-      $socialMedia->save();
-
-      $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-      $visiMisi->visi = $request->visi;
-      $visiMisi->misi = $request->misi;
-
-      $visiMisi->save();
-
-      $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-      $artikel->body = $request->deskripsi;
-
-      $artikel->save();
-    } catch (Exception $err) {
-      if(Auth::user()->roles_id == 1){
-        return redirect('dashboard/himpunan')->with('error', 'Gagal Memperbarui Data!');
-      }
-      elseif(Auth::user()->roles_id == 6){
-        return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
-      }
-    }
-
-    if(Auth::user()->roles_id == 1){
+    if (Auth::user()->roles_id == 1) {
       return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
-    }
-    elseif(Auth::user()->roles_id == 6){
+    } elseif (Auth::user()->roles_id == 6) {
       return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
     }
   }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return \Illuminate\Http\Response
-   */
   public function destroy($id)
   {
-    $himpunan = Himpunan::where('ormawas_id', $id)->firstOrFail();
-    Storage::delete($himpunan->logo);
-    $himpunan->delete();
+    Ormawa::destroy($id);
 
-    $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-    $socialMedia->delete();
-
-    $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-    $visiMisi->delete();
-
-    $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-    $artikel->delete();
-
-    $ormawa = Ormawa::where('id', $id)->firstOrFail();
-    $ormawa->delete();
-
-    return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Menghapus Data!');
-  }
-
-  public function SaveFiles(Request $request)
-  {
-    $namaFiles = $request->namaSingkat . '.' . $request->logo->extension();
-    $request->logo->storeAs(('Himpunan'), $namaFiles);
-
-    return $namaFiles;
+    if (Auth::user()->roles_id == 1) {
+      return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Menghapus Data!');
+    } elseif (Auth::user()->roles_id == 6) {
+      return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Menghapus Data!');
+    }
   }
 }

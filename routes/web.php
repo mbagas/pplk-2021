@@ -36,59 +36,63 @@ Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
-    // Ini Route yang hanya bisa diakses Role SuperAdmin
+  // Ini Route yang hanya bisa diakses Role SuperAdmin
 
-    // SUDAH DI OPTIMIZE (routing)
-    Route::get('/', [dashboardController::class, 'index'])->name('index');
-    Auth::routes();
-    Route::resource('user', userController::class)->except('show');
-    Route::resource('prodi', prodiController::class)->except(['show']);
-    Route::resource('ukm', ukmController::class)->except(['show']);
-    Route::resource('himpunan', himpunanController::class)->except(['show']);
-    Route::resource('funfact', FunFactController::class)->except(['show']);
-    Route::resource('jurusan', jurusanController::class)->except(['show']);
-    Route::resource('senat', senatController::class)->except(['show']);
-    Route::resource('pplk', pplkController::class)->except('show');
-    Route::resource('upt', uptController::class)->except('show');
-    Route::resource('kamusGaul', kamusGaulController::class)->except('show');
-    Route::resource('kabinet', kabinetController::class)->except('show');
+  // SUDAH DI OPTIMIZE (routing)
+  Route::get('/', [dashboardController::class, 'index'])->name('index');
 
-    // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-    // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+  // SUDAH DI OPTIMIZE (routing)
+  Route::get('/', [dashboardController::class, 'index'])->name('index');
+  Auth::routes();
+  Route::resource('user', userController::class)->except('show');
+  Route::resource('prodi', prodiController::class)->except(['show']);
+  Route::resource('ukm', ukmController::class)->except(['show']);
+  Route::resource('himpunan', himpunanController::class)->except(['show']);
+  Route::resource('funfact', FunFactController::class)->except(['show']);
+  Route::resource('jurusan', jurusanController::class)->except(['show']);
+  Route::resource('senat', senatController::class)->except(['show']);
+  Route::resource('pplk', pplkController::class)->except('show');
+  Route::resource('upt', uptController::class)->except('show');
+  Route::resource('kamusGaul', kamusGaulController::class)->except('show');
+  Route::resource('kabinet', kabinetController::class)->except('show');
 
-//    Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-//    Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
+  // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
+  // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
 
+  Route::get('/files/{types}/{id}', [FileManager::class, 'DownloadFile'])->name('file.Download');
+
+  Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
+
+  Route::resource('tugas', tugasController::class);
+  Route::resource('maba', mengerjakanController::class);
 });
 
 Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
-    // Ini Route yang hanya bisa diakses Role Ormawa
+  // Ini Route yang hanya bisa diakses Role Ormawa
 
- 
-    Route::get('/', [ormawaController::class, 'index'])->name('index');
-    Route::resource('prodi', prodiController::class)->only(['update']);
-    Route::resource('ukm', ukmController::class)->only(['update']);
-    Route::resource('himpunan', himpunanController::class)->only(['update']);
+
+  Route::get('/', [ormawaController::class, 'index'])->name('index');
+  Route::resource('prodi', prodiController::class)->only(['update']);
+  Route::resource('ukm', ukmController::class)->only(['update']);
+  Route::resource('himpunan', himpunanController::class)->only(['update']);
 });
 
 Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('dashboardDaplokMentor')->group(function () {
-    // Ini Route yang hanya bisa diakses Role DaplokMentor
+  // Ini Route yang hanya bisa diakses Role DaplokMentor
 
-    Route::get('/', [userController::class, 'index'])->name('index');
-    Route::resource('user', userController::class)->except('show');
-
+  Route::get('/', [userController::class, 'index'])->name('index');
+  Route::resource('user', userController::class)->except('show');
 });
 
 
 Route::middleware(['Tugas'])->group(function () {
-    // Ini Route yang hanya bisa diakses Role Tugas
+  // Ini Route yang hanya bisa diakses Role Tugas
 });
 
 Route::middleware(['Pendanaan'])->group(function () {
-    // Ini Route yang hanya bisa diakses Role Pendanaan
+  // Ini Route yang hanya bisa diakses Role Pendanaan
 });
 
 Route::middleware(['Maba'])->group(function () {
-    // Ini Route yang hanya bisa diakses Role Maba
+  // Ini Route yang hanya bisa diakses Role Maba
 });
-
