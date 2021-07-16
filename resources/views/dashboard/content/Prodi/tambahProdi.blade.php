@@ -9,6 +9,13 @@
             <h4 class="card-title">Program Studi</h4>
         </div>
         <div class="card-body">
+            @if($errors->any())
+                @foreach($errors->all() as $data)
+                    <div class="alert alert-danger">
+                        {{ $data }}
+                    </div>
+                @endforeach
+            @endif
             
             <form method="POST" action="{{ route('dashboard.prodi.store') }}" enctype="multipart/form-data">                
                 @method('POST')
@@ -28,7 +35,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <select name="jurusan" class="form-control wide" tabindex="0" id="jurusan">
+                        <select name="jurusans_id" class="form-control wide" tabindex="0" id="jurusan">
                             @foreach ($jurusans as $data)
                             <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
                             @endforeach

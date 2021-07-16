@@ -32,7 +32,7 @@
               </tr>
           </thead>
           <tbody>
-            @foreach ($result as $data )
+            @foreach ($prodis as $data )
             <tr>
               <td>{{$data->ormawas->id}}</td>
               <td>{{$data->ormawas->namaLengkap}}</td>

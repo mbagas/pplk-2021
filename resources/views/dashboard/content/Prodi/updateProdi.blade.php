@@ -11,7 +11,7 @@
         <div class="card-body">
             
             @if (Auth::user()->roles_id == '1')
-                    <form method="POST" action="{{ route('dashboard.prodi.update',$result->ormawas->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('dashboard.prodi.update', $prodi) }}" enctype="multipart/form-data">
                 @else
                     @if (session('sukses'))
                         <div class="alert alert-success">
@@ -22,28 +22,28 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('dashboardOrmawa.prodi.update',$result->ormawas->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('dashboardOrmawa.prodi.update', $prodiData->ormawas->id) }}" enctype="multipart/form-data">
                 @endif
                         @method('PUT')
                         @csrf
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaLengkap" class="form-control" value="{{ $result->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
+                        <input type="text" name="namaLengkap" class="form-control" value="{{ $prodiData->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaSingkat" class="form-control" value="{{ $result->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
+                        <input type="text" name="namaSingkat" class="form-control" value="{{ $prodiData->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jurusan</label>
                     <div class="col-sm-9">
-                        <select name="jurusan" class="form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
-                            <option value="{{ $result->jurusans->id }}">{{ $result->jurusans->namaLengkap }} ({{ $result->jurusans->namaSingkat }})</option>
+                        <select name="jurusans_id" class="form-control wide mb-3" tabindex="0" id="jurusan" required disabled>
+                            <option value="{{ $prodiData->jurusans->id }}">{{ $prodiData->jurusans->namaLengkap }} ({{ $prodiData->jurusans->namaSingkat }})</option>
                             @foreach ($jurusans as $data)
                             <option value="{{ $data->id }}">{{ $data->namaLengkap}} ({{ $data->namaSingkat }})</option>
                             @endforeach
@@ -53,56 +53,56 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Kepala Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $result->kepalaProdi }}" id="kepalaProdi" disabled>
+                        <input type="text" name="kepalaProdi" class="form-control  " value="{{ $prodiData->kepalaProdi }}" id="kepalaProdi" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Tahun Berdiri</label>
                     <div class="col-sm-9">
-                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $result->tahunBerdiri }}" id="tahunBerdiri" disabled>
+                        <input type="number" name="tahunBerdiri" class="form-control  " value="{{ $prodiData->tahunBerdiri }}" id="tahunBerdiri" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Akreditasi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="akreditasi" class="form-control  " value="{{ $result->akreditasi }}" id="akreditasi" disabled>
+                        <input type="text" name="akreditasi" class="form-control  " value="{{ $prodiData->akreditasi }}" id="akreditasi" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="visi" class="form-control  " value="{{ $result->ormawas->visiMisis->visi }}" id="visi" disabled>
+                        <input type="text" name="visi" class="form-control  " value="{{ $prodiData->ormawas->visiMisis->visi }}" id="visi" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" disabled>{{ $result->ormawas->visiMisis->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi" id="misi" disabled>{{ $prodiData->ormawas->visiMisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Ruang Prodi</label>
                     <div class="col-sm-9">
-                        <input type="text" name="ruangProdi" class="form-control" value="{{ $result->ruangProdi }}" id="ruangProdi" disabled>
+                        <input type="text" name="ruangProdi" class="form-control" value="{{ $prodiData->ruangProdi }}" id="ruangProdi" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Jumlah Mahasiswa</label>
                     <div class="col-sm-9">
-                        <input type="number" name="jumlahMahasiswa" class="form-control" value="{{ $result->jumlahMahaSiswa }}" id="jumlahMahasiswa" disabled>
+                        <input type="number" name="jumlahMahasiswa" class="form-control" value="{{ $prodiData->jumlahMahaSiswa }}" id="jumlahMahasiswa" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
                     <div class="col-sm-9">
-                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $result->diagramAlir }}" id="diagramAlir" disabled>
+                        <input type="file" accept="image/*" name="diagramAlir" class="form-control  " value="{{ $prodiData->diagramAlir }}" id="diagramAlir" disabled>
                     </div>
                 </div>
                 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" disabled>{{ $result->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" disabled>{{ $prodiData->ormawas->artikels->body }}</textarea>
                     </div>
                 </div>
                 <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -116,20 +116,20 @@
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Website</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="website" class="form-control" value="{{ $result->ormawas->socialMedias->website }}" id="website" disabled>
+                                    <input type="text" name="website" class="form-control" value="{{ $prodiData->ormawas->socialMedias->website }}" id="website" disabled>
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Instagram</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="instagram" class="form-control" value="{{ $result->ormawas->socialMedias->instagram }}" id="instagram" disabled>
+                                    <input type="text" name="instagram" class="form-control" value="{{ $prodiData->ormawas->socialMedias->instagram }}" id="instagram" disabled>
                                 </div>
 
                             </div>
                             <div class="mb-3 row">
                                 <label class="col-sm-3 col-form-label">Youtube</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="youtube" class="form-control" value="{{ $result->ormawas->socialMedias->youtube }}" id="youtube" disabled>
+                                    <input type="text" name="youtube" class="form-control" value="{{ $prodiData->ormawas->socialMedias->youtube }}" id="youtube" disabled>
                                 </div>
                             </div>                            
                         </div>

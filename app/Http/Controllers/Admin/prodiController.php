@@ -3,225 +3,123 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProdiStoreRequest;
+use App\Http\Requests\ProdiUpdateRequest;
+use App\Models\Ormawa;
 use App\Models\Artikel;
 use App\Models\Jurusan;
-use App\Models\Kategori;
-use App\Models\Ormawa;
 use App\Models\Prodi;
 use App\Models\SocialMedia;
 use App\Models\VisiMisi;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-use function GuzzleHttp\Promise\exception_for;
+use Illuminate\Support\Facades\DB;
 
 class prodiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-        $result = Prodi::with('ormawas')->get();
+    //
 
-        return view('dashboard.content.Prodi.prodi', compact('result'));
+    public function index(){
+        $prodis = Prodi::with('ormawas', 'jurusans')->get();
+        return view('dashboard.content.Prodi.prodi', compact('prodis'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $jurusans = Jurusan::get();
+    public function create(){
+        $jurusans = Jurusan::all();
         return view('dashboard.content.Prodi.tambahProdi', compact('jurusans'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        try{
+    public function store(ProdiStoreRequest $request){
+        $ormawa = Ormawa::create(
+            $request->validated() +
+                [
+                    'kategoris_id'  =>  1
+                ]
+            );
+
+            Prodi::create(['ormawas_id' => $ormawa->id, 'jurusans_id' => $request->jurusans_id]);
+            Artikel::create(['ormawas_id' => $ormawa->id]);
+            VisiMisi::create(['ormawas_id' => $ormawa->id]);
+            SocialMedia::create(['ormawas_id' => $ormawa->id]);
             
-            $ormawa = new Ormawa();
-            $ormawa->namaLengkap = $request->namaLengkap;
-            $ormawa->namaSingkat = $request->namaSingkat;
-            $ormawa->kategoris_id = 1;
-            $ormawa->save();
-
-            $prodi = new Prodi();
-            $prodi->kepalaProdi = $request->kepalaProdi;
-            $prodi->akreditasi = $request->akreditasi;
-            $prodi->tahunBerdiri = $request->tahunBerdiri;
-            $prodi->ruangProdi = $request->ruangProdi;
-            $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
-            $prodi->kepalaProdi = $request->kepalaProdi;
-            $prodi->jurusans_id = $request->jurusan;
-            if($request->diagramAlir !== NULL){
-                $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
-                $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
-                $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
-            }
-            $ormawa->prodis()->save($prodi);
-
-
-            $artikel = new Artikel();
-            $artikel->body = $request->deskripsi;
-            $ormawa->artikels()->save($artikel);
-
-            $visiMisi = new VisiMisi();
-            $visiMisi->visi = $request->visi;
-            $visiMisi->misi = $request->misi;
-            $ormawa->visimisis()->save($visiMisi);
-
-            $socialMedia = new SocialMedia();
-            $socialMedia->website = $request->website;
-            $socialMedia->instagram = $request->instagram;
-            $socialMedia->youtube = $request->youtube;
-            $ormawa->socialmedias()->save($socialMedia);
-        } catch(Exception $ex){
-            return redirect('dashboard/prodi')->with('error', 'Gagal Menambahkan Data!');
-        }
-
-        return redirect('dashboard/prodi')->with('sukses', 'Berhasil Menambahkan Data!');
-
+            return redirect()->route('dashboard.prodi.index')->with('sukses', 'Berhasil Menambahkan Data!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function edit(Ormawa $prodi){
+        $prodiData = Prodi::with('ormawas')->where('ormawas_id', $prodi->id)->firstOrFail();
+        $jurusans = Jurusan::all();
+        return view('dashboard.content.Prodi.updateProdi', compact('prodi', 'prodiData', 'jurusans'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
+    public function update(ProdiUpdateRequest $request, Ormawa $prodi){
+        DB::transaction(function () use($prodi, $request) {
+            $prodiData = Prodi::where('ormawas_id', $prodi->id)->first();
+            $prodiData->update(
+                [
+                    'kepalaProdi'       => $request->kepalaProdi,
+                    'akreditasi'        => $request->akreditasi,
+                    'tahunBerdiri'      => $request->tahunBerdiri,
+                    'ruangProdi'        => $request->ruangProdi,
+                    'jumlahMahasiswa'   => $request->jumlahMahasiswa,
+                    'jurusans_id'       => $request->jurusans_id
+                ]
+            );
+            
+            if($request->hasFile('diagramAlir')){
+                $prodiData->update([
+                    'diagramAlir'   => url($request->file('diagramAlir')->move('diagramAlir', $prodi->namaSingkat . '.' . $request->file('diagramAlir')->extension()))
+                ]);
+            }
 
-        try{
-            $jurusans = Jurusan::get();
-            $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
-            $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
-        } catch(Exception $ex){
-            return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
+            if($request->has('deskripsi')){
+                $artikelData = Artikel::where('ormawas_id', $prodi->id)->first();
+                
+                $artikelData->update(
+                    [
+                        'body'  => $request->deskripsi
+                    ]
+                );
+            }
+
+            if ($request->has('visi') or $request->has('misi')) {
+                $visiMisiData = VisiMisi::where('ormawas_id', $prodi->id)->first();
+
+                $visiMisiData->update(
+                    [
+                        'visi'          => $request->visi,
+                        'misi'          => $request->misi,
+                        'ormawas_id'    => $prodi->id
+                    ]
+                );
+            }
+
+            if($request->has('youtube') or $request->has('instagram') or $request->has('website')){
+                $socialMediaData = SocialMedia::where('ormawas_id', $prodi->id)->first();
+
+                $socialMediaData->update(
+                        [
+                            'youtube'   => $request->youtube,
+                            'instagram' => $request->instagram,
+                            'website'   => $request->website
+                        ]
+                    );
+            }
+
+        });
+
+        if(auth()->user()->roles_id == 1){
+            return redirect()->route('dashboard.prodi.index')->with('sukses', 'Berhasil Edit Data!');
         }
-        
+        elseif(auth()->user()->roles_id == 6){
+            return redirect()->route('dashboardOrmawa.index')->with('sukses', 'Berhasil Edit Data!');
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        try{
-            $ormawa = Ormawa::where('id', $id)->firstOrFail();
-            if($request->namaLengkap !== NULL){
-                $ormawa->namaLengkap = $request->namaLengkap;
-            }
-            if($request->namaSingkat !== NULL){
-                $ormawa->namaSingkat = $request->namaSingkat;
-            }
-            
-            $ormawa->save();
+    public function destroy($id){
+        $ormawa = Ormawa::where('id', $id)->firstOrFail();
+        $ormawa->delete();
 
-            $prodi = Prodi::where('ormawas_id', $id)->firstOrFail();
-            $prodi->kepalaProdi = $request->kepalaProdi;
-            $prodi->akreditasi = $request->akreditasi;
-            $prodi->jurusans_id = $request->jurusan;
-            $prodi->tahunBerdiri = $request->tahunBerdiri;
-            $prodi->ruangProdi = $request->ruangProdi;
-            $prodi->jumlahMahaSiswa = $request->jumlahMahasiswa;
-            if($request->diagramAlir != NULL){
-                $namaFile = $request->namaSingkat.'.'.$request->diagramAlir->extension();
-                $request->diagramAlir->storeAs(('diagramAlir'), $namaFile);
-                $prodi->diagramAlir = 'diagramAlir/'.$namaFile;
-            }
-            $prodi->save();
-
-            $artikel = Artikel::where('ormawas_id', $id)->first();
-            $artikel->body = $request->deskripsi;
-            $artikel->save();
-
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi->visi = $request->visi;
-            $visiMisi->misi = $request->misi;
-            $visiMisi->save();
-
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia->website = $request->website;
-            $socialMedia->instagram = $request->instagram;
-            $socialMedia->youtube = $request->youtube;
-            $socialMedia->save();
-        } catch(Exception $ex){
-            if(Auth::user()->roles_id == 1){
-                return redirect('dashboard/prodi')->with('error', 'Gagal Edit Data!');
-            }
-            elseif(Auth::user()->roles_id == 6){
-                return redirect('dashboardOrmawa/')->with('error', 'Gagal Edit Data!');
-            }
-            
-        }
-        if(Auth::user()->roles_id == 1){
-            return redirect('dashboard/prodi')->with('sukses', 'Berhasil Edit Data!');
-        }
-        elseif(Auth::user()->roles_id == 6){
-            return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
-        }
-        
+        return redirect()->route('dashboard.prodi.index')->with('sukses', 'Berhasil Hapus Data!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        try{
-            $artikel = Artikel::where('ormawas_id', $id)->first();
-            $artikel->delete();
-            
-            $prodi = Prodi::where('ormawas_id', $id)->first();
-            $prodi->delete();
-
-            $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-            $socialMedia->delete();
-
-            $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-            $visiMisi->delete();
-            
-            $ormawa = Ormawa::where('id', $id)->first();
-            $ormawa->delete();
-        } catch(Exception $ex){
-            return $ex;
-        }
-        return redirect('dashboard/prodi')->with('sukses', 'Berhasil Hapus Data!');
-    }
 }
