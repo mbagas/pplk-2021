@@ -28,13 +28,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($result as $data )
+                                @foreach ($kamusGauls as $data )
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->gaul}}</td>
                                         <td>{{$data->asli}}</td>
                                         <td class="manage-row">
-                                            <a href="{{route('dashboard.kamusGaul.edit', $data->id)}}" class="edit-button">
+                                            <a href="{{route('dashboard.kamusGaul.edit', ['kamusGaul' => $data->id])}}" class="edit-button">
                                               <i class="fa fa-pencil" aria-hidden="true"></i>
                                             </a>
                                             <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$data->id}}">

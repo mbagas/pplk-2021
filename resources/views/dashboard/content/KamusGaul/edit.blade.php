@@ -9,22 +9,22 @@
                 </div>
                 <div class="card-body">
                    <div class="basic-form">
-                        <form method="POST" action="{{ route('dashboard.kamusGaul.update', $result->id) }}">
+                        <form method="POST" action="{{ route('dashboard.kamusGaul.update', $kamusGaulData->id) }}">
                             @method('PUT')
                             @csrf
 
-                            <input name="id" value="{{ $result->id }}" type="hidden">
+                            <input name="id" value="{{ $kamusGaulData->id }}" type="hidden">
                             <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Nama</label>
                             <div class="col-sm-9">
-                                <input type="text" name="gaul" id="gaul" class="form-control" value="{{ $result->gaul }}" required disabled>
+                                <input type="text" name="gaul" id="gaul" class="form-control" value="{{ $kamusGaulData->gaul }}" required disabled>
                             </div>
                             </div>
 
                             <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Deskripsi</label>
                             <div class="col-sm-9">
-                                <textarea type="text" name="asli" id="asli" class="form-control" required disabled>{{ $result->asli }}</textarea>
+                                <textarea type="text" name="asli" id="asli" class="form-control" required disabled>{{ $kamusGaulData->asli }}</textarea>
                             </div>
                             </div>
                             <div class="mb-3 row">
