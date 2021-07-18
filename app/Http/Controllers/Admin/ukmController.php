@@ -59,7 +59,7 @@ class ukmController extends Controller
 
     public function update(UkmUpdateRequest $request, Ormawa $ukm)
     {
-        
+
         DB::transaction(function () use ($ukm, $request){
             $ukmData = Ukm::where('ormawas_id', $ukm->id)->first();
 
@@ -122,8 +122,8 @@ class ukmController extends Controller
         if(auth()->user()->roles_id == 1){
             return redirect()->route('dashboard.ukm.index')->with('sukses', 'Berhasil Mengubah Data UKM');
         }
-        else{
-            return redirect()->route('dashboardOrmawa')->with('sukses', 'Berhasil Edit Data');
+        elseif(auth()->user()->roles_id == 6){
+            return redirect()->route('dashboardOrmawa.index')->with('sukses', 'Berhasil Edit Data');
         }
 
         

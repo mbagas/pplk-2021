@@ -64,11 +64,6 @@ class himpunanController extends Controller
     DB::transaction(function () use ($himpunan, $request) {
       $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $himpunan->id)->first();
 
-      $himpunan->update([
-        'namaSingkat' => $request->namaSingkat,
-        'namaLengkap' => $request->namaLengkap,
-      ]);
-
       $dataHimpunan->update([
         'kodeWarna' => $request->kodeWarna,
         'ketuaHimpunan' => $request->ketuaHimpunan,

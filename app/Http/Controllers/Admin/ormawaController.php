@@ -25,41 +25,21 @@ class ormawaController extends Controller
         $id = $ormawa->id;
         $kategori = $ormawa->kategoris_id;
         if($kategori == '1'){
-            try{
-                
-                $jurusans = Jurusan::get();
-                $result = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
-                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-                $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-                $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                return view('dashboard.content.Prodi.updateProdi', compact('result', 'artikel', 'jurusans', 'socialMedia', 'visiMisi'));
-            } catch(Exception $ex){
-                return redirect('dashboard/prodi')->with('error', 'Gagal Menyunting Data!');
-            }
+            $jurusans = Jurusan::get();
+            $prodiData = Prodi::with('ormawas',)->where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.Prodi.edit', compact('prodiData', 'jurusans'));
         }
         elseif($kategori == '2'){
-            try {
-                $himpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-                $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-                $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-        
-                return view('dashboard.content.Himpunan.updateHimpunan', compact('himpunan', 'socialMedia', 'visiMisi', 'artikel'));
-              } catch (Exception $ex) {
-                return redirect('dashboard/himpunan')->with('error', 'Gagal Menyunting Data!');
-              }
+            $himpunan = $ormawa;
+            $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.Himpunan.edit', compact('dataHimpunan', 'himpunan'));
+
         }
         elseif($kategori == '3'){
-            try{
-                $ukm = $ormawa;
-                $result = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
-                $artikel = Artikel::where('ormawas_id', $id)->firstOrFail();
-                $socialMedia = SocialMedia::where('ormawas_id', $id)->firstOrFail();
-                $visiMisi = VisiMisi::where('ormawas_id', $id)->firstOrFail();
-                return view('dashboard.content.Ukm.edit', compact('result', 'artikel', 'socialMedia', 'visiMisi'));
-            } catch(Exception $ex){
-                return redirect('dashboard/ukm')->with('error', 'Gagal Menyunting Data!');
-            }
+            $ukm = $ormawa;
+            $ukmData = Ukm::with('ormawas')->where('ormawas_id', $id)->firstOrFail();
+            return view('dashboard.content.Ukm.edit', compact('ukmData','ukm'));
+
         }
     }
 }

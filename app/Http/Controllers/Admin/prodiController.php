@@ -21,12 +21,12 @@ class prodiController extends Controller
 
     public function index(){
         $prodis = Prodi::with('ormawas', 'jurusans')->get();
-        return view('dashboard.content.Prodi.prodi', compact('prodis'));
+        return view('dashboard.content.Prodi.index', compact('prodis'));
     }
 
     public function create(){
         $jurusans = Jurusan::all();
-        return view('dashboard.content.Prodi.tambahProdi', compact('jurusans'));
+        return view('dashboard.content.Prodi.create', compact('jurusans'));
     }
 
     public function store(ProdiStoreRequest $request){
@@ -48,7 +48,7 @@ class prodiController extends Controller
     public function edit(Ormawa $prodi){
         $prodiData = Prodi::with('ormawas')->where('ormawas_id', $prodi->id)->firstOrFail();
         $jurusans = Jurusan::all();
-        return view('dashboard.content.Prodi.updateProdi', compact('prodi', 'prodiData', 'jurusans'));
+        return view('dashboard.content.Prodi.edit', compact('prodi', 'prodiData', 'jurusans'));
     }
 
     public function update(ProdiUpdateRequest $request, Ormawa $prodi){

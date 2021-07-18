@@ -38,7 +38,7 @@
                         {{ session('error') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('dashboardOrmawa.ukm.update', $ukmData->ormawas->id) }}">
+                <form method="POST" action="{{ route('dashboardOrmawa.ukm.update', $ukm) }}" enctype="multipart/form-data">
             @endif
 
                         @method('PUT')
@@ -84,13 +84,13 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Visi</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $ukmData->ormawas->visiMisis->visi }}" disabled>
+                        <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $ukmData->ormawas->visimisis->visi }}" disabled>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Misi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $ukmData->ormawas->visiMisis->misi }}</textarea>
+                        <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $ukmData->ormawas->visimisis->misi }}</textarea>
                     </div>
                 </div>
                 <div class="mb-3 row">
