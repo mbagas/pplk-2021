@@ -1,6 +1,7 @@
 <div class="dlabnav">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
             <li class="header-profile">
@@ -182,6 +183,9 @@
             </div>
         
 =======
+=======
+
+>>>>>>> 8bf18096fb817c48a6d4e9ab1b635e096feb3b1b
   <div class="dlabnav-scroll">
     <ul class="metismenu" id="menu">
       <li class="header-profile">
@@ -223,6 +227,7 @@
         <ul aria-expanded="false" class="mm-collapse">
           <li><a href="{{ route('dashboard.user.create') }}">Tambah User</a></li>
           <li><a href="{{ route('dashboard.user.index') }}">Kelola Data User</a></li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 84df0294831bf95a7fefd1417485fa46d0cb732c
         </ul>
@@ -370,6 +375,8 @@
         </ul>
       </li>
 =======
+=======
+>>>>>>> 8bf18096fb817c48a6d4e9ab1b635e096feb3b1b
         </ul>
       </li>
       <!-- ITERA -->
