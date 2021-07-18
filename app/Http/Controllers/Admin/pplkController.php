@@ -17,7 +17,7 @@ class pplkController extends Controller
         //
         $pplks = Pplk::all();
 
-        return view('dashboard.content.Pplk.pplk', compact('pplks'));
+        return view('dashboard.content.Pplk.index', compact('pplks'));
     }
 
 
@@ -33,7 +33,7 @@ class pplkController extends Controller
             return redirect('dashboard/pplk/'. $id .'/edit')->with('error','Data sudah tersedia!');
         }
 
-        return view('dashboard.content.Pplk.tambahPPLK', compact('result'));
+        return view('dashboard.content.Pplk.create', compact('result'));
     }
 
     
@@ -60,15 +60,9 @@ class pplkController extends Controller
 
     public function edit(Pplk $pplk)
     {
-        //
-        try{
-            $result = Pplk::where('id', $pplk->id)->firstOrFail();
-            return view('dashboard.content.Pplk.updatePPLK', compact('result','pplk'));
-        } 
-        
-        catch (Exception $ex){
-            return redirect('dashboard/pplk')->with('error', 'Gagal Edit Data!');
-        }
+
+        return view('dashboard.content.Pplk.edit', compact('pplk'));
+
     }
 
 

@@ -29,24 +29,16 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaLengkap" class="form-control @error('namaLengkap') is-invalid @enderror" value="{{ $prodiData->ormawas->namaLengkap }}" id="namaLengkap" required disabled>
-                        @error('namaLengkap')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        <label for="">{{ $prodiData->ormawas->namaLengkap }}</label>
+                        
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" name="namaSingkat" class="form-control @error('namaSingkat') is-invalid @enderror" value="{{ $prodiData->ormawas->namaSingkat }}" id="namaSingkat" required disabled>
-                        @error('namaSingkat')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                        <label for="">{{ $prodiData->ormawas->namaSingkat }}</label>
+                        
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -144,7 +136,8 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Diagram Alir</label>
-                    <div class="col-sm-9">
+                    <img class="img-thumbnail w-25" src="{{ $prodiData->diagramAlir ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+                    <div class="col-sm-6">
                         <input type="file" accept="image/*" name="diagramAlir" class="form-control @error('diagramAlir') is-invalid @enderror" value="{{ $prodiData->diagramAlir }}" id="diagramAlir" disabled>
                         @error('diagramAlir')
                             <span class="invalid-feedback" role="alert">

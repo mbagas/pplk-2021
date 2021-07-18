@@ -61,13 +61,7 @@ class kabinetController extends Controller
 
     public function edit(Kabinet $kabinet)
     {
-        //
-        try{
-            $result = Kabinet::where('id', $kabinet->id)->firstOrFail();
-            return view('dashboard.content.Kabinet.edit',compact('result','kabinet'));
-        } catch(Exception $ex){
-            return redirect('dashboard/kabinet')->with('error', 'Gagal Edit Data!');
-        }
+        return view('dashboard.content.Kabinet.edit',compact('kabinet'));
     }
 
     public function update(KabinetStoreRequest $request, Kabinet $kabinet)

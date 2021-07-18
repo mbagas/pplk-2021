@@ -18,11 +18,11 @@ class userController extends Controller
         if($user->roles_id == 3){
             $kelompok = $user->kelompok;
             $users = User::where('kelompok', $kelompok)->get();
-            return view('dashboard.content.User.user', compact('users'));
+            return view('dashboard.content.User.index', compact('users'));
         }
         
         $users = User::all();
-        return view('dashboard.content.User.user', compact('users'));
+        return view('dashboard.content.User.index', compact('users'));
     }
 
     public function create(){
@@ -32,10 +32,10 @@ class userController extends Controller
         } else{
             $roles = Role::where('id', 5)->get();
             $kelompok = Auth::user()->kelompok;
-            return view('dashboard.content.User.tambahUser', compact('prodis', 'roles', 'kelompok'));
+            return view('dashboard.content.User.create', compact('prodis', 'roles', 'kelompok'));
         }
         
-        return view('dashboard.content.User.tambahUser', compact('prodis', 'roles'));
+        return view('dashboard.content.User.create', compact('prodis', 'roles'));
     }
 
     public function store(UserStoreRequest $request){
@@ -57,7 +57,7 @@ class userController extends Controller
         $prodis = Prodi::all();
         $roles = Role::all();
 
-        return view('dashboard.content.User.updateUser', compact('userData', 'roles', 'prodis'));
+        return view('dashboard.content.User.edit', compact('userData', 'roles', 'prodis'));
 
     }
 

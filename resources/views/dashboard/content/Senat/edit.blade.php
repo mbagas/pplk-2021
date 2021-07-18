@@ -9,25 +9,32 @@
       <h4 class="card-title">Senat</h4>
     </div>
     <div class="card-body">
+      @if($errors->any())
+          @foreach($errors->all() as $data)
+            <div class="alert alert-danger">
+              {{ $data }}
+            </div>
+          @endforeach
+        @endif
       @if (session('error'))
       <div class="alert alert-danger">
         {{ session('error') }}
       </div>
       @endif
-      <form method="POST" action="{{ route('dashboard.senat.update', $result->id) }}" enctype='multipart/form-data'>
+      <form method="POST" action="{{ route('dashboard.senat.update', $senat->id) }}" enctype='multipart/form-data'>
         @method('PUT')
         @csrf
-        <input name="id" value="{{ $result->id }}" type="hidden">
+        <input name="id" value="{{ $senat->id }}" type="hidden">
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label col-form-label-lg">Nama Ketua</label>
           <div class="col-sm-9">
-            <input type="text" name="ketua" class="form-control" id="ketua" value="{{ $result->ketua }}" required disabled>
+            <input type="text" name="ketua" class="form-control" id="ketua" value="{{ $senat->ketua }}" required disabled>
           </div>
         </div>
         <div class="mb-3 row">
           <label class="col-sm-3 col-form-label col-form-label-lg">Deskripsi</label>
           <div class="col-sm-9">
-            <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" disabled required >{{ $result->deskripsi }}</textarea>
+            <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" disabled required >{{ $senat->deskripsi }}</textarea>
           </div>
         </div>
         <div class="accordion accordion-danger-solid" id="accordion-two">
@@ -41,19 +48,19 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Website</label>
                         <div class="col-sm-9">
-                            <input type="text" name="website" class="form-control" value="{{ $result->website }}" id="website" disabled>
+                            <input type="text" name="website" class="form-control" value="{{ $senat->website }}" id="website" disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Instagram</label>
                         <div class="col-sm-9">
-                            <input type="text" name="instagram" class="form-control" value="{{ $result->instagram }}" id="instagram" disabled>
+                            <input type="text" name="instagram" class="form-control" value="{{ $senat->instagram }}" id="instagram" disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Youtube</label>
                         <div class="col-sm-9">
-                            <input type="text" name="youtube" class="form-control" value="{{ $result->youtube }}" id="youtube" disabled>
+                            <input type="text" name="youtube" class="form-control" value="{{ $senat->youtube }}" id="youtube" disabled>
                         </div>
                     </div>                            
                 </div>

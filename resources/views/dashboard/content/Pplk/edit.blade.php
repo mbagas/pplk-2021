@@ -28,18 +28,20 @@
                     @method('PUT')
                     @csrf
 
-                    <input name="id" value="{{ $result->id }}" type="hidden">
+                    <input name="id" value="{{ $pplk->id }}" type="hidden">
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Logo</label>
-                        <div class="col-sm-9">
+                        <img class="img-thumbnail w-25" src="{{ $pplk->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+
+                        <div class="col-sm-6">
                             <input type="file" accept="image/*" class="form-control" placeholder="Logo" name="logo"
-                                id="logo" value="{{ $result->logo }}" required disabled>
+                                id="logo" value="{{ $pplk->logo }}" required disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Visi</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $result->visi }}"
+                            <input type="text" class="form-control" placeholder="Visi" name="visi" id="visi" value="{{ $pplk->visi }}"
                                 required disabled>
                         </div>
                     </div>
@@ -47,7 +49,7 @@
                         <label class="col-sm-3 col-form-label">Misi</label>
                         <div class="col-sm-9">
                             <input class="form-control" placeholder="Misi" name="misi" id="misi"
-                            value="{{ $result->misi }}" required disabled>
+                            value="{{ $pplk->misi }}" required disabled>
                         </div>
                     </div>
 

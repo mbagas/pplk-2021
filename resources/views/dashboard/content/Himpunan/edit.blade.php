@@ -30,13 +30,15 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Nama Lengkap</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap" id="namaLengkap" value="{{ $himpunan->namaLengkap }}" required disabled>
+              <label for="">{{ $himpunan->namaLengkap }}</label>
+              
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Nama Singkat</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="Nama Singkat" name="namaSingkat" id="namaSingkat" value="{{ $himpunan->namaSingkat }}" required disabled>
+              <label for="">{{ $himpunan->namaSingkat }}</label>
+              
             </div>
           </div>
           <div class="mb-3 row">
@@ -77,7 +79,8 @@
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Logo</label>
-            <div class="col-sm-9">
+            <img class="img-thumbnail w-25" src="{{ $dataHimpunan->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+            <div class="col-sm-6">
               <input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $dataHimpunan->logo }}" disabled>
             </div>
           </div>

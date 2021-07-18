@@ -47,16 +47,14 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nama Singkat</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Nama Singkat" name="namaSingkat"
-                            id="namaSingkat" value="{{ $ukmData->ormawas->namaSingkat }}" required disabled>
+                        <label for="">{{ $ukmData->ormawas->namaSingkat }}</label>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" placeholder="Nama Lengkap" name="namaLengkap"
-                            id="namaLengkap" value="{{ $ukmData->ormawas->namaLengkap }}" required disabled>
+                        <label for="">{{ $ukmData->ormawas->namaLengkap }}</label>
                     </div>
                 </div>
 
@@ -97,7 +95,7 @@
                     <label class="col-sm-3 col-form-label">Logo</label>
                     <img class="img-thumbnail w-25" src="{{ $ukmData->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
                     
-                    <div class="col-sm-9">
+                    <div class="col-sm-6">
                         <input type="file" accept="image/*" class="form-control" name="logo" id="logo" value="{{ $ukmData->logo }}" disabled>
                     </div>
                 </div>
@@ -110,7 +108,9 @@
                 </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Barcode</label>
-                    <div class="col-sm-9">
+                    <img class="img-thumbnail w-25" src="{{ $ukmData->barcode ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+
+                    <div class="col-sm-6">
                         <input type="file" accept="image/*" class="form-control" name="barcode" id="barcode"
                             value="{{ $ukmData->barcode }}" disabled>
                     </div>

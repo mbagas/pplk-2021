@@ -23,47 +23,50 @@
         <form method="POST" action="{{ route('dashboard.kabinet.update', $kabinet) }}" enctype="multipart/form-data">
           @method('PUT')
           @csrf
-          <input name="id" value="{{ $result->id }}" type="hidden">
+          <input name="id" value="{{ $kabinet->id }}" type="hidden">
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Nama Kabinet</label>
             <div class="col-sm-9">
-              <input type="text" name="nama" class="form-control" id="nama" value="{{ $result->nama }}" required disabled>
+              <input type="text" name="nama" class="form-control" id="nama" value="{{ $kabinet->nama }}" required disabled>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Presiden</label>
             <div class="col-sm-9">
-              <input type="text" name="presiden" class="form-control" id="presiden" value="{{ $result->presiden }}" required disabled>
+              <input type="text" name="presiden" class="form-control" id="presiden" value="{{ $kabinet->presiden }}" required disabled>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Sekjen</label>
             <div class="col-sm-9">
-              <input type="text" name="sekjen" class="form-control" id="sekjen" value="{{ $result->sekjen }}" required disabled>
+              <input type="text" name="sekjen" class="form-control" id="sekjen" value="{{ $kabinet->sekjen }}" required disabled>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Organigram</label>
-            <div class="col-sm-9">
-              <input type="file" accept="image/*" name="organigram" class="form-control" id="organigram" value="{{ $result->organigram }}" required disabled>
+            <img class="img-thumbnail w-25" src="{{ $kabinet->organigram ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+
+            <div class="col-sm-6">
+              <input type="file" accept="image/*" name="organigram" class="form-control" id="organigram" value="{{ $kabinet->organigram }}" required disabled>
             </div>
           </div>          
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Logo</label>
-            <div class="col-sm-9">
-              <input type="file" accept="image/*" name="logo" class="form-control" id="logo" value="{{ $result->logo }}" required disabled>
+            <img class="img-thumbnail w-25" src="{{ $kabinet->logo ?? asset('assets/images/LogoItera.png') }}" alt="" height="300" width="300">
+            <div class="col-sm-6">
+              <input type="file" accept="image/*" name="logo" class="form-control" id="logo" value="{{ $kabinet->logo }}" required disabled>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Filosofi Logo</label>
             <div class="col-sm-9">
-              <input type="text" name="filosofiLogo" class="form-control" id="filosofiLogo" value="{{ $result->filosofiLogo }}" required disabled>
+              <input type="text" name="filosofiLogo" class="form-control" id="filosofiLogo" value="{{ $kabinet->filosofiLogo }}" required disabled>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Deskripsi</label>
             <div class="col-sm-9">
-            <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" required disabled>{{ $result->deskripsi }}</textarea>
+            <textarea class="form-control custom-txt-area" name="deskripsi" id="deskripsi" required disabled>{{ $kabinet->deskripsi }}</textarea>
             </div>
           </div>
           <div class="mb-3 row">

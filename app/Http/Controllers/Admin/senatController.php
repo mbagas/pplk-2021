@@ -80,12 +80,9 @@ class senatController extends Controller
    */
   public function edit(Senat $senat)
   {
-    try {
-      $result = Senat::where('id', $senat->id)->firstOrFail();
-      return view('dashboard.content.Senat.update', compact('result'));
-    } catch (Exception $ex) {
-      return redirect()->route('dashboard.senat.index')->with('error', 'Gagal Edit Data!');
-    }
+
+    return view('dashboard.content.Senat.edit', compact('senat'));
+
   }
 
   /**
