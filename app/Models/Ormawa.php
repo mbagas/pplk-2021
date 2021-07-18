@@ -10,7 +10,7 @@ class Ormawa extends Model
     use HasFactory;
     protected $table = 'ormawas';
     protected $fillable = [
-        'id', 'namaLengkap', 'namaSingkatan', 'kategoris_id'
+        'id', 'namaLengkap', 'namaSingkat', 'kategoris_id'
     ];
 
     public function kategoris(){
