@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\kamusGaulController;
 use App\Http\Controllers\Admin\kabinetController;
 use App\Http\Controllers\Admin\ormawaController;
 use App\Http\Controllers\Admin\userController;
+use App\Http\Controllers\mengerjakanController;
+use App\Http\Controllers\tugasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
