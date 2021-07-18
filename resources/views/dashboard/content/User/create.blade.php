@@ -134,16 +134,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Kelompok</label>
                             <div class="col-md-9">
-                                <select name="kelompok" class="form-control wide" tabindex="0" required>
-                                    @if(Auth::user()->roles_id == 1)
-                                        <option value="">Pilih Kelompok </option>
-                                        @for ($i = 1; $i <= 100; $i++)
-                                            <option value="{{$i}}">{{$i}} </option>
-                                        @endfor
-                                    @else
-                                    <option value="{{$kelompok}}">{{$kelompok}} </option>
-                                    @endif
-                                </select>
+                                <input class="form-control wide" value="0">
                                 @error('kelompok')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -448,16 +439,7 @@
                         <div class="mb-3 row">
                             <label class="col-sm-3 col-form-label">Kelompok</label>
                             <div class="col-md-9">
-                                <select name="kelompok" class="form-control wide" tabindex="0" required>
-                                    @if(Auth::user()->roles_id == 1)
-                                        <option value="">Pilih Kelompok </option>
-                                        @for ($i = 1; $i <= 100; $i++)
-                                            <option value="{{$i}}">{{$i}} </option>
-                                        @endfor
-                                    @else
-                                    <option value="{{$kelompok}}">{{$kelompok}} </option>
-                                    @endif
-                                </select>
+                                <input class="form-control wide" value="0">
                                 @error('kelompok')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
