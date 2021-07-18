@@ -30232,3 +30232,8 @@ td{
   border: none;
   box-shadow: 4px 4px 4px 6px rgba(0,0,0,.2);
 }
+
+.user-custom{
+  margin-bottom: 20px !important;
+  column-gap: 30px !important;
+}
