@@ -49,7 +49,13 @@ class userController extends Controller
             'instagram' => $request->instagram,
             'prodis_id' => $request->prodis_id
         ]);
-        return redirect('dashboard/user')->with('sukses', 'Sukses Menambahkan User!');
+        if(Auth::user()->roles_id == 1){
+            return redirect()->route('dashboard.user.index')->with('sukses', 'Sukses Menambahkan User!');
+        }
+        else{
+            return redirect()->route('dashboardDaplokMentor.user.index')->with('sukses', 'Sukses Menambahkan User!');
+        }
+        
     }
 
     public function edit($id){
