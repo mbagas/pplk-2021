@@ -425,7 +425,7 @@
                         <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">{{ __('Nama') }}</label>
                             <div class="col-md-9">
-                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="YUHU" name="nama" value="{{ old('nama') }}" required autocomplete="off">
+                                <input id="nama" type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama" name="nama" value="{{ old('nama') }}" required autocomplete="off">
                                 @error('nama')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

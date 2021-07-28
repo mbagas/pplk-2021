@@ -40,6 +40,8 @@ class LoginController extends Controller
             return '/dashboardOrmawa';
         } else if (Auth::user()->roles_id == 3) {
             return '/dashboardDaplokMentor';
+        } else if (Auth::user()->roles_id == 2) {
+            return '/dashboardTugas';
         } else {
             return '/home';
         }

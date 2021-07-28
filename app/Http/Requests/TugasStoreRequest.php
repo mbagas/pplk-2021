@@ -27,9 +27,9 @@ class TugasStoreRequest extends FormRequest
       'judul' => ['string', 'required'],
       'deskripsi' => ['string', 'required'],
       'format' => ['string', 'required'],
-      'file' => ['file', 'max:10240', 'required'],
+      'fileTugas' => ['file', 'max:10240', 'required'],
       'start_time' => ['date', 'before:end_time', 'required'],
-      'end_time' => ['date', 'after:start_time', 'required'],
+      'end_time' => ['date', 'after:start_time', 'required']
     ];
   }
 }

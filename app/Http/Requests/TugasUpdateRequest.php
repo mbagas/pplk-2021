@@ -27,9 +27,9 @@ class TugasUpdateRequest extends FormRequest
       'judul' => ['string', 'nullable'],
       'deskripsi' => ['string', 'nullable'],
       'format' => ['string', 'nullable'],
-      'file' => ['file', 'max:10240', 'nullable'],
+      'fileTugas' => ['file', 'max:10240', 'nullable'],
       'start_time' => ['date', 'before:end_time', 'nullable'],
-      'end_time' => ['date', 'after:start_time', 'nullable'],
+      'end_time' => ['date', 'after:start_time', 'nullable']
     ];
   }
 }

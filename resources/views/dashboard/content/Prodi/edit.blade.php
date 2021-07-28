@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             
-            @if (Auth::user()->roles_id == '1')
+            @if (Auth::user()->roles_id == 1)
                     <form method="POST" action="{{ route('dashboard.prodi.update', $prodi) }}" enctype="multipart/form-data">
                 @else
                     @if (session('sukses'))

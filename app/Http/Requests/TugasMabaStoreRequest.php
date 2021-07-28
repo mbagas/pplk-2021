@@ -25,7 +25,7 @@ class TugasMabaStoreRequest extends FormRequest
   {
     return [
       'jawaban' => ['string', 'required'],
-      'file' => ['file', 'max:10240', 'required'],
+      'fileTugas' => ['file', 'max:10240', 'required']
     ];
   }
 }
