@@ -109,8 +109,8 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Kelompok</label>
                     <div class="col-md-9">
-                        <select name="kelompok" class="form-control wide" tabindex="0" required disabled id="kelompok">
-                            <option value="{{$userData->kelompok}}">{{$userData->kelompok}} </option>
+                        <select name="kelompok" class="form-control wide" tabindex="0" disabled id="kelompok">
+                            <option value=""> Pilih Kelompok </option>
                             @for ($i = 1; $i <= 100; $i++)
                                 <option value="{{$i}}">{{$i}} </option>
                             @endfor
