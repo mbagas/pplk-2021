@@ -13,9 +13,9 @@ class submissionController extends Controller
     //
     public function index(){
         if(auth()->user()->roles_id == 3){
-            $submissions = Mengerjakan::with('users')->where('kelompok', auth()->user()->kelompok)->orderBy('tugas_id', 'ASC')->get();
+            $submissions = Mengerjakan::with('users', 'tugas')->where('kelompok', auth()->user()->kelompok)->orderBy('tugas_id', 'ASC')->get();
         }else{
-            $submissions = Mengerjakan::with('users')->orderBy('tugas_id', 'ASC')->get();
+            $submissions = Mengerjakan::with('users', 'tugas')->orderBy('tugas_id', 'ASC')->get();
         }
         
         return view('tugas.content.submissions', compact('submissions'));
