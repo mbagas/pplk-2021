@@ -189,7 +189,7 @@
 
       @elseif(Auth::user()->roles_id == 2)
       <li>
-        <a href="{{ route('dashboardDaplokMentor.index') }}" class="ai-icon" aria-expanded="true">
+        <a href="{{ route('dashboardTugas.index') }}" class="ai-icon" aria-expanded="true">
           <i class="flaticon-025-dashboard"></i>
           <span class="nav-text">Dashboard </span>
         </a>
@@ -207,68 +207,10 @@
       </li>
       @endif
 
-      <div class="copyright">
+      </ul>
+    <div class="copyright">
         <p><strong>Content Management System PPLK 2021</strong> © 2021 All Rights Reserved</p>
         <p class="fs-12">Made with <span class="heart"></span> by Abhinaksa</p>
       </div>
-    </ul>
-    </li>
-    {{-- --}}
-    <li class="">
-      <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-        <i class="flaticon-041-graph"></i>
-        <span class="nav-text">PPLK</span>
-      </a>
-      <ul aria-expanded="false" class="mm-collapse">
-        <li><a href="{{ route('dashboard.pplk.index') }}">Data PPLK</a></li>
-        <li><a href="{{ route('dashboard.pplk.create') }}">Tambah PPLK</a></li>
-      </ul>
-    </li>
-    <li class="">
-      <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-        <i class="flaticon-041-graph"></i>
-        <span class="nav-text">UPT</span>
-      </a>
-      <ul aria-expanded="false" class="mm-collapse">
-        <li><a href="{{ route('dashboard.upt.index') }}">Data UPT</a></li>
-        <li><a href="{{ route('dashboard.upt.create') }}">Tambah UPT</a></li>
-      </ul>
-    </li>
-    <li class="">
-      <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-        <i class="flaticon-041-graph"></i>
-        <span class="nav-text">Kamus Gaul LPG</span>
-      </a>
-      <ul aria-expanded="false" class="mm-collapse">
-        <li><a href="{{ route('dashboard.kamusGaul.index') }}">Data Kamus Gaul</a></li>
-        <li><a href="{{ route('dashboard.kamusGaul.create') }}">Tambah Bahasa Gaul Lampung</a></li>
-      </ul>
-    </li>
-    <li class="">
-      <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-        <i class="flaticon-041-graph"></i>
-        <span class="nav-text">Tugas</span>
-      </a>
-      <ul aria-expanded="false" class="mm-collapse">
-        <li><a href="{{ route('dashboard.tugas.index') }}">Data Tugas</a></li>
-        <li><a href="{{ route('dashboard.tugas.create') }}">Tambah Tugas</a></li>
-      </ul>
-    </li>
-    <li><a href="{{route('dashboard.maba.index')}}" class="ai-icon" aria-expanded="false">
-        <i class="flaticon-381-file"></i>
-        <span class="nav-text">Tugas </span>
-      </a>
-    </li>
-    <li><a href="dataMerch.html" class="ai-icon" aria-expanded="false">
-        <i class="flaticon-381-gift"></i>
-        <span class="nav-text">Merch </span>
-      </a>
-    </li>
-    <li><a href="dataMateri.html" class="ai-icon" aria-expanded="false">
-        <i class="flaticon-381-paperclip"></i>
-        <span class="nav-text">Materi </span>
-      </a>
-    </li>
-    </ul>
   </div>
 </div>
