@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'Data Tugas')
 @section('content')
+<style>
+    thead input {
+        width: 100%;
+    }
+</style>
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
@@ -18,14 +23,14 @@
         </div>
         @endif
         <div class="table-responsive">
-          <table id="example4" class="display" style="min-width: 845px">
+          <table id="example4" class="display" style="width: 100%">
             <thead>
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
                     <th>NIM</th>
                     <th>Kelompok</th>
-                    <th>ID Tugas</th>
+                    <th>Judul Tugas</th>
                     <th>Nilai</th>
                     <th>Status</th>
                     @if(auth()->user()->roles_id == 1 || auth()->user()->roles_id == 2)
@@ -40,7 +45,7 @@
                 <td>{{ $data->users->nama }}</td>
                 <td>{{ $data->users->nim }}</td>
                 <td>{{ $data->users->kelompok }}</td>
-                <td>{{ $data->tugas_id }}</td>
+                <td>{{ $data->tugas->judul }}</td>
                 <td>{{ $data->nilai }}</td>
                 <td>
                   @if($data->status)
@@ -86,8 +91,33 @@
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>>
 
 <script>
+
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example4 thead tr').clone(false).appendTo( '#example4 thead' );
+    $('#example4 thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search by '+title+'" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+ 
+    var table = $('#example4').DataTable( {
+        orderCellsTop: true,
+        fixedHeader: true
+    } );
+} );
+
   function alertin(){
     alert('Tugas belum dikerjakan');
   }

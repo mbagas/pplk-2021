@@ -54,14 +54,19 @@
 
           <div class="mb-3 row">
           <label class="col-sm-2 col-form-label col-form-label-lg">Nilai</label>
+          <div class="col-sm-10">
+              <div class="row">
+              
           @foreach ($parameters as $param)
-            <div class="mb-2 col-md-2">
+            <div class="col-sm-2">
                 <label class="form-label">{{ $param->nama }} ({{ $param->persen }}%)</label>
                 <input type="number" name="parameter[]" class="form-control" onkeyup="hitung()" value="0">
                 <input type="hidden" name="persen[]" value="{{ $param->persen }}">
             </div>
               
           @endforeach
+          </div>
+          </div>
         </div>
 
           <div class="mb-3 row">

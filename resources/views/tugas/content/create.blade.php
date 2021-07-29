@@ -8,7 +8,11 @@
         <h4 class="card-title">Tambah Tugas</h4>
       </div>
       <div class="card-body">
+          @if(Auth::user()->roles_id == 2)
+          <form method="POST" action="{{ route('dashboardTugas.tugas.store') }}" enctype="multipart/form-data">
+              @else
         <form method="POST" action="{{ route('dashboard.tugas.store') }}" enctype="multipart/form-data">
+            @endif
           @csrf
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">Judul</label>
