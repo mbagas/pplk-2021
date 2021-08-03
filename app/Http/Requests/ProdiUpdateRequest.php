@@ -26,7 +26,7 @@ class ProdiUpdateRequest extends FormRequest
         return [
             'kepalaProdi'       => ['string', 'nullable'],
             'akreditasi'        => ['string', 'nullable', 'max:2'],
-            'tahunBerdiri'      => ['integer', 'min:2012', 'max:2020', 'nullable'],
+            'tahunBerdiri'      => ['integer', 'min:2012', 'max:2021', 'nullable'],
             'ruangProdi'        => ['string', 'nullable'],
             'jumlahMahasiswa'   => ['integer', 'nullable'],
             'diagramAlir'       => ['image', 'max:1024', 'nullable'],

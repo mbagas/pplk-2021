@@ -94,9 +94,9 @@ class himpunanController extends Controller
       ]);
     });
 
-    if (Auth::user()->roles_id == 1) {
+    if (auth()->user()->roles_id == 1) {
       return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Memperbarui Data!');
-    } elseif (Auth::user()->roles_id == 6) {
+    } elseif (auth()->user()->roles_id == 6) {
       return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Edit Data!');
     }
   }
@@ -105,9 +105,9 @@ class himpunanController extends Controller
   {
     Ormawa::destroy($id);
 
-    if (Auth::user()->roles_id == 1) {
+    if (auth()->user()->roles_id == 1) {
       return redirect('dashboard/himpunan')->with('sukses', 'Berhasil Menghapus Data!');
-    } elseif (Auth::user()->roles_id == 6) {
+    } elseif (auth()->user()->roles_id == 6) {
       return redirect('dashboardOrmawa/')->with('sukses', 'Berhasil Menghapus Data!');
     }
   }

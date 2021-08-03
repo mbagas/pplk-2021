@@ -8,30 +8,33 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\Prodi;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Ormawa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class userController extends Controller
 {
     public function index(){
-        $user = Auth::user();
+        $user = auth()->user();
         if($user->roles_id == 3){
             $kelompok = $user->kelompok;
-            $users = User::where('kelompok', $kelompok)->get();
+            $users = User::with('roles')->where('kelompok', $kelompok)->get();
+
             return view('dashboard.content.User.index', compact('users'));
         }
-        
-        $users = User::all();
+        else{
+        $users =  User::with('roles')->get();
         return view('dashboard.content.User.index', compact('users'));
+        }
     }
 
     public function create(){
         $prodis = Prodi::with('ormawas')->get();
-        if(Auth::user()->roles_id == 1){
+        if(auth()->user()->roles_id == 1){
             $roles = Role::all();
         } else{
             $roles = Role::where('id', 5)->get();
-            $kelompok = Auth::user()->kelompok;
+            $kelompok = auth()->user()->kelompok;
             return view('dashboard.content.User.create', compact('prodis', 'roles', 'kelompok'));
         }
         
@@ -49,7 +52,7 @@ class userController extends Controller
             'instagram' => $request->instagram,
             'prodis_id' => $request->prodis_id
         ]);
-        if(Auth::user()->roles_id == 1){
+        if(auth()->user()->roles_id == 1){
             return redirect()->route('dashboard.user.index')->with('sukses', 'Sukses Menambahkan User!');
         }
         else{
@@ -60,6 +63,12 @@ class userController extends Controller
 
     public function edit($id){
         $userData = User::with('roles', 'prodis')->where('id', $id)->firstOrFail();
+        if($userData->prodis_id != NULL){
+            $prodi = Prodi::with('ormawas')->where('id', $userData->prodis_id)->first();
+            $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
+            $userData->namaProdi = $ormawa->namaLengkap;
+        }
+        
         $prodis = Prodi::all();
         $roles = Role::all();
 
@@ -82,7 +91,7 @@ class userController extends Controller
             $userData->update(['password'  => bcrypt($request->password)]);
         }
 
-        if(Auth::user()->roles_id == 3){
+        if(auth()->user()->roles_id == 3){
             return redirect('dashboardDaplokMentor/user')->with('sukses', 'Sukses Update User!');
         }
         return redirect('dashboard/user')->with('sukses', 'Sukses Update User!');
@@ -91,7 +100,7 @@ class userController extends Controller
     public function destroy($id){
         $user = User::where('id', $id)->firstOrFail();
         $user->delete();
-        if(Auth::user()->roles_id == 3){
+        if(auth()->user()->roles_id == 3){
             return redirect('dashboardDaplokMentor/user')->with('sukses', 'Sukses Hapus User!');
         }
         return redirect('dashboard/user')->with('sukses', 'Sukses Hapus User!');

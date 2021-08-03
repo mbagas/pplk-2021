@@ -29,8 +29,9 @@ class HimpunanUpdateRequest extends FormRequest
       'kodeWarna' => ['string', 'nullable'],
       'ketuaHimpunan' => ['string', 'nullable'],
       'pembina' => ['string', 'nullable'],
-      'tahunBerdiri' => ['integer', 'min:2012', 'max:2020', 'nullable'],
+      'tahunBerdiri' => ['integer', 'min:2012', 'max:2021', 'nullable'],
       'filosofiLogo' => ['string', 'nullable'],
+      'deskripsi'   => ['string', 'nullable'],
       'logo' => ['file', 'max:1024', 'nullable'],
     ];
   }

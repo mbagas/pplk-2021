@@ -17,12 +17,8 @@ class Ormawa
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()) {
-            if (Auth::user()->roles_id == 6) {
-                return $next($request);
-            } else {
-                return abort(403);
-            }
+        if (Auth::check() && auth()->user()->roles_id == 6) {
+            return $next($request);
         } else {
             return redirect('login');
         }
