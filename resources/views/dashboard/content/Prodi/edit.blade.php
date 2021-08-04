@@ -205,27 +205,7 @@
 @endsection
 
 @section('script')
-@if(Auth::user()->roles_id == '1')
-<script>
-    function editData() {   
-        document.getElementById('namaLengkap').disabled = false;
-        document.getElementById('namaSingkat').disabled = false;
-        document.getElementById('jurusan').disabled = false;
-        document.getElementById('kepalaProdi').disabled = false;
-        document.getElementById('tahunBerdiri').disabled = false;
-        document.getElementById('akreditasi').disabled = false;
-        document.getElementById('visi').disabled = false;
-        document.getElementById('misi').disabled = false;
-        document.getElementById('ruangProdi').disabled = false;
-        document.getElementById('jumlahMahasiswa').disabled = false;
-        document.getElementById('diagramAlir').disabled = false;
-        document.getElementById('deskripsi').disabled = false;
-        document.getElementById('website').disabled = false;
-        document.getElementById('instagram').disabled = false;
-        document.getElementById('youtube').disabled = false;
-    }
-</script>
-@else
+
 <script>
     function editData() {
         document.getElementById('jurusan').disabled = false;
@@ -243,5 +223,5 @@
         document.getElementById('youtube').disabled = false;
     }
 </script>
-@endif
+
 @endsection
