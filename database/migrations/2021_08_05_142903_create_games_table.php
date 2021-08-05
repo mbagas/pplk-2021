@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFindCodesTable extends Migration
+class CreateGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateFindCodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('find_codes', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->text('gambar');
-            $table->string('code');
-            $table->integer('score');
+            $table->string('kategori');
+            $table->integer('skor');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateFindCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('find_codes');
+        Schema::dropIfExists('games');
     }
 }
