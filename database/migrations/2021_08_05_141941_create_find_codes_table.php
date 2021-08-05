@@ -16,6 +16,7 @@ class CreateFindCodesTable extends Migration
         Schema::create('find_codes', function (Blueprint $table) {
             $table->id();
             $table->text('gambar');
+            $table->text('nama');
             $table->string('code');
             $table->foreignId('games_id');
             $table->foreign('games_id')->references('id')->on('games')->onDelete('cascade');
