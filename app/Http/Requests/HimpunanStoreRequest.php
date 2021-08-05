@@ -25,7 +25,7 @@ class HimpunanStoreRequest extends FormRequest
   {
     return [
       'namaLengkap' => ['required'],
-      'namaSingkat' => ['required'],
+      'namaSingkat' => ['required']
     ];
   }
 }
