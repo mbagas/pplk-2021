@@ -82,9 +82,11 @@ class findCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Game $findCode)
     {
         //
+        $dataFindCode = FindCode::with('games')->where('games_id', $findCode->id)->first();
+        return view('dashboard.game.FindCode.edit', compact('dataFindCode', 'findCode'));
     }
 
     /**
@@ -94,9 +96,10 @@ class findCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(findCodeController $request, Game $findCode)
     {
         //
+        
     }
 
     /**
