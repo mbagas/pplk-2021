@@ -160,6 +160,8 @@
         padding-right: 26px;
         margin-bottom: 5px;
         margin-top: 5px;
+        -ms-overflow-style: none; /* IE 11 */
+        scrollbar-width: none; /* Firefox 64 */
     }
 
     .scrolling-wrapper-flexbox::-webkit-scrollbar {
