@@ -15,12 +15,12 @@
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!--Per Page Styling-->
-        <link rel="stylesheet" href="../css/ukm.css">
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/ukm.css">
     </head>
     <body>
         <div class="main-wrapper">
@@ -37,13 +37,13 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../assets/images/jurusan-poster3.png" alt="POSTER" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster3.png" alt="POSTER" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/images/jurusan-poster2.png" alt="POSTER" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster2.png" alt="POSTER" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/images/jurusan-poster1.png" alt="POSTER" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster1.png" alt="POSTER" class="d-block w-100">
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         <div class="row row-cols-3 g-3" style="padding-top: 10px;">
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM A</h6>
                                     </div>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM C</h6>
                                     </div>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM D</h6>
                                     </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM E</h6>
                                     </div>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM F</h6>
                                     </div>
@@ -142,7 +142,7 @@
 
     <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
     <!--script-->
 </html>

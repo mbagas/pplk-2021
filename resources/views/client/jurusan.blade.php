@@ -11,18 +11,18 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="stylesheet" href="../css/index.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
         
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/jurusan-page.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/jurusan-page.css"></link>
     </head>
 
     <body>
@@ -30,7 +30,7 @@
             <!-- Navbar -->
             <nav class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="../html/index.html">
+                    <a class="navback-home" href="{{ asset('assets') }}/html/index.html">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -40,13 +40,13 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="../assets/images/jurusan-poster1.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="d-block w-100" >
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/images/jurusan-poster2.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster2.png" class="d-block w-100" >
                         </div>
                         <div class="carousel-item">
-                            <img src="../assets/images/jurusan-poster3.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster3.png" class="d-block w-100" >
                         </div>
                     </div>
                 </div>             
@@ -92,7 +92,7 @@
                     <!--Content 1-->                
                     <div class="tab-pane active custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="sains">
                         <div class="card w-100">
-                            <img src="../assets/images/jurusan-poster1.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -112,7 +112,7 @@
                     <!--Content 2-->
                     <div class="tab-pane custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="jtpi">
                         <div class="card w-100">
-                            <img src="../assets/images/jurusan-poster2.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster2.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -132,7 +132,7 @@
                     <!--Content 3-->
                     <div class="tab-pane custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="jtik">
                         <div class="card w-100">
-                            <img src="../assets/images/jhonnysins.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/assets/images/jhonnysins.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -157,8 +157,8 @@
 
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
         
     </body>
 </html>

@@ -15,12 +15,12 @@
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
 
         <script>
             $(document).ready(function(){
@@ -53,16 +53,16 @@
 									<div class="card sponsor-card container">
 										<div class="row row-cols-3">
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 										</div>
 									</div>
@@ -72,16 +72,16 @@
 										<div class="card sponsor-card container">
 											<div class="row row-cols-3">
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 											</div>
 										</div>
@@ -92,16 +92,16 @@
 										<div class="card sponsor-card container">
 											<div class="row row-cols-3">
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 											</div>
 										</div>
@@ -118,17 +118,17 @@
             <nav class="navbar p-0">
                 <div class="container-fluid head-bar">
                     <a class="pplk-logo navbar-brand" href="#">
-                        <img src="../assets/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                        <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
                     </a>
                     <div class="head-menu row ">
                         <a class="head-menu-icon" href="#">
-                            <img src="../assets/images/notification.png" alt="notification-menu">
+                            <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-icon" href="#">
-                            <img src="../assets/images/messages.png" alt="notification-menu">
+                            <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="profile">
-                            <img src="../assets/images/jhonnysins.png" alt="notification-menu">    
+                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">    
                         </a>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
                             <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda</p>
                         </div>
                         <div class="card-img-container">
-                            <img src="../assets/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                            <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
                         </div>
                     </a>
 
@@ -244,7 +244,7 @@
                             <p class="card-text">Unit Kegiatan Mahasiswa (UKM) adalah lembaga kemahasiswaan tempat....</p>
                         </div>
                         <div class="card-img-container">
-                            <img src="../assets/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                            <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
                         </div>
                     </a>
 
@@ -255,7 +255,7 @@
                                 Mauris ac enim eu tortor blandit sodales. </p>
                         </div>
                         <div class="card-img-container">
-                            <img src="../assets/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                            <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
                         </div>
                     </a>
 
@@ -267,7 +267,7 @@
                                 Mauris ac enim eu tortor blandit sodales. </p>
                         </div>
                         <div class="card-img-container">
-                            <img src="../assets/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                            <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
                         </div>
                     </a>
                 </div>
@@ -305,7 +305,7 @@
                     <div class="col-sm-12">
                         <div class="info-card card justify-content-between " style="height: 160px;" >
                             <div class="info-card-img-container">
-                                <img src="../assets/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
                             </div>
                             <div class="info-card-body" >
 
@@ -323,7 +323,7 @@
 					<div class="col-sm-12">
                         <div class="info-card card justify-content-between " style="height: 160px;" >
                             <div class="info-card-img-container">
-                                <img src="../assets/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
                             </div>
                             <div class="info-card-body" >
 
@@ -341,7 +341,7 @@
 					<div class="col-sm-12">
                         <div class="info-card card justify-content-between " style="height: 160px;" >
                             <div class="info-card-img-container">
-                                <img src="../assets/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
                             </div>
                             <div class="info-card-body" >
 
@@ -359,7 +359,7 @@
 					<div class="col-sm-12">
                         <div class="info-card card justify-content-between " style="height: 160px;" >
                             <div class="info-card-img-container">
-                                <img src="../assets/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
                             </div>
                             <div class="info-card-body" >
 
@@ -441,16 +441,16 @@
 									<div class="card sponsor-card container">
 										<div class="row row-cols-3">
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 											<div class="col">
-												<img src="../assets/images/pdip-red.png" alt="gambar-sponsor">
+												<img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
 											</div>
 										</div>
 									</div>
@@ -460,16 +460,16 @@
 										<div class="card sponsor-card container">
 											<div class="row row-cols-3">
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/owi.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
 												</div>
 											</div>
 										</div>
@@ -480,16 +480,16 @@
 										<div class="card sponsor-card container">
 											<div class="row row-cols-3">
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
-													<img src="../assets/images/master.jpeg" alt="gambar-sponsor">
+													<img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
 												</div>
 											</div>
 										</div>
@@ -503,7 +503,7 @@
 
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
     </body>
 </html>
