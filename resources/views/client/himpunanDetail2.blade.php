@@ -56,8 +56,8 @@
                                 <p>Dr. Ir. Agus</p>
                             </div>
                             <div class="dies-natalis">
-                                <h6>Dies Natalis</h6>
-                                <p>10 Agustus 2010</p>
+                                <h6>Tahun Berdiri</h6>
+                                <p>2010</p>
                             </div>
                         </div>
                     </div>
