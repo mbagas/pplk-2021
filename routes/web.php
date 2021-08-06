@@ -17,6 +17,10 @@ use App\Http\Controllers\Admin\submissionController;
 use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\Client\clientHomeController;
+use App\Http\Controllers\Client\clientBiodataController;
+use App\Http\Controllers\Client\clientTugasController;
+use App\Http\Controllers\Client\gameController;
+use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -107,6 +111,10 @@ Route::middleware(['Maba'])->group(function () {
 });
 
 Route::get('/home', [clientHomeController::class, 'index'])->name('home');
+Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
+Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+Route::get('/games', [gameController::class, 'index'])->name('games');
+Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
 
 // Route::get('/game', function () {
 //   $start = strtotime("16th august 2021");
