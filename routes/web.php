@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\mengerjakanController;
 use App\Http\Controllers\Admin\findCodeController;
+use App\Http\Controllers\Admin\tebakGedungController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::resource('kamusGaul', kamusGaulController::class)->except('show');
   Route::resource('kabinet', kabinetController::class)->except('show');
   Route::resource('findCode', findCodeController::class)->except(['show']);
+  Route::resource('tebakGedung', tebakGedungController::class)->except(['show']);
 
   // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
