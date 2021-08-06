@@ -1,0 +1,175 @@
+@media (max-width: 500px){
+    .himpunan-navback{
+        display: flex;  
+        top: 0;       
+        padding-left: 25px;
+        padding-right: 25px;   
+        border-radius: 15px !important;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+
+    .himpunan-navback a{        
+        position: absolute;
+        top: 36px;
+        font-weight: 300;
+    }
+    
+    .first-headline {
+        display: flex; 
+        margin-top: 74px ;    
+        justify-content: space-between !important;
+        margin-bottom: 20px;   
+    }
+
+    .logo-himpunan {
+        max-width: 40%;        
+    }
+
+    .logo-himpunan img{
+        width: 100%;
+    }
+
+    .name-himpunan{
+        margin-left: 10px;
+    }
+
+    .name-himpunan h2{
+        font-weight: bold;
+        margin: 0px;
+    }
+
+    .name-himpunan h5{
+        font-family: var(--font-family-body);
+        font-size: 14px;
+    }
+
+    .detail-headline h6{
+        font-family: var(--font-family-body);
+        font-size: 10px;
+        margin: 0px;
+    }
+
+    .detail-headline p{
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .second-headline {
+        margin-bottom: 20px;
+    }
+
+    .artikel-himpunan h2{
+        font-weight: bold;
+        margin-left: 14px;
+    }
+
+    .artikel-himpunan img{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .artikel-custom {
+        font-family: var(--font-family-body);
+        margin-left: 14px; 
+    }
+
+    .artikel-title h6{        
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    .artikel-title p{ 
+       font-size: 10px !important;        
+    }
+
+    .artikel-custom p{
+        font-size: 13px;
+    }
+
+    .third-headline{
+        margin-bottom: 20px;
+    }
+
+    .filo-himpunan h2{
+        font-weight: bold;
+        margin-left: 14px; 
+    }
+
+    .filo-custom img{
+        width: 40%;
+        margin-bottom: 8px;
+    }
+
+    .detail-filosofi {
+        font-family: var(--font-family-body);
+        margin-left: 14px; 
+    }
+
+    .detail-filosofi h6{
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    .detail-filosofi p{
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .last-headline{
+        margin-bottom: 20px;
+    }
+
+    .last-headline h2{
+        font-weight: bold;
+        margin-left: 14px;
+    }
+
+    .last-headline p{
+        font-size: 13px;
+        margin-left: 14px; 
+    }
+    
+    .footer {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 26px;
+        padding-right: 26px;
+        display: flex;
+        background-color: var(--primary);
+        text-align: left;
+        position: absolute;
+        align-items: center;
+    }
+
+    .footer-logo{
+        width: 10%;     
+    }
+
+    .footer img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .footer p{
+        font-size: 8px; 
+        margin-bottom: 0px;
+        color: var(--white);
+    }
+
+    .detail-info{
+        margin-left: 10px;
+    }
+
+    .icon-sosmed{
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        width: 25%;
+    }
+
+    .icon-sosmed img{
+        width: 25%;
+    }
+}
