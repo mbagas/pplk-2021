@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 })
 
 jQuery(function($) {
-    var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+    var path = window.location.href;
     $('ul a').each(function() {
         if (this.href === path) {
             $(this).addClass('active');
