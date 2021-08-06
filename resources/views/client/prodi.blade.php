@@ -43,13 +43,13 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster2.png" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster2.png" class="d-block w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster3.png" class="d-block w-100">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster3.png" class="d-block w-100">
                         </div>
                     </div>
                 </div>
