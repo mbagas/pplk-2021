@@ -40,7 +40,7 @@
                             <td>{{$findCode->games->skor}}</td>
 
                             <td class="manage-row">
-                                <a href="{{route('dashboard.findCode.edit', ['findCode' => $findCode])}}" class="edit-button">
+                                <a href="{{route('dashboard.findCode.edit', ['findCode' => $findCode->games])}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
