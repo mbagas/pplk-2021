@@ -228,7 +228,7 @@
 
                 <!-- Big Slide Menu -->
                 <div class="scrolling-wrapper-flexbox">
-                    <a href="../html/jurusan.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="../html/jurusan.html" class="card justify-content-between" style="width: 280px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Jurusan ITERA</h5>
                             <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda</p>
@@ -238,7 +238,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/ukm.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="../html/ukm.html" class="card justify-content-between" style="width: 280px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Unit Kegiatan Mahasiswa</h5>
                             <p class="card-text">Unit Kegiatan Mahasiswa (UKM) adalah lembaga kemahasiswaan tempat....</p>
@@ -248,7 +248,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/prodi.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="../html/prodi.html" class="card justify-content-between" style="width: 280px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Prodi ITERA</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
@@ -259,7 +259,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/himpunan.html" class="card justify-content-between" style="width: 250px; height: 170px; margin-right: 60px;">
+                    <a href="../html/himpunan.html" class="card justify-content-between" style="width: 280px; height: 170px; margin-right: 60px;">
                         <div class="card-body" >
                             <h5 class="card-title">Himpunan ITERA</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
