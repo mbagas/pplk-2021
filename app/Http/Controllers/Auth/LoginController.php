@@ -27,6 +27,8 @@ class LoginController extends Controller
      *
      * @return \Illuminate\View\View
      */
+    protected $redirectTo;
+    
     public function showLoginForm()
     {
         return view('login');
@@ -34,25 +36,33 @@ class LoginController extends Controller
     
     public function redirectTo()
     {
-        if (Auth::user()->roles_id == 1) {
-            return '/dashboard';
-        } else if (Auth::user()->roles_id == 6) {
-            return '/dashboardOrmawa';
-        } else if (Auth::user()->roles_id == 3) {
-            return '/dashboardDaplokMentor';
-        } else {
-            return '/home';
+        
+        switch(auth()->user()->roles_id){
+            case 1:
+                $this->redirectTo = '/dashboard';
+                return $this->redirectTo;
+                break;
+            case 2:
+                $this->redirectTo = '/dashboardTugas';
+                return $this->redirectTo;
+                break;
+            case 3:
+                $this->redirectTo = '/dashboardDaplokMentor';
+                return $this->redirectTo;
+                break;
+            case 6:
+                $this->redirectTo = '/dashboardOrmawa';
+                return $this->redirectTo;
+                break;
+            default:
+                $this->redirectTo = '/home';
+                return $this->redirectTo;
         }
+        
+       
     }
     
-    public function redirectPath()
-    {
-        if (method_exists($this, 'redirectTo')) {
-            return $this->redirectTo();
-        }
-
-        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
-    }
+   
 
     /**
      * Create a new controller instance.

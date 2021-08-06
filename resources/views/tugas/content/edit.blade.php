@@ -8,7 +8,11 @@
         <h4 class="card-title">Update Tugas</h4>
       </div>
       <div class="card-body">
+        @if (Auth::user()->roles_id == 1)
         <form method="POST" action="{{ route('dashboard.tugas.update', $tugas->id) }}" enctype='multipart/form-data'>
+        @else
+        <form method="POST" action="{{ route('dashboardTugas.tugas.update', $tugas->id) }}" enctype='multipart/form-data'>
+        @endif
           @method('PUT')
           @csrf
           <div class="mb-3 row">
@@ -48,13 +52,42 @@
               <input type="datetime-local" name="end_time" class="form-control form-control-lg" value="{{$tugas->end_time}}">
             </div>
           </div>
-          <button type="submit" class="btn btn-lg btn-primary">Perbarui</button>
-
+          <div id="parameter">
+            @foreach($tugas->parameters as $param)
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label col-form-label-lg">Parameter Nilai</label>
+              <div class="col-sm-6">
+                <input type="text" name="nama_params[]" class="form-control form-control-lg" value="{{ $param->nama }}" required>
+              </div>
+            
+              <div class="col-sm-4">
+                <input type="number" name="persen[]" class="form-control form-control-lg" value="{{ $param->persen }}" required>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <div class="mb-3 row">
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary ">Edit</button>
+            </div>
+            <div class="col-sm-6">
+              <button type="button" class="btn btn-danger" id="addParameter">Tambah Parameter</button>
+          </div>
+          </div>
         </form>
 
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#addParameter").click(function(){
+      $("#parameter").append('<div class="mb-3 row"><label class="col-sm-2 col-form-label col-form-label-lg">Parameter Nilai</label><div class="col-sm-6"><input type="text" name="nama_params[]" class="form-control form-control-lg" placeholder="Nama Parameter" required></div><div class="col-sm-4"><input type="number" name="persen[]" class="form-control form-control-lg" placeholder="Persentase Parameter" required></div></div>');
+    });
+  });
+</script>
 
 @endsection

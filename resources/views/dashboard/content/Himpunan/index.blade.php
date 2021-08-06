@@ -22,7 +22,8 @@
           <thead>
             <tr>
               <th>No</th>
-              <th>Nama</th>
+              <th>Nama Singkat</th>
+              <th>Nama Lengkap</th>
               <th>Pembina</th>
               <th>Ketua Himpunan</th>
               <th>Logo</th>
@@ -36,6 +37,7 @@
             @foreach ($himpunans as $himpunan )
             <tr>
               <td>{{$himpunan->ormawas->id}}</td>
+              <td>{{$himpunan->ormawas->namaSingkat}}</td>
               <td>{{$himpunan->ormawas->namaLengkap}}</td>
               <td>{{$himpunan->pembina}}</td>
               <td>{{$himpunan->ketuaHimpunan}}</td>

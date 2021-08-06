@@ -17,6 +17,7 @@ class CreateMengerjakansTable extends Migration
       $table->id();
       $table->foreignId('users_id');
       $table->foreignId('tugas_id');
+      $table->integer('kelompok');
       $table->string('file')->nullable();
       $table->text('jawaban')->nullable();
       $table->integer('nilai')->nullable();

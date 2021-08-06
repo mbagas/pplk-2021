@@ -25,7 +25,7 @@ class TugasMabaUpdateRequest extends FormRequest
   {
     return [
       'jawaban' => ['string', 'nullable'],
-      'file' => ['file', 'max:10240', 'nullable'],
+      'fileTugas' => ['file', 'max:10240', 'nullable']
     ];
   }
 }

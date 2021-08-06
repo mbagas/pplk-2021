@@ -27,7 +27,9 @@ class dashboardController extends Controller
      */
     public function index()
     {
-        $totalMahasiswa = User::where('roles_id', 5)->count();
+        $totalMahasiswa = cache()->remember('totalMahasiswa', 33600, function () {
+            return User::where('roles_id', 5)->count();
+        });
         return view('dashboard.index', compact('totalMahasiswa'));
     }
 }

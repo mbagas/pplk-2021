@@ -1,0 +1,218 @@
+@media (max-width: 500px){
+    .navbar {
+        position: absolute;
+        top: 0px;
+    }
+
+    .navback-custom img{
+       width: 100%;
+   }
+
+   .first-headline {        
+       margin-bottom: 20px; 
+       top: 100px;
+   }
+   
+   .card{
+       display: flex;
+       flex-direction: row !important;
+   }
+
+   .name-himpunan{       
+       width: 60%;
+       z-index: 1;
+       margin-top: 20px;
+       margin-left: 20px;
+   }
+
+   .name-himpunan h2{
+        font-weight: bold;
+        margin: 0px;
+   }
+
+   .name-himpunan h5{
+        font-family: var(--font-family-body);
+        font-size: 14px;
+   }
+
+    .detail-headline h6{
+        font-family: var(--font-family-body);
+        font-size: 10px;
+        margin: 0px;
+    }
+
+    .detail-headline p{
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+   .logo-himpunan {
+       margin-top: 20px;
+       margin-right: 20px;
+       width:20%;
+       z-index: 2;
+   }
+
+   .logo-himpunan img{           
+       width: 100%;
+   }   
+
+   .second-headline{
+        margin-top: 130px;
+        margin-bottom: 20px;
+   }
+
+   .artikel-himpunan img{
+       width: 100%;
+       margin-bottom: 16px;
+   }
+
+    .artikel-custom {
+        font-family: var(--font-family-body);
+        margin-left: 14px; 
+        padding-right: 14px;
+    }
+
+    .artikel-title h6{        
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    .artikel-title p{ 
+        font-size: 10px !important; 
+    }
+
+    .artikel-custom p{
+        font-size: 13px;
+    }
+
+    .custom-himpunan{
+        display: flex; 
+        flex-direction: column !important; 
+        height: relative; 
+        padding: 0px; 
+        height: 100%;
+        color: black;
+        margin-bottom: 30px;
+    }
+
+    .card-img-top{                        
+        border-radius: 15px;
+        width: 100% !important;   
+        height: 100% !important;    
+    }
+
+    .card-body {    
+        max-height: 100%;
+        max-width: 100%;
+        padding-left: 20px ;
+        padding-right: 20px ;
+        padding-bottom: 20px;
+    }
+
+    .card-title{
+        padding-top: 15px;        
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    .card-text{
+        margin-bottom: 0px;
+        width: 100%;  
+        display: flex;
+        max-height: 100%;
+        text-overflow: unset;
+    }
+
+    .footer {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 26px;
+        padding-right: 26px;
+        display: flex;
+        background-color: var(--primary);
+        text-align: left;
+        position: absolute;
+        align-items: center;
+    }
+
+    .footer-logo{
+        width: 10%;     
+    }
+
+    .small-himpunan-menu{
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: unset;
+        width: 100%;
+        justify-content:space-between !important;
+    }
+
+    .small-himpunan-menu .nav-item button{   
+        display: grid;
+        place-items: center;      
+        font-weight: 600;
+        width: 110px;    
+        height: 40px;                  
+        font-family: var(--font-family-body);
+        font-size: 13px; 
+        text-align: center; 
+        color: var(--grey); 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px; 
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .active, .button-himpunan:hover {
+        background-image: var(--gradient-1) !important;
+        color: var(--white) !important;
+        border-radius: 10px !important;
+        box-shadow: 0px 5px 10px 1px rgb(57 145 201 / 18%);        
+    }
+
+    .tab-content .active {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        background-image: none !important;
+    }
+
+    .footer img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .footer p{
+        font-size: 8px; 
+        margin-bottom: 0px;
+        color: var(--white);
+    }
+
+    .detail-info{   
+        margin-left: 10px;
+    }
+
+    .icon-sosmed{
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+        width: 25%;
+    }
+
+    .icon-sosmed img{
+        width: 25%;
+    }
+}
+
+@media (max-width: 360px) {
+    .small-himpunan-menu .nav-item button {
+        width: 90px !important;
+        height: 100%;
+    }
+}

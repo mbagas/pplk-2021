@@ -13,9 +13,10 @@ use App\Http\Controllers\Admin\senatController;
 use App\Http\Controllers\Admin\kamusGaulController;
 use App\Http\Controllers\Admin\kabinetController;
 use App\Http\Controllers\Admin\ormawaController;
+use App\Http\Controllers\Admin\submissionController;
 use App\Http\Controllers\Admin\userController;
+use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\mengerjakanController;
-use App\Http\Controllers\tugasController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +67,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
 
   Route::resource('tugas', tugasController::class);
+  Route::resource('submissions', submissionController::class);
   Route::resource('maba', mengerjakanController::class);
 });
 
@@ -84,10 +86,14 @@ Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('das
 
   Route::get('/', [userController::class, 'index'])->name('index');
   Route::resource('user', userController::class)->except('show');
+  Route::resource('submissions', submissionController::class)->only(['index']);
 });
 
 
-Route::middleware(['Tugas'])->group(function () {
+Route::middleware(['Tugas'])->name('dashboardTugas.')->prefix('dashboardTugas')->group(function () {
+  Route::get('/', [tugasController::class, 'index'])->name('index');
+  Route::resource('tugas', tugasController::class);
+  Route::resource('submissions', submissionController::class);
   // Ini Route yang hanya bisa diakses Role Tugas
 });
 

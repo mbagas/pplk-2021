@@ -22,7 +22,8 @@
           <thead>
               <tr>
                   <th>No</th>
-                  <th>Nama</th>
+                  <th>Nama Singkat</th>
+                  <th>Nama Lengkap</th>
                   <th>Jurusan</th>
                   <th>Kepala Prodi</th>
                   <th>Akreditasi</th>
@@ -35,6 +36,7 @@
             @foreach ($prodis as $data )
             <tr>
               <td>{{$data->ormawas->id}}</td>
+              <td>{{$data->ormawas->namaSingkat}}</td>
               <td>{{$data->ormawas->namaLengkap}}</td>
               <td>{{$data->jurusans->namaLengkap}}</td>
               <td>{{$data->kepalaProdi}}</td>

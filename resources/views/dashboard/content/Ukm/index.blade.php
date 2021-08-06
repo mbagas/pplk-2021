@@ -23,7 +23,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
+                            <th>Nama Singkat</th>
+                            <th>Nama Lengkap</th>
                             <th>Nama Pembina</th>
                             <th>Ketua Umum</th>
                             <th>Tahun Berdiri</th>
@@ -34,6 +35,7 @@
                         @foreach ($ukms as $ukm )
                         <tr>
                             <td>{{$loop->iteration}}</td>
+                            <td>{{$ukm->ormawas->namaSingkat}}</td>
                             <td>{{$ukm->ormawas->namaLengkap}}</td>
                             <td>{{$ukm->pembina}}</td>
                             <td>{{$ukm->ketuaUmum}}</td>

@@ -9,7 +9,7 @@ class Mengerjakan extends Model
 {
     use HasFactory;
     protected $table = 'mengerjakans';
-    protected $fillable = ['file', 'jawaban', 'nilai', 'status', 'users_id', 'tugas_id'];
+    protected $fillable = ['file', 'jawaban', 'nilai', 'status', 'users_id', 'tugas_id', 'kelompok'];
 
     public function tugas(){
         return $this->belongsTo(Tugas::class, 'tugas_id');

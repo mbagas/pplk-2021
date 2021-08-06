@@ -17,12 +17,8 @@ class DaplokMentor
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check()) {
-            if (Auth::user()->roles_id == 3) {
-                return $next($request);
-            } else {
-                return abort(403);
-            }
+        if (Auth::check() && auth()->user()->roles_id == 3) {
+            return $next($request);
         } else {
             return redirect('login');
         }

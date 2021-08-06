@@ -30,11 +30,11 @@ class mengerjakanController extends Controller
   {
     //Get Current User Id
     $UID = Auth::id();
-    $users = User::where('id', $UID)->first();
+    $user = User::where('id', $UID)->first();
 
     $tugas = Mengerjakan::create(
       $request->validated() + [
-        'file' => url($request->file('file')->move('Submissions/' . $users->nim . $request->id, $request->file('file')->getClientOriginalName())),
+        'file' => url($request->file('fileTugas')->move('Submissions/' . $user->nim . $request->id, $tugas->judul . '.' . $request->file('fileTugas')->extension())),
         'jawaban' => $request->jawaban,
         'status' => false,
         'users_id' => $UID,
@@ -106,7 +106,7 @@ class mengerjakanController extends Controller
 
         if ($request->hasFile('file')) {
           $submissions->update([
-            'file' => url($request->file('file')->move('Submissions/' . $users->nim . $request->id, $request->file('file')->getClientOriginalName())),
+            'file' => url($request->file('fileTugas')->move('Submissions/' . $user->nim . $request->id, $tugas->judul . '.' . $request->file('fileTugas')->extension())),
           ]);
         }
       }

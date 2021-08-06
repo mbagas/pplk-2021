@@ -20,7 +20,7 @@ class ormawaController extends Controller
     //
     public function index()
     {
-        $user = Auth::user();
+        $user = auth()->user();
         $ormawa = Ormawa::where('namaSingkat', $user->nama)->firstOrFail();
         $id = $ormawa->id;
         $kategori = $ormawa->kategoris_id;

@@ -1,0 +1,83 @@
+@media (max-width: 500px){
+    .hd-menu-bio {
+        margin-top: 2rem;
+        margin-right: 3rem;
+        padding: 0;
+    }
+    
+    .bio-profile {
+        display: grid;
+        place-items: center;
+        margin: 10px;
+    }
+    
+    .bio-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px !important;
+        min-height: 540px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    input {
+        border: none;
+        border-bottom: 1.5px solid #E0E0E0;
+        width: 100%;
+        outline: none;
+        background: transparent;
+    }
+    
+    label {
+        font-size: 13px;
+        color: gray;
+    }
+    
+    .bio-input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .bio-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-x: hidden;
+        transition: all 300ms ease;
+        z-index: 90;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 80px;
+        padding-bottom: calc(80px + (constant(safe-area-inset-bottom))*1.1);
+        padding-bottom: calc(80px + (env(safe-area-inset-bottom))*1.1);
+    }
+
+    .input-field-group{
+        margin-bottom: 0;
+    }
+    
+}
+
+/* @media (max-width: 400px) {
+    .hd-menu-bio {
+        margin-left: 310px;
+        margin-top: 33px;
+        margin-right: 37px;
+    }
+    .bio-input {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 350px) {
+    .hd-menu-bio {
+        margin-left: 270px;
+        margin-top: 33px;
+        margin-right: 37px;
+    }
+
+    .bio-input {
+        margin-bottom: 16px;
+    }
+} */

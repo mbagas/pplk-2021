@@ -139,26 +139,7 @@
 
 @endsection
 @section('script')
-@if (Auth::user()->roles_id == '1')
-<script>
-  function editData() {
-    document.getElementById('namaLengkap').disabled = false;
-    document.getElementById('namaSingkat').disabled = false;
-    document.getElementById('pembina').disabled = false;
-    document.getElementById('ketuaHimpunan').disabled = false;
-    document.getElementById('tahunBerdiri').disabled = false;
-    document.getElementById('kodeWarna').disabled = false;
-    document.getElementById('visi').disabled = false;
-    document.getElementById('misi').disabled = false;
-    document.getElementById('logo').disabled = false;
-    document.getElementById('filosofiLogo').disabled = false;
-    document.getElementById('deskripsi').disabled = false;
-    document.getElementById('website').disabled = false;
-    document.getElementById('instagram').disabled = false;
-    document.getElementById('youtube').disabled = false;
-  }
-</script>
-@else
+
 <script>
   function editData() {
     document.getElementById('pembina').disabled = false;
@@ -175,5 +156,5 @@
     document.getElementById('youtube').disabled = false;
   }
 </script>
-@endif
+
 @endsection

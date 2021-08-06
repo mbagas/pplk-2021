@@ -18,56 +18,100 @@
         </div>
         @endif
         <div class="table-responsive">
-          <table class="table table-responsive-md">
+          <table id="example4" class="display" style="min-width: 845px">
             <thead>
-              <tr>
-                <th style="width:80px;"><strong>Judul</strong></th>
-                <th class="text-center"><strong>Deskripsi</strong></th>
-                <th class="text-center"><strong>File</strong></th>
-                <th class="text-center"><strong>Format Penamaan</strong></th>
-                <th class="text-center"><strong>Start Time</strong></th>
-                <th class="text-center"><strong>End Time</strong></th>
-                <th class="text-center"><strong>ACTION</strong></th>
-              </tr>
+                <tr>
+                    <th>No</th>
+                    <th>Judul</th>
+                    <th>Deskripsi</th>
+                    <th>File</th>
+                    <th>Format</th>
+                    <th>Start Time</th>
+                    <th>EndTime</th>
+                    <th>More</th>
+                </tr>
             </thead>
             <tbody>
               @foreach ($tugass as $tugas )
               <tr>
-                <td class="text-center">{{$tugas->judul}}</td>
-                <td class="text-center">{{$tugas->deskripsi}}</td>
-                <td class="text-center">{{$tugas->file}}</td>
-                <td class="text-center">{{$tugas->format}}</td>
-                <td class="text-center">{{$tugas->start_time}}</td>
-                <td class="text-center">{{$tugas->end_time}}</td>
-                <td class="text-center">
-                  <div class="dropdown">
-                    <button type="button" class="btn btn-primary light sharp" data-bs-toggle="dropdown" aria-expanded="false">
-                      <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <rect x="0" y="0" width="24" height="24"></rect>
-                          <circle fill="#000000" cx="5" cy="12" r="2"></circle>
-                          <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                          <circle fill="#000000" cx="19" cy="12" r="2"></circle>
-                        </g>
-                      </svg>
-                    </button>
-                    <div class="dropdown-menu" style="margin: 0px;">
-                      <a class="dropdown-item" href="{{route('dashboard.tugas.show', $tugas->id)}}">Details</a>
-                      <a class="dropdown-item" href="{{route('dashboard.tugas.submissions', $tugas->id)}}">Submissions</a>
-                      <a class="dropdown-item" href="{{route('dashboard.tugas.edit', $tugas->id)}}">Edit</a>
-                      <form action="{{route('dashboard.tugas.destroy', $tugas->id)}}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <input type="submit" class="dropdown-item" value="Delete">
-                      </form>
+                <td>{{ $tugas->id }}</td>
+                <td>{{ $tugas->judul }}</td>
+                <td>{{ $tugas->deskripsi }}</td>
+                <td>{{ $tugas->file }}</td>
+                <td>{{ $tugas->format }}</td>
+                <td>{{ $tugas->start_time }}</td>
+                <td>{{ $tugas->end_time }}</td>
+                @if(Auth::user()->roles_id != 2)
+                  <td class="manage-row">
+                    <a href="{{route('dashboard.tugas.show', $tugas->id)}}" class="edit-button">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <a href="{{route('dashboard.tugas.edit', $tugas->id)}}" class="edit-button">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{$tugas->id}}">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                    <div class="modal fade bd-example-modal-sm{{$tugas->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><strong>Hapus Data</strong></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                    </button>
+                                </div>
+                                <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
+                                <div class="modal-footer">
+                                  <form action="{{route('dashboard.tugas.destroy', $tugas->id)}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                  </td>
+                @else
+                <td class="manage-row">
+                  <a href="{{route('dashboardTugas.tugas.show', $tugas->id)}}" class="edit-button">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  </a>
+                  <a href="{{route('dashboardTugas.tugas.edit', $tugas->id)}}" class="edit-button">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </a>
+                  <a role="button" class="delete-button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-sm{{ $tugas->id }}">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </a>
+                  <div class="modal fade bd-example-modal-sm{{$tugas->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title"><strong>Hapus Data</strong></h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal">
+                                  </button>
+                              </div>
+                              <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
+                              <div class="modal-footer">
+                                <form action="{{route('dashboardTugas.tugas.destroy', $tugas->id)}}" method="POST">
+                                  @method('DELETE')
+                                  @csrf
+                                  <input type="submit" class="btn btn-danger light" name="" id="" value="Hapus">
+                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Tidak</button>
+                                </form>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </td>
+                @endif
               </tr>
               @endforeach
             </tbody>
             {{-- link paginate --}}
           </table>
+        
         </div>
       </div>
     </div>

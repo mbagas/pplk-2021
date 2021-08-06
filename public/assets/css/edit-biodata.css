@@ -1,0 +1,62 @@
+@media (max-width: 500px){
+    .bio-content{
+        height: 100% !important;
+        width: 100% !important;
+        padding-bottom: 0!important;
+        max-width: 100%;
+    }
+
+    .head-menu {
+        margin-top: 1.5rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .bio-profile img{
+        margin-bottom: 16px;
+    }
+
+    .bio-profile p{
+        font-family: var(--font-family-title);
+        font-weight: 700;
+        text-align: center;
+        color: var(--black);
+    }
+
+    .icon-photo img{
+        position: absolute;
+        width: 8%;
+        margin-left: 12px;
+    }
+
+    .bio-form {
+        margin-top: 25px;    
+    }
+
+    .bio-input input{
+        color: var(--black)!important;
+        font-family: var(--font-family-body);
+    }  
+
+    .icon-dropdown {
+        position: absolute;
+        margin-top: 1.5rem;
+        margin-left: 62%;
+    }
+
+    .save-bio{
+        outline:none;
+        background-color: transparent;
+        border: none;
+    }
+
+    select {
+        font-family: var(--font-family-body) ;        
+        -webkit-appearance: none;        
+        border: none;
+        background: transparent;
+        border-bottom: 1.5px solid #E0E0E0;
+    }
+
+}
