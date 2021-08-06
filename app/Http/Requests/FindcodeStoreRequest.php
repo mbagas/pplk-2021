@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FindcodeStoreRequest extends FormRequest
+class FindCodeStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class FindcodeStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,8 +24,9 @@ class FindcodeStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'game' => ['required'],
-            'code' => ['required']
+            'gambar' => ['image', 'max:5024', 'required'],
+            'nama' => ['string','required'],
+            'code' => ['string','required']
         ];
     }
 }

@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\submissionController;
 use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\mengerjakanController;
+use App\Http\Controllers\Admin\findCodeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,9 +44,6 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
   // SUDAH DI OPTIMIZE (routing)
   Route::get('/', [dashboardController::class, 'index'])->name('index');
-
-  // SUDAH DI OPTIMIZE (routing)
-  Route::get('/', [dashboardController::class, 'index'])->name('index');
   Auth::routes();
   Route::resource('user', userController::class)->except('show');
   Route::resource('prodi', prodiController::class)->except(['show']);
@@ -58,6 +56,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::resource('upt', uptController::class)->except('show');
   Route::resource('kamusGaul', kamusGaulController::class)->except('show');
   Route::resource('kabinet', kabinetController::class)->except('show');
+  Route::resource('findCode', findCodeController::class)->except(['show']);
 
   // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
