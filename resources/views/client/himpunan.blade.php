@@ -12,20 +12,20 @@
     <!-- Title -->
     <title>WEB PPLK 2021 - @yield('title')</title>
 
-    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
     <!-- Styling and logo -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css">
     </link>
-    <link rel="stylesheet" href="../css/main-stylings.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css">
     </link>
-    <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
     <!-- Per Page Styling -->
-    <link rel="stylesheet" href="../css/himpunan.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/himpunan.css">
     </link>
 </head>
 
@@ -33,7 +33,7 @@
     <div class="main-wrapper">
         <nav class="navbar p-0">
             <div class="container-fluid nav-back">
-                <a class="navback-home" href="../html/index.html">
+                <a class="navback-home" href="../index.blade.php">
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="36" height="36" rx="10" fill="white"/>
                         <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -43,13 +43,13 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../assets/images/jurusan-poster1.png" class="d-block w-100">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="../assets/images/jurusan-poster2.png" class="d-block w-100">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster2.png" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                        <img src="../assets/images/jurusan-poster3.png" class="d-block w-100">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster3.png" class="d-block w-100">
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 1</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 2</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@
                             <div class="card-body">
                                 <h6 class="card-title" >Himpunan 3</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -136,7 +136,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 4</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -147,7 +147,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 5</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -158,7 +158,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 6</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -169,7 +169,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 7</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -180,7 +180,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 8</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -191,7 +191,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">Himpunan 9</h6>
                             </div>
-                            <a href="../html/himpunanDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
 
@@ -201,8 +201,8 @@
 
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
         <!-- <script>
             var header = document.getElementById("small-menu");
             var btns = header.getElementsByClassName("button-prodi");
