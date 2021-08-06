@@ -19,13 +19,13 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="stylesheet" href="../css/prodi.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/prodi.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!--Per Page Styling-->
-        <link rel="stylesheet" href="../css/detail-prodi.css">
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/detail-prodi.css">
     </head>
     <body>
         <div class="main-wrapper">
@@ -53,7 +53,7 @@
                 <!--headline pertama-->
                 <div class="first-headline">
                     <div class="logo-prodi">
-                        <img src="../assets/images/ukm.png" alt="poster">
+                        <img src="{{ asset('assets') }}/images/ukm.png" alt="poster">
                     </div>                   
                     <div class="name-prodi">
                         <h5>Program Studi</h5>
@@ -103,7 +103,7 @@ Placerat semper nisl turpis mattis pharetra. </p>
 
                 <div class="last-headline">
                     <div class="logo-prodi">
-                        <img src="../assets/images/jurusan-poster1.png" alt="poster">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster1.png" alt="poster">
                     </div>                   
                     <div class="name-prodi">
                         <h5>Dr. Moedji Raharto</h5>
@@ -125,7 +125,7 @@ Placerat semper nisl turpis mattis pharetra. </p>
                         </div>
                     </div> 
                     <div class="logo-prodi">
-                        <img src="../assets/images/jurusan-poster1.png" alt="poster">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster1.png" alt="poster">
                     </div>                    
                 </div>
 
@@ -144,9 +144,9 @@ Placerat semper nisl turpis mattis pharetra. </p>
                 <!--slick carousel-->
                 <div class="slick-wrapper">
                     <div class="carousel-3">
-                        <img class="slide-image" src="../assets/images/jurusan-poster1.png" />
-                        <img class="slide-image" src="../assets/images/jurusan-poster2.png" />
-                        <img class="slide-image" src="../assets/images/jurusan-poster3.png" />
+                        <img class="slide-image" src{{ asset('assets') }}/images/jurusan-poster1.png" />
+                        <img class="slide-image" src="{{ asset('assets') }}/images/jurusan-poster2.png" />
+                        <img class="slide-image" src="{{ asset('assets') }}/images/jurusan-poster3.png" />
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@ Placerat semper nisl turpis mattis pharetra. </p>
         <!--footer-->
         <div class="footer justify-content-around">
             <div class="footer-logo">
-                <img src="../assets/images/logo-footer.png">
+                <img src="{{ asset('assets') }}/images/logo-footer.png">
             </div>
             <div class="detail-info">
                 <p>Copyright © 2016 UPT TIK -
@@ -163,17 +163,17 @@ Placerat semper nisl turpis mattis pharetra. </p>
                 <p>Telepon : 07218030188 – 07218030189</p>
             </div>
             <div class="icon-sosmed">
-                <img src="../assets/images/twiter.png">
-                <img src="../assets/images/yutub.png">
-                <img src="../assets/images/ige.png">                                     
+                <img src{{ asset('assets') }}/images/twiter.png">
+                <img src="{{ asset('assets') }}/images/yutub.png">
+                <img src="{{ asset('assets') }}/images/ige.png">                                     
             </div>
         </div>
     </body>
 
     <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
     <script>
         $(function () {
             $('.carousel-3').slick({

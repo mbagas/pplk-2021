@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ormawaController;
 use App\Http\Controllers\Admin\submissionController;
 use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
+use App\Http\Controllers\Client\clientHomeController;
 use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -104,3 +105,13 @@ Route::middleware(['Pendanaan'])->group(function () {
 Route::middleware(['Maba'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
 });
+
+Route::get('/home', [clientHomeController::class, 'index'])->name('home');
+
+// Route::get('/game', function () {
+//   $start = strtotime("16th august 2021");
+
+//   $submit = strtotime("19th august 2021");
+
+//   return $submit-$start;
+// });

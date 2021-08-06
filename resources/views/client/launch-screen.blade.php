@@ -13,26 +13,26 @@
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
     </head>
 
     <body>
         <!-- Splash Screen -->
         <div class="launch-logo">
-            <img src="../assets/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="launch-logo-image fade"/>
+            <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="launch-logo-image fade"/>
         </div>
 
         <!-- Login Page -->
         <div class="login-page w-100 m-auto">
             <div class="pplk-logo">
-                <img src="../assets/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
             </div>
             
                 <div class="wrap-login modal-content d-flex flex-wrap justify-content-between">
                     <div class="m-sm-auto image-container">
-                        <img src="../assets/images/reading.png" alt="reading-image" class="login-image">
+                        <img src="{{ asset('assets') }}/images/reading.png" alt="reading-image" class="login-image">
                     </div>
     
                     <div class="login-welcome-info">
@@ -45,7 +45,7 @@
                             <label class="form-label mb-1">Email</label>
                             <div class="input-field">
                                 <i class="input-logo">
-                                    <img src="../assets/images/email-logo.png" alt="" class="">
+                                    <img src="{{ asset('assets') }}/images/email-logo.png" alt="" class="">
                                 </i>
                                 <input class="input-control form-control" type="text" name="email" placeholder="Email">
                             </div>
@@ -53,7 +53,7 @@
                             <label class="form-label mb-1">Password</label>
                             <div class="input-field">
                                 <i class="input-logo">
-                                    <img src="../assets/images/password-logo.png" alt="" class="">
+                                    <img src="{{ asset('assets') }}/images/password-logo.png" alt="" class="">
                                 </i>
                                 <input class="input-control form-control" type="password" name="pass" placeholder="Password">
                             </div>
@@ -73,7 +73,7 @@
         </div>
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
     </body>
 </html>
