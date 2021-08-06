@@ -70,7 +70,7 @@
 
     .footer-bar{
         z-index: 98;
-        background-color: var(--page-background-1);
+        background-color: var(--white);
         bottom: 0;
         position: fixed;
         overflow: hidden;
