@@ -11,24 +11,24 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>     
-        <link rel="stylesheet" href="../css/himpunan.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>     
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/himpunan.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!--Per Page Styling-->
-        <link rel="stylesheet" href="../css/himpunanDetail2.css">
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/himpunanDetail2.css">
     </head>
     <body>
         <div class="main-wrapper">
             <!--NavBar-->
             <nav class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="../html/himpunan.html">
+                    <a class="navback-home" href="../himpunan.blade.php">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -36,7 +36,7 @@
                     </a>
                 </div>
                 <div class="navback-custom">            
-                    <img src="../assets/images/ukm-poster-1.png">
+                    <img src="{{ asset('assets') }}/images/ukm-poster-1.png">
                 </div>
             </nav>
             <!--content-->
@@ -62,13 +62,13 @@
                         </div>
                     </div>
                     <div class="logo-himpunan">            
-                        <img src="../assets/images/himpunan-logo.png" alt="poster">                        
+                        <img src="{{ asset('assets') }}/images/himpunan-logo.png" alt="poster">                        
                     </div>                    
                 </div>
                 <!--second headline-->
                 <div class="second-headline">
                     <div class="artikel-himpunan">
-                        <img src="../assets/images/jurusan-poster1.png">
+                        <img src="{{ asset('assets') }}/images/jurusan-poster1.png">
                         <div class="d-flex justify-content-between artikel-custom">
                             <div class="artikel-1">
                                 <div class="artikel-title">
@@ -105,7 +105,7 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
                     <!--Content 1-->                
                     <div class="tab-pane active justify-content-center"  role="tabpanel" id="filosofi">
                         <div class="card custom-himpunan w-100">
-                            <img src="../assets/images/ukm-1.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Segi Empat
@@ -137,7 +137,7 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
                     <!--Content 2-->
                     <div class="tab-pane justify-content-center"  role="tabpanel" id="visi">
                         <div class="card custom-himpunan w-100">
-                            <img src="../assets/images/ukm-1.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -151,7 +151,7 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
                     <!--Content 3-->
                     <div class="tab-pane justify-content-center"  role="tabpanel" id="misi">
                         <div class="card custom-himpunan w-100">
-                            <img src="../assets/images/ukm-1.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
                             <div class="card-body">                                
                                 <h2 class="card-title">
                                     Misi
@@ -171,7 +171,7 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
         <!--footer-->
         <div class="footer justify-content-around">
             <div class="footer-logo">
-                <img src="../assets/images/logo-footer.png">
+                <img src="{{ asset('assets') }}/images/logo-footer.png">
             </div>
             <div class="detail-info">
                 <p>Copyright © 2016 UPT TIK -
@@ -180,16 +180,16 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
                 <p>Telepon : 07218030188 – 07218030189</p>
             </div>
             <div class="icon-sosmed">
-                <img src="../assets/images/twiter.png">
-                <img src="../assets/images/yutub.png">
-                <img src="../assets/images/ige.png">                                     
+                <img src="{{ asset('assets') }}/images/twiter.png">
+                <img src="{{ asset('assets') }}/images/yutub.png">
+                <img src="{{ asset('assets') }}/images/ige.png">                                     
             </div>
         </div>
     </body>
 
     <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/custom.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
     <!--script-->
 </html>

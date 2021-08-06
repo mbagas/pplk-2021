@@ -11,23 +11,23 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>        
-        <link rel="stylesheet" href="../css/biodata.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>        
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/biodata.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/edit-biodata.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/edit-biodata.css"></link>
     </head>
     <body>
         <div class="main-wrapper">
             <!--NavBar-->
                 <div class="head-menu d-flex justify-content-between">
-                    <a class="head-custom" href="../html/biodata.html">
+                    <a class="head-custom" href="../biodata.blade.php">
                         <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.5625 16.5832C7.5625 16.5832 1.4375 12.0938 1.4375 8.99984C1.4375 5.90692 7.5625 1.4165 7.5625 1.4165" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>                                                   
@@ -44,9 +44,9 @@
             <div class="bio-content container-fluid justify-content-between">
                 <div class="bio-profile">
                     <div class="icon-photo">
-                        <img src="../assets/images/logo photo.png">
+                        <img src="{{ asset('assets') }}/images/logo photo.png">
                     </div>
-                    <img src="../assets/images/jhonnysins.png" alt="photo-profile" >                                                            
+                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="photo-profile" >                                                            
                     <p class="edit-profile">Edit Profile Photo</p>
                     <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="23" height="3" rx="1.5" fill="#3991C9"/>
@@ -115,7 +115,7 @@
 
          <!-- Required JS -->
          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-         <script src="../js/bootstrap.bundle.js"></script>
-         <script src="../js/custom.js"></script>
+         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+         <script src="{{ asset('assets') }}/js/custom.js"></script>
     </body>
 </html>
