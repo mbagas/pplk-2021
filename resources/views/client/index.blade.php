@@ -15,12 +15,12 @@
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
-        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"/>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"/>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"/>
 
         <script>
             $(document).ready(function(){
@@ -228,7 +228,7 @@
 
                 <!-- Big Slide Menu -->
                 <div class="scrolling-wrapper-flexbox">
-                    <a href="../html/jurusan.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="{{ route('jurusan') }}" class="card justify-content-between" style="width: 250px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Jurusan ITERA</h5>
                             <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda</p>
@@ -238,7 +238,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/ukm.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="{{ route('ukm') }}" class="card justify-content-between" style="width: 250px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Unit Kegiatan Mahasiswa</h5>
                             <p class="card-text">Unit Kegiatan Mahasiswa (UKM) adalah lembaga kemahasiswaan tempat....</p>
@@ -248,7 +248,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/prodi.html" class="card justify-content-between" style="width: 250px; height: 170px;">
+                    <a href="{{ route('prodi') }}" class="card justify-content-between" style="width: 250px; height: 170px;">
                         <div class="card-body" >
                             <h5 class="card-title">Prodi ITERA</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
@@ -259,7 +259,7 @@
                         </div>
                     </a>
 
-                    <a href="../html/himpunan.html" class="card justify-content-between" style="width: 250px; height: 170px; margin-right: 60px;">
+                    <a href="{{ route('himpunan') }}" class="card justify-content-between" style="width: 250px; height: 170px; margin-right: 60px;">
                         <div class="card-body" >
                             <h5 class="card-title">Himpunan ITERA</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.

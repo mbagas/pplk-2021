@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class clientJurusanController extends Controller
 {
-    //
+    public function index(){
+        return view('client.jurusan');
+    }
 }

@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
         
 
         <!-- Per Page Styling -->
@@ -30,7 +30,7 @@
             <!-- Navbar -->
             <nav class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="{{ asset('assets') }}/html/index.html">
+                    <a class="navback-home" href="{{ url()->previous() }}">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -40,13 +40,13 @@
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="d-block w-100" >
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster2.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/images/jurusan-poster2.png" class="d-block w-100" >
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster3.png" class="d-block w-100" >
+                            <img src="{{ asset('assets') }}/images/jurusan-poster3.png" class="d-block w-100" >
                         </div>
                     </div>
                 </div>             
@@ -92,7 +92,7 @@
                     <!--Content 1-->                
                     <div class="tab-pane active custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="sains">
                         <div class="card w-100">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -112,7 +112,7 @@
                     <!--Content 2-->
                     <div class="tab-pane custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="jtpi">
                         <div class="card w-100">
-                            <img src="{{ asset('assets') }}/assets/images/jurusan-poster2.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster2.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
@@ -132,7 +132,7 @@
                     <!--Content 3-->
                     <div class="tab-pane custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="jtik">
                         <div class="card w-100">
-                            <img src="{{ asset('assets') }}/assets/images/jhonnysins.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/jhonnysins.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi

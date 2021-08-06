@@ -11,7 +11,7 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -27,7 +27,7 @@
             <!--NavBar-->
             <nav class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="../html/index.html">
+                    <a class="navback-home" href="{{ url()->previous() }}">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="col custom-mini-ukm-col">
                                 <div class="card">
-                                    <img src="../assets/images/logo-box.png" alt="poster">
+                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
                                         <h6 class="card-title">UKM B</h6>
                                     </div>

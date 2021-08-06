@@ -18,7 +18,11 @@ use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\Client\clientHomeController;
 use App\Http\Controllers\Client\clientBiodataController;
+use App\Http\Controllers\Client\clientHimpunanController;
+use App\Http\Controllers\Client\clientJurusanController;
+use App\Http\Controllers\Client\clientProdiController;
 use App\Http\Controllers\Client\clientTugasController;
+use App\Http\Controllers\Client\clientUkmController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\mengerjakanController;
@@ -115,6 +119,10 @@ Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata
 Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
 Route::get('/games', [gameController::class, 'index'])->name('games');
 Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
+Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
+Route::get('/prodi', [clientProdiController::class, 'index'])->name('prodi');
+Route::get('/ukmm', [clientUkmController::class, 'index'])->name('ukm');
+Route::get('/himpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
 
 // Route::get('/game', function () {
 //   $start = strtotime("16th august 2021");
