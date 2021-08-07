@@ -79,22 +79,29 @@
                         </div>
 
                         <div class="row row-cols-3 g-3" style="padding-top: 10px;">
-                            <div class="col custom-mini-ukm-col">
+
+                            
+                            @foreach ($ukms as $ukm) 
+                            <div class="col custom-mini-ukm-col">  
                                 <div class="card">
-                                    <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
+                                    <img src="{{$ukm->logo ?? asset('assets/images/LogoItera.png')}} " alt="poster">
                                     <div class="card-body">
-                                        <h6 class="card-title">UKM A</h6>
+                                        <h6 class="card-title">{{$ukm->ormawas->namaSingkat}}</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                                </div>
+                                    <a href="../ukmDetail/{{$ukm->ormawas->id}}" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                </div>                            
                             </div>
-                            <div class="col custom-mini-ukm-col">
+                            @endforeach
+
+
+                            
+                            {{-- <div class="col custom-mini-ukm-col">
                                 <div class="card">
                                     <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                     <div class="card-body">
-                                        <h6 class="card-title">UKM B</h6>
+                                        <h6 class="card-title">UKM PENCAK SILAT</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                    <a href="../ukmDetail" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                                 </div>
                             </div>
                             <div class="col custom-mini-ukm-col">
@@ -103,7 +110,7 @@
                                     <div class="card-body">
                                         <h6 class="card-title">UKM C</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                    <a href="../ukmDetail" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                                 </div>
                             </div>
                             <div class="col custom-mini-ukm-col">
@@ -112,7 +119,7 @@
                                     <div class="card-body">
                                         <h6 class="card-title">UKM D</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                    <a href="../ukmDetail" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                                 </div>
                             </div>
                             <div class="col custom-mini-ukm-col">
@@ -121,7 +128,7 @@
                                     <div class="card-body">
                                         <h6 class="card-title">UKM E</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                    <a href="../ukmDetail" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                                 </div>
                             </div>
                             <div class="col custom-mini-ukm-col">
@@ -130,9 +137,9 @@
                                     <div class="card-body">
                                         <h6 class="card-title">UKM F</h6>
                                     </div>
-                                    <a href="../html/ukmDetail2.html" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                                    <a href="../ukmDetail" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

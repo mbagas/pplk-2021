@@ -122,7 +122,10 @@ Route::get('/games', [gameController::class, 'index'])->name('games');
 Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
 Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
 Route::get('/prodi', [clientProdiController::class, 'index'])->name('prodi');
+
 Route::get('/ukmm', [clientUkmController::class, 'index'])->name('ukm');
+Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
+
 Route::get('/himpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
 
 // Route::get('/game', function () {
