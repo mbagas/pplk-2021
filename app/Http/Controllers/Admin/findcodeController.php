@@ -96,10 +96,29 @@ class findCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(findCodeController $request, Game $findCode)
+    public function update(FindCodeStoreRequest $request, Game $findCode)
     {
         //
-        
+        // dd($request);
+        DB::transaction(function () use ($findCode,$request) {
+            $findCode->update([
+                'skor' => $request->skor
+            ]);
+
+            $dataFindCode = FindCode::with('games')->where('games_id', $findCode->id)->first();
+
+            $dataFindCode->update([
+                'nama'  => $request->nama,
+                'code'  => $request->code,
+            ]);
+
+            if($request->hasFile('gambar')){
+                $dataFindCode->update([
+                    'gambar' => url($request->file('gambar')->move('findCode', $dataFindCode->nama . '.' . $request->file('gambar')->extension())),
+                ]);
+            }
+        });
+        return redirect()->route('dashboard.findCode.index')->with('sukses', 'Berhasil Mengubah Data');
     }
 
     /**
@@ -111,5 +130,7 @@ class findCodeController extends Controller
     public function destroy($id)
     {
         //
+        Game::destroy($id);
+        return redirect()->route('dashboard.findCode.index')->with('sukses', 'Berhasil Menghapus Data');
     }
 }

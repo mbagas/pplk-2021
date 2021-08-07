@@ -146,6 +146,17 @@
         </ul>
       </li>
       <li>
+        <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+          <i class="fa fa-tasks" aria-hidden="true"></i>
+          <span class="nav-text">Games</span>
+        </a>
+        <ul aria-expanded="false">
+          <li><a href="{{route('dashboard.findCode.create')}}">Masukkan Find the Code</a></li>
+          <li><a href="{{route('dashboard.findCode.index')}}">Kelola Find the Code</a></li>
+          <li><a href="{{route('dashboard.submissions.index')}}"></a></li>
+        </ul>
+      </li>
+      <li>
         <a href="javascript:void()">
           <i class="fa fa-shopping-basket" aria-hidden="true"></i>
           <span class="nav-text">E-commerce</span>
