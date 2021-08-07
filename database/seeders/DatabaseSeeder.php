@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\KategoriGame;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -19,7 +20,8 @@ class DatabaseSeeder extends Seeder
             JurusanSeeder::class,
             KategorySeeder::class,
             RoleSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            KategoryGameSeeder::class
         ]);
     }
 }
