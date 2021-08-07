@@ -43,30 +43,26 @@ class tebakGedungController extends Controller
         DB::transaction(function () use($request){
             $game = Game::create(
                 [
-                    'kategoriGame_id' =>2,
+                    'kategoriGame_id' => 2,
                     'skor' => $request->skor
                 ]
             );
 
             $tebakgedung = TebakGedung::create(
                 [
-                    'gambar' => $request->gambar,
+                    'gambar' => url($request->file('gambar')->move('tebakGedung', $request->nama . '.' . $request->file('gambar')->extension())),
                     'pil1' => $request->pil1,
                     'pil2' => $request->pil2,
                     'pil3' => $request->pil3,
                     'pil4' => $request->pil4,
-                    'jawaban' => $request->jawaban
+                    'jawaban' => $request->jawaban,
+                    'games_id'=> $game->id
                 ]
                 );
 
-            $games = Game::create(
-                [
-                    'skor' => $request->skor
-                ]
-            );
         });
 
-        return redirect()->route('dashboard.tebakgedung.index')->with('sukses', 'Berhasil Menambah Data');
+        return redirect()->route('dashboard.tebakGedung.index')->with('sukses', 'Berhasil Menambah Data');
     }
 
     /**
@@ -86,9 +82,11 @@ class tebakGedungController extends Controller
      * @param  \App\Models\TebakGedung  $tebakGedung
      * @return \Illuminate\Http\Response
      */
-    public function edit(TebakGedung $tebakGedung)
+    public function edit(Game $tebakGedung)
     {
         //
+        $dataTebakGedung = TebakGedung::with('games')->where('games_id', $tebakGedung->id)->first();
+        return view('dashboard.game.TebakGedung.edit', compact('dataTebakGedung', 'tebakGedung'));
     }
 
     /**
@@ -98,19 +96,27 @@ class tebakGedungController extends Controller
      * @param  \App\Models\TebakGedung  $tebakGedung
      * @return \Illuminate\Http\Response
      */
-    public function update(TebakGedung $request, Game $tebakGedung)
+    public function update(TebakGedungStoreRequest $request, Game $tebakGedung)
     {
         DB::transaction(function () use($request, $tebakGedung){
+            $tebakGedung->update([
+                'skor' => $request->skor
+            ]);
             $dataTebakGedung = TebakGedung::with('games')->where('games_id',$tebakGedung->id)->first();
             
             $dataTebakGedung->update([
-                'gambar' => $request->gambar,
                 'pil1' => $request->pil1,
                 'pil2' => $request->pil2,
                 'pil3' => $request->pil3,
                 'pil4' => $request->pil4,
                 'jawaban' => $request->jawaban
             ]);
+
+            if($request->hasFile('gambar')){
+                $dataTebakGedung->update([
+                    'gambar' => url($request->file('gambar')->move('tebakGedung', $dataTebakGedung->nama . '.' . $request->file('gambar')->extension())),
+                ]);
+            }
         });
     }
 
@@ -120,8 +126,10 @@ class tebakGedungController extends Controller
      * @param  \App\Models\TebakGedung  $tebakGedung
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TebakGedung $tebakGedung)
+    public function destroy($id)
     {
         //
+        Game::destroy($id);
+        return redirect()->route('dashboard.tebakGedung.index')->with('sukses', 'Berhasil Menghapus Data');
     }
 }

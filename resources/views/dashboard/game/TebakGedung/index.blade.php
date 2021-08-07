@@ -30,14 +30,14 @@
                             <th>Pilihan 4</th>
                             <th>Jawaban</th>
                             <th>Score</th>
+                            <th>More</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($tebakGedungs as $tebakGedung )
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td>{{$tebakGedung->gambar}}</td>
-                            <td><img src="{{$tebakGedung->gambar}}" alt="" widht="100" height="100"></td>
+                            <td><img src="{{$tebakGedung->gambar}}" widht="100" height="100" alt=""></td>
                             <td>{{$tebakGedung->pil1}}</td>
                             <td>{{$tebakGedung->pil2}}</td>
                             <td>{{$tebakGedung->pil3}}</td>
@@ -46,7 +46,7 @@
                             <td>{{$tebakGedung->games->skor}}</td>
 
                             <td class="manage-row">
-                                <a href="{{route('dashboard.tebak$tebakGedung.edit', ['tebak$tebakGedung' => $tebakGedung])}}" class="edit-button">
+                                <a href="{{route('dashboard.tebakGedung.edit', ['tebakGedung' => $tebakGedung->games])}}" class="edit-button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a role="button" class="delete-button" data-bs-toggle="modal"
@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="modal-body">Apakah anda yakin ingin menghapus data?</div>
                                             <div class="modal-footer">
-                                                <form action="{{route('dashboard.tebak$tebakGedung.destroy', $tebakGedung->games->id)}}"
+                                                <form action="{{route('dashboard.tebakGedung.destroy', $tebakGedung->games->id)}}"
                                                     method="POST">
                                                     @method('DELETE')
                                                     @csrf

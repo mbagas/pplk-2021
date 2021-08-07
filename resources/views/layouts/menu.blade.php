@@ -153,7 +153,8 @@
         <ul aria-expanded="false">
           <li><a href="{{route('dashboard.findCode.create')}}">Masukkan Find the Code</a></li>
           <li><a href="{{route('dashboard.findCode.index')}}">Kelola Find the Code</a></li>
-          <li><a href="{{route('dashboard.submissions.index')}}"></a></li>
+          <li><a href="{{route('dashboard.tebakGedung.create')}}">Masukkan Tebak Gedung</a></li>
+          <li><a href="{{route('dashboard.tebakGedung.index')}}">Kelola Tebak Gedung</a></li>
         </ul>
       </li>
       <li>
