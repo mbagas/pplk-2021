@@ -16,7 +16,6 @@ class clientHimpunanController extends Controller
         $himpunans = cache()->remember('himpunans', 7200, function () {
             return Himpunan::with("ormawas")->get();
         });
-        dd($himpunans);
         return view('client.himpunan', compact('himpunans'));
     }
 
