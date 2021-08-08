@@ -376,42 +376,21 @@
 
                     <div id="carouselFunFact" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
                         <div class="carousel-inner">
-							<div class="carousel-item active">
+                            @foreach($funFact as $i=>$data)
+							<div class="carousel-item @if($i == 0) active @endif ">
 								<div class="card fun-fact-card">
 									<div class="card-body">
 										<h2 class="card-title">
 											Fun Fact
 										</h2>
 										<p class="card-text">
-											Segi empat menggabarkan stabilitas, kedamaian, soliditas, dan kesetaraan.
+											{{ $data->body }}
 										</p>
 									</div>
 								</div>
 							</div>
-							<div class="carousel-item">
-								<div class="card fun-fact-card">
-									<div class="card-body">
-										<h2 class="card-title">
-											Fun Fact
-										</h2>
-										<p class="card-text">
-											Segi empat menggabarkan stabilitas, kedamaian, soliditas, dan kesetaraan.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<div class="card fun-fact-card">
-									<div class="card-body">
-										<h2 class="card-title">
-											Fun Fact
-										</h2>
-										<p class="card-text">
-											Segi empat menggabarkan stabilitas, kedamaian, soliditas, dan kesetaraan.
-										</p>
-									</div>
-								</div>
-							</div>
+                            @endforeach
+							
                         </div>
 						<button class="carousel-control-prev fun-fact-prev" type="button" data-bs-target="#carouselFunFact" data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>

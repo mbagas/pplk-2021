@@ -118,460 +118,65 @@
                 <!--Content 1-->                
                 <div class="tab-pane active custom-card-prodi justify-content-center info-prodi"  role="tabpanel" id="sains">
                     <div class="row row-cols-3 g-3" style="padding-top: 10px;">
+                        @foreach($prodis as $data)
+                        @if($data->jurusans_id == 3)
                         <div class="col custom-mini-prodi-col">
                             <div class="card">
                                 <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
                                     alt="a snow-capped mountain range" />
                                 <div class="card-body">
-                                    <h6 class="card-title">Fisika</h6>
+                                    <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
+                            <a href="#" class="btn btn-primary rounded custom-more-btn">
                                     Learn More
                             </a>
                             </div>
                         </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Kimia</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title" >Matematika</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Sains Data</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Sains Aktuaria</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Farmasi</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Biologi</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Sains Lingkungan Kelautan</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Sains Atmosfir dan Keplanetan</h6>
-                                </div>
-                            <a href="{{ asset('assets') }}/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
+                        @endif
+                        @endforeach
                     </div>
                 </div>
                 <!--Content 2-->
                 <div class="tab-pane custom-card-prodi justify-content-center info-prodi"  role="tabpanel" id="jtpi">
                     <div class="row row-cols-3 g-3" style="padding-top: 10px;">
+                        @foreach($prodis as $data)
+                        @if($data->jurusans_id == 2)
                         <div class="col custom-mini-prodi-col">
                             <div class="card">
                                 <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
                                     alt="a snow-capped mountain range" />
                                 <div class="card-body">
-                                    <h6 class="card-title">Teknik Elektro</h6>
+                                    <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
+                            <a href="../prodiDetail/{{$data->ormawas->id}}" class="btn btn-primary rounded custom-more-btn">
                                     Learn More
                             </a>
                             </div>
                         </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Geofisika</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknologi Pangan</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Mesin</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Industri</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Geologi</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Sistem Energi</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknologi Informatika</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Industri Pertanian</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Fisika</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Kimia</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Biomedis</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Material</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Biomedis</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Rekayasa Kehutanan</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Pertambangan</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>  
-
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Telekomunikasi</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
 
                     </div>       
                 </div>
                 <!--Content 3-->
                 <div class="tab-pane custom-card-prodi justify-content-center info-prodi"  role="tabpanel" id="jtik">
                     <div class="row row-cols-3 g-3" style="padding-top: 10px;">
-                    
+                        @foreach($prodis as $data)
+                        @if($data->jurusans_id == 1)
                         <div class="col custom-mini-prodi-col">
                             <div class="card">
                                 <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
                                     alt="a snow-capped mountain range" />
                                 <div class="card-body">
-                                    <h6 class="card-title">Teknik Sipil</h6>
+                                    <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
+                            <a href="#" class="btn btn-primary rounded custom-more-btn">
                                     Learn More
                             </a>
                             </div>
                         </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Arsitektur</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Kelautan</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Geomatika</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Perencanaan Wilayah dan Kota</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Desain Komunikasi dan Visual</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Teknik Lingkungan</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="col custom-mini-prodi-col">
-                            <div class="card">
-                                <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body">
-                                    <h6 class="card-title">Arsitektur Lanskap</h6>
-                                </div>
-                            <a href="/html/prodiDetail1.html" class="btn btn-primary rounded custom-more-btn">
-                                    Learn More
-                            </a>
-                            </div>
-                        </div>
+                        @endif
+                        @endforeach
 
                     </div>           
                 </div>

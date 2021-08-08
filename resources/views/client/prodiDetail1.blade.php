@@ -53,21 +53,21 @@
                 <!--headline pertama-->
                 <div class="first-headline">
                     <div class="logo-prodi">
-                        <img src="{{ asset('assets') }}/images/ukm.png" alt="poster">
+                        <img src="{{ asset('assets') }}/images/LogoItera.png" alt="poster">
                     </div>                   
                     <div class="name-prodi">
                         <h5>Program Studi</h5>
-                        <h2>Sains Data</h2>
+                        <h2>{{ $dataProdi->ormawas->namaLengkap }}</h2>
                         <div class="detail-headline">
                             <div class="dies-natalis">
-                                <h6>Dies Natalis</h6>
-                                <p>10 Agustus 2010</p>
+                                <h6>Tahun Berdiri</h6>
+                                <p>{{ $dataProdi->tahunBerdiri }}</p>
                             </div>
                             <div class="lokasiprodi">
                                 <p><svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.875 6.87538C8.875 5.83943 8.03557 5 7.00038 5C5.96443 5 5.125 5.83943 5.125 6.87538C5.125 7.91057 5.96443 8.75 7.00038 8.75C8.03557 8.75 8.875 7.91057 8.875 6.87538Z" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M6.99963 14.75C6.10078 14.75 1.375 10.9238 1.375 6.92247C1.375 3.78998 3.89283 1.25 6.99963 1.25C10.1064 1.25 12.625 3.78998 12.625 6.92247C12.625 10.9238 7.89849 14.75 6.99963 14.75Z" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg> GK000</p>
+                                    </svg> {{ $dataProdi->ruangProdi }}</p>
                             </div>    
                         </div>
                     </div>  
@@ -76,28 +76,24 @@
                 <!--headline kedua-->
                 <div class="second-headline">
                     <h2>Tentang Kami</h2>                                
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis tempor tempor sollicitudin nunc euismod. Purus lobortis ut ornare lectus consectetur massa pellentesque tellus. Ac nisi, tincidunt cras tellus aliquam lectus aenean dui. Faucibus dictum odio hac montes, eget diam. Quisque lorem venenatis nunc eu tellus turpis. Leo nisl, adipiscing arcu lacus. Fringilla neque a lorem eget aliquet eget lectus morbi scelerisque. Quis pellentesque cras amet magna nibh in tortor diam mauris. At facilisis lorem a sagittis, egestas sit enim.
-Placerat semper nisl turpis mattis pharetra. </p>
+                    <p>{{ $dataProdi->ormawas->artikels->body }}</p>
                 </div>
                 
                 <!--headline ketiga-->
                 <div class="third-headline">
                     <div class="visi-ukm">                    
                         <h2>Visi</h2>
-                        <p>Visi dari Muwaghei yaitu bisa mewadahi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera dalam mengembangkan potensi dalam hal aspirasi, keilmuan, kreativitas, dan kebudayaan Sumatera serta memberikan semangat berkarya mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera untuk kebermanfaatan sosial.</p>
+                        <p>{{ $dataProdi->ormawas->visimisis->visi }}</p>
                     </div>
                     <!--headline keempat-->
                     <div class="misi-ukm">
                         <h2>Misi</h2>
-                        <p>1.	Mengembangkan potensi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera dalam hal keilmuan, kreativitas, dan kebudayaan Sumatera untuk kebermanfaatan sosial.</p>
-                        <p>2.	Melaksanakan kegiatan kemahasiswaan dengan tujuan meningkatkan kreativitas mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera</p>
-                        <p>3.	Menampung dan mengolah aspirasi serta inspirasi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera melalui kegiatan peningkatan wawasan Desain Komunikasi Visual.</p>
-                        <p>4.	Menjalin kerja sama kekeluargaan dengan Himpunan Program Studi Desain Komunikasi Visual yang ada di Institut Teknologi Sumatera yang selaras dengan pengembangan potensi budaya Sumatera. Untuk berkerja sama meningkatkan semangat berkarya, keahlian, dan memperluas ilmu pengetahuan dalam bidang Desain Komunikasi Visual.</p>
+                        <p>{!! nl2br(e($dataProdi->ormawas->visimisis->misi)) !!}</p>
                     </div>
                 </div>
                
                 <!--struktur-headline prodi-->
-                <div class="struktur-headline">
+                {{-- <div class="struktur-headline">
                     <h2>Stuktur Program Studi</h2>
                 </div>
 
@@ -148,7 +144,7 @@ Placerat semper nisl turpis mattis pharetra. </p>
                         <img class="slide-image" src="{{ asset('assets') }}/images/jurusan-poster2.png" />
                         <img class="slide-image" src="{{ asset('assets') }}/images/jurusan-poster3.png" />
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!--footer-->
