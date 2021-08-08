@@ -26,8 +26,6 @@ use App\Http\Controllers\Client\clientUkmController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\mengerjakanController;
-use App\Http\Controllers\Admin\findCodeController;
-use App\Http\Controllers\Admin\tebakGedungController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +52,9 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
 
   // SUDAH DI OPTIMIZE (routing)
   Route::get('/', [dashboardController::class, 'index'])->name('index');
+
+  // SUDAH DI OPTIMIZE (routing)
+  Route::get('/', [dashboardController::class, 'index'])->name('index');
   Auth::routes();
   Route::resource('user', userController::class)->except('show');
   Route::resource('prodi', prodiController::class)->except(['show']);
@@ -66,8 +67,6 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::resource('upt', uptController::class)->except('show');
   Route::resource('kamusGaul', kamusGaulController::class)->except('show');
   Route::resource('kabinet', kabinetController::class)->except('show');
-  Route::resource('findCode', findCodeController::class)->except(['show']);
-  Route::resource('tebakGedung', tebakGedungController::class)->except(['show']);
 
   // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
@@ -116,7 +115,7 @@ Route::middleware(['Maba'])->group(function () {
 });
 
 Route::get('/home', [clientHomeController::class, 'index'])->name('home');
-Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
+Route::resource('/biodata', clientBiodataController::class);
 Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
 Route::get('/games', [gameController::class, 'index'])->name('games');
 Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
@@ -125,6 +124,7 @@ Route::get('/prodi', [clientProdiController::class, 'index'])->name('prodi');
 
 Route::get('/ukmm', [clientUkmController::class, 'index'])->name('ukm');
 Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
+
 
 Route::get('/himpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
 
