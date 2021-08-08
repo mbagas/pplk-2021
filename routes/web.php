@@ -113,21 +113,22 @@ Route::middleware(['Pendanaan'])->group(function () {
 
 Route::middleware(['Maba'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
+  Route::get('/home', [clientHomeController::class, 'index'])->name('home');
+  Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
+  Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+  Route::get('/games', [gameController::class, 'index'])->name('games');
+  Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
+  Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
+  Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
+  
+  Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
+  Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
+  
+  Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
+  Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 });
 
-Route::get('/home', [clientHomeController::class, 'index'])->name('home');
-Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
-Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
-Route::get('/games', [gameController::class, 'index'])->name('games');
-Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
-Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
-Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
 
-Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
-Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
-
-Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
-Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 
 // Route::get('/game', function () {
 //   $start = strtotime("16th august 2021");
