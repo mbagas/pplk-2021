@@ -127,7 +127,7 @@
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
-                        <a class="head-menu-profile" href="profile">
+                        <a class="head-menu-profile" href="{{ route('biodata') }}">
                             <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">    
                         </a>
                     </div>

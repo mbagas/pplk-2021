@@ -27,7 +27,7 @@
         <div class="main-wrapper">
             <!--NavBar-->
                 <div class="head-menu d-flex justify-content-between">
-                    <a class="head-custom" href="../biodata.blade.php">
+                    <a class="head-custom" href="{{ route('biodata') }}">
                         <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.5625 16.5832C7.5625 16.5832 1.4375 12.0938 1.4375 8.99984C1.4375 5.90692 7.5625 1.4165 7.5625 1.4165" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>                                                   
@@ -77,40 +77,12 @@
                                 </svg>
                             </div>
                             <select>
-                                <option selected class="selected">Program Studi</option>
-                                foreach (prodis as prodi)
-                                <option value="1">IF</option>
-                                <option value="2">Elektro</option>
-                                <option value="3">PWK</option>
+                                <option selected class="selected" value="{{ $editBiodata->prodis_id }}">{{ $editBiodata->namaProdi }}</option>
+                                @foreach ($prodis as $prodi)
+                                <option value="{{ $prodi->id }}"> {{ $prodi->ormawas->namaLengkap }}</option>
                                 @endforeach
                             </select>                                                                                                  
-                        </div>
-
-                        <div class="row bio-input">
-                            <label class="form-label" for="golongan darah">Golongan Darah</label>
-                            <div class="icon-dropdown">
-                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.4173 0.791504L8.00065 7.20817L1.58398 0.791504" stroke="#4A4A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <select>
-                                <option selected class="selected">Golongan Darah</option>
-                                <option value="1">A</option>
-                                <option value="2">AB</option>
-                                <option value="3">B</option>
-                                <option value="4">O</option>
-                            </select> 
-                        </div>
-
-                        <div class="row bio-input">
-                            <label class="form-label" for="alamat">Alamat</label>
-                            <input type="text" placeholder="Alamat" disabled>
-                        </div>
-
-                        <div class="row bio-input">
-                            <label class="form-label" for="nama">Riwayat Penyakit</label>
-                            <input type="text" placeholder="Riwayat Penyakit" disabled>
-                        </div>                
+                        </div>       
                 </form>
             </div>
         </div>
