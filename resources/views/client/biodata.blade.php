@@ -121,22 +121,22 @@
                 <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" method="POST">
                         
                         <div class="row bio-input">
-                            <label class="form-label" for="email">Email</label>
+                            <label class="form-label" for="biodata->email">Email</label>
                             <input type="text" placeholder="Email" disabled>
                         </div>
                         
                         <div class="row bio-input">
-                            <label class="form-label" for="nama">Nama</label>
+                            <label class="form-label" for="biodata->nama">Nama</label>
                             <input type="text" placeholder="Nama" disabled>
                         </div>
 
                         <div class="row bio-input">
-                            <label class="form-label" for="nim">NIM</label>
+                            <label class="form-label" for="biodata->nim">NIM</label>
                             <input type="text" placeholder="Nomor Induk Mahasiswa" disabled>
                         </div>
 
                         <div class="row bio-input">
-                            <label class="form-label" for="prodi">Prodi</label>
+                            <label class="form-label" for="biodata->prodi">Prodi</label>
                             <input type="text" placeholder="Program Studi" disabled>
                         </div>
 

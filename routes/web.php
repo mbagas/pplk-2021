@@ -115,7 +115,7 @@ Route::middleware(['Maba'])->group(function () {
 });
 
 Route::get('/home', [clientHomeController::class, 'index'])->name('home');
-Route::resource('/biodata', clientBiodataController::class);
+Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
 Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
 Route::get('/games', [gameController::class, 'index'])->name('games');
 Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
