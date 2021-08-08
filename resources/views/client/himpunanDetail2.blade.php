@@ -28,7 +28,7 @@
             <!--NavBar-->
             <nav class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="{{ url()->previous() }}">
+                    <a class="navback-home" href="{{ route('himpunan')}}">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

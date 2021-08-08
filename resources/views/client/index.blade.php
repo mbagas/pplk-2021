@@ -219,7 +219,7 @@
 				<!-- Nama User -->
 				<div class="greetings">
 					<h1>
-						Hi, @name
+						Hi, {{ $dataUser->nama }}
 					</h1>
 					<p>
 						Mari kita kenal lebih dekat dengan PPLK ITERA
