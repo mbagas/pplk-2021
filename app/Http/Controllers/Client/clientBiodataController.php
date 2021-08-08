@@ -12,13 +12,13 @@ class clientBiodataController extends Controller
     //
     public function index(){
 
-        // $biodata = User::where(auth()->user()->id)->firstOrFail();
-        // return view('client.biodata',compact('biodata'));
-        return view('client.biodata');
+        $biodata = User::where('id',auth()->user()->id)->firstOrFail();
+        return view('client.biodata',compact('biodata'));
+        // return view('client.biodata');
     }
 
     public function edit(){
-        $editBiodata = User::where(auth()->user()->id)->firstOrFail();
+        $editBiodata = User::where('id',auth()->user()->id)->firstOrFail();
         return view('client.editBiodata',compact('editBiodata'));
 
     }
