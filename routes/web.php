@@ -126,7 +126,8 @@ Route::get('/prodi', [clientProdiController::class, 'index'])->name('prodi');
 Route::get('/ukmm', [clientUkmController::class, 'index'])->name('ukm');
 Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
 
-Route::get('/himpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
+Route::get('/himpunann', [clientHimpunanController::class, 'index'])->name('himpunan');
+Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 
 // Route::get('/game', function () {
 //   $start = strtotime("16th august 2021");

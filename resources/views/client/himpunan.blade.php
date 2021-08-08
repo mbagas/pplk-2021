@@ -37,7 +37,7 @@
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="36" height="36" rx="10" fill="white"/>
                         <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                            
+                    </svg>
                 </a>
             </div>
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -73,12 +73,12 @@
 
                 <div class="row search-bar">
                     <div class="col-10">
-                        <div class="search-form"> 
-                            <i class="fa fa-search"></i> 
-                            <input type="text" class="form-control search-form-input" placeholder="Search">  
+                        <div class="search-form">
+                            <i class="fa fa-search"></i>
+                            <input type="text" class="form-control search-form-input" placeholder="Search">
                         </div>
                     </div>
-    
+
                     <div class="col-2 justify-content-center p-0">
                         <a class="btn filter-search-button">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,114 +86,28 @@
                                 <path d="M12.0449 6.3252H17.8206" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99845 6.27573C7.99845 5.08805 7.02847 4.125 5.83223 4.125C4.636 4.125 3.66602 5.08805 3.66602 6.27573C3.66602 7.46342 4.636 8.42647 5.83223 8.42647C7.02847 8.42647 7.99845 7.46342 7.99845 6.27573Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3324 15.1742C18.3324 13.9865 17.3632 13.0234 16.167 13.0234C14.97 13.0234 14 13.9865 14 15.1742C14 16.3619 14.97 17.3249 16.167 17.3249C17.3632 17.3249 18.3324 16.3619 18.3324 15.1742Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>                                    
+                            </svg>
                         </a>
                     </div>
                 </div>
 
 
             </div>
-           
+
 
                 <div class="row row-cols-3 g-3" style="padding-top: 20px;">
+                    @foreach ($himpunans as $himpunan)
                     <div class="col custom-mini-himpunan-col">
                         <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
+                            <img class="rounded" src="{{ $himpunan->logo }}"
                                 alt="a snow-capped mountain range" />
                             <div class="card-body">
-                                <h6 class="card-title">Himpunan 1</h6>
+                                <h6 class="card-title">{{ $himpunan->ormawas->namaLengkap }}</h6>
                             </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="himpunanDetail/{{$himpunan->ormawas->id }}" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 2</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title" >Himpunan 3</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 4</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 5</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 6</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 7</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 8</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="col custom-mini-himpunan-col">
-                        <div class="card">
-                            <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                alt="a snow-capped mountain range" />
-                            <div class="card-body">
-                                <h6 class="card-title">Himpunan 9</h6>
-                            </div>
-                            <a href="../himpunanDetail2.blade.php" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
         </div>
@@ -207,7 +121,7 @@
             var header = document.getElementById("small-menu");
             var btns = header.getElementsByClassName("button-prodi");
             for (var i = 0; i < btns.length; i++) {
-                btns[i].addEventListener("click", function() {                   
+                btns[i].addEventListener("click", function() {
                     // var sains = document.getElementsByClassName("sains");
                     // var jtpi = document.getElementsByClassName("jtpi");
                     // var jtik = document.getElementsByClassName("jtik");
@@ -219,7 +133,7 @@
                     // else {
                     //     sains.className.replace(" show-card", "");
                     // }
-                    
+
                     var current = document.getElementsByClassName("active-prodi");
                     current[0].className = current[0].className.replace(" active-prodi", "");
                     this.className += " active-prodi";

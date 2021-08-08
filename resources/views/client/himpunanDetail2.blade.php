@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <meta name="robots" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
@@ -16,7 +16,7 @@
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
-        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>     
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/himpunan.css"></link>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
@@ -32,10 +32,10 @@
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                            
+                        </svg>
                     </a>
                 </div>
-                <div class="navback-custom">            
+                <div class="navback-custom">
                     <img src="{{ asset('assets') }}/images/ukm-poster-1.png">
                 </div>
             </nav>
@@ -44,26 +44,26 @@
                 <!--first headline-->
                 <div class="first-headline card d-flex justify-content-between ">
                     <div class="name-himpunan">
-                        <h2>Muwaghei</h2>
-                        <h5>Himpunan Mahasiswa Desain Komunikasi Visual</h5>
+                        <h2>{{ $dataHimpunan->ormawas->namaSingkat }}</h2>
+                        <h5>{{ $dataHimpunan->ormawas->namaLengkap }}</h5>
                         <div class="detail-headline">
                             <div class="pembina">
                                 <h6>Pembina</h6>
-                                <p>Dr. Ir. Agus</p>
+                                <p>{{ $dataHimpunan->pembina }}</p>
                             </div>
                             <div class="ketua">
                                 <h6>Ketua Himpunan</h6>
-                                <p>Dr. Ir. Agus</p>
+                                <p>{{ $dataHimpunan->ketuaHimpunan }}</p>
                             </div>
                             <div class="dies-natalis">
                                 <h6>Tahun Berdiri</h6>
-                                <p>2010</p>
+                                <p>{{ $dataHimpunan->tahunBerdiri }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="logo-himpunan">            
-                        <img src="{{ asset('assets') }}/images/himpunan-logo.png" alt="poster">                        
-                    </div>                    
+                    <div class="logo-himpunan">
+                        <img src="{{ $dataHimpunan->logo }}" alt="poster">
+                    </div>
                 </div>
                 <!--second headline-->
                 <div class="second-headline">
@@ -72,12 +72,10 @@
                         <div class="d-flex justify-content-between artikel-custom">
                             <div class="artikel-1">
                                 <div class="artikel-title">
-                                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h6>
-                                    <p>2 Min read | 26 Oktober 2020</p>
+                                    <h6>{{ $dataHimpunan->ormawas->namaLengkap }}</h6>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis tempor tempor sollicitudin nunc euismod. Purus lobortis ut ornare lectus consectetur massa pellentesque tellus. Ac nisi, tincidunt cras tellus aliquam lectus aenean dui. Faucibus dictum odio hac montes, eget diam. Quisque lorem venenatis nunc eu tellus turpis. Leo nisl, adipiscing arcu lacus. Fringilla neque a lorem eget aliquet eget lectus morbi scelerisque. Quis pellentesque cras amet magna nibh in tortor diam mauris. At facilisis lorem a sagittis, egestas sit enim.
-Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh habitant nulla. Cras bibendum magna nec nulla scelerisque amet mollis. Donec scelerisque id non in. </p>
-                            </div>                                                      
+                                <p>{{ $dataArtikel->body }}</p>
+                            </div>
                         </div>
                     </div>
                     <!--small menu-->
@@ -97,76 +95,53 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
                         <li class="nav-item" role="presentation">
                             <button  data-bs-toggle="pill" data-bs-target="#misi" class="nav-link button-ukm" aria-selected="false" role="tab">
                                 Misi
-                            </button> 
-                        </li>                  
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="tab-content" id="pills-tabContent">
-                    <!--Content 1-->                
+                    <!--Content 1-->
                     <div class="tab-pane active justify-content-center"  role="tabpanel" id="filosofi">
                         <div class="card custom-himpunan w-100">
-                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
+                            <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
                             <div class="card-body">
-                                <h2 class="card-title">
-                                    Segi Empat
-                                </h2>
                                 <p class="card-text">
-                                    Segi empat menggabarkan stabilitas, kedamaian, soliditas, dan kesetaraan.
+                                    {{ $dataHimpunan->filosofiLogo }}
                                 </p>
-                                <h2 class="card-title">
-                                    Simbol Gambar
-                                </h2>
-                                <p class="card-text">
-                                    Sebagai simbol yang mempresentasikan bidang Desain Komunikasi Visual Institut Teknologi Sumatera.
-                                </p>
-                                <h2 class="card-title">
-                                    Simbol Hati
-                                </h2>
-                                <p class="card-text">
-                                    Menggambarkan perasaan bangga terhadap himpunan sekaligus menunjukkan kesatuan serta kekeluargaan yang didukung dengan lingkungan yang selalu mensupport.
-                                </p>
-                                <h2 class="card-title">
-                                    Huruf "M"
-                                </h2>
-                                <p class="card-text">
-                                    Sebagai simbol yang mempresentasikan bidang Desain Komunikasi Visual Institut Teknologi Sumatera.
-                                </p>
+
                             </div>
-                        </div>                                               
+                        </div>
                     </div>
                     <!--Content 2-->
                     <div class="tab-pane justify-content-center"  role="tabpanel" id="visi">
                         <div class="card custom-himpunan w-100">
-                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
+                            <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
                                 </h2>
                                 <p class="card-text">
-                                    Visi dari Muwaghei yaitu bisa mewadahi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera dalam mengembangkan potensi dalam hal aspirasi, keilmuan, kreativitas, dan kebudayaan Sumatera serta memberikan semangat berkarya mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera untuk kebermanfaatan sosial.
-                                </p>                            
+                                    {{ $dataVisiMisi->visi }}
+                                </p>
                             </div>
-                        </div>                                               
+                        </div>
                     </div>
                     <!--Content 3-->
                     <div class="tab-pane justify-content-center"  role="tabpanel" id="misi">
                         <div class="card custom-himpunan w-100">
-                            <img src="{{ asset('assets') }}/images/ukm-1.png" class="card-img-top">
-                            <div class="card-body">                                
+                            <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
+                            <div class="card-body">
                                 <h2 class="card-title">
                                     Misi
                                 </h2>
                                 <p class="card-text">
-                                    <p>1.	Mengembangkan potensi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera dalam hal keilmuan, kreativitas, dan kebudayaan Sumatera untuk kebermanfaatan sosial.</p>
-                                    <p>2.	Melaksanakan kegiatan kemahasiswaan dengan tujuan meningkatkan kreativitas mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera</p>
-                                    <p>3.	Menampung dan mengolah aspirasi serta inspirasi mahasiswa Desain Komunikasi Visual Institut Teknologi Sumatera melalui kegiatan peningkatan wawasan Desain Komunikasi Visual.</p>
-                                    <p>4.	Menjalin kerja sama kekeluargaan dengan Himpunan Program Studi Desain Komunikasi Visual yang ada di Institut Teknologi Sumatera yang selaras dengan pengembangan potensi budaya Sumatera. Untuk berkerja sama meningkatkan semangat berkarya, keahlian, dan memperluas ilmu pengetahuan dalam</p>
+                                    {{ $dataVisiMisi->misi }}
                                 </p>
                             </div>
-                        </div>                                               
-                    </div>                    
+                        </div>
+                    </div>
                 </div>
-            </div>            
+            </div>
         </div>
         <!--footer-->
         <div class="footer justify-content-around">
@@ -182,7 +157,7 @@ Placerat semper nisl turpis mattis pharetra. Mattis fames mollis lobortis nibh h
             <div class="icon-sosmed">
                 <img src="{{ asset('assets') }}/images/twiter.png">
                 <img src="{{ asset('assets') }}/images/yutub.png">
-                <img src="{{ asset('assets') }}/images/ige.png">                                     
+                <img src="{{ asset('assets') }}/images/ige.png">
             </div>
         </div>
     </body>
