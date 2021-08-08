@@ -56,17 +56,17 @@
                         
                         <div class="row bio-input">
                             <label class="form-label" for="email">Email</label>
-                            <input type="text" placeholder="Email" enabled>
+                            <input type="text" placeholder="Email" value="{{$editBiodata->email}}" enabled>
                         </div>
                         
                         <div class="row bio-input">
                             <label class="form-label" for="nama">Nama</label>
-                            <input type="text" placeholder="Nama" enabled>
+                            <input type="text" placeholder="Nama" value="{{$editBiodata->nama}}" enabled>
                         </div>
 
                         <div class="row bio-input">
                             <label class="form-label" for="nim">NIM</label>
-                            <input type="text" placeholder="Nomor Induk Mahasiswa" enabled>
+                            <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" enabled>
                         </div>                        
 
                         <div class="row bio-input">
@@ -78,9 +78,11 @@
                             </div>
                             <select>
                                 <option selected class="selected">Program Studi</option>
+                                foreach (prodis as prodi)
                                 <option value="1">IF</option>
                                 <option value="2">Elektro</option>
                                 <option value="3">PWK</option>
+                                @endforeach
                             </select>                                                                                                  
                         </div>
 

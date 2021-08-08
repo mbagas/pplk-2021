@@ -113,12 +113,11 @@ Route::middleware(['Pendanaan'])->group(function () {
 Route::middleware(['Maba'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
   Route::get('/home', [clientHomeController::class, 'index'])->name('home');
-  Route::get('/profile', [clientBiodataController::class, 'index'])->name('biodata');
+  Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
   Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
-  
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
   
