@@ -54,6 +54,10 @@ class LoginController extends Controller
                 $this->redirectTo = '/dashboardOrmawa';
                 return $this->redirectTo;
                 break;
+            case 5:
+                $this->redirectTo = '/home';
+                return $this->redirectTo;
+                break;
             default:
                 $this->redirectTo = '/home';
                 return $this->redirectTo;
