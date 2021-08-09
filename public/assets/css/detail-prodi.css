@@ -1,3 +1,13 @@
+
+.desktop{
+    margin: auto;
+}
+
+.navbar-cust-prodi {
+    top: 0px;
+    width: 100%;
+}
+
 .prodi-navback{
     display: flex;  
     top: 0;       
@@ -9,14 +19,16 @@
 }
 
 .prodi-navback a{        
-    position: absolute;
     top: 36px;
     font-weight: 300;
+    z-index: 100;
 }
 
 .first-headline {
-    display: flex; 
-    margin-top: 74px ;    
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-top: 20px ;    
     margin-bottom: 20px;   
 }
 
@@ -221,6 +233,7 @@
         padding-left: 26px;
         padding-right: 26px;
     }
+
     .prodi-navback{
         display: flex;  
         top: 0;       
@@ -229,17 +242,18 @@
         border-radius: 15px !important;
         overflow: hidden;
         margin-bottom: 20px;
+        margin-top: 20px;
     }
 
     .prodi-navback a{        
-        position: absolute;
         top: 36px;
         font-weight: 300;
+        z-index: 100;
     }
     
     .first-headline {
         display: flex; 
-        margin-top: 74px ;    
+        margin-top: 0px ;    
         margin-bottom: 20px;   
     }
 

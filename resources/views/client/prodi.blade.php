@@ -254,7 +254,7 @@
                     <div class="row row-cols-3 g-3" style="padding-top: 10px;">
                         @foreach($prodis as $data)
                         @if($data->jurusans_id == 3)
-                        <div class="col custom-mini-prodi-col">
+                        <div class="col custosliderm-mini-prodi-col">
                             <div class="card">
                                 <div class="image">
                                     <img class="rounded" src="https://assets.codepen.io/6093409/mountains-1.jpg"
