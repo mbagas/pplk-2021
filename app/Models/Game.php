@@ -21,6 +21,10 @@ class Game extends Model
         return $this->hasOne(TebakGedung::class, 'games_id');
     }
 
+    public function Score(){
+        return $this->hasMany(Score::class, 'games_id');
+    }
+
     public function KategoriGame(){
         return $this->belongsTo(KategoriGame::class, 'kategoriGame_id');
     }

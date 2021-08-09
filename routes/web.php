@@ -16,8 +16,11 @@ use App\Http\Controllers\Admin\ormawaController;
 use App\Http\Controllers\Admin\submissionController;
 use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
+use App\Http\Controllers\Admin\findCodeController;
+use App\Http\Controllers\Admin\tebakGedungController;
 use App\Http\Controllers\Client\clientHomeController;
 use App\Http\Controllers\Client\clientBiodataController;
+use App\Http\Controllers\Client\clientFindCodeController;
 use App\Http\Controllers\Client\clientHimpunanController;
 use App\Http\Controllers\Client\clientJurusanController;
 use App\Http\Controllers\Client\clientProdiController;
@@ -67,6 +70,8 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::resource('upt', uptController::class)->except('show');
   Route::resource('kamusGaul', kamusGaulController::class)->except('show');
   Route::resource('kabinet', kabinetController::class)->except('show');
+  Route::resource('findCode', findCodeController::class)->except(['show']);
+  Route::resource('tebakGedung', tebakGedungController::class)->except(['show']);
 
   // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
   // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
@@ -128,6 +133,7 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 
+  Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
 });
 
 

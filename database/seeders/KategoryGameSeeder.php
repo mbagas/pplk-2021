@@ -16,8 +16,8 @@ class KategoryGameSeeder extends Seeder
     {
         //
         $kategori_game = [
-            ['kategori'=>'Find the Code'],
-            ['kategori'=>'Tebak Gedung'],
+            ['kategori'=>'findCode'],
+            ['kategori'=>'tebakGedung'],
         ];
         KategoriGame::query()->insert($kategori_game);
     }

@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\KategoriGame;
 
 class gameController extends Controller
 {
     public function index(){
-        return view('client.games');
+        $kategoriGames = KategoriGame::all();
+        return view('client.games', compact('kategoriGames'));
     }
 }
