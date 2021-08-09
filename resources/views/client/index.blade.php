@@ -209,7 +209,7 @@
                             <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">  
                         </a>
                         <div class="username">
-                            Nama User
+                            {{ $dataUser->nama }}
                         </div> 
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
