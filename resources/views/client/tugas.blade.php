@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>WEB PPLK 2021 - @yield('title')</title>
+        <title>PPLK 2021 - Tugas</title>
 
         <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
@@ -105,7 +105,7 @@
                 </ul>
             </div>  
             <!-- Search bar -->
-            <div class="tugas-search">
+            {{-- <div class="tugas-search">
                 <a class="tugas-search-icon" href="#">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12.7474" cy="12.7474" r="9.73761" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -117,11 +117,23 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M4.9456 3.25C4.0095 3.25 3.25 4.02227 3.25 4.97294V5.98698C3.25 6.69118 3.51779 7.36838 3.9968 7.87775L9.24636 13.4597L9.24867 13.4562C10.2621 14.4937 10.8323 15.8962 10.8323 17.3586V22.3114C10.8323 22.6424 11.1786 22.8537 11.466 22.6976L14.4555 21.0685C14.9068 20.8221 15.1885 20.3432 15.1885 19.8233V17.3457C15.1885 15.8915 15.7506 14.4949 16.7548 13.4597L22.0044 7.87775C22.4822 7.36838 22.75 6.69118 22.75 5.98698V4.97294C22.75 4.02227 21.9917 3.25 21.0556 3.25H4.9456Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>   
                 </a>
-            </div>
+            </div> --}}
             <!-- Content -->
             <div class="tugas-content">
+
+                <div class="col-sm-12">
+                    <div class="info-card card justify-content-between " style="height: 160px;" >
+                        <div class="info-card-body" >
+
+                            <h1 style="text-align: center">Coming Soon !</h1>
+
+
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Info Kelompok dan Daplok -->
-                <div class="tugas-kelompok-card mx-auto">
+                {{-- <div class="tugas-kelompok-card mx-auto">
                     <img class="tugas-daplok-img" src="../assets/images/jhonnysins.png">
                     <div class="tugas-circle tugas-circle1">
                         <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +377,7 @@
 
                 </div>
                
-                
+                 --}}
 
 
             </div>

@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>WEB PPLK 2021 - @yield('title')</title>
+        <title>PPLK 2021 - Leaderboard</title>
 
         <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
@@ -45,7 +45,7 @@
                 </div>
             </nav>
 
-            <div class="navbar p-0">
+            {{-- <div class="navbar p-0">
                 <ul class="container-fluid footer-bar">
                         
                         <li>
@@ -121,33 +121,19 @@
                         </li>
 
                 </ul>
-            </div>  
+            </div>   --}}
 
             <div class="page-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
+                <div class="col-sm-12">
+                    <div class="info-card card justify-content-between " style="height: 160px;" >
+                        <div class="info-card-body" >
 
-Mauris ac enim eu tortor blandit sodales. Morbi accumsan malesuada nulla, at bibendum eros. Nunc suscipit mauris sit amet nibh euismod efficitur. Vestibulum viverra tincidunt risus, ac suscipit massa fermentum sed. Suspendisse rhoncus, felis sed scelerisque posuere, dui ligula suscipit diam, a luctus libero tellus ut libero. Quisque sodales lectus a risus bibendum ultrices. Aenean in imperdiet lectus, quis mollis magna. Nunc vitae justo facilisis, posuere elit eget, vulputate metus. Sed est mi, feugiat id nulla pellentesque, volutpat ornare elit. Suspendisse potenti.
+                            <h1 style="text-align: center">Coming Soon !</h1>
 
-Aenean mi metus, ultricies vitae facilisis non, imperdiet nec orci. Maecenas non odio ultricies, cursus sapien sed, tempor leo. Proin tempus cursus magna. Suspendisse consectetur, tortor a pretium mollis, leo neque tincidunt nisi, et vestibulum ex lorem non mauris. Fusce non dui eu nunc convallis fermentum tempor ac elit. Proin molestie, erat eget porttitor finibus, nulla turpis eleifend felis, at fringilla nunc sem vitae velit. Mauris laoreet sodales est id blandit. Donec elementum laoreet dignissim.
 
-Praesent vitae sem ac magna porta porttitor. Sed eget rhoncus est, sit amet iaculis justo. Donec mattis nisi sed blandit congue. In bibendum, ante eget venenatis maximus, turpis arcu auctor orci, vitae dapibus mi ex ut lectus. Donec faucibus, urna non dictum posuere, lorem arcu porttitor libero, nec egestas diam eros ac justo. Fusce volutpat sed orci ornare ultricies. Nulla facilisi. Cras sit amet pharetra arcu. Morbi a viverra odio, eget pretium ipsum. Quisque blandit quam eget sagittis auctor. Ut varius gravida lacus id porta. Nullam aliquet fermentum metus vel viverra. Proin accumsan congue est, in tristique nulla pellentesque eu.
-
-Fusce purus nisl, euismod nec dignissim sit amet, suscipit eget ante. Cras elementum arcu quis nisi blandit lacinia. Nullam vehicula consectetur vulputate. Vestibulum a turpis turpis. Vivamus nec erat commodo, tristique eros at, tincidunt nulla. Praesent vulputate diam mauris, ut viverra est auctor ac. Vestibulum eu justo purus. Nullam laoreet viverra metus. Sed rutrum, risus sagittis placerat ullamcorper, velit odio sagittis turpis, et facilisis sapien dui at enim. Duis aliquet, ligula ut porta semper, orci dui tempor velit, a volutpat velit velit ac ex. Nam et ante vehicula, dignissim lacus nec, bibendum velit. Vestibulum aliquam dignissim faucibus. Pellentesque iaculis, ipsum et feugiat condimentum, felis elit tristique nisi, non rhoncus dolor diam ut nunc. Vivamus eleifend ante quis dignissim lacinia. Donec luctus vulputate lobortis. Nulla purus nisi, gravida ac erat non, tincidunt molestie orci.
-
-Duis blandit tortor vel magna viverra malesuada. Nulla eleifend tempor urna, vel euismod risus tempor eu. Sed semper odio vel efficitur condimentum. Aenean eleifend congue velit, quis varius ligula porttitor quis. Quisque maximus convallis ultrices. Pellentesque nunc eros, consectetur quis pretium ac, sagittis eget nibh. Aenean finibus cursus rutrum.
-
-Nunc blandit dui elementum ultrices suscipit. Etiam et neque scelerisque, condimentum est ac, porttitor elit. Integer nulla arcu, laoreet sit amet hendrerit in, vulputate a risus. Integer imperdiet purus nec ante volutpat placerat. Pellentesque accumsan porta enim, in congue eros gravida ac. Proin efficitur tincidunt sollicitudin. Fusce eget tincidunt augue.
-
-Vivamus viverra diam non quam venenatis, a aliquam leo facilisis. Proin nec ante ut leo vehicula eleifend. Aliquam mollis purus nisl, id luctus sem ultrices sit amet. Fusce vel bibendum urna. Cras lacinia erat nec tempus rutrum. Proin tincidunt nibh urna, et accumsan lectus porta at. In hac habitasse platea dictumst. Aliquam augue nisl, vulputate nec lectus eu, auctor eleifend ante. Praesent ligula magna, fringilla vel ligula a, tincidunt sagittis nulla. Sed ullamcorper leo est, nec facilisis lacus elementum eget. Ut laoreet sed arcu vitae egestas. Sed quis molestie elit, sit amet lacinia quam. Ut bibendum egestas erat id tincidunt. Maecenas vitae laoreet sapien, a tincidunt enim.
-
-Ut quis ligula vel velit eleifend sodales a vel sapien. Quisque in urna nulla. Pellentesque hendrerit tempus magna sed faucibus. Nullam vel ex cursus nisi tempor hendrerit. Donec in hendrerit lorem. Integer bibendum sit amet quam non pretium. Pellentesque mollis est nec aliquam elementum. Aliquam vitae varius diam, non fermentum arcu.
-t mi. Pellentesque ipsum dui, pretium sit amet erat non, elementum volutpat urna. Nunc nec ornare sem. Curabitur at odio pellentesque, pretium dui in, maximus nibh. Integer interdum ornare lacus ultrices interdum. Etiam ut tempor eros. Etiam pretium gravida nulla vel lobortis. Duis ultricies ante nunc, ac feugiat eros aliquam non. Nullam in libero vel neque fringilla cursus at ac nulla. Vivamus facilisis nisi sed turpis commodo ultricies. Quisque sed pretium nunc. Ut lacinia feugiat luctus. Suspendisse condimentum ex vestibulum ex convallis, vel fringilla tellus auctor. Nam ac odio eu quam egestas tincidunt nec eget arcu.
-
-In vel sodales augue. Morbi commodo sed velit sed consequat. Praesent sed vestibulum leo. Ut consectetur suscipit sem vel malesuada. Phasellus gravida, odio sed imperdiet ultrices, arcu justo ultricies leo, nec commodo nisi felis ac velit. Suspendisse enim orci, rutrum vitae pellentesque a, ultrices nec est. In tellus nisi, fermentum ut sagittis nec, ornare eget odio. Cras eleifend eget est maximus efficitur. Nam convallis eleifend elementum. Praesent a nulla vel lorem fermentum commodo. Nunc aliquam luctus vehicula. Sed ultricies turpis scelerisque, porttitor elit eu, vestibulum nibh. Aliquam vitae libero quam. Suspendisse potenti. Maecenas luctus lacus vel justo maximus feugiat ut quis augue. Aenean dapibus neque eu tortor varius consectetur.
-
-Pellentesque ac tristique nisl, vitae elementum diam. Sed sem ipsum, consectetur ut erat vulputate, placerat posuere diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec eget tortor tellus. Maecenas ut tortor efficitur, vestibulum tortor ac, gravida turpis. Donec pellentesque vel turpis ut varius. Nullam a ipsum a neque consequat convallis. Duis a ex quis sapien feugiat efficitur at ut risus.
-                </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
