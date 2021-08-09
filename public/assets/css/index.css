@@ -154,6 +154,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     transition: all 300ms ease;
     z-index: 90;
     padding-top: 100px;
+    margin-bottom: 90px;
     padding-left: 0;
     padding-right: 0;
 }
@@ -755,6 +756,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
         padding-top: 90px;
         padding-left: 0;
         padding-right: 0;
+        margin-bottom: 0px;
     }
 
     .greetings{

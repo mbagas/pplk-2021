@@ -36,8 +36,62 @@
             </nav>
             <!--Content-->
             <div class="page-content">
-                <div class="card container-fluid justify-content-between">
-                    <form class="" method="POST"></form>
+                <div class="card container-fluid">
+                    <div class="desc-text">
+                        <h2>Report Page</h2>
+                    </div>
+                    <form class="col-sm-12 container-fluid m-sm-auto report-form fle" method="POST">
+                        <div class="row report-input">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="inputs">
+                        </div>
+                        <div class="row report-input">
+                            <label for="nim" class="form-label">NIM</label>
+                            <input type="text" class="inputs">
+                        </div>
+                        <div class="row report-input">
+                            <label for="prodi" class="form-label">Program Studi</label>
+                            <input type="text" class="inputs">
+                        </div>
+                        <div class="row report-input">
+                            <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
+                            <input type="text" class="inputs">
+                        </div>
+                        <div class="row radio-input">
+                            <label for="kondisi">Kondisi</label>
+                            <p><input class="" type="radio" name="kondisi" value="sakit"> Sakit</p>
+                            <p><input class="" type="radio" name="kondisi" value="tidakSakit"> Tidak Sakit</p>
+                        </div>
+                        <div class="row report-input">
+                            <label for="sakit" class="form-label">Jika sakit, apa yang dikeluhkan?</label>
+                            <input type="text" class="fill">
+                        </div>
+                        <div class="row report-input">
+                            <label for="keluhan" class="form-label">Keluhan selain diatas</label>
+                            <textarea name="keluhan" id="keluhan" cols="30" rows="10" class="fill"></textarea>
+                        </div>
+                        <div class="col-sm-12 mt-4">
+                            <button name="submit" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary rounded custom-login-btn">
+                                Kirim Laporan
+                            </button>
+                        </div>
+                    </form>
+                </div> 
+            </div>
+            <div class="modal container-fluid" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="../assets/images/thumbs-up.png" alt="thumbs-up" class="thumbs-up">
+                            <h2>Terima Kasih!</h2>
+                            <p>Laporan kamu telah 
+                                kami simpan. Silahkan 
+                                tunggu tanggapan dari kami. </p>
+                        </div>
+                        <div class="modal-back">
+                            <button class="close-button" data-bs-dismiss="modal" aria-label="Close">Kembali ke Awal</button>
+                        </div>
+                  </div>
                 </div>
             </div>
         </div>
