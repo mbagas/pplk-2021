@@ -102,13 +102,167 @@ p{
     display: flex;
     flex-direction: column;
     transition: all 0.5s ease-in;
-    background-color: var(--page-background-1);
-    height: 100% ;
+    background-color: none;
+    height: 100% !important;
     margin: 0;
     padding: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
 }
 
-@media (max-width: 500px) {
+.bg-container {
+    display: none;
+}
+
+.bg-container.display{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: fixed;
+}
+
+.wavey-bg{
+    width: 50%;
+    height: 100%;
+}
+
+.pplk-logo{
+    margin-top: 14px;
+    margin-left: 25px;
+    margin-bottom: 0px;
+    background-color: #fff;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    z-index: 90;
+}
+
+.pplk-logo-img{
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+}
+
+.wrap-login{
+    background-color: transparent;
+    border: none;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    display: grid;
+    place-items: center;
+    right: 0;
+    min-height: 300px;
+    margin-top: 0px;
+    margin-left: 55%;
+}
+
+.image-container{
+    display: grid;
+    place-items: center;
+    right: 0 !important;
+}
+
+.login-image{
+    width: 70%;
+    margin-top: 1rem;
+}
+
+.login-welcome-info{
+    margin-top: 0.8rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.login-welcome-info p{
+    margin: 0;
+}
+
+.silahkan-masuk{
+    margin: 0;
+}
+
+.input-field-group{
+    margin-bottom: 4rem;
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-control{
+    border: none;
+    border-bottom: 1.5px solid #E0E0E0;
+    border-radius: 0;
+    background-color: transparent;
+    appearance:none;
+    outline: none;
+    height: 30px;
+    font-size: 13px;
+    padding-left: 30px;
+    font-family: var(--font-family-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: #7B7B7B;
+} 
+
+.input-control:focus{
+    background-color: transparent;
+    border-radius: 5px;
+    color: #7B7B7B;
+    appearance: none;
+}
+
+.form-label{
+    text-align: left !important;
+    float: left;
+    font-family: var(--font-family-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: #7B7B7B;
+}
+
+.input-logo{
+    position: absolute;
+    float: left !important;
+    text-align: left;
+}
+
+.input-logo img{
+    width: 20px;
+}
+
+.custom-login-btn{
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(#3991C9, #63BCF4);
+    border: none;
+    font-family: var(--font-family-body);
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.forget-password{
+    margin-top: 1rem;
+    margin-bottom: 1rem ;
+}
+
+.forget-password p{
+    bottom: 0 !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    padding: 5px;
+}
+ 
+
+
+@media (max-width: 1200px) {
     .launch-logo-image{
         width: 281px;
         height: 281px;
@@ -140,6 +294,7 @@ p{
         place-items: center;
         min-height: 640px;
         margin-top: 35px;
+        margin: auto;
     }
 
     .image-container{
