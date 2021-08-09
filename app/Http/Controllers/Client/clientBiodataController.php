@@ -30,4 +30,13 @@ class clientBiodataController extends Controller
         return view('client.editBiodata',compact('editBiodata', 'prodis'));
 
     }
+
+    public function update($id){
+        $userData = User::where('id', $id)->first();
+        if($request->hasFile('diagramAlir')){
+            $userData->update([
+                'diagramAlir'   => url($request->file('diagramAlir')->move('diagramAlir', $prodi->namaSingkat . '.' . $request->file('diagramAlir')->extension()))
+            ]);
+        }
+    }
 }

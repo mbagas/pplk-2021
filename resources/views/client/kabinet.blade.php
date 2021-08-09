@@ -11,22 +11,22 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/kabinet.css"></head>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/kabinet.css"></head>
     <body>
         <div class="main-wrapper">
             <!--NavBar-->
             <div class="navbar p-0">
                 <div class="container-fluid nav-back">
-                    <a class="navback-home" href="#">
+                    <a class="navback-home" href="{{ route('home') }}">
                         <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
                             <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -45,7 +45,7 @@
                 
                     <div class="first-headline">
                         <div class="logo-kabinet">
-                            <img src="../assets/images/Kabinet-logo.png" alt="Kabinet-logo">
+                            <img src="{{ asset('kabinet') }}/logo.png" alt="Kabinet-logo">
                         </div>
                         <div class="name-kabinet">
                             <h2>KM ITERA</h2>
@@ -137,7 +137,7 @@
                                     <div class="carousel-item active">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="../assets/images/Kabinet-filosofi.png" alt="poster">
+                                                <img src="{{ asset('kabinet') }}/logo.png" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
@@ -150,7 +150,7 @@
                                     <div class="carousel-item">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="../assets/images/Kabinet-filosofi.png" alt="poster">
+                                                <img src="{{ asset('kabinet') }}/logo.png" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
@@ -250,7 +250,7 @@
         </div>
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
     </body>
 </html>

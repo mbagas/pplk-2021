@@ -196,10 +196,10 @@
                     <div class="main-text">
                         <h2 class="prodi-title-text">Program Studi di Institut Teknologi Sumatera</h2>
                         <p>
-                            Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang
-                            berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya
-                            menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih
-                            dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                            Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan prioritas akan kebutuhan Sumber Daya Manusia di lingkungan lokal maupun nasional. Disamping itu pula yang menjadi pertimbangan adalah kesiapan akan infrastruktur dan sumber daya pendukung lainnya, untuk itu nantinya tidak akan dilaksanakan sekaligus. Prodi-prodi yang menjadi Sains Dasar serta Teknologi Dasar akan diprioritaskan terlebih dahulu.
+                            <br/>
+                            <br/>
+                            Program akademik di Institut Teknologi Sumatera yang dikaji dan direncanakan akan didasarkan pada pertimbangan bahasan di atas. Hal ini mencakup Program Studi (Prodi) yang akan dibuka,  program riset dan inovasi yang direncanakan, termasuk pengembangan Innovation & Techno Park. Program Studi di ITERA akan dibuka secara bertahap dan direncanakan mempunyai sejumlah program studi.
                         </p>
                          <!--Title Kedua-->
                         <h2 class="prodi-title-text"> Program Studi di ITERA dibagi menjadi 3 cluster</h2>

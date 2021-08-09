@@ -45,7 +45,7 @@
                 </div>
             </nav>
 
-            {{-- <div class="navbar p-0">
+            <div class="navbar p-0">
                 <ul class="container-fluid footer-bar">
                         
                         <li>
@@ -121,7 +121,7 @@
                         </li>
 
                 </ul>
-            </div>   --}}
+            </div>  
 
             <div class="page-content">
                 <div class="col-sm-12">
