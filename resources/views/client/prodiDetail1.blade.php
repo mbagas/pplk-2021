@@ -135,26 +135,25 @@
                     </div>
                 </div>
             </div>
-
-            <!--NavBar-->
-            <nav class="navbar p-0">
-                <div class="container-fluid  prodi-navback">
-                    <a class="navback-home" href="{{ route('prodi')}}">
-                        <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
-                            <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <defs>
-                            <linearGradient id="paint0_linear" x1="26.9725" y1="67.5161" x2="-28.7342" y2="-13.9055" gradientUnits="userSpaceOnUse">
-                            <stop offset="0.0187499" stop-color="#63BCF4"/>
-                            <stop offset="1" stop-color="#479FD7"/>
-                            </linearGradient>
-                            </defs>
-                        </svg>                                                                 
-                    </a>
-                </div>
-            </nav>
             <!--Content-->
             <div class="page-content container-fluid col-xl-6">
+                <!--NavBar-->
+                <nav class="navbar p-0">
+                    <div class="container-fluid  prodi-navback">
+                        <a class="navback-home" href="{{ route('prodi')}}">
+                            <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
+                                <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                <linearGradient id="paint0_linear" x1="26.9725" y1="67.5161" x2="-28.7342" y2="-13.9055" gradientUnits="userSpaceOnUse">
+                                <stop offset="0.0187499" stop-color="#63BCF4"/>
+                                <stop offset="1" stop-color="#479FD7"/>
+                                </linearGradient>
+                                </defs>
+                            </svg>                                                                 
+                        </a>
+                    </div>
+                </nav>
                 <div class="first-custom">
                     <!--headline pertama-->
                     <div class="first-headline">
