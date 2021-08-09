@@ -8,4 +8,7 @@ use Illuminate\Http\Request;
 class clientKabinetController extends Controller
 {
     //
+    public function index(){
+        return view('client.kabinet');
+    }
 }

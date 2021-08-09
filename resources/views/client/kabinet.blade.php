@@ -11,16 +11,16 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/kabinet.css"></head>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/kabinet.css"></head>
     <body>
         <div class="main-wrapper">
             <!--NavBar-->
@@ -45,7 +45,7 @@
                 
                     <div class="first-headline">
                         <div class="logo-kabinet">
-                            <img src="../assets/images/Kabinet-logo.png" alt="Kabinet-logo">
+                            <img src="{{ asset('assets') }}/images/Kabinet-logo.png" alt="Kabinet-logo">
                         </div>
                         <div class="name-kabinet">
                             <h2>KM ITERA</h2>
@@ -250,7 +250,7 @@
         </div>
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.bundle.js"></script>
-        <script src="../js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+        <script src="{{ asset('assets') }}/js/custom.js"></script>
     </body>
 </html>

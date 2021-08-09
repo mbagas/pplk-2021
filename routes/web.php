@@ -23,6 +23,7 @@ use App\Http\Controllers\Client\clientBiodataController;
 use App\Http\Controllers\Client\clientFindCodeController;
 use App\Http\Controllers\Client\clientHimpunanController;
 use App\Http\Controllers\Client\clientJurusanController;
+use App\Http\Controllers\Client\clientKabinetController;
 use App\Http\Controllers\Client\clientKamusGaulController;
 use App\Http\Controllers\Client\clientProdiController;
 use App\Http\Controllers\Client\clientTugasController;
@@ -118,6 +119,8 @@ Route::middleware(['Pendanaan'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
+
+  // Sudah responsive
   Route::get('/home', [clientHomeController::class, 'index'])->name('home');
   Route::get('/profile', [clientBiodataController::class, 'index'])->name('biodata');
   Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
@@ -126,6 +129,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
 
+  // Belum responsive
+  Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   Route::get('/profile/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');

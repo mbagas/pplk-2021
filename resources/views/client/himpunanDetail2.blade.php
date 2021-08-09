@@ -106,7 +106,7 @@
                             <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
                             <div class="card-body">
                                 <p class="card-text">
-                                    {{ $dataHimpunan->filosofiLogo }}
+                                    {!! nl2br(e($dataHimpunan->filosofiLogo)) !!}
                                 </p>
 
                             </div>
@@ -121,7 +121,7 @@
                                     Visi
                                 </h2>
                                 <p class="card-text">
-                                    {{ $dataVisiMisi->visi }}
+                                    {!! nl2br(e($dataVisiMisi->visi)) !!}
                                 </p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                     Misi
                                 </h2>
                                 <p class="card-text">
-                                    {{ $dataVisiMisi->misi }}
+                                    {!! nl2br(e($dataVisiMisi->misi)) !!}
                                 </p>
                             </div>
                         </div>
