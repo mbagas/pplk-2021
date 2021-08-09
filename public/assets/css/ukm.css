@@ -34,7 +34,7 @@
 
 .main-text { 
     margin-top: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
 
 .ukm-title-text{     
@@ -99,8 +99,10 @@
 }
 
 .custom-mini-ukm-col .card-body {
+    display: grid;
+    place-items: center;
     height: 100%;
-    max-width: 100%;
+    width: 100%;
     padding-top: 2px;
     padding-left: 10px;
     padding-right: 20px;
@@ -312,7 +314,7 @@
         border: none;
         font-family: var(--font-family-body);
         font-size: 7px;
-        font-weight: 50;
+        font-weight: 200;
         float: right;
         border-radius: 6px !important;
         position: absolute;

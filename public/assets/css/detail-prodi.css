@@ -1,4 +1,221 @@
-@media (max-width: 500px){
+.prodi-navback{
+    display: flex;  
+    top: 0;       
+    padding-left: 25px;
+    padding-right: 25px;   
+    border-radius: 15px !important;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.prodi-navback a{        
+    position: absolute;
+    top: 36px;
+    font-weight: 300;
+}
+
+.first-headline {
+    display: flex; 
+    margin-top: 74px ;    
+    margin-bottom: 20px;   
+}
+
+.logo-prodi {
+    max-width: 40%;        
+}
+
+.logo-prodi img{
+    width: 100%;
+}
+
+.name-prodi{
+    margin-left: 10px;
+}
+
+.name-prodi h2{
+    font-weight: bold;
+    margin: 0px;
+}
+
+.name-prodi h5{
+    font-family: var(--font-family-body);
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+
+.detail-headline h6{
+    font-family: var(--font-family-body);
+    font-size: 10px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+.detail-headline p{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.second-headline {
+    margin-bottom: 20px;
+}
+
+.third-headline {
+    margin-bottom: 20px;
+}
+
+.footer-blue {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    background-color: var(--primary);
+    text-align: left;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+}
+
+.footer-blue-logo{
+    width: 10%;     
+}
+
+.footer-blue img {
+    width: unset;
+    border-radius: 20px;
+}
+
+.footer-blue p{
+    font-size: 8px; 
+    margin-bottom: 0px;
+    color: var(--white);
+}
+
+
+.detail-info{
+    margin-left: 10px;
+    width: 40%;
+}
+
+.icon-sosmed{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: unset;
+}
+
+.icon-sosmed img{
+    width: 25%;
+}
+
+.slick-wrapper {
+    max-width: 500px;
+}
+[class^='carousel-'] {
+    margin: 0 20px 30px 20px;
+    padding: 0;
+}
+.slick-prev:before,
+.slick-next:before {
+    color: #3991C9;
+}
+.slide-image {
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+}
+.carousel-3 .slide-image {
+    transition: .5s;
+    opacity: .5;
+}
+.carousel-3 .slick-center .slide-image {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.detail-prodikiri h6{
+    font-family: var(--font-family-body);
+    font-size: 10px;
+    margin: 0px;
+}
+
+.detail-prodikiri p{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.detail-prodikanan h6{
+    font-family: var(--font-family-body);
+    font-size: 10px;
+    margin: 0px;
+    text-align: right;
+}
+
+.detail-prodikanan p{
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: right;
+}
+.name-prodikanan{
+    margin-right: 10px;
+}
+
+.name-prodikanan h2{
+    font-weight: bold;
+    margin: 0px;
+    text-align: right;
+}
+
+.name-prodikanan h5{
+    font-family: var(--font-family-body);
+    font-size: 14px;
+    margin: 0px;
+    text-align: right;
+}
+
+.struktur-headline{
+    margin-top: 10px;
+}
+
+.struktur-headline h2{
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+}
+
+.nav-link{
+    display: flex;  
+    top: 0;       
+    padding-right: 25px;   
+    border-radius: 15px !important;
+    overflow: hidden;
+    z-index: 99;
+    margin: 0px;        
+}
+
+.nav-link a{        
+    color: #0d6efd !important;                
+}
+
+.navlink-detail{
+    text-decoration: none; 
+    font-family: var(--font-family-body);
+}
+
+.slick-headline {
+    margin-bottom: 0px;
+}
+
+.last-headline {
+    display: flex; 
+    margin-top: 20px ;    
+    margin-bottom: 20px;   
+}
+
+@media (max-width: 1200px){
     .prodi-navback{
         display: flex;  
         top: 0;       
@@ -65,7 +282,7 @@
         margin-bottom: 20px;
     }
     
-    .footer {
+    .footer-blue {
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 26px;
@@ -77,22 +294,23 @@
         align-items: center;
     }
 
-    .footer-logo{
+    .footer-blue-logo{
         width: 10%;     
     }
 
-    .footer img {
+
+    .footer-blue img {
         width: 100%;
         border-radius: 20px;
     }
 
-    .footer p{
+    .footer-blue p{
         font-size: 8px; 
         margin-bottom: 0px;
         color: var(--white);
     }
 
-    .detail-info{
+    .detail-info{   
         margin-left: 10px;
     }
 
@@ -107,6 +325,7 @@
     .icon-sosmed img{
         width: 25%;
     }
+
     .slick-wrapper {
         max-width: 500px;
     }
