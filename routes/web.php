@@ -129,6 +129,7 @@ Route::middleware(['auth'])->group(function () {
   
   Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
   Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
+  Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');

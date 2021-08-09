@@ -42,12 +42,11 @@
                         <h2>UKM QR BARCODE</h2>
                     </div>
                     <div class="code justify-content-center">
-                        <img src="{{ asset('assets') }}/images/Barcode.png" alt="BARCODE">
+                        <img src="{{ $ukmData->barcode}}" alt="BARCODE">
                     </div>
                     <div class="desc-text margin-code">
-                        <h3 clas="subhead-text">Lorem ipsum dolor sit amet</h3>
-                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Facilisis tempor tempor sollicitudin nunc euismod. Purus lobortis ut  </p>
+                        <h3 clas="subhead-text">Scan untuk bergabung !</h3>
+                        <p class="body-text">{{$ukmData->ormawas->artikels->body}}</p>
                     </div>
                 </div>
             </div>

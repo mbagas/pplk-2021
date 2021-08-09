@@ -230,13 +230,15 @@
                                     Visi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.    
                                 </p>
                                 <h2 class="card-title">
                                     Misi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    1. Menyelenggarakan dan mengambangkan pendidikan tinggi sains yang mencakup pengembangan teknologi serta menjadi landasan pengembangan teknologi dalam upaya menghasilkan lulusan yang memahami, mengembangkan, menerapkan ilmu sains yang berkarakter.<br/>
+                                    2. Menyelenggarakan dan mengembangkan kegiatan penelitian dan pengabdian masyarakat untuk mendorong peningkatan sains mencakup pengembangan teknologi serta menjadi landasan dalam pengembangan teknologi yang inovatif dan tanggap terhadap tantangan lokal maupun global.<br/>
+                                    3. Pemberdayaan potensi wilayah sekitar Sumatera secara optimal melalui keunggulan dalam pendidikan, penelitian, dan pengabdian kepada masyarakat melalui kerjasama dengan stakeholder terkait.    
                                 </p>
                             </div>
                         </div>                                               
@@ -250,13 +252,16 @@
                                     Visi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    Jurusan yang berkontribusi unggul pada pendidikan tinggi sumber daya manusia dan inovasi dalam teknologi produksi dan pengelolaan sumber daya alam di Sumatera secara khusus dan Indonesia secara umum untuk menajuan ekonomi dan kesejahteraan yang berkelanjutan di era Revolusi Industri 4.0    
                                 </p>
                                 <h2 class="card-title">
                                     Misi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    1. Melaksanakan dan mengembangkan pendidikan tinggi terutama bidang teknologi produksi dan industri untuk menyiapkan lulusan yang siap menggunakan, mengembangkan, dan menerapkan ilmu teknologi yang berkarakter.<br/>
+                                    2. Melakukan kegiatan penelitian dan pegabdian kepada masyarakat yang dapat menghasilkan pengembangan teknologi bidang produksi dan industri yang tanggap terhadap lokal maupun global.<br/>
+                                    3. Pengelolaan dan pengembangan potensi wilayah sekitar Sumatera khususnya dan Indonesia secara umumnya dalam bidang produksi dan industri melalui kegiatan pendidikan, penelitian, dan pengabdian kepada masyarakat melalui kerja sama dengan pihak-pihak yang terkait.<br/>
+                                    4. Menjalankan, menstimulasi, dan mengelola kerja sama pendidikan, penelitian, dan pengembangan kelompok penelitian yang menjangkarkan wilayah Sumatera sebagai pusat kemajuan Indonesia untuk menjangkau kontribusi di tingkat nasional, regional ASEAN, Asia, dan dunia di era Revolusi Industri 4.0<br/> 
                                 </p>
                             </div>
                         </div>                                               
@@ -264,19 +269,20 @@
                     <!--Content 3-->
                     <div class="tab-pane custom-card-jurusan justify-content-center info-jurusan"  role="tabpanel" id="jtik">
                         <div class="card w-100">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" class="card-img-top">
+                            <img src="{{ asset('assets') }}/images/jurusan-poster3.png" class="card-img-top">
                             <div class="card-body">
                                 <h2 class="card-title">
                                     Visi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    Menjadi Jurusan yang unggul dan berkualitas di bidang IPTEK dan berkontribusi pada pemberdayaan potensi yang ada di wilayah Sumatera khususnya dan Indonesia serta dunia umumnya    
                                 </p>
                                 <h2 class="card-title">
                                     Misi
                                 </h2>
                                 <p class="card-text">
-                                    Menjadi perguruan tinggi yang unggul, bermartabat, mandiri dan diakui dunia, serta berkontribusi dalam perubahan yang mampu meningkatkan kesejahteraan bangsa Indonesia dan dunia dengan memberdayakan potensi yang ada di wilayah Sumatera dan Sekitarnya.
+                                    1. Berkontribusi pada penyelengaraan program akademik, vokasi, dan profesi dilandasi dengan program kegiatan Pendidikan, penelitian dan pengabdian pada masyarakat yang terpadu dan berbasis teknologi untuk pemberdayaan potensi sumber daya alam di Sumatera.<br/>
+                                    2. Berkontribusi pada pengembangan SDM yang unggul, berkualitas menguasai IPTEK, disamping memiliki karakter kewirausahaan yang baik.       
                                 </p>
                             </div>
                         </div>                                               
