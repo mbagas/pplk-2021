@@ -120,9 +120,17 @@
     margin-bottom: 20px;
 }
 
+.artikel-image{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: var(--thumbnail-photos);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 .artikel-ukm img{
-   width: 100%;
-   margin-bottom: 16px;
+   width: 50%;
 }
 
 .artikel-custom {
@@ -152,6 +160,11 @@ font-size: 10px !important;
     height: 100%;
     color: black;
     margin-bottom: 30px;
+}
+
+.custom-card-ukm {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .card-img-top{                        
@@ -202,21 +215,23 @@ font-size: 10px !important;
 
 .small-ukm-menu{
     margin-top: 15px;
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: unset;
-    width: 100%;
+    width: 75%;
+    margin: auto;
     justify-content:space-between !important;
 }
 
-.small-ukm-menu .nav-item button{   
+.small-ukm-menu .nav-item button{  
+    margin-top: 20px;
+    margin-bottom: 20px; 
     display: grid;
     place-items: center;      
     font-weight: 600;
-    width: 110px;    
-    height: 40px;                  
+    width: 160px;    
+    height: 60px;                  
     font-family: var(--font-family-body);
-    font-size: 13px; 
+    font-size: 20px; 
     text-align: center; 
     color: var(--grey); 
     padding-top: 10px;
@@ -271,6 +286,10 @@ font-size: 10px !important;
 }
 
 @media (max-width: 1200px) {
+    .artikel-image{
+        margin-top: 45%;
+    }
+
     .nav-back a{        
         top: 36px;           
     }
@@ -293,6 +312,9 @@ font-size: 10px !important;
 }
 
 @media (max-width: 768px) {
+    .artikel-image{
+        margin-top: 40%;
+    }
     .nav-back a{        
         top: 36px;           
     }
@@ -404,9 +426,8 @@ font-size: 10px !important;
         margin-bottom: 20px;
    }
 
-   .artikel-ukm img{
-       width: 100%;
-       margin-bottom: 16px;
+   .artikel-image{
+       margin-top: 35%;
    }
 
     .artikel-custom {

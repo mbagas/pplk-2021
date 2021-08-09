@@ -212,7 +212,9 @@
                     <!--second headline-->
                     <div class="second-headline">
                         <div class="artikel-ukm">
-                            <img src="{{$ukmData->logo}}">
+                            <div class="artikel-image">
+                                <img src="{{$ukmData->logo}}">
+                            </div>
                             <div class="d-flex justify-content-between artikel-custom">
                                 <div class="artikel-1">
                                     <div class="artikel-title">
