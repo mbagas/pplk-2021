@@ -23,6 +23,7 @@ use App\Http\Controllers\Client\clientBiodataController;
 use App\Http\Controllers\Client\clientFindCodeController;
 use App\Http\Controllers\Client\clientHimpunanController;
 use App\Http\Controllers\Client\clientJurusanController;
+use App\Http\Controllers\Client\clientKamusGaulController;
 use App\Http\Controllers\Client\clientProdiController;
 use App\Http\Controllers\Client\clientTugasController;
 use App\Http\Controllers\Client\clientUkmController;
@@ -118,18 +119,20 @@ Route::middleware(['Pendanaan'])->group(function () {
 Route::middleware(['auth'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
   Route::get('/home', [clientHomeController::class, 'index'])->name('home');
-  Route::get('/biodata', [clientBiodataController::class, 'index'])->name('biodata');
-  Route::get('/biodata/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');
-  Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
-  Route::get('/games', [gameController::class, 'index'])->name('games');
-  Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
+  Route::get('/profile', [clientBiodataController::class, 'index'])->name('biodata');
+  Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
+  Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
-  
-  Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
-  Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
+
+  Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
+  Route::get('/profile/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');
+  Route::post('/profile/{id}/update', [clientBiodataController::class, 'update'])->name('updateProfile');
+  Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+  Route::get('/games', [gameController::class, 'index'])->name('games');
+  Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');

@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Kamusgaul;
 use Illuminate\Http\Request;
 
 class clientKamusGaulController extends Controller
 {
     //
+    public function index(){
+        $kamusGauls = Kamusgaul::all();
+        return view('client.kamusGaul', compact('kamusGauls'));
+    }
 }

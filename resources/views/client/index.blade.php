@@ -378,8 +378,7 @@
                         <a href="{{ route('prodi') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Prodi ITERA</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
-                                    Mauris ac enim eu tortor blandit sodales. </p>
+                                <p class="card-text">Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -389,9 +388,7 @@
                         <a href="{{ route('himpunan') }}" class="card justify-content-between big-menu-item last-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Himpunan ITERA</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ligula sit amet lectus sollicitudin, eu placerat felis imperdiet. Pellentesque volutpat, eros fringilla rutrum imperdiet, mauris purus maximus augue, sit amet convallis erat eros ac nibh. Donec fermentum laoreet sem pulvinar suscipit. Aenean congue tellus eros, sed pharetra felis aliquet sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin consequat, arcu vel scelerisque hendrerit, massa neque mollis odio, a dictum nisl ipsum in metus. Nunc vel porttitor libero, ac interdum lacus.
-
-                                    Mauris ac enim eu tortor blandit sodales. </p>
+                                <p class="card-text">Himpunan Mahasiswa Program Studi adalah Organisasi Kemahasiswaan sebagai Lembaga Eksekutif di tingkat Program Studi, yang hanya melaksanakan kegiatan penalaran dan keilmuan. </p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -401,7 +398,7 @@
 
                     <!-- Small Slide Menu -->
                     <div class="scrolling-wrapper-flexbox-mini">
-                        <a href="../html/kamusGaul.html" class="small-slide-menu-item justify-content-center">
+                        <a href="{{ route('kamus') }}" class="small-slide-menu-item justify-content-center">
                             Kamus Gaul
                         </a>
 
