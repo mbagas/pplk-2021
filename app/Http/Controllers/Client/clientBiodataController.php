@@ -13,9 +13,11 @@ class clientBiodataController extends Controller
     //
     public function index(){
         $biodataUser = User::where('id',auth()->user()->id)->firstOrFail();
-        $prodi = Prodi::with('ormawas')->where('id', $biodataUser->prodis_id)->first();
-        $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
-        $biodataUser->namaProdi = $ormawa->namaLengkap;
+        if($biodataUser->prodis_id != NULL){
+            $prodi = Prodi::with('ormawas')->where('id', $biodataUser->prodis_id)->first();
+            $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
+            $biodataUser->namaProdi = $ormawa->namaLengkap;
+        }
         return view('client.biodata',compact('biodataUser'));
     }
 
