@@ -410,7 +410,7 @@
                             Logo PPLK
                         </a>
 
-                        <a href="../html/kabinet.html" class="small-slide-menu-item justify-content-center ">
+                        <a href="{{ route('kabinet') }}" class="small-slide-menu-item justify-content-center ">
                             Kabinet KM ITERA
                         </a>
 

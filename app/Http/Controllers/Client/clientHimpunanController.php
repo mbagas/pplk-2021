@@ -8,12 +8,13 @@ use App\Models\Himpunan;
 use App\Models\Ormawa;
 use App\Models\VisiMisi;
 use App\Models\Artikel;
+use Illuminate\Support\Facades\Cache;
 
 class clientHimpunanController extends Controller
 {
     //
     public function index(){
-        $himpunans = cache()->remember('himpunans', 7200, function () {
+        $himpunans = Cache::rememberForever('himpunans', function () {
             return Himpunan::with("ormawas")->get();
         });
         return view('client.himpunan', compact('himpunans'));
