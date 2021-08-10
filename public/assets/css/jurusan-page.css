@@ -1,6 +1,9 @@
 .navbar{
     padding-top: 0px;
 }
+.page-content .navbar{
+    position: absolute;
+}
 
 .nav-back{
     display: flex;  

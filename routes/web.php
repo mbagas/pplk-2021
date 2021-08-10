@@ -30,6 +30,7 @@ use App\Http\Controllers\Client\clientTugasController;
 use App\Http\Controllers\Client\clientUkmController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
+use App\Http\Controllers\Client\logoPplkController;
 use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -129,13 +130,16 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
 
+
   // Belum responsive
+  Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   Route::get('/profile/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');
   Route::post('/profile/{id}/update', [clientBiodataController::class, 'update'])->name('updateProfile');
   Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+  Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   

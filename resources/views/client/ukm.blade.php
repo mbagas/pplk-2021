@@ -194,7 +194,7 @@
                         </p>
                     </div>
                     <!--Search Bar-->
-                    <div class="row search-bar">
+                    <div class="row search-bar d-lg-flex d-xl-none">
                         <div class="col-10">
                             <div class="search-form">
                                 <i class="fa fa-search"></i>
@@ -214,9 +214,7 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">
-
-                        
+                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">               
                         @foreach ($ukms as $ukm) 
                         <div class="col custom-mini-ukm-col">  
                             <div class="card">
@@ -230,8 +228,6 @@
                             </div>                            
                         </div>
                         @endforeach
-
-
                         
                         {{-- <div class="col custom-mini-ukm-col">
                             <div class="card">
