@@ -1,4 +1,132 @@
-@media (max-width: 500px) {
+.nav-back {
+    display: flex;
+    top: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.nav-back a {
+    position: absolute;
+    top: 20px;
+    color: #fefefe;
+}
+
+.navback-home {
+    text-decoration: none;
+    font-family: var(--font-family-body);
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding-top: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    background-color: var(--primary);
+}
+
+.page-content .card {
+    margin-top: 90px;
+    display: flex;
+    width: 100%;
+    padding: 30px 25px 20px 25px;
+    border-radius: 15px 15px 0px 0px !important;
+    min-height: 100vh;
+    background-color: #fefefe;
+    flex-direction: column;
+}
+
+.main-content{
+    top: 0;
+    display: grid;
+    width:90%;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}  
+
+.detail-page{
+    display: flex;   
+    justify-content: space-between;
+    margin-bottom: 20px;    
+}
+
+.custom-page {
+    margin-top: 50px;
+    display: flex;
+    max-width: 100%;  
+    padding: 5px 20px 20px 20px; 
+    border-radius: 15px 15px 0px 0px !important;
+    height: 100%;
+    background-color: #fefefe;
+}
+
+.card h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+} 
+
+.col {
+    margin-bottom: 20px;
+    display: grid;
+    place-items: center;
+}
+.col .card{
+    border-radius: 15px !important;
+}
+.custom-divisi {
+    padding: 20px !important;
+    margin-top: 20px !important;
+    border-radius: 15px !important;
+    box-shadow: 2px 1px 3px var(--grey); 
+    height: 100% !important;    
+    min-height: 100% !important;  
+    display: grid;
+    width: 80% !important;
+    place-items: center;             
+}
+
+.custom-divisi img{
+    width: 60%;
+}
+
+.rounded{
+    border-radius: 15px !important;
+}
+
+.card-title{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.card-body{
+    padding-top: 20px;
+    height: 100%;
+    width: 100% !important;
+}
+
+@media (max-width: 1200px) {
+    .custom-divisi{
+        width: 100% !important;
+    }
+
+    .custom-divisi img{
+        width: 100%;
+    }
+    .card-title{
+        font-size: 13px;
+    }
     .nav-back {
         display: flex;
         top: 0;
@@ -7,56 +135,30 @@
         overflow: hidden;
         z-index: 99;
     }
-
+    
     .nav-back a {
         position: absolute;
         top: 20px;
         color: #fefefe;
     }
-
+    
     .navback-home {
         text-decoration: none;
         font-family: var(--font-family-body);
     }
-
+    
     .page-content {
-        padding-top: 30px;
+        margin-top: 0px !important;
+        padding-top: 0px;
         background-color: var(--primary);
     }
 
-    .custom-page {
-        margin-top: 50px;
-        display: flex;
-        max-width: 100%;  
-        padding: 5px 20px 20px 20px; 
-        border-radius: 15px 15px 0px 0px !important;
-        height: 100%;
-        background-color: #fefefe;
+    .page-content .card {
+        margin-top: 90px;
     }
 
-    .card h2{
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 50px;
-    } 
-
-    .col {
-        margin-bottom: 10px;
+    .main-content{
+        width: 100%;
     }
 
-    .custom-divisi {
-        border-radius: 15px !important;
-        box-shadow: 2px 1px 3px var(--grey); 
-        height: 220px;                   
-    }
-
-    .rounded{
-        border-radius: 15px !important;
-    }
-
-    .card-title{
-        font-size: 20px;
-        font-weight: 700;
-        text-align: center;
-    }
 }

@@ -1,41 +1,345 @@
-@media(max-width: 500px){
-    .nav-back{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
-        z-index: 99;        
+.main-wrapper{
+    position: unset;
+}
+
+.desktop{
+    margin: auto;
+}
+
+.page-content{
+    margin-top: 0;
+    padding-left: 26px;
+    padding-right: 26px;
+    min-height: calc(100vh - 90px);
+}
+
+.navbar-cust-kab {
+    position: unset;
+    top: 0px;
+    width: 100%;
+}
+
+.kab-navback{
+    display: flex;
+    top: 0;
+    overflow: hidden;
+}
+
+.kab-navback a{        
+    top: 36px;
+    z-index: 100;
+}
+
+.navback-home{
+    text-decoration: none; 
+    font-family: var(--font-family-body);
+}
+
+.first-headline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-top: 20px ;    
+    margin-bottom: 20px;  
+    z-index: 90; 
+}
+
+.logo-kabinet {
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    max-width: 50%;        
+}
+
+.logo-kabinet img{
+    width: 60%;
+}
+
+.name-kabinet{
+    width: 50%;
+    margin-left: 10px;
+}
+
+.name-kabinet h2{
+    font-weight: bold;
+    margin: 0px;
+}
+
+.name-kabinet h5{
+    font-family: var(--font-family-body);
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+
+.detail-headline h6{
+    font-family: var(--font-family-body);
+    font-size: 10px;
+    padding-top: 10px;
+    margin: 0px;
+}
+
+.detail-headline p{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.list-kabinet {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-height: 45px;
+    align-items: center;
+    background-color: var(--grey);
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px !important;
+}
+
+.list-kabinet li {
+    list-style-type: none;
+}
+
+.icon-list {
+    display: inline-block;
+}
+
+
+.video {
+    width: 100%;
+    border-radius: 15px !important;
+    margin-bottom: 20px;
+}
+
+ .small-kabinet-menu{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: unset;
+    width: 75%;
+    justify-content:space-between !important;
+}
+
+.small-kabinet-menu .nav-item button{   
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    width: 160px;
+    height: 100%;
+    font-family: var(--font-family-body);
+    font-size: 20px;
+    text-align: center;
+    color: var(--grey);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 10px;
+    
+}
+
+.active, .button-kabinet:hover {
+    background-image: var(--gradient-1) !important;
+    color: var(--white) !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 5px 10px 1px rgb(57 145 201 / 18%);        
+}
+
+.tab-content .active {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+.body-content {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.content-kabinet { 
+    padding: 25px !important;
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.card-kabinet {
+    padding: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 85%;
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+}
+
+.logo-filosofi {
+    display: grid;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.logo-filosofi img {
+    padding: 15px;
+    width: 100%;
+}
+
+.card-filosofi {
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-height: 100px;
+    background-color: #e0e0e0;
+}
+
+.text {
+    text-align: center;
+}
+
+.filosofi-text h2, .card-title {
+    color: black;
+    font-size: 16px;
+    font-style: bold;
+}
+
+.filosofi-text p, .card-text {
+    color: #686868;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.kabinet-prev .carousel-control-prev-icon, .kabinet-next .carousel-control-next-icon {
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%233991C9'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%233991C9'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.kabinet-prev, .kabinet-next {
+    opacity: 1 !important;
+}
+
+.footer-blue {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    background-color: var(--primary);
+    text-align: left;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+}
+
+.footer-blue-logo{
+    width: 10%;     
+}
+
+.footer-blue img {
+    width: unset;
+    border-radius: 20px;
+}
+
+.footer-blue p{
+    font-size: 8px; 
+    margin-bottom: 0px;
+    color: var(--white);
+}
+
+.detail-info{
+    margin-left: 10px;
+    width: 40%;
+}
+
+.icon-sosmed{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: unset;
+}
+
+.icon-sosmed img{
+    width: 25%;
+}
+
+#filosofiLogo{
+    place-items: center;
+}
+
+#visiMisi{
+    place-items: center;
+}
+
+#carouselFilosofiLogo{
+    width: 80%;
+}
+
+#carouselVisiMisi{
+    width: 80%;
+}
+
+.tab-content > .active {
+    display: grid;
+}
+
+
+@media(max-width: 1200px){
+    .navback-home img{
+        width: 36px;
     }
 
-    .nav-back a{        
-        position: absolute;
-        top: 36px;
-        color: var(--primary) !important;                
+    .navbar-cust-kab {
+        top: 0px;
+        width: 100%;
     }
-
+    
     .page-content {
-        margin-top: 20px;
-        padding-top: 0;
+        margin-top: 0;
         padding-left: 26px;
         padding-right: 26px;
-        min-height: calc(100vh - 90px);
+    }
+
+    .kab-navback{
+        display: flex;
+        top: 0;
+        margin-top: 36px;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+
+    .kab-navback a{ 
+        top: 36px;
+        z-index: 100;
     }
 
     .first-headline {
         display: flex; 
-        margin-top: 74px ;    
-        justify-content: space-between !important;
+        margin-top: 0px ;    
         margin-bottom: 20px;   
     }
 
     .logo-kabinet {
-        margin-top: 20px;
-        margin-right: 20px;
-        margin-left: 20px;
-        width: 30%;
-        z-index: 2;
+        max-width: 50%;   
+        padding: 10px;     
     }
 
     .logo-kabinet img{
@@ -44,6 +348,7 @@
 
     .name-kabinet{
         margin-left: 10px;
+        width: 50%;
     }
 
     .name-kabinet h2{
@@ -54,20 +359,22 @@
     .name-kabinet h5{
         font-family: var(--font-family-body);
         font-size: 14px;
+        margin-bottom: 10px;
     }
+
 
     .detail-headline h6{
         font-family: var(--font-family-body);
         font-size: 10px;
+        padding-top: 0px;
         margin: 0px;
     }
 
     .detail-headline p{
         font-weight: 600;
-        font-size: 12px;
         margin-bottom: 12px;
     }
-
+    
     .list-kabinet {
         display: flex;
         flex-wrap: wrap;
@@ -97,6 +404,8 @@
      .small-kabinet-menu{
         margin-top: 15px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
         flex-wrap: unset;
         width: 100%;
@@ -214,7 +523,7 @@
         opacity: 1 !important;
     }
 
-    .footer {
+    .footer-blue {
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 26px;
@@ -226,12 +535,23 @@
         align-items: center;
     }
 
-    .footer img {
+}
+
+@media (max-width: 576px) {
+    #carouselFilosofiLogo{
+        width: 100%;
+    }
+    .footer-blue-logo{
+        width: 10%;     
+    }
+
+
+    .footer-blue img {
         width: 100%;
         border-radius: 20px;
     }
 
-    .footer p{
+    .footer-blue p{
         font-size: 8px; 
         margin-bottom: 0px;
         color: var(--white);

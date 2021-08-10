@@ -134,8 +134,6 @@
                     </div>
                 </div>
             </div>
-
-            
             <!-- FootBar -->
             <div class="navbar p-0 d-lg-block d-xl-none">
                 <ul class="container-fluid footer-bar">

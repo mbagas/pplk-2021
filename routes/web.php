@@ -159,6 +159,10 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
 });
 
+Route::get('/detailTugas', function () {
+  return view('client.dummyTugasDetail');
+});
+
 
 
 // Route::get('/game', function () {

@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>        
         <link rel="stylesheet" href="{{ asset('assets') }}/css/biodata.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png"></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/edit-biodata.css"></link>
@@ -43,9 +43,6 @@
                         </svg>                            
                     </button>                  
                 </div>                
-                
-                        
-           
                 <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" action="{{ route('updateProfile', $editBiodata->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
