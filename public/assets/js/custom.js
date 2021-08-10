@@ -36,3 +36,10 @@ $(window).scroll(function() {
         $(".tugas-search").removeClass("scrolled");
     }
 });
+$('#myTable').DataTable({
+    "oLanguage": {
+                    "sLengthMenu": " _MENU_ ", 
+                    "sInfo": "Menampilkan kata gaul _START_ sampai _END_ dari total _TOTAL_ yang ada",
+                },
+
+});
