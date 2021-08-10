@@ -45,28 +45,34 @@
                 </div>                
                 
                         
-            <!--Content-->  
-            <div class="bio-content container-fluid justify-content-between">
-                <div class="bio-profile" onclick="">
-                    
-                    <div class="image-upload">
-                        <label for="file-input">
-                            <img src="{{ asset('assets') }}/images/logo photo.png"/>
-                        </label>
-                        <input id="file-input" type="file"/>
-                    </div>
-                        <!-- <input type="file"><img src="{{ asset('assets') }}/images/logo photo.png"></a> -->
-                        <!-- <img src="{{ asset('assets') }}/images/logo photo.png"> -->
-                    
-                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="photo-profile" >                                                            
-                    <p class="edit-profile">Edit Profile Photo</p>
-                    <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="23" height="3" rx="1.5" fill="#3991C9"/>
-                    </svg>                      
-                      
-                </div>
-                <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" action="{{ route('updateProfile', auth()->user()->id)}}" method="POST" enctype="multipart/form-data">
-                        
+           
+                <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" action="{{ route('updateProfile', $editBiodata->id)}}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
+                @csrf
+                     <!--Content-->  
+                        <div class="bio-content container-fluid justify-content-between">
+                            <div class="bio-profile" onclick="">
+                                
+                            <!-- tahan -->
+                                <div class="image-upload">
+                                    <label for="file-input">
+                                        <img src="{{ asset('assets') }}/images/logo photo.png"/>
+                                    </label>
+                                    <input id="file-input" type="file" accept="image/*" name="img" id="img" value="{{$editBiodata->img}}"/>
+                                </div> 
+                                    <!-- <input type="file"><img src="{{ asset('assets') }}/images/logo photo.png"></a> -->
+                                    <!-- <img src="{{ asset('assets') }}/images/logo photo.png">-->
+                                
+                                <img src="{{$editBiodata->img}}" alt="photo-profile" >                                                            
+                                <p class="edit-profile">Edit Profile Photo</p>
+                                <!-- <input type="file" name="img" id="img" value="{{$editBiodata->img}}"/> -->
+                                <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="3" rx="1.5" fill="#3991C9"/>
+                                </svg>                      
+                                
+                        </div>
+                        <button type="submit">submit </button>
+                </form>
                         <div class="row bio-input">
                             <label class="form-label" for="email">Email</label>
                             <input type="text" placeholder="Email" value="{{$editBiodata->email}}" disabled>
@@ -81,8 +87,7 @@
                             <label class="form-label" for="nim">NIM</label>
                             <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" disabled>
                         </div>                        
-      
-                </form>
+                
             </div>
         </div>
 
