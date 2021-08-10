@@ -512,7 +512,9 @@ font-size: 10px !important;
         justify-content:space-between !important;
     }
 
-    .small-ukm-menu .nav-item button{   
+    .small-ukm-menu .nav-item button{  
+        margin-top: 0px;
+        margin-bottom: 0px; 
         display: grid;
         place-items: center;      
         font-weight: 600;

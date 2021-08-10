@@ -11,26 +11,25 @@
         <!-- Title -->
         <title>PPLK 2021 - {{ $dataProdi->ormawas->namaLengkap }}</title>
 
-        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/prodi.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" /></link>
 
         <!--Per Page Styling-->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/detail-prodi.css"></link>
     </head>
     <body>
-        <div class="main-wrapper">
-
+        <div class="main-wrapper container-fluid">
             <!-- Desktop Navabar top -->
             <div class="navbar p-0 d-none d-xl-block d-xxl-block">
                 <div class="container-fluid head-desktop head-bar">
@@ -139,27 +138,10 @@
             </div>
             <!--Content-->
             <div class="page-content container-fluid col-xl-6">
-                <!--NavBack Mobile-->
-                <div class="navbar-cust-prodi p-0 d-lg-block d-xl-none">
-                    <div class="container-fluid prodi-navback">
-                        <a class="navback-home" href="{{ route('prodi')}}">
-                            <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
-                                <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <defs>
-                                <linearGradient id="paint0_linear" x1="26.9725" y1="67.5161" x2="-28.7342" y2="-13.9055" gradientUnits="userSpaceOnUse">
-                                <stop offset="0.0187499" stop-color="#63BCF4"/>
-                                <stop offset="1" stop-color="#479FD7"/>
-                                </linearGradient>
-                                </defs>
-                            </svg>                                                                 
-                        </a>
-                    </div>
-                </div>
-
-                <!--NavBack Desktop-->
-                <div class="navbar-cust-prodi p-0 d-none d-xl-block d-xxl-block">
-                        <div class="container-fluid  prodi-navback">
+                <div class=" desktop">
+                    <!--NavBack Desktop-->
+                    <div class="navbar-cust-prodi p-0 d-none d-xl-block d-xxl-block" style="margin-top:100px; margin-right:auto; margin-left:auto;">
+                        <div class=" prodi-navback">
                             <a class="navback-home" href="{{ route('prodi')}}">
                             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="50" height="50" rx="10" fill="url(#paint0_linear)"/>
@@ -174,14 +156,25 @@
                             </a>
                         </div>
                     </div>
+                    <!--NavBack Mobile-->
+                    <div class="navbar-cust-prodi p-0 d-lg-block d-xl-none">
+                        <div class="prodi-navback">
+                            <a class="navback-home" href="{{ route('prodi')}}">
+                                <img src="{{ asset('assets') }}/images/back-button-biru-jingan-sekali.png" alt="tombol-sialan">
+                            </svg>
 
-                <div class=" desktop">
-                    <div class="first-custom">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="first-custom">        
                         <!--headline pertama-->
                         <div class="first-headline">
+                            
                             <div class="logo-prodi">
                                 <img src="{{ asset('assets') }}/images/LogoItera.png" alt="poster">
-                            </div>                   
+                            </div>          
+
                             <div class="name-prodi">
                                 <h5>Program Studi</h5>
                                 <h2>{{ $dataProdi->ormawas->namaLengkap }}</h2>
@@ -290,7 +283,7 @@
                 <p>Telepon : 07218030188 – 07218030189</p>
             </div>
             <div class="icon-sosmed">
-                <img src{{ asset('assets') }}/images/twiter.png">
+                <img src="{{ asset('assets') }}/images/twiter.png">
                 <img src="{{ asset('assets') }}/images/yutub.png">
                 <img src="{{ asset('assets') }}/images/ige.png">                                     
             </div>
