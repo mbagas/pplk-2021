@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            .image-upload>input {
+                display: none;
+            }
+        </style>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="keywords" content="" />
@@ -43,9 +48,16 @@
             <!--Content-->  
             <div class="bio-content container-fluid justify-content-between">
                 <div class="bio-profile" onclick="">
-                    <div class="icon-photo">
-                        <img src="{{ asset('assets') }}/images/logo photo.png">
+                    
+                    <div class="image-upload">
+                        <label for="file-input">
+                            <img src="{{ asset('assets') }}/images/logo photo.png"/>
+                        </label>
+                        <input id="file-input" type="file"/>
                     </div>
+                        <!-- <input type="file"><img src="{{ asset('assets') }}/images/logo photo.png"></a> -->
+                        <!-- <img src="{{ asset('assets') }}/images/logo photo.png"> -->
+                    
                     <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="photo-profile" >                                                            
                     <p class="edit-profile">Edit Profile Photo</p>
                     <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
