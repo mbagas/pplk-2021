@@ -28,6 +28,7 @@ use App\Http\Controllers\Client\clientKamusGaulController;
 use App\Http\Controllers\Client\clientProdiController;
 use App\Http\Controllers\Client\clientTugasController;
 use App\Http\Controllers\Client\clientUkmController;
+use App\Http\Controllers\Client\clientUptController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\Client\logoPplkController;
@@ -132,6 +133,7 @@ Route::middleware(['auth'])->group(function () {
 
 
   // Belum responsive
+  Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');

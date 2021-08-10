@@ -8,4 +8,8 @@ use Illuminate\Http\Request;
 class clientUptController extends Controller
 {
     //
+    public function index(){
+        return view('client.uptItera');
+    }
 }
+
