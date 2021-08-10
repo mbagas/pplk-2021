@@ -214,9 +214,7 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">
-
-                        
+                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">               
                         @foreach ($ukms as $ukm) 
                         <div class="col custom-mini-ukm-col">  
                             <div class="card">
@@ -230,8 +228,6 @@
                             </div>                            
                         </div>
                         @endforeach
-
-
                         
                         {{-- <div class="col custom-mini-ukm-col">
                             <div class="card">
