@@ -148,7 +148,7 @@ h2{
     }
     
     .page-content {
-        margin-top: 0px;
+        margin-top: 0px !important;
         padding-top: 0px;
         background-color: var(--primary);
     }
