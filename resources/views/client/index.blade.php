@@ -103,9 +103,12 @@
                         <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
                     </a>
                     <div class="head-menu row ">
-                        <a class="head-menu-icon" href="logoOut">
+                        <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
+                            @csrf
+                        </form>
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
                         </a>
