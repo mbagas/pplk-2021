@@ -11,7 +11,7 @@ a:hover{
     font-family: var(--font-family-body);
     font-style: normal;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 114.3%;
 }
 
@@ -19,12 +19,236 @@ a:hover{
     font-family: var(--font-family-title);
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 114.3%;
     color: var(--font-color-primary-2);
 }
 
-@media (max-width: 500px){
+.tugas-search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    background-color: var(--page-background-1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.scrolled {
+    position: fixed;
+    z-index: 2;
+}
+
+.tugas-content {
+    overflow-x: hidden;
+    transition: all 300ms ease;
+    z-index: 90;
+    margin-top: 100px;
+    padding-top: 0px;
+    padding-left: 26px;
+    padding-right: 26px;
+    min-height: calc(100vh - 90px);
+    padding-bottom: 80px;
+    padding-bottom: calc(80px + (constant(safe-area-inset-bottom))*1.1);
+    padding-bottom: calc(80px + (env(safe-area-inset-bottom))*1.1);
+}
+
+.tugas-search-icon {
+    margin-right: 16px;
+}
+
+.tugas-kelompok-card {
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 0 0 15px 15px;
+    padding: 15px 23px 18px 23px;
+    width: 100%;
+    height: 360px;
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0px 5px 6px rgba(57, 145, 201, 0.18);
+}
+
+.tugas-daplok-img {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+}
+
+.tugas-daplok-text, .tugas-daplok-text>* {
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.tugas-daplok-text>h6 {
+    font-size: 10px;
+}
+
+.tugas-circle {
+    position: absolute;
+}
+
+.tugas-circle1 {
+    transform-origin: top left;
+    top: 0;
+    left: 0;
+}
+
+.tugas-circle2 {
+    transform-origin: bottom right;
+    bottom: 0;
+    right: 0;
+}
+
+.tugas-menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: unset;
+    width: 100%;
+    justify-content:space-between !important;
+}
+
+.tugas-menu li {
+    display: flex;
+    justify-content: center;
+}
+
+.tugas-menu .nav-item button{   
+    display: grid;
+    place-items: center;      
+    font-weight: 600;
+    width: 95%;
+    min-height: 100%;                  
+    font-family: var(--font-family-body);
+    font-size: 20px; 
+    text-align: center; 
+    color: var(--grey); 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px; 
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.tugas-menu .active, .tugas-menu-item:hover {
+    background-image: var(--gradient-1) ;
+    color: var(--white) !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 5px 10px 1px rgb(57 145 201 / 18%);        
+}
+
+.tab-content {
+    display: grid;
+    place-items: center;
+}
+
+.tugas-list{
+    width: 75%;
+}
+
+.tugas-list-card {
+    overflow: hidden;
+    position: relative;
+    min-height: 320px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.tugas-list-score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18%;
+    background-color: #FFA941;
+    text-align: center;
+}
+
+.tugas-list-image {
+    border-radius: 15px;
+    background-color: #E0E0E0;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 200px;
+}
+
+.tugas-list-content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    min-height: 105px;
+    padding: 10px 15px 12px 15px;
+}
+
+.tugas-list-content * {
+    margin: 0;
+}
+
+.tugas-list-content-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tugas-list-date {
+    display: flex;
+    flex-direction: column;
+    color: #636363;
+}
+
+.tugas-list-date>* {
+    white-space: nowrap;
+}
+
+.tugas-list-assigned {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.tugas-list-title {
+    overflow: hidden;
+    font-size: 16px;
+    color: var(--font-color-subheadline);
+    margin-bottom: 12px;
+}
+
+.tugas-list-status{
+    color: #636363;
+}
+
+.tugas-list-status.late{
+    color: #E63844;
+}
+
+@media (max-width: 1200px){
+
+    .tugas-main-text {
+        font-size: 13px;
+    }
+    
+    .tugas-main-title {
+        font-size: 20px;
+    }
+    
     
     .tugas-search {
         position: absolute;
@@ -89,6 +313,7 @@ a:hover{
 
     .tugas-daplok-text, .tugas-daplok-text>* {
         margin-bottom: 0;
+        font-size: 13px;
         margin-top: 5px;
         line-height: 100%;
     }
