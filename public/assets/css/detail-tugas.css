@@ -57,7 +57,7 @@ a {
 .dTugas-top {
     position: relative;
     padding: 16px 42px 30px;
-    min-height: 300px;
+    min-height: 370px;
     background-color: var(--primary);
     overflow: visible;
 }
