@@ -20,9 +20,9 @@ $(".dTugas-attachment-icon").click(function (e) {
     $(this).children(".dTugas-attachment-options-wrapper").toggleClass("dTugas-options-show")
 });
 
-$(".dTugas-attachment-options-wrapper").mouseout(function (e) {
+$(document).click(function (e) {
     e.stopPropagation()
-    $(this).removeClass("dTugas-options-show")
+    $(".dTugas-attachment-options-wrapper").removeClass("dTugas-options-show")
 });
 
 $(".dTugas-attachment-option").click(function (e) {

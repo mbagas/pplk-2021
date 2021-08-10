@@ -160,7 +160,7 @@ Route::middleware(['Maba'])->group(function () {
 });
 
 Route::get('/detailTugas', function () {
-  return view('client.dummyTugasDetail');
+  return view('client.tugasDetail');
 });
 
 
