@@ -86,7 +86,7 @@ h2{
     position: relative;        
     margin-top: -10px;        
     align-items: center;        
-    width: 40%;
+    width: 100%;
 }
 
 .search-form .fa-search {
