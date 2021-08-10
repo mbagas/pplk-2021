@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class clientUptController extends Controller
+class logoPplkController extends Controller
 {
     //
     public function index(){
-        return view('client.uptItera');
+        return view('client.logoPplk');
     }
 }
-

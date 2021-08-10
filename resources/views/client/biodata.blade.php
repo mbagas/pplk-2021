@@ -153,7 +153,7 @@
                         </li>                    
 
                         <li>
-                            <a href="{{ route('biodata')}}">
+                            <a href="{{route('editBiodata', $biodataUser->id)}}">
                                 <svg class="icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" 
                                         d="M12.8309 23.4669C8.83147 23.4669 5.41602 22.8446 5.41602 20.352C5.41602 17.8595 8.8098 15.5586 12.8309 15.5586C16.8304 15.5586 20.2459 17.8372 20.2459 20.3297C20.2459 22.8212 16.8521 23.4669 12.8309 23.4669Z" 
@@ -231,7 +231,7 @@
                     </a>
                 </div>
                 <div class="bio-profile">
-                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="photo-profile" >
+                    <img src="{{ $biodataUser->img ?? asset('assets/images/jhonnysins.png') }}" alt="photo-profile" >
                 </div>
                 <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" method="POST">
                         
@@ -257,7 +257,7 @@
 
                         <div class="row bio-input">
                             <label class="form-label" for="Prodi">Instagram</label>
-                            <input type="text" value="{{ $biodataUser->instagram ?? "pplkitera"}}" disabled>
+                            <input type="text" value="{{ $biodataUser->instagram ?? pplkitera}}" disabled>
                         </div>
 
                         

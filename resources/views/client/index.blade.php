@@ -51,11 +51,11 @@
 							<div class="carousel-inner">
 								<div class="carousel-item active">
 									<div class="card sponsor-card container">
-										<div class="row row-cols-3">
+										<div class="row row-cols-1">
 											<div class="col">
 												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
 											</div>
-											<div class="col">
+											{{-- <div class="col">
 												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
 											</div>
 											<div class="col">
@@ -69,6 +69,32 @@
 											</div>
                                             <div class="col">
 												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
+											</div> --}}
+										</div>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="card sponsor-card">
+										<div class="card sponsor-card container">
+											<div class="row row-cols-1">
+												<div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div>
+												{{-- <div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div>
+												<div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div>
+												<div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div>
+                                                <div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div>
+                                                <div class="col">
+													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
+												</div> --}}
 											</div>
 										</div>
 									</div>
@@ -76,37 +102,11 @@
 								<div class="carousel-item">
 									<div class="card sponsor-card">
 										<div class="card sponsor-card container">
-											<div class="row row-cols-3">
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-                                                <div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-                                                <div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="carousel-item">
-									<div class="card sponsor-card">
-										<div class="card sponsor-card container">
-											<div class="row row-cols-3">
+											<div class="row row-cols-1">
 												<div class="col">
 													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
 												</div>
-												<div class="col">
+												{{-- <div class="col">
 													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
 												</div>
 												<div class="col">
@@ -120,7 +120,7 @@
 												</div>
 												<div class="col">
 													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
+												</div> --}}
 												
 											</div>
                                             
@@ -412,7 +412,7 @@
                             UPT ITERA
                         </a>
 
-                        <a href="../html/logoPplk.html" class="small-slide-menu-item justify-content-center">
+                        <a href="{{ route('logoPPLK') }}" class="small-slide-menu-item justify-content-center">
                             Logo PPLK
                         </a>
 

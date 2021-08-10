@@ -11,17 +11,17 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/index.css"></link>
-        <link rel="stylesheet" href="../css/detail-tugas.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/detail-tugas.css"></link>
 </head>
 <body>
     <div class="main-wrapper">
@@ -37,14 +37,14 @@
             </a>
             <h1 class="dTugas-top-title dTugas-title">
                 <!-- TUGAS Test buat link ke page detail-tugas.html -->
-                Tugas Membuat Laporan Pertanggung Jawaban
+                {{ $tugasDetail->judul }}
             </h1>
-            <img src="../assets/images/laptop3d.png" class="dTugas-top-img">
+            <img src="{{ asset('assets') }}/images/laptop3d.png" class="dTugas-top-img">
             
         </div>
         <div class="page-content d-tTugas-mainContent">
             <div class="dTugas-head">
-                <h1 class="dTugas-main-title dTugas-title">Tugas Membuat Laporan Pertanggung Jawaban</h1>
+                <h1 class="dTugas-main-title dTugas-title">{{ $tugasDetail->judul }}</h1>
                     <div class="dTugas-tags">
                         <div class="dTugas-tag">
                         <p class="bodytext text-small">Kategori</p>
@@ -52,26 +52,32 @@
                     </div>
                     <div class="dTugas-tag">
                         <p class="bodytext text-small">Dates</p>
-                        <p class="dTugas-tag-block bodytext text-small">13 Jul - 20 Jul at 23:59 WIB</p>
+                        <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail->end_time))}}</p>
                     </div>
                 </div>
             </div>
             <div class="dTugas-body">
                 <h2 class="dTugas-body-title dTugas-title subheadline">Deskripsi</h2>
                 <P class="dTugas-body-text bodytext">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    panjang bener itu si lorem
+                    {{ $tugasDetail->deskripsi }}
+                </P>
+            </div>
+            
+            <div class="dTugas-body">
+                <h2 class="dTugas-body-title dTugas-title subheadline">Format Penamaan</h2>
+                <P class="dTugas-body-text bodytext">
+                    {{ $tugasDetail->format }}
                 </P>
             </div>
             <div class="dTugas-materials-slider">
                 <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                    <img class="dTugas-material-img dTugas-img" src="../assets/images/jurusan-poster1.png">
+                    <img class="dTugas-material-img dTugas-img" src="{{ asset('assets') }}/images/jurusan-poster1.png">
                     <div class="dTugas-material-info">
                         <div class="dTugas-material-text">
-                            <p class="subheadline dTugas-title text-small">Panduan Membuat html yg bener.pdf</p>
+                            <p class="subheadline dTugas-title text-small">{{ $tugasDetail->judul }}.pdf</p>
                             <p class="subheadline text-small">PDF</p>
                         </div>
-                        <a href="#" onclick="alert('Downloading Materi....')">
+                        <a href="{{ $tugasDetail->file ?? '#' }}" onclick="alert('Downloading Materi....')">
                             <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
                                 <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
@@ -81,40 +87,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                    <img class="dTugas-material-img dTugas-img" src="../assets/images/ukm-poster-1.png">
-                    <div class="dTugas-material-info">
-                        <div class="dTugas-material-text">
-                            <p class="subheadline dTugas-title text-small">Referensi Lapor Komandan.pdf</p>
-                            <p class="subheadline text-small">PDF</p>
-                        </div>
-                        <a href="#" onclick="alert('Downloading Materi....')">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
-                                <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.2676 14.5796L14.3236 16.5316L12.3796 14.5796" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M17.4122 11.6592H18.0342C19.3909 11.6592 20.4902 12.7585 20.4902 14.1158V17.3718C20.4902 18.7252 19.3936 19.8218 18.0402 19.8218H10.6136C9.2569 19.8218 8.1569 18.7218 8.1569 17.3652L8.1569 14.1085C8.1569 12.7558 9.25424 11.6592 10.6069 11.6592H11.2349" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                    <img class="dTugas-material-img dTugas-img" src="../assets/images/jhonnysins.png">
-                    <div class="dTugas-material-info">
-                        <div class="dTugas-material-text">
-                            <p class="subheadline dTugas-title text-small">Cheat dapet pacar.pdf</p>
-                            <p class="subheadline text-small">PDF</p>
-                        </div>
-                        <a href="#" onclick="alert('Downloading Materi....')">
-                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
-                                <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16.2676 14.5796L14.3236 16.5316L12.3796 14.5796" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M17.4122 11.6592H18.0342C19.3909 11.6592 20.4902 12.7585 20.4902 14.1158V17.3718C20.4902 18.7252 19.3936 19.8218 18.0402 19.8218H10.6136C9.2569 19.8218 8.1569 18.7218 8.1569 17.3652L8.1569 14.1085C8.1569 12.7558 9.25424 11.6592 10.6069 11.6592H11.2349" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+            
             </div>
             <div class="dTugas-submisions">
                 <div class="dTugas-submisions-head">
@@ -130,7 +103,7 @@
                     <!-- TIAP ATTACHMENT HARUS PUNYA WRAPPER SENDIRI -->
                     <div class="dTugas-attachment-wrapper">
                         <div class="dTugas-attachment" onclick="alert('Opening file...')">
-                            <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
+                            <img class="dTugas-img dTugas-attachment-img" src="{{ asset('assets') }}/images/jurusan-poster3.png">
                             <div class="dTugas-attachment-info">
                                 <p class="subheadline dTugas-title text-small">Keluh kesah kuliah onlen ospek jg onlen.pdf</p>
                                 <p class="bodytext text-small">PDF</p>
