@@ -42,7 +42,7 @@
                         
             <!--Content-->  
             <div class="bio-content container-fluid justify-content-between">
-                <div class="bio-profile">
+                <div class="bio-profile" onclick="">
                     <div class="icon-photo">
                         <img src="{{ asset('assets') }}/images/logo photo.png">
                     </div>
@@ -50,39 +50,26 @@
                     <p class="edit-profile">Edit Profile Photo</p>
                     <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="23" height="3" rx="1.5" fill="#3991C9"/>
-                    </svg>                        
+                    </svg>                      
+                      
                 </div>
-                <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" method="POST">
+                <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" action="{{ route('updateProfile', auth()->user()->id)}}" method="POST" enctype="multipart/form-data">
                         
                         <div class="row bio-input">
                             <label class="form-label" for="email">Email</label>
-                            <input type="text" placeholder="Email" value="{{$editBiodata->email}}" enabled>
+                            <input type="text" placeholder="Email" value="{{$editBiodata->email}}" disabled>
                         </div>
                         
                         <div class="row bio-input">
                             <label class="form-label" for="nama">Nama</label>
-                            <input type="text" placeholder="Nama" value="{{$editBiodata->nama}}" enabled>
+                            <input type="text" placeholder="Nama" value="{{$editBiodata->nama}}" disabled>
                         </div>
 
                         <div class="row bio-input">
                             <label class="form-label" for="nim">NIM</label>
-                            <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" enabled>
+                            <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" disabled>
                         </div>                        
-
-                        <div class="row bio-input">
-                            <label class="form-label" for="prodi">Prodi</label>                                                
-                            <div class="icon-dropdown">
-                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.4173 0.791504L8.00065 7.20817L1.58398 0.791504" stroke="#4A4A4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <select>
-                                <option selected class="selected" value="{{ $editBiodata->prodis_id }}">{{ $editBiodata->namaProdi }}</option>
-                                @foreach ($prodis as $prodi)
-                                <option value="{{ $prodi->id }}"> {{ $prodi->ormawas->namaLengkap }}</option>
-                                @endforeach
-                            </select>                                                                                                  
-                        </div>       
+      
                 </form>
             </div>
         </div>

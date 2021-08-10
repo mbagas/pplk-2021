@@ -1,16 +1,363 @@
-@media (max-width: 500px){
-    .navbar {
+
+.desktop{
+    margin: auto;
+}
+
+.page-content{
+    margin-bottom: 10px;
+}
+
+.navbar-cust-ukm {
+    position: unset;
+    top: 0px;
+    width: 100%;
+}
+
+.nav-back{
+    display: flex;  
+    top: 0;       
+    padding-left: 25px;
+    padding-right: 25px;   
+    border-radius: 15px !important;
+    overflow: hidden;       
+}
+
+.nav-back a{        
+    position: absolute;
+    top: 150px;
+    color: var(--white) !important;   
+    z-index: 100;             
+}
+
+.navback-home{
+    text-decoration: none; 
+    font-family: var(--font-family-body);
+}
+
+.navback-custom {
+    z-index: 90;
+}
+
+.navback-custom img{
+   width: 100%;
+   border-radius: 0 0 15px 15px;
+}
+
+.first-headline { 
+    min-height: 230px;       
+    margin-bottom: 20px;
+    top: 35%;
+    width: 90%;
+    margin: auto;
+    z-index: 95;
+    transform: translate(0%, -65%);
+    border-radius: 10px !important;
+}
+
+.card{
+   display: flex;
+   flex-direction: row !important;
+}
+
+.name-ukm{       
+   width: 60%;
+   z-index: 1;
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-bottom: 20px;
+   
+}
+
+.name-ukm h2{
+    font-weight: bold;
+    margin: 0px;
+}
+
+.name-ukm h5{
+    font-family: var(--font-family-body);
+    font-size: 14px;
+}
+
+.detail-headline h6{
+    font-family: var(--font-family-body);
+    font-size: 10px;
+    margin: 0px;
+}
+
+.detail-headline p{
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.right-side-card{
+    width: 140px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.dies-natalis p{
+    margin:0;
+}
+
+.logo-ukm{
+   float: right;
+   width:70%;
+   z-index: 2;
+   margin-bottom: 70%;
+}
+
+.logo-ukm img{           
+   width: 100%;
+}
+
+.qr-code {
+   width: 100%;
+}
+
+.second-headline{
+    margin-top: -15%;
+    margin-bottom: 20px;
+}
+
+.artikel-image{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: var(--thumbnail-photos);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.artikel-ukm img{
+   width: 50%;
+}
+
+.artikel-custom {
+    font-family: var(--font-family-body);
+    margin-left: 14px; 
+    padding-right: 14px;
+}
+
+.artikel-title h6{        
+    margin: 0px;
+    font-weight: 600;
+}
+
+.artikel-title p{ 
+font-size: 10px !important; 
+}
+
+.artikel-custom p{
+    font-size: 13px;
+}
+
+.custom-ukm{
+    display: flex; 
+    flex-direction: column !important; 
+    height: relative; 
+    padding: 0px; 
+    height: 100%;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.custom-card-ukm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-img-top{                        
+    border-radius: 15px;
+    width: 100% !important;   
+    height: 100% !important;    
+}
+
+.card-body {    
+    max-height: 100%;
+    max-width: 100%;
+    padding-left: 20px ;
+    padding-right: 20px ;
+    padding-bottom: 20px;
+}
+
+.card-title{
+    padding-top: 15px;        
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.card-text{
+    margin-bottom: 0px;
+    width: 100%;  
+    display: flex;
+    max-height: 100%;
+    text-overflow: unset;
+}
+
+.footer-blue {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    background-color: var(--primary);
+    text-align: left;
+    position: absolute;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+}
+
+.footer-blue-logo{
+    width: 10%;     
+}
+
+.small-ukm-menu{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: unset;
+    width: 75%;
+    margin: auto;
+    justify-content:space-between !important;
+}
+
+.small-ukm-menu .nav-item button{  
+    margin-top: 20px;
+    margin-bottom: 20px; 
+    display: grid;
+    place-items: center;      
+    font-weight: 600;
+    width: 160px;    
+    height: 60px;                  
+    font-family: var(--font-family-body);
+    font-size: 20px; 
+    text-align: center; 
+    color: var(--grey); 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px; 
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.active, .button-ukm:hover {
+    background-image: var(--gradient-1) !important;
+    color: var(--white) !important;
+    border-radius: 10px !important;
+    box-shadow: 0px 5px 10px 1px rgb(57 145 201 / 18%);        
+}
+
+.tab-content .active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.footer-blue img {
+    width: unset;
+    border-radius: 20px;
+}
+
+.footer-blue p{
+    font-size: 8px; 
+    margin-bottom: 0px;
+    color: var(--white);
+}
+
+.detail-info{   
+    margin-left: 10px;
+    width: 40%;
+}
+
+.icon-sosmed{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: unset;
+}
+
+.icon-sosmed img{
+    width: 25%;
+}
+
+@media (max-width: 1200px) {
+    .artikel-image{
+        margin-top: 45%;
+    }
+
+    .nav-back a{        
+        top: 36px;           
+    }
+    .page-content{
+        margin-bottom: 0;
+    }
+    .navbar-cust-ukm{
+        position: absolute;
+        margin-left: -26px;
+        margin-right: -26px;
+    }
+
+    .first-headline{
+        transform: translate(0%, 150%);
+    }
+
+    .second-headline{
+        margin-top: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .artikel-image{
+        margin-top: 40%;
+    }
+    .nav-back a{        
+        top: 36px;           
+    }
+    .page-content{
+        margin-bottom: 0;
+    }
+    .navbar-cust-ukm{
+        position: absolute;
+        margin-left: -26px;
+        margin-right: -26px;
+    }
+
+    .first-headline{
+        transform: translate(0%, 90%);
+    }
+
+    .second-headline{
+        margin-top: 30%;
+    }
+}
+@media (max-width: 576px){
+    .nav-back a{        
+        top: 36px;           
+    }
+    .page-content{
+        margin-bottom: 0;
+    }
+    .navbar-cust-ukm{
         position: absolute;
         top: 0px;
+        margin-left: -26px;
+        margin-right: -26px;
     }
 
     .navback-custom img{
        width: 100%;
+       border-radius: 0 0 15px 15px;
    }
 
    .first-headline {        
        margin-bottom: 20px; 
        top: 100px;
+       transform: unset;
    }
    
    .card{
@@ -75,13 +422,12 @@
    }
 
    .second-headline{
-        margin-top: 130px;
+        margin-top: 30%;
         margin-bottom: 20px;
    }
 
-   .artikel-ukm img{
-       width: 100%;
-       margin-bottom: 16px;
+   .artikel-image{
+       margin-top: 35%;
    }
 
     .artikel-custom {
@@ -141,7 +487,7 @@
         text-overflow: unset;
     }
 
-    .footer {
+    .footer-blue {
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 26px;
@@ -153,7 +499,7 @@
         align-items: center;
     }
 
-    .footer-logo{
+    .footer-blue-logo{
         width: 10%;     
     }
 
@@ -199,12 +545,12 @@
         background-image: none !important;
     }
 
-    .footer img {
+    .footer-blue img {
         width: 100%;
         border-radius: 20px;
     }
 
-    .footer p{
+    .footer-blue p{
         font-size: 8px; 
         margin-bottom: 0px;
         color: var(--white);
@@ -228,6 +574,9 @@
 }
 
 @media (max-width: 360px) {
+    .nav-back a{        
+        top: 36px;           
+    }
     .small-ukm-menu .nav-item button {
         width: 90px !important;
         height: 100%;

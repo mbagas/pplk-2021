@@ -37,6 +37,15 @@
     font-size: 10px;
 }
 
+.btn:hover {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
 @media (max-width: 500px) {
     
@@ -288,6 +297,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
     }
 
     .dTugas-attachment-info p {
@@ -330,23 +340,17 @@
     
     .dTugas-options-show  {
         display: block;
-        animation: dTugas-attachment-options 0.2s;
+        animation: dTugas-fade 0.2s;
     }
 
-    @keyframes dTugas-attachment-options {
-        0% {
-            opacity: 0.0;
-        }
-
-        100% {
-            opacity: 1.0;
-        }
+    .dTugas-attachment-options a {
+        flex: 1;
     }
 
     .dTugas-attachment-option {
         padding: 7px 1px;
         width: 100%;
-        flex: 1;
+        height: 100%;
         display: flex;
         align-items: center;
         border-radius: 5px;
@@ -367,6 +371,30 @@
 
     .dTugas-attachment-option span {
         font-weight: 600;
+    }
+
+    .dTugas-submisions-turnIn {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dTugas-turnIn-btn {
+        background-color: var(--primary);
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 10px;
+        text-align: center;
+        font-family: var(--font-family-body);
+        font-weight: 600;
+        color: white;
+    }
+
+    .unsubmit {
+        background-color: white;
+        color: var(--primary);
+        border: 1px solid var(--primary);
     }
 
     .dTugas-footer {
@@ -458,10 +486,54 @@
 
     .dTugas-show {
         display: block;
-        animation: opacity 0.2s ease;
+        animation: dTugas-fade 0.2s ease;
     }
 
-    @keyframes opacity {
+    .dTugas-modal {
+        animation: dTugas-fade 0.5s ease-out;
+    }
+
+    .dTugas-modal-title {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .dTugas-modal-text-form *{
+        margin: 10px 0;
+    }
+
+    #text-bodytext-input {
+        height: 150px;
+    }
+
+    .dTugas-modal-submit {
+        margin-top: 10px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 10px;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+
+    .dTugas-modal-content {
+        border-radius: 10px;
+    }
+
+    .dTugas-modal-form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* index.css OVERIDE */
+    .modal-body {
+        min-height: 200px;
+        height: 100%;
+    }
+
+    /* KEYFRAMES */
+
+    @keyframes dTugas-fade {
         from {
             opacity: 0;
         }

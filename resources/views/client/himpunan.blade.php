@@ -62,10 +62,7 @@
                 <div class="main-text">
                     <h2 class="prodi-title-text">Himpunan Institut Teknologi Sumatera</h2>
                     <p>
-                        Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang
-                        berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya
-                        menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih
-                        dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                        Himpunan Mahasiswa Program Studi adalah Organisasi Kemahasiswaan sebagai Lembaga Eksekutif di tingkat Program Studi, yang hanya melaksanakan kegiatan penalaran dan keilmuan.
                     </p>
                 </div>
 

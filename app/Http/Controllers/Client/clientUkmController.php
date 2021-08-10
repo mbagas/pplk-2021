@@ -17,9 +17,12 @@ class clientUkmController extends Controller
     }
 
     public function show(Ormawa $ukm){
-
-
         $ukmData = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
         return view('client.ukmDetail2', compact('ukm', 'ukmData'));
+    }
+
+    public function showQR(Ormawa $ukm){
+        $ukmData = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
+        return view('client.ukmBarcode', compact('ukm', 'ukmData'));
     }
 }

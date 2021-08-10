@@ -27,10 +27,129 @@
     .card {
         margin-top: 50px;
         display: flex;
-        max-width: 100%;  
-        padding: 5px 20px 20px 20px; 
+        width: 100%;  
+        padding-top: 5px;
         border-radius: 15px 15px 0px 0px !important;
         height: 100%;
         background-color: #fefefe;
+        flex-direction: column;
+        overflow-x: hidden;
+        z-index: 90;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .desc-text {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .report-form {
+        display: grid;
+        place-items: center;
+        flex-direction: column;
+        gap: 20px !important;
+        min-height: 540px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .report-input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .inputs {
+        border: none;
+        border-bottom: 1.5px solid #E0E0E0;
+        width: 100%;
+        outline: none;
+        background: transparent;
+    }
+
+    label {
+        font-size: 13px;
+        color: gray;
+    }
+
+    .radio-input {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .radio-input p{
+        font-size: 13px;
+        color: gray;
+        margin-bottom: 0px;
+    }
+
+    .radio-input input{
+        background: transparent;
+    }
+
+    .fill {
+        border: none;
+        border: 2px solid #E0E0E0;
+        width: 100%;
+        outline: none;
+        background: transparent;
+        border-radius: 5px;
+    }
+
+    .report-input input, textarea {
+        color: gray;
+    }
+
+    .modal-content {
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        width: 60%;
+        border: none;
+    }
+
+    .modal-body{
+        min-height: 200px;
+        display: grid;
+        place-items: center ;
+        text-align: center;
+    }
+
+    .modal-body h2{
+        color: var(--font-color-subheadline);
+        font-family: var(--font-family-body);
+        font-size: 16px;
+    }
+
+    .modal-body p{
+        color: var(--font-color-secondary);
+        font-size: 13px;
+    }
+
+    .modal-back{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 130%);
+        width: 100%;
+    }
+
+    .thumbs-up{
+        width: 70%;
+    }
+
+    .close-button{
+        background-image: linear-gradient(#3991C9, #63BCF4);
+        width: 100%;
+        font-family: var(--font-family-body);
+        color: var(--white);
+        font-size: 16px;
+        height: 45px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
     }
 }
