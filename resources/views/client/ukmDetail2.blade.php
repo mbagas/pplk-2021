@@ -142,19 +142,7 @@
                 <!--content-->
                 <div class=" desktop">
                     <!--NavBar Desktop-->
-                    <div class="navbar-cust-ukm p-0 d-none d-xl-block d-xxl-block">
-                        <div class="nav-back">
-                            <a class="navback-home" href="{{ route('ukm') }}">
-                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="50" height="50" rx="10" fill="white"/>
-                                    <path d="M28.7285 35.5C28.7285 35.5 20.2702 29.284 20.2702 25C20.2702 20.7175 28.7285 14.5 28.7285 14.5" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                        
-                            </a>
-                        </div>
-                        <div class="navback-custom">            
-                            <img src="{{ asset('assets') }}/images/ukm-poster-1.png">
-                        </div>
-                    </div>
+                    @include('client.menu')
 
                     <!--NavBack Mobile-->
                     <div class="navbar-cust-ukm p-0 d-lg-block d-xl-none">
