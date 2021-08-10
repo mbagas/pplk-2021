@@ -406,7 +406,7 @@
                             UPT ITERA
                         </a>
 
-                        <a href="../html/logoPplk.html" class="small-slide-menu-item justify-content-center">
+                        <a href="{{ route('logoPPLK') }}" class="small-slide-menu-item justify-content-center">
                             Logo PPLK
                         </a>
 
