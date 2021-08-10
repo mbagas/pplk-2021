@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/prodi.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" /></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png"></link>
 
         <!--Per Page Styling-->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/detail-prodi.css"></link>
