@@ -145,7 +145,7 @@
 }
 
 .artikel-title p{ 
-font-size: 10px !important; 
+    font-size: 10px !important; 
 }
 
 .artikel-custom p{
@@ -293,9 +293,11 @@ font-size: 10px !important;
     .nav-back a{        
         top: 36px;           
     }
+
     .page-content{
         margin-bottom: 0;
     }
+
     .navbar-cust-ukm{
         position: absolute;
         margin-left: -26px;
@@ -469,6 +471,7 @@ font-size: 10px !important;
         max-height: 100%;
         max-width: 100%;
         padding-left: 20px ;
+        padding-top: 20px;
         padding-right: 20px ;
         padding-bottom: 20px;
     }
