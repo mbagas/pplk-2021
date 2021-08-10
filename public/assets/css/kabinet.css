@@ -1,5 +1,5 @@
 .main-wrapper{
-    overflow: hidden;
+    position: unset;
 }
 
 .desktop{
@@ -359,14 +359,14 @@
     .name-kabinet h5{
         font-family: var(--font-family-body);
         font-size: 14px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
 
 
     .detail-headline h6{
         font-family: var(--font-family-body);
         font-size: 10px;
-        padding-top: 10px;
+        padding-top: 0px;
         margin: 0px;
     }
 
