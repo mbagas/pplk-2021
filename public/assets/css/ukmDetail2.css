@@ -160,6 +160,8 @@
     height: 100%;
     color: black;
     margin-bottom: 30px;
+    display: grid;
+    place-items: center;
 }
 
 .custom-card-ukm {
@@ -168,9 +170,9 @@
 }
 
 .card-img-top{                        
-    border-radius: 15px;
-    width: 100% !important;   
-    height: 100% !important;    
+border-radius: 15px;
+width: 50% !important;   
+padding: 40px;
 }
 
 .card-body {    
