@@ -292,7 +292,7 @@
                         <!-- card tugas -->
                         <div class="tab-pane active tugas-list" role="tabpanel" id="new-task">
                             <!-- cards start -->
-                            <!-- @foreach($dataTugas as $data)
+                            @foreach($dataTugas as $data)
                             @if(!$data->status && ($data->tugas->end_time  >= date('d F')))
                             <a href="{{ route('detailTugas', $data->tugas_id) }}">
                                 <div class="tugas-list-card">
@@ -324,72 +324,14 @@
                                 </div>
                             </a>
                             @endif
-                            @endforeach -->
+                            @endforeach
                             <!-- cards end -->
-                            <a href="detail-tugas.html">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">0/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="../assets/images/logo-rebahan.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                TUGAS Test buat link ke page detail-tugas.html
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                New Task
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">0/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Test Tugas No Background
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                New Task
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
                         </div>
 
                         <!-- card tugas -->
                         <div class="tab-pane tugas-list" role="tabpanel" id="completed">
                             <!-- cards start -->
-                            <!-- @foreach($dataTugas as $data)
+                            @foreach($dataTugas as $data)
                             @if($data->status)
                             <a href="#">
                                 <div class="tugas-list-card">
@@ -421,66 +363,9 @@
                                 </div>
                             </a>
                             @endif
-                            @endforeach -->
+                            @endforeach 
                             <!-- cards end -->
-                            <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">33/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="../assets/images/jhonnysins.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Tugas Membuat Laporan Pertanggung Jawaban
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                New Task
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">44/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="../assets/images/jurusan-poster1.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Tugas Membuat Laporan Pertanggung Jawaban
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text late">
-                                                Turned In Late
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        
                         </div>
 
                     </div>

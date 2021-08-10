@@ -38,7 +38,7 @@
             </a>
             <h1 class="dTugas-top-title dTugas-title">
                 <!-- TUGAS Test buat link ke page detail-tugas.html -->
-                {{ $tugasDetail ?? ''->judul }}
+                {{ $tugasDetail->judul }}
             </h1>
             <img src="{{ asset('assets') }}/images/laptop3d.png" class="dTugas-top-img">
             
@@ -47,7 +47,7 @@
         <div class="page-content d-tTugas-mainContent">
 
             <div class="dTugas-head">
-                <h1 class="dTugas-main-title dTugas-title">{{ $tugasDetail ?? ''->judul }}</h1>
+                <h1 class="dTugas-main-title dTugas-title">{{ $tugasDetail->judul }}</h1>
                     <div class="dTugas-tags">
                         <div class="dTugas-tag">
                         <p class="bodytext text-small">Kategori</p>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="dTugas-tag">
                         <p class="bodytext text-small">Dates</p>
-                        <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail ?? ''->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail ?? ''->end_time))}}</p>
+                        <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail->end_time))}}</p>
                     </div>
                 </div>
             </div>
@@ -63,14 +63,14 @@
             <div class="dTugas-body">
                 <h2 class="dTugas-body-title dTugas-title subheadline">Deskripsi</h2>
                 <P class="dTugas-body-text bodytext">
-                    {{ $tugasDetail ?? ''->deskripsi }}
+                    {!! nl2br(e($tugasDetail->deskripsi)) !!}
                 </P>
             </div>
             
             <div class="dTugas-body">
                 <h2 class="dTugas-body-title dTugas-title subheadline">Format Penamaan</h2>
                 <P class="dTugas-body-text bodytext">
-                    {{ $tugasDetail ?? ''->format }}
+                    {{ $tugasDetail->format }}
                 </P>
             </div>
 
@@ -80,10 +80,10 @@
                     <img class="dTugas-material-img dTugas-img" src="{{ asset('assets') }}/images/jurusan-poster1.png">
                     <div class="dTugas-material-info">
                         <div class="dTugas-material-text">
-                            <p class="subheadline dTugas-title text-small">{{ $tugasDetail ?? ''->judul }}.pdf</p>
+                            <p class="subheadline dTugas-title text-small">{{ $tugasDetail->judul }}.pdf</p>
                             <p class="subheadline text-small">PDF</p>
                         </div>
-                        <a href="{{ $tugasDetail ?? ''->file ?? '#' }}" onclick="alert('Downloading Materi....')">
+                        <a href="{{ $tugasDetail->file ?? '#' }}" onclick="alert('Downloading Materi....')">
                             <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
                                 <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
@@ -453,8 +453,8 @@
 
     <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/custom.js"></script>
-    <script src="../js/dTugas.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
+    <script src="{{ asset('assets') }}/js/dTugas.js"></script>
 </body>
 </html>

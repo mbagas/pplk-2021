@@ -190,9 +190,12 @@
                         <a class="head-menu-icon" href="reportPage.blade.php">
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
-                        <a class="head-menu-icon" href="logoOut">
+                        <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>
