@@ -116,7 +116,7 @@
             <!--Content-->  
             <div class="bio-content container-fluid justify-content-between">
                 <div class="bio-profile">
-                    <img src="{{ $biodataUser->img ?? asset('assets/images/LogoItera.png') }}" alt="photo-profile" >
+                    <img src="{{ $biodataUser->img ?? asset('assets/images/jhonnysins.png') }}" alt="photo-profile" >
                 </div>
                 <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" method="POST">
                         
