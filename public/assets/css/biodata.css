@@ -1,7 +1,27 @@
-.hd-menu-bio {
-    margin-top: 2rem;
-    margin-right: 3rem;
+.hd-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.hd-menu-bio-left {
+    display:grid;
+    place-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 10%;
     padding: 0;
+    margin-right: 40%;
+}
+
+.hd-menu-bio-right {
+    display:grid;
+    place-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 10%;
+    padding: 0;
+    margin-left: 40%;
 }
 
 .bio-profile {
@@ -14,7 +34,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px !important;
-    min-height: 540px;
+    min-height: 100%;
     margin-top: 10px;
     margin-bottom: 20px;
 }
@@ -39,6 +59,7 @@ label {
 }
 
 .bio-content {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -58,8 +79,6 @@ label {
 
 @media (max-width: 1200px){
     .hd-menu-bio {
-        margin-top: 2rem;
-        margin-right: 3rem;
         padding: 0;
     }
     
@@ -67,15 +86,6 @@ label {
         display: grid;
         place-items: center;
         margin: 10px;
-    }
-    
-    .bio-form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px !important;
-        min-height: 540px;
-        margin-top: 10px;
-        margin-bottom: 20px;
     }
     
     input {
@@ -98,6 +108,7 @@ label {
     }
     
     .bio-content {
+        margin-top: 0px;
         display: flex;
         flex-direction: column;
         height: 100%;
