@@ -458,13 +458,13 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 }
 
 .custom-more-btn{
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 45px;
     background-image: linear-gradient(#3991C9, #63BCF4);
     border: none;
     font-family: var(--font-family-body);
     font-size: 16px;
-    font-weight: 50;
+    font-weight: 200;
     display: grid;
     place-items: center;
     border-radius: 6px !important;
@@ -588,10 +588,12 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
 .sponsor-card{
     padding: 0 !important;
-    background-color:#E0E0E0;
+    /* background-color:#E0E0E0; */
+    box-shadow: none;
     height: 100%;
     border-radius: 0;
     width: 100%;
+    border: none;
 }
 
 .sponsor-card .row > *{
@@ -1040,7 +1042,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
         border: none;
         font-family: var(--font-family-body);
         font-size: 7px;
-        font-weight: 50;
+        font-weight: 200;
         float: left;
         border-radius: 6px !important;
     }
@@ -1163,10 +1165,12 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .sponsor-card{
         padding: 0;
-        background-color:#E0E0E0;
+        /* background-color:#E0E0E0; */
+        box-shadow: none;
         height: 100%;
         border-radius: 0;
         width: 100%;
+        border: none;
     }
 
     .sponsor-card .row > *{
