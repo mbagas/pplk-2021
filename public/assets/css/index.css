@@ -305,7 +305,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     color: var(--font-color-call-to-act-2);
     text-decoration: none;
     font-family: var(--font-family-body);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     box-shadow: 0px 5px 10px 1px rgba(138, 139, 140, 0.18);
 }
