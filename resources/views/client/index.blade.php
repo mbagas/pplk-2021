@@ -55,21 +55,6 @@
 											<div class="col">
 												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
 											</div>
-											{{-- <div class="col">
-												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
-											</div>
-											<div class="col">
-												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
-											</div>
-											<div class="col">
-												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
-											</div>
-                                            <div class="col">
-												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
-											</div>
-                                            <div class="col">
-												<img src="{{ asset('sponsor') }}/futino.jpg" alt="gambar-sponsor">
-											</div> --}}
 										</div>
 									</div>
 								</div>
@@ -80,21 +65,6 @@
 												<div class="col">
 													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
 												</div>
-												{{-- <div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-                                                <div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div>
-                                                <div class="col">
-													<img src="{{ asset('sponsor') }}/kimiafarma.jpeg" alt="gambar-sponsor">
-												</div> --}}
 											</div>
 										</div>
 									</div>
@@ -105,25 +75,8 @@
 											<div class="row row-cols-1">
 												<div class="col">
 													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
-												{{-- <div class="col">
-													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
-                                                <div class="col">
-													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div>
-												<div class="col">
-													<img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
-												</div> --}}
-												
+												</div>												
 											</div>
-                                            
 										</div>
 									</div>
 								</div>
@@ -550,27 +503,29 @@
                                 Supported By
                             </h2>
 
-                            <div id="carouselSponsor" class="carousel slide sponsor-carousel" data-bs-ride="carousel" data-bs-interval="3000">
+                            <div id="carouselSponsor" class="carousel slide sponsor-carousel" data-bs-ride="carousel" data-bs-interval="2000">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="4" aria-label="Slide 5"></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="card sponsor-card container">
-                                            <div class="row row-cols-3">
+                                            <div class="row row-cols-4">
                                                 <div class="col">
-                                                    <img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
+                                                    <img src="{{ asset('assets') }}/mediapartner/1.png" alt="gambar-sponsor">
                                                 </div>
                                                 <div class="col">
-                                                    <img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
+                                                    <img src="{{ asset('assets') }}/mediapartner/2.png" alt="gambar-sponsor">
                                                 </div>
                                                 <div class="col">
-                                                    <img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
+                                                    <img src="{{ asset('assets') }}/mediapartner/3.png" alt="gambar-sponsor">
                                                 </div>
                                                 <div class="col">
-                                                    <img src="{{ asset('assets') }}/images/pdip-red.png" alt="gambar-sponsor">
+                                                    <img src="{{ asset('assets') }}/mediapartner/4.png" alt="gambar-sponsor">
                                                 </div>
                                             </div>
                                         </div>
@@ -578,18 +533,18 @@
                                     <div class="carousel-item">
                                         <div class="card sponsor-card">
                                             <div class="card sponsor-card container">
-                                                <div class="row row-cols-3">
+                                                <div class="row row-cols-4">
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/5.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/6.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/7.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/owi.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/8.png" alt="gambar-sponsor">
                                                     </div>
                                                 </div>
                                             </div>
@@ -598,18 +553,58 @@
                                     <div class="carousel-item">
                                         <div class="card sponsor-card">
                                             <div class="card sponsor-card container">
-                                                <div class="row row-cols-3">
+                                                <div class="row row-cols-4">
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/9.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/10.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/11.png" alt="gambar-sponsor">
                                                     </div>
                                                     <div class="col">
-                                                        <img src="{{ asset('assets') }}/images/master.jpeg" alt="gambar-sponsor">
+                                                        <img src="{{ asset('assets') }}/mediapartner/12.png" alt="gambar-sponsor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card sponsor-card">
+                                            <div class="card sponsor-card container">
+                                                <div class="row row-cols-4">
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/13.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/14.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/15.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/16.png" alt="gambar-sponsor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card sponsor-card">
+                                            <div class="card sponsor-card container">
+                                                <div class="row row-cols-4">
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/17.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/18.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/19.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/20.png" alt="gambar-sponsor">
                                                     </div>
                                                 </div>
                                             </div>
