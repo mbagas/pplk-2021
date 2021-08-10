@@ -7,13 +7,17 @@
     padding: 0px;
 }
 
+.navbar{
+    padding-bottom: 0px;
+}
+
 .head-desktop{
     background-color: #F3F3F3;
 }
 
 .head-desktop .pplk-logo{
-    margin-top: 14px;
-    margin-left: 25px;
+    margin-top: 0px;
+    margin-left: 0px;
     margin-bottom: 0px;
     width: 80px;
     height: 80px;
@@ -58,6 +62,7 @@
     width: 25%;
     gap: 20px;
     align-items: center;
+    float: left !important;
 }
 
 .head-desktop .main-nav-desktop{
@@ -350,7 +355,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     margin: 0 auto;
     align-items: center;
     float: left;
-    width: 100%;
+    width: 90%;
 }
 
 .search-form .fa-search {
