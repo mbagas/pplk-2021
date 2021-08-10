@@ -126,8 +126,11 @@
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
                         </a>
-                        <a class="head-menu-icon" href="#">
+                        <a class="head-menu-icon" href="reportPage.blade.php">
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
+                        </a>
+                        <a class="head-menu-icon" href="logoOut">
+                            <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
                         </a>
                     </div>
                 </div>

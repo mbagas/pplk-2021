@@ -88,7 +88,7 @@
     place-items: center;      
     font-weight: 600;
     width: 160px;    
-    height: 60px;                  
+    height: 100%;                  
     font-family: var(--font-family-body);
     font-size: 20px; 
     text-align: center; 
