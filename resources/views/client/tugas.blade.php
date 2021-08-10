@@ -26,8 +26,8 @@
     </head>
     <body>
         <div class="main-wrapper">
-             <!-- Desktop Navabar top -->
-        <div class="navbar p-0 d-none d-xl-block d-xxl-block">
+            <!-- Desktop Navabar top -->
+            <div class="navbar p-0 d-none d-xl-block d-xxl-block">
                 <div class="container-fluid head-bar head-desktop">
                     <div class="navbar-brand">
                         <a class="pplk-logo " href="#">
@@ -492,6 +492,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
         <script src="{{ asset('assets') }}/js/custom.js"></script>
+        <script src="{{ asset('assets') }}/js/dTugas.js"></script>
     </body>
 
 </html>

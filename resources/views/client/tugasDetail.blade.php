@@ -25,6 +25,7 @@
 </head>
 <body>
     <div class="main-wrapper">
+
         <div class="page-content dTugas-top">
             <div class="dTugas-top-bg">
                 <div class="topbg-circle c1"></div>
@@ -37,14 +38,16 @@
             </a>
             <h1 class="dTugas-top-title dTugas-title">
                 <!-- TUGAS Test buat link ke page detail-tugas.html -->
-                {{ $tugasDetail->judul }}
+                {{ $tugasDetail ?? ''->judul }}
             </h1>
             <img src="{{ asset('assets') }}/images/laptop3d.png" class="dTugas-top-img">
             
         </div>
+
         <div class="page-content d-tTugas-mainContent">
+
             <div class="dTugas-head">
-                <h1 class="dTugas-main-title dTugas-title">{{ $tugasDetail->judul }}</h1>
+                <h1 class="dTugas-main-title dTugas-title">{{ $tugasDetail ?? ''->judul }}</h1>
                     <div class="dTugas-tags">
                         <div class="dTugas-tag">
                         <p class="bodytext text-small">Kategori</p>
@@ -52,32 +55,35 @@
                     </div>
                     <div class="dTugas-tag">
                         <p class="bodytext text-small">Dates</p>
-                        <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail->end_time))}}</p>
+                        <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail ?? ''->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail ?? ''->end_time))}}</p>
                     </div>
                 </div>
             </div>
+
             <div class="dTugas-body">
                 <h2 class="dTugas-body-title dTugas-title subheadline">Deskripsi</h2>
                 <P class="dTugas-body-text bodytext">
-                    {{ $tugasDetail->deskripsi }}
+                    {{ $tugasDetail ?? ''->deskripsi }}
                 </P>
             </div>
             
             <div class="dTugas-body">
                 <h2 class="dTugas-body-title dTugas-title subheadline">Format Penamaan</h2>
                 <P class="dTugas-body-text bodytext">
-                    {{ $tugasDetail->format }}
+                    {{ $tugasDetail ?? ''->format }}
                 </P>
             </div>
+
             <div class="dTugas-materials-slider">
+
                 <div class="dTugas-material" onclick="alert('Opening Materi....')">
                     <img class="dTugas-material-img dTugas-img" src="{{ asset('assets') }}/images/jurusan-poster1.png">
                     <div class="dTugas-material-info">
                         <div class="dTugas-material-text">
-                            <p class="subheadline dTugas-title text-small">{{ $tugasDetail->judul }}.pdf</p>
+                            <p class="subheadline dTugas-title text-small">{{ $tugasDetail ?? ''->judul }}.pdf</p>
                             <p class="subheadline text-small">PDF</p>
                         </div>
-                        <a href="{{ $tugasDetail->file ?? '#' }}" onclick="alert('Downloading Materi....')">
+                        <a href="{{ $tugasDetail ?? ''->file ?? '#' }}" onclick="alert('Downloading Materi....')">
                             <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
                                 <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
@@ -89,7 +95,9 @@
                 </div>
             
             </div>
+
             <div class="dTugas-submisions">
+
                 <div class="dTugas-submisions-head">
                     <svg class="dTugas-submisions-head-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5231 2.54202H6.97897C5.24564 2.53535 3.82481 3.91702 3.78397 5.64952V14.577C3.74564 16.3378 5.14147 17.797 6.90231 17.8362C6.92814 17.8362 6.95314 17.837 6.97897 17.8362H13.6365C15.3815 17.7653 16.7565 16.3237 16.744 14.577V6.93868L12.5231 2.54202Z" stroke="#071D2C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -99,9 +107,11 @@
                     </svg>
                     <h1 class="dTugas-submisions-head-title subheadline dTugas-title">Attachments</h1>
                 </div>
+
                 <div class="dTugas-attachments">
                     <!-- TIAP ATTACHMENT HARUS PUNYA WRAPPER SENDIRI -->
                     <div class="dTugas-attachment-wrapper">
+
                         <div class="dTugas-attachment" onclick="alert('Opening file...')">
                             <img class="dTugas-img dTugas-attachment-img" src="{{ asset('assets') }}/images/jurusan-poster3.png">
                             <div class="dTugas-attachment-info">
@@ -159,6 +169,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="dTugas-attachment-wrapper">
                         <div class="dTugas-attachment" onclick="alert('Opening file...')">
                             <img class="dTugas-img dTugas-attachment-img" src="">
@@ -217,6 +228,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="dTugas-attachment-wrapper">
                         <div class="dTugas-attachment" onclick="alert('Opening file...')">
                             <img class="dTugas-img dTugas-attachment-img" src="">
@@ -275,14 +287,20 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+
                 <div class="dTugas-submisions-turnIn">
                     <button id="turnInt" class="dTugas-turnIn-btn btn">Turn In</button>
                     <button id="unsubmit" class="dTugas-turnIn-btn btn unsubmit d-none">Unsubmit</button>
                 </div>
+
             </div>
+
         </div>
+
         <footer class="dTugas-footer">
+
             <div class="dTugas-footer-contact">
                 <a onclick="alert('Ringing... Daplok kak robert')">
                     <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -305,7 +323,11 @@
                     <p class="bodytext text-small">Kontak Daplok!</p>
                 </div>
             </div>
-            <div id="drop-bg" class="dTugas-hidden"> <!-- SEMI-BLACK BACKGROUND --> </div>
+
+            <div id="drop-bg" class="dTugas-hidden"> 
+                <!-- SEMI-BLACK BACKGROUND --> 
+            </div>
+
             <div class="dTugas-footer-submit">
                 <!-- footer-submit act as wrapper -->
                 <div class="dTugas-footer-option">
@@ -316,6 +338,7 @@
                         </svg>
                     </button>
                 </div>
+
                 <div class="dTugas-footer-option">
                     <button id="dTugas-footer-collapse" class="dTugas-footer-btn btn dTugas-hidden">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -324,6 +347,7 @@
                         </svg>
                     </button>
                 </div>
+
                 <!-- DROPUP CONTENT -->
                 <div id="dTugas-footer-dropContentWrapper" class="dTugas-footer-dropContent-wrapper">
                     <div class="dTugas-footer-dropContent">
@@ -358,10 +382,14 @@
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </footer>
+
         <!-- KUMPULAN MODAL -->
         <div class="dTugas-popup"> 
+
             <div class="modal dTugas-modal" id="dTugas-modal-gallery" data-bs-backdrop="static" aria-labelledby="dTugas-modal-gallery-ARIAlabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content dTugas-modal-content">
@@ -381,6 +409,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal dTugas-modal" id="dTugas-modal-docs" data-bs-backdrop="static" aria-labelledby="dTugas-modal-docs-ARIAlabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content dTugas-modal-content">
@@ -400,6 +429,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal dTugas-modal" id="dTugas-modal-text" data-bs-backdrop="static" aria-labelledby="dTugas-modal-text-ARIAlabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content dTugas-modal-content">
@@ -416,7 +446,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
+        
     </div>
 
     <!-- Required JS -->

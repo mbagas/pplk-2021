@@ -43,9 +43,6 @@
                         </svg>                            
                     </button>                  
                 </div>                
-                
-                        
-           
                 <form class="col-sm-12 bio-form m-sm-auto container-fluid justify-content-between fle" action="{{ route('updateProfile', $editBiodata->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
