@@ -305,7 +305,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     color: var(--font-color-call-to-act-2);
     text-decoration: none;
     font-family: var(--font-family-body);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     box-shadow: 0px 5px 10px 1px rgba(138, 139, 140, 0.18);
 }
@@ -458,13 +458,13 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 }
 
 .custom-more-btn{
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 45px;
     background-image: linear-gradient(#3991C9, #63BCF4);
     border: none;
     font-family: var(--font-family-body);
     font-size: 16px;
-    font-weight: 50;
+    font-weight: 200;
     display: grid;
     place-items: center;
     border-radius: 6px !important;
@@ -588,10 +588,13 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
 .sponsor-card{
     padding: 0 !important;
-    background-color:#E0E0E0;
+    /* background-color:#E0E0E0; */
+    box-shadow: none;
     height: 100%;
     border-radius: 0;
     width: 100%;
+    border: none;
+    border-radius: 0px !important;
 }
 
 .sponsor-card .row > *{
@@ -618,21 +621,12 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 }
 
 .modal-body{
-    height: 260px;
+    height: 100%;
 }
 
-.modal-body .carousel-indicators{
-    margin-top: 40px;
-    position: absolute;
-    bottom: 0;
-    transform: translate(0, 160%);
-}
 
 .modal-body .carousel-indicators button{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #C4C4C4;
+    display:none;
 }
 
 @media (max-width: 1500px) {
@@ -870,6 +864,10 @@ a.active, .active svg path, li:hover svg path,li a:hover {
         width: 100%;
     }
 
+    #carouselSponsor .sponsor-card img{
+        object-fit: contain;
+    }
+
     .big-menu-item{
         width: 280px; 
         height: 170px;
@@ -1045,7 +1043,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
         border: none;
         font-family: var(--font-family-body);
         font-size: 7px;
-        font-weight: 50;
+        font-weight: 200;
         float: left;
         border-radius: 6px !important;
     }
@@ -1149,7 +1147,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     }
 
     #carouselSponsor{
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
     .sponsor-container .carousel-indicators{
@@ -1168,10 +1166,13 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .sponsor-card{
         padding: 0;
-        background-color:#E0E0E0;
-        height: 125px;
+        /* background-color:#E0E0E0; */
+        box-shadow: none;
+        height: 100%;
         border-radius: 0;
         width: 100%;
+        border: none;
+        border-radius: 0px !important;
     }
 
     .sponsor-card .row > *{
@@ -1183,6 +1184,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .sponsor-card .row{
         margin: 0!important;
+        height: 100%;
     }
 
     .modal-content{
@@ -1198,14 +1200,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     }
 
     .modal-body{
-        height: 200px;
-    }
-
-    .modal-body .carousel-indicators{
-        margin-top: 40px;
-        position: absolute;
-        bottom: 0;
-        transform: translate(0, 160%);
+        height: 100%;
     }
 
     .modal-body .carousel-indicators button{

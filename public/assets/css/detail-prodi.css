@@ -1,34 +1,59 @@
-.prodi-navback{
-    display: flex;  
-    top: 0;       
-    padding-left: 25px;
-    padding-right: 25px;   
-    border-radius: 15px !important;
-    overflow: hidden;
-    margin-bottom: 20px;
+
+.desktop{
+    margin: auto;
 }
 
-.prodi-navback a{        
-    position: absolute;
-    top: 36px;
-    font-weight: 300;
+.page-content{
+    margin-top: 0;
+    padding-left: 26px;
+    padding-right: 26px;
+    min-height: calc(100vh - 90px);
 }
 
-.first-headline {
-    display: flex; 
-    margin-top: 74px ;    
-    margin-bottom: 20px;   
-}
-
-.logo-prodi {
-    max-width: 40%;        
-}
-
-.logo-prodi img{
+.navbar-cust-prodi {
+    position: unset;
+    top: 0px;
     width: 100%;
 }
 
+.prodi-navback{
+    display: flex;
+    top: 0;
+    overflow: hidden;
+}
+
+.prodi-navback a{        
+    top: 36px;
+    z-index: 100;
+}
+
+.navback-home{
+    text-decoration: none; 
+    font-family: var(--font-family-body);
+}
+
+.first-headline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-top: 20px ;    
+    margin-bottom: 20px;  
+    z-index: 90; 
+}
+
+.logo-prodi {
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    max-width: 50%;        
+}
+
+.logo-prodi img{
+    width: 60%;
+}
+
 .name-prodi{
+    width: 50%;
     margin-left: 10px;
 }
 
@@ -57,7 +82,7 @@
 }
 
 .second-headline {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .third-headline {
@@ -215,36 +240,52 @@
     margin-bottom: 20px;   
 }
 
-@media (max-width: 1200px){
+@media (max-width:1200px){
+    .logo-prodi img{
+        width: 50%;
+    }
+
+    .navback-home img{
+        width: 36px;
+    }
+
+    .navbar-cust-prodi {
+        top: 0px;
+        width: 100%;
+    }
+    
     .page-content {
         margin-top: 0;
         padding-left: 26px;
         padding-right: 26px;
     }
+
     .prodi-navback{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
+        display: flex;
+        top: 0;
+        margin-top: 36px;
         margin-bottom: 20px;
+        overflow: hidden;
     }
 
-    .prodi-navback a{        
-        position: absolute;
+    .prodi-navback a{ 
         top: 36px;
-        font-weight: 300;
+        z-index: 100;
     }
+
+}
+
+@media (max-width: 763px){
     
     .first-headline {
         display: flex; 
-        margin-top: 74px ;    
+        margin-top: 0px ;    
         margin-bottom: 20px;   
     }
 
     .logo-prodi {
-        max-width: 40%;        
+        max-width: 50%;   
+        padding: 10px;     
     }
 
     .logo-prodi img{
@@ -253,6 +294,7 @@
 
     .name-prodi{
         margin-left: 10px;
+        width: 50%;
     }
 
     .name-prodi h2{
@@ -280,7 +322,7 @@
     }
  
     .second-headline {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
     }
 
     .third-headline {

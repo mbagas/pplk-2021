@@ -2,20 +2,24 @@
     padding-top: 0px;
 }
 
+.page-content .navbar{
+    position: absolute;
+}
+
 .nav-back{
     display: flex;  
     top: 0;       
     padding-left: 25px;
     padding-right: 25px;   
     border-radius: 15px !important;
-    overflow: hidden;
-    z-index: 99;        
+    overflow: hidden;        
 }
 
 .nav-back a{        
     position: absolute;
-    top: 36px;
-    color: var(--white) !important;                
+    top: 50px;
+    color: var(--white) !important;   
+    z-index: 100;             
 }
 
 .navback-home{
@@ -152,11 +156,12 @@
 }
 
 .custom-mini-prodi-col .card .image{
-    width: 80%;
-    height: 70%;
+    width: 100%;
+    height: 160px;
     display: grid;
     place-items: center;
-    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    background-color: #E0E0E0;
 }
 
 .custom-mini-prodi-col .card img{
@@ -164,23 +169,20 @@
 }
 
 .custom-mini-prodi-col .card-body {    
-    display: grid;
-    place-items: center;
-    height: 100%;
+    height: 100px;
     width: 100%;
-    padding-top: 2px;
+    padding-top: 10px;
     padding-left: 10px ;
     padding-right: 20px ;
     padding-bottom: 20px;
 }
 
 .custom-mini-prodi-col .card-title{
-    padding-top: 20px;
     font-size: 18px;
     float: left;
     color: var(--font-color-subheadline);
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 .custom-mini-prodi-col .card-text{
@@ -241,7 +243,7 @@
 }
 
 .search-bar{
-    margin-bottom: 20px;
+    margin: auto;
     width: 100%;
 }
 
@@ -402,6 +404,10 @@
         min-height: 130px;
     }
 
+    .custom-mini-prodi-col .card .image{
+        height: 100%;
+    }
+
     .custom-mini-prodi-col .card{              
         display: flex; 
         flex-direction: column !important; 
@@ -409,12 +415,13 @@
         padding: 0px; 
         border-radius: 10px !important;
         height: 100%;
+        width: 100%;
         box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
     }
 
     .custom-mini-prodi-col .card-body {    
-        max-height: 100%;
-        max-width: 100%;
+        max-height: 60px;
+        width: 100%;
         padding-top: 2px;
         padding-left: 10px ;
         padding-right: 20px ;
@@ -487,7 +494,7 @@
     }
 
     .search-bar{
-        margin-bottom: 20px;
+        margin-bottom: 30px !important;
     }
     
     .search-form-input {
