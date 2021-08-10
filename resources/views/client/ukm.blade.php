@@ -194,7 +194,7 @@
                         </p>
                     </div>
                     <!--Search Bar-->
-                    <div class="row search-bar">
+                    <div class="row search-bar d-lg-flex d-xl-none">
                         <div class="col-10">
                             <div class="search-form">
                                 <i class="fa fa-search"></i>

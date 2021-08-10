@@ -205,7 +205,7 @@
                         <h2 class="prodi-title-text"> Program Studi di ITERA dibagi menjadi 3 cluster</h2>
                     </div>
 
-                    <div class="row search-bar">
+                    <div class="row search-bar d-lg-flex d-xl-none">
                         <div class="col-10">
                             <div class="search-form"> 
                                 <i class="fa fa-search"></i> 

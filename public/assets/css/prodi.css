@@ -2,20 +2,24 @@
     padding-top: 0px;
 }
 
+.page-content .navbar{
+    position: absolute;
+}
+
 .nav-back{
     display: flex;  
     top: 0;       
     padding-left: 25px;
     padding-right: 25px;   
     border-radius: 15px !important;
-    overflow: hidden;
-    z-index: 99;        
+    overflow: hidden;        
 }
 
 .nav-back a{        
     position: absolute;
-    top: 36px;
-    color: var(--white) !important;                
+    top: 50px;
+    color: var(--white) !important;   
+    z-index: 100;             
 }
 
 .navback-home{
@@ -239,7 +243,7 @@
 }
 
 .search-bar{
-    margin-bottom: 20px;
+    margin: auto;
     width: 100%;
 }
 
@@ -490,7 +494,7 @@
     }
 
     .search-bar{
-        margin-bottom: 20px;
+        margin-bottom: 30px !important;
     }
     
     .search-form-input {

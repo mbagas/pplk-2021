@@ -618,21 +618,12 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 }
 
 .modal-body{
-    height: 260px;
+    height: 100%;
 }
 
-.modal-body .carousel-indicators{
-    margin-top: 40px;
-    position: absolute;
-    bottom: 0;
-    transform: translate(0, 160%);
-}
 
 .modal-body .carousel-indicators button{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #C4C4C4;
+    display:none;
 }
 
 @media (max-width: 1500px) {
@@ -868,6 +859,10 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .card img{
         width: 100%;
+    }
+
+    #carouselSponsor .sponsor-card img{
+        object-fit: contain;
     }
 
     .big-menu-item{
@@ -1149,7 +1144,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     }
 
     #carouselSponsor{
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
     .sponsor-container .carousel-indicators{
@@ -1169,7 +1164,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     .sponsor-card{
         padding: 0;
         background-color:#E0E0E0;
-        height: 125px;
+        height: 100%;
         border-radius: 0;
         width: 100%;
     }
@@ -1183,6 +1178,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .sponsor-card .row{
         margin: 0!important;
+        height: 100%;
     }
 
     .modal-content{
@@ -1198,14 +1194,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     }
 
     .modal-body{
-        height: 200px;
-    }
-
-    .modal-body .carousel-indicators{
-        margin-top: 40px;
-        position: absolute;
-        bottom: 0;
-        transform: translate(0, 160%);
+        height: 100%;
     }
 
     .modal-body .carousel-indicators button{
