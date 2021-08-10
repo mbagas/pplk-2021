@@ -482,6 +482,10 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     height: 260px;
 }
 
+.fun-fact-card:hover{
+    transform: none !important;
+}
+
 .fun-fact-prev, .fun-fact-next{
     opacity: 1 !important;
 }
@@ -600,6 +604,10 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     width: 100%;
     border: none;
     border-radius: 0px !important;
+}
+
+.sponsor-card:hover{
+    transform: none !important;
 }
 
 .sponsor-card .row > *{

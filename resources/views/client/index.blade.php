@@ -408,7 +408,7 @@
                             Kamus Gaul
                         </a>
 
-                        <a href="../html/uptItera.html" class="small-slide-menu-item justify-content-center">
+                        <a href="{{ route('dataUpt') }}" class="small-slide-menu-item justify-content-center">
                             UPT ITERA
                         </a>
 
