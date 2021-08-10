@@ -121,7 +121,7 @@
             <!-- Content -->
             <div class="tugas-content">
 
-                <div class="col-sm-12">
+                {{-- <div class="col-sm-12">
                     <div class="info-card card justify-content-between " style="height: 160px;" >
                         <div class="info-card-body" >
 
@@ -130,11 +130,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Info Kelompok dan Daplok -->
-                {{-- <div class="tugas-kelompok-card mx-auto">
-                    <img class="tugas-daplok-img" src="../assets/images/jhonnysins.png">
+                <div class="tugas-kelompok-card mx-auto">
+                    <img class="tugas-daplok-img" src="{{ asset('assets') }}/images/jhonnysins.png">
                     <div class="tugas-circle tugas-circle1">
                         <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 82C40.8691 82 74 48.8691 74 8C74 5.29704 73.8551 2.62792 73.5726 0H15C6.71573 0 0 6.71572 0 15V82Z" fill="#58B1E9"/>
@@ -152,13 +152,14 @@
                         </svg>
                     </div>
                     <div class="d-flex flex-column" style="height: 100%; position: relative;">
-                        <h3 class="tugas-kelompok-text tugas-main-title mb-auto">Kelompok 1</h3>
+                        <h3 class="tugas-kelompok-text tugas-main-title mb-auto">Kelompok {{ auth()->user()->kelompok }}</h3>
                         <div class="tugas-daplok d-flex justify-content-between">
                             <div class="tugas-daplok-text">
-                                <h6 class="tugas-main-text">Daplok</h6>
-                                <p class="tugas-main-text">Fesfita Salsabila</p>
+                                {{-- <h6 class="tugas-main-text"></h6> --}}
+                                <p class="tugas-main-text">{{ auth()->user()->nama }}</p>
+                                <p class="tugas-main-text">{{ auth()->user()->nim }}</p>
                             </div>
-                            <p class="tugas-daplok-text tugas-main-text mt-auto mb-0" style="text-align: right;">+62 821 7768 2346</p>
+                            {{-- <p class="tugas-daplok-text tugas-main-text mt-auto mb-0" style="text-align: right;">+62 821 7768 2346</p> --}}
                         </div>
                     </div>
                 </div>
@@ -168,11 +169,6 @@
                     <li class="nav-item col" role="presentation">
                         <button class="tugas-menu-item active tugas-main-text" aria-selected="true" role="tab" data-bs-toggle="pill" data-bs-target="#new-task" >
                             New Task
-                        </button>
-                    </li>
-                    <li class="nav-item col" role="presentation">
-                        <button class="tugas-menu-item tugas-main-text" aria-selected="true" role="tab" data-bs-toggle="pill" data-bs-target="#in-progress">
-                            In Progress
                         </button>
                     </li>
                     <li class="nav-item col" role="presentation">
@@ -186,16 +182,18 @@
                     <!-- card tugas -->
                     <div class="tab-pane active tugas-list" role="tabpanel" id="new-task">
                         <!-- cards start -->
-                        <a href="detail-tugas.html">
+                        @foreach($dataTugas as $data)
+                        @if(!$data->status && ($data->tugas->end_time  >= date('d F')))
+                        <a href="{{ route('detailTugas', $data->tugas_id) }}">
                             <div class="tugas-list-card">
                                 <div class="tugas-list-score">
-                                    <span class="tugas-main-text">0/100</span>
+                                    {{-- <span class="tugas-main-text">0/100</span> --}}
                                 </div>
                                 <img class="tugas-list-image" src="{{ asset('assets') }}/images/logo-rebahan.png">
                                 <div class="tugas-list-content">
                                     <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
+                                        <p class="tugas-main-text">Deadline</p>
+                                        <p class="tugas-main-text">{{date('d F', strtotime($data->tugas->end_time))}}</p>
                                     </div>
                                     <div class="tugas-list-content-left">
                                         <div>
@@ -203,7 +201,7 @@
                                                 Assigned to You
                                             </p>
                                             <p class="tugas-list-title tugas-main-title">
-                                                TUGAS Test buat link ke page detail-tugas.html
+                                                {{ $data->tugas->judul }}
                                             </p>
                                         </div>
                                         <div>
@@ -215,109 +213,20 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">0/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Test Tugas No Background
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                New Task
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- cards end -->
-                    </div>
-
-                    <!-- card tugas -->
-                    <div class="tab-pane tugas-list" role="tabpanel" id="in-progress">
-                        <!-- cards start -->
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">33/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="{{ asset('assets') }}/images/jhonnysins.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Tugas Membuat Laporan Pertanggung Jawaban
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                New Task
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">44/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="{{ asset('assets') }}/images/jurusan-poster1.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">6 April</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                Tugas Membuat Laporan Pertanggung Jawaban
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text late">
-                                                Turned In Late
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        @endif
+                        @endforeach
                         <!-- cards end -->
                     </div>
 
                     <!-- card tugas -->
                     <div class="tab-pane tugas-list" role="tabpanel" id="completed">
                         <!-- cards start -->
+                        @foreach($dataTugas as $data)
+                        @if($data->status)
                         <a href="#">
                             <div class="tugas-list-card">
                                 <div class="tugas-list-score">
-                                    <span class="tugas-main-text">55/100</span>
+                                    <span class="tugas-main-text">{{ $data->nilai }}/100</span>
                                 </div>
                                 <img class="tugas-list-image" src="{{ asset('assets') }}/images/LOGO PPLK.png">
                                 <div class="tugas-list-content">
@@ -343,41 +252,15 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#">
-                            <div class="tugas-list-card">
-                                <div class="tugas-list-score">
-                                    <span class="tugas-main-text">66/100</span>
-                                </div>
-                                <img class="tugas-list-image" src="{{ asset('assets') }}/images/jurusan-poster1.png">
-                                <div class="tugas-list-content">
-                                    <div class="tugas-list-date">
-                                        <p class="tugas-main-text">Due Date</p>
-                                        <p class="tugas-main-text">16 BBY</p>
-                                    </div>
-                                    <div class="tugas-list-content-left">
-                                        <div>
-                                            <p class="tugas-list-assigned tugas-main-text">
-                                                Assigned to You
-                                            </p>
-                                            <p class="tugas-list-title tugas-main-title">
-                                                The time has come. Execute order ..
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p class="tugas-list-status tugas-main-text">
-                                                It will be done
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        @endif
+                        @endforeach
+                        
                         <!-- cards end -->
                     </div>
 
                 </div>
                
-                 --}}
+                
 
 
             </div>

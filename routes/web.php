@@ -136,6 +136,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/profile/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');
   Route::post('/profile/{id}/update', [clientBiodataController::class, 'update'])->name('updateProfile');
   Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+  Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   
