@@ -139,7 +139,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   Route::get('/profile/{id}', [clientBiodataController::class, 'edit'])->name('editBiodata');
-  Route::post('/profile/{id}/update', [clientBiodataController::class, 'update'])->name('updateProfile');
+  Route::put('/profile/{id}/update', [clientBiodataController::class, 'update'])->name('updateProfile');
   Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
   Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
   Route::get('/games', [gameController::class, 'index'])->name('games');

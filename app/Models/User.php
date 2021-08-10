@@ -24,6 +24,7 @@ class User extends Authenticatable
         'kelompok',
         'roles_id',
         'prodis_id',
+        'img',
         'instagram'
     ];
 

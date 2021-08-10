@@ -117,7 +117,7 @@
                     </div>
                     <div class="head-menu row ">
                         <a class="head-menu-profile" href="profile">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">  
+                            <img src="{{ $biodataUser->img ?? asset('assets/images/jhonnysins.png') }}" alt="notification-menu">  
                         </a>
                         <div class="username">
                             {{ $biodataUser->nama }}

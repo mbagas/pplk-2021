@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ormawa;
 use App\Models\Prodi;
+use Illuminate\Support\Facades\DB;
 
 class clientBiodataController extends Controller
 {
@@ -31,12 +32,16 @@ class clientBiodataController extends Controller
 
     }
 
-    public function update($id){
-        $userData = User::where('id', $id)->first();
-        if($request->hasFile('diagramAlir')){
+    public function update(Request $request,User $id){
+        // dd($request);
+        $userData = User::where('id', auth()->user()->id)->first();
+        if($request->hasFile('img')){
             $userData->update([
-                'diagramAlir'   => url($request->file('diagramAlir')->move('diagramAlir', $prodi->namaSingkat . '.' . $request->file('diagramAlir')->extension()))
+                'img'   => url($request->file('img')->move('fotoUser', $userData->id . '.' . $request->file('img')->extension()))
             ]);
         }
+       
+        
+        return redirect('profile')->with('sukses','Foto profil Berhasil diganti');
     }
 }
