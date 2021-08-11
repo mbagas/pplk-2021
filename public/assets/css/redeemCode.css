@@ -1,0 +1,85 @@
+@media(max-width: 1200px) {
+
+    .nav-back{
+        display: flex;  
+        top: 0;       
+        padding-left: 25px;
+        padding-right: 25px;   
+        border-radius: 15px !important;
+        overflow: hidden;
+        z-index: 99;        
+    }
+
+    .nav-back a{        
+        position: absolute;
+        top: 36px;
+        color: var(--primary) !important;                
+    }
+
+    .page-content {
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+
+    .headline-text {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-rc{              
+        display: flex; 
+        flex-direction: column !important; 
+        height: relative; 
+        padding: 0px; 
+        border-radius: 15px !important;
+        height: 100%;
+        box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
+    }
+
+    .card-rc img {
+        min-height: 90px;
+    }
+
+    .rounded-rc {
+        border-radius: 15px !important;
+    }
+
+    .card-body-rc {    
+        max-height: 100%;
+        max-width: 100%;
+        padding-top: 10px;
+        padding-left: 10px ;
+        padding-right: 10px ;
+        padding-bottom: 20px;
+    }
+
+    .redeem-input {
+        display: grid;
+        width: 75%;
+        gap: 5px;
+        align-items: center;
+        padding: 10px;
+        margin: auto;
+    }
+
+    .redeem-input label {
+        text-align: center;
+        font: 400;
+        font-size: 13px;
+        color: gray;
+    }
+
+    .redeem-input input {
+        border: 1.5px solid gray;
+        background: transparent;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .round {
+        border-radius: 10px !important;
+    }
+}
