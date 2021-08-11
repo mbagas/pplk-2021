@@ -88,7 +88,7 @@
             </ul>
         </div>
         <div class="head-menu row ">
-            <a class="head-menu-profile" href="profile">
+            <a class="head-menu-profile" href="{{ route('biodata.index')}}">
                 <img src="{{ auth()->user()->img ?? asset('assets/images/jhonnysins.png') }}" alt="notification-menu">
             </a>
             <div class="username" style="font-size: 15px;">
