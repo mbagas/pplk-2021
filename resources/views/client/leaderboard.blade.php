@@ -29,32 +29,6 @@
             <!-- Desktop Navabar top -->
             @include('client.menu')
 
-            <!-- Navbar -->
-            <div class="navbar p-0 d-lg-block d-xl-none">
-                <div class="container-fluid head-bar">
-                    <a class="pplk-logo navbar-brand" href="{{ route('home')}}">
-                        <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
-                    </a>
-                    <div class="head-menu row ">
-                        <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
-                            @csrf
-                        </form>
-                        <a class="head-menu-icon" href="#">
-                            <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
-                        </a>
-                        <a class="head-menu-icon" href="report-page.blade.php">
-                            <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
-                        </a>
-                        <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">
-                        </a>
-                    </div>
-                </div>
-        </div>
-
             <!-- FootBar -->
             <div class="navbar p-0 d-lg-block d-xl-none">
                 @include('client.footbar_mobile')
@@ -83,7 +57,7 @@
                     <div class="top-3-winner row row-cols-3">
                         <div class="winner-2 winner">
                             <div class="profile-winner">
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         2
@@ -105,7 +79,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        6969
+                                        6969 Point
                                     </h1>
                                 </div>
                             </div>
@@ -114,7 +88,10 @@
 
                         <div class="winner-1 winner">
                             <div class="profile-winner">
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <div class="crown">
+                                    <img src="{{ asset('assets') }}/images/crown.png" alt="crown" class="crown-img"/>
+                                </div>
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         1
@@ -136,7 +113,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        6969
+                                        6969 Point
                                     </h1>
                                 </div>
                             </div>
@@ -145,7 +122,7 @@
 
                         <div class="winner-3 winner">
                             <div class="profile-winner">
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         3
@@ -167,7 +144,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        6969
+                                        6969 Point
                                     </h1>
                                 </div>
                             </div>
@@ -178,13 +155,177 @@
                     <div class="leaderboard-container">
 
                         <div class="leaderboard-list">
+                            <!-- di isi punya si user jadi dia paling atas -->
+                            <div class="card user-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
 
-                            <div class="user-data">
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+                            <!-- nilai yang lain for dari sini -->
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
 
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
                             </div>
 
-                            <div class="others-data">
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
 
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
                             </div>
 
                         </div>

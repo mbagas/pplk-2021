@@ -1,6 +1,22 @@
 .page-content{
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+}
+
+.top-3-winner{
     padding-left: 26px;
     padding-right: 26px;
+}
+
+.title-page{
+    margin-bottom: 40px;
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.title-page h1{
+    font-size: 24px !important;
 }
 
 .winner{
@@ -38,6 +54,22 @@
     border: 3px solid var(--winner-color);
 }
 
+.crown{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 100;
+    top: -25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.crown img{
+    width:  25px;
+    height: 17px;
+}
+
 .winner-patch{
     width: 100%;
     display: grid;
@@ -71,12 +103,121 @@
 
 .nama h2{
     font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--font-color-subheadline);
 }
 
 .prodi h3{
     font-family: var(--font-family-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--font-color-secondary);
 }
 
 .point h1{
     font-family: var(--font-family-body);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.winner-1 .point h1{
+    color: var(--winner-color);
+}
+
+.leaderboard-container{
+    /* position: absolute; */
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 25px 20px 25px;
+    border-radius: 15px 15px 0px 0px !important;
+    min-height: calc(100vh - 90px);
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: var(--page-background-1);
+    flex-direction: column;
+    box-shadow: 0px 5px 10px 4px rgb(0 0 0 / 15%);
+}
+
+.leaderboard-list{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 66.666667%;
+}
+
+.card-leaderboard{
+    border-radius: 10px !important;
+    height: 90px;   
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    justify-content: space-between;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+.user-data{
+    border: 3px solid var(--primary) !important;
+}
+
+.card-leaderboard:hover{
+    transform: none !important;
+    border: 3px solid var(--primary);
+}
+
+.profile-pic img{
+    width: 50px;
+    height: 50px;
+}
+
+.number-rank h2{
+    font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--font-color-subheadline);
+}
+
+
+@media (max-width:1200px) {
+    .title-page h1{
+        font-size: 20px !important;
+    }
+
+    .page-content{
+        margin-top: 20px;
+    }
+
+    .nama h2{
+        font-family: var(--font-family-body) !important;
+        font-size: 13px;
+    }
+    
+    .prodi h3{
+        font-family: var(--font-family-body);
+        font-size: 10px;
+    }
+    
+    .point h1{
+        font-family: var(--font-family-body);
+        font-size: 13px;
+    }
+
+    .number-rank h2{
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .leaderboard-list{
+        width: 100%;
+    }
+
+    .card-leaderboard{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 }
