@@ -15,6 +15,7 @@
     min-height: calc(100vh - 90px);
     padding-left: 26px;
     padding-right: 26px;
+    padding-bottom: 80px;
 }
 
 .player-info{
@@ -39,6 +40,7 @@
 .menu-list .card{
     width: 66.66667%;
     height: 200px;
+    padding-right: 8%;
 }
 
 .col-6{
@@ -53,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    padding: 10px !important;
 }
 
 .profile-pic{
@@ -65,7 +68,7 @@
 }
 
 .rank-text{
-    width: 65%;
+    width: 70%;
     display: grid;
     align-items: center;
 }
@@ -85,6 +88,127 @@
     color: var(--font-color-subheadline);
 }
 
+.poin-pic{
+    width: 30%;
+}
+
+.poin-pic img{
+    width: 50px;
+    height: 50px;
+}
+.poin-text{
+    width: 70%;
+    display: grid;
+    align-items: center;
+}
+
+.poin-text h2{
+    margin-bottom: 0 !important;
+    color: var(--primary) !important;
+    font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.poin-text h5{
+    font-family: var(--font-family-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--font-color-subheadline);
+}
+
+.find-code{
+    background-color: var(--white) !important;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.tebak-bangunan{
+    background-color: var(--font-color-subheadline) !important;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.result-points-wrapper{
+    position: relative;
+    width: 40%;
+    display: grid;
+    place-items: center;
+    margin: 30px 0;
+}
+
+.result-canvas{
+    width: 100%;
+}
+
+
+.result-canvas-text {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    position: absolute;
+    right: 50%;
+    margin-bottom: 0 !important;
+    color: var(--primary) !important;
+    font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bodytext{
+    position: absolute;
+    right: 40%;
+    margin-bottom: 0 !important;
+    color: var(--primary) !important;
+    font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menu-text{
+    width: 60%;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.tebak-bangunan .menu-text h2{
+    font-size: 20px !important;
+    color: var(--primary) !important;
+    font-family: var(--font-family-body) !important;
+    font-weight: 600;
+}
+
+.tebak-bangunan .menu-text h3{
+    font-size: 16px !important;
+    color: var(--white);
+    font-family: var(--font-family-body) !important;
+}
+
+.find-code .menu-text h2{
+    font-size: 20px !important;
+    color: var(--font-color-primary) !important;
+    font-family: var(--font-family-body) !important;
+    font-weight: 600;
+}
+
+.find-code .menu-text h3{
+    font-size: 16px !important;
+    color: var(--font-color-secondary);
+    font-family: var(--font-family-body) !important;
+}
+
 @media (max-width:1200px) {
     .page-content{
         margin-top: 20px;
@@ -97,6 +221,10 @@
 }
 
 @media (max-width: 576px) {
+    .tebak-bangunan .menu-text h2{
+        font-size: 16px !important;
+    }
+
     .rank-text h2{
         font-size: 13px;
     }
@@ -110,6 +238,19 @@
         height: 26px;
     }
 
+    .poin-text h2{
+        font-size: 13px;
+    }
+    
+    .poin-text h5{
+        font-size: 10px;
+    }
+
+    .poin-pic img{
+        width: 26px;
+        height: 26px;
+    }
+
     .col-6 .card{
         width: 90%;
         height: 55px;
@@ -119,5 +260,28 @@
         width: 100%;
         height: 100px;
     }
+
+    .title{
+        font-size: 10px;
+    }
+
+    .bodytext{
+        font-size: 10px;
+    }
     
+    .tebak-bangunan .menu-text h2{
+        font-size: 13px !important;
+    }
+    
+    .tebak-bangunan .menu-text h3{
+        font-size: 10px !important;
+    }
+
+    .find-code .menu-text h2{
+        font-size: 13px !important;
+    }
+    
+    .find-code .menu-text h3{
+        font-size: 10px !important;
+    }
 }
