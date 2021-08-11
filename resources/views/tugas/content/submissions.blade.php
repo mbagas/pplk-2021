@@ -6,7 +6,7 @@
         width: 100%;
     }
 </style>
-<div class="row">
+<div class="row form-wrapper">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Update Tugas')
 @section('content')
-<div class="row">
+<div class="row form-wrapper">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
