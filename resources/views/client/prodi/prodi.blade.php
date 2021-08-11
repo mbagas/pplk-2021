@@ -92,11 +92,10 @@
                     <div class="main-text">
                         <h2 class="prodi-title-text">Program Studi di Institut Teknologi Sumatera</h2>
                         <p>
-                            Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan prioritas akan kebutuhan Sumber Daya Manusia di lingkungan lokal maupun nasional. Disamping itu pula yang menjadi pertimbangan adalah kesiapan akan infrastruktur dan sumber daya pendukung lainnya, untuk itu nantinya tidak akan dilaksanakan sekaligus. Prodi-prodi yang menjadi Sains Dasar serta Teknologi Dasar akan diprioritaskan terlebih dahulu.
-                            <br/>
-                            <br/>
-                            Program akademik di Institut Teknologi Sumatera yang dikaji dan direncanakan akan didasarkan pada pertimbangan bahasan di atas. Hal ini mencakup Program Studi (Prodi) yang akan dibuka,  program riset dan inovasi yang direncanakan, termasuk pengembangan Innovation & Techno Park. Program Studi di ITERA akan dibuka secara bertahap dan direncanakan mempunyai sejumlah program studi.
-                        </p>
+                        Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang penyelenggaraannya berdasarkan suatu kurikulum. Di dalam jurusan yang ada di ITERA memiliki 35 program studi yang membawahi jurusan masing-masing.                             
+                        <br/>
+                        <br/>
+                        Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan prioritas akan kebutuhan Sumber Daya Manusia di lingkungan lokal maupun nasional. Disamping itu pula yang menjadi pertimbangan adalah kesiapan akan infrastruktur dan sumber daya pendukung lainnya, untuk itu nantinya tidak akan dilaksanakan sekaligus. Prodi-prodi yang menjadi Sains Dasar serta Teknologi Dasar akan diprioritaskan terlebih dahulu.                        </p>
                          <!--Title Kedua-->
                         <h2 class="prodi-title-text"> Program Studi di ITERA dibagi menjadi 3 cluster</h2>
                     </div>
