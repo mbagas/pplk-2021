@@ -90,7 +90,7 @@
 
                     <div class="games-menu-container">
                         <div class="menu-list">
-                            <div class="card find-code">
+                            <a class="card find-code">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
@@ -112,9 +112,9 @@
                                         <path d="M4.90039 3.43317L11.4671 9.99984L4.90039 16.5665L6.66706 18.3332L15.0004 9.99984L6.66706 1.6665L4.90039 3.43317Z" fill="#4A4A4A"/>
                                     </svg>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="card tebak-bangunan">
+                            <a class="card tebak-bangunan">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
@@ -137,7 +137,7 @@
                                     </svg>
                                 </div>
 
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>                
