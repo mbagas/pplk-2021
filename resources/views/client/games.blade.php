@@ -128,24 +128,39 @@
                     </div>
                     
                     <div class="player-info">
-                        <div class="card rank-info">
-
+                        <div class="col-6">
+                            <div class="card rank-info ">
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="rank-text">
+                                    <h5>
+                                        Rank
+                                    </h5>
+                                    <h2>
+                                        169
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="card point-info">
-                            
+                        <div class="col-6">
+                            <div class="card point-info ">
+
+                            </div>
                         </div>
                     </div>
 
                     <div class="games-menu-container">
-                        <div class="card find-code">
+                        <div class="menu-list">
+                            <div class="card find-code">
 
+                            </div>
+
+                            <div class="card tebak-bangunan">
+
+                            </div>
                         </div>
-
-                        <div class="card tebak-bangunan">
-
-                        </div>
-
                     </div>
                 </div>                
             </div>
