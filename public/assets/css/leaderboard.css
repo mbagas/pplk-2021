@@ -147,17 +147,36 @@
 .card-leaderboard{
     border-radius: 10px !important;
     height: 90px;   
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     justify-content: space-between;
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+.user-data{
+    border: 3px solid var(--primary) !important;
 }
 
 .card-leaderboard:hover{
     transform: none !important;
     border: 3px solid var(--primary);
 }
+
+.profile-pic img{
+    width: 50px;
+    height: 50px;
+}
+
+.number-rank h2{
+    font-family: var(--font-family-body) !important;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--font-color-subheadline);
+}
+
 
 @media (max-width:1200px) {
     .page-content{
@@ -178,10 +197,19 @@
         font-family: var(--font-family-body);
         font-size: 13px;
     }
+
+    .number-rank h2{
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 576px) {
     .leaderboard-list{
         width: 100%;
+    }
+
+    .card-leaderboard{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }

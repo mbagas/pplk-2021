@@ -260,7 +260,146 @@
                             </div>
                             <!-- nilai yang lain for dari sini -->
                             <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
 
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="card others-data card-leaderboard">
+                                <div class="number-rank">
+                                    <h2>
+                                        1
+                                    </h2>
+                                </div>
+                                <div class="profile-pic">
+                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                </div>
+                                <div class="profile-info">
+                                    <div class="nama">
+                                        <h2>
+                                            Dhifaf Athiyah Z
+                                        </h2>
+                                    </div>
+
+                                    <div class="prodi">
+                                        <h3>
+                                            Teknik Informatika
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="point">
+                                    <h1>
+                                        6969 point
+                                    </h1>
+                                </div>
                             </div>
 
                         </div>
