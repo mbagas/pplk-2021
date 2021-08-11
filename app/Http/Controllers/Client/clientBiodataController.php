@@ -41,6 +41,6 @@ class clientBiodataController extends Controller
         }
 
 
-        return redirect('profile')->with('sukses','Foto profil Berhasil diganti');
+        return redirect('biodata')->with('sukses','Foto profil Berhasil diganti');
     }
 }
