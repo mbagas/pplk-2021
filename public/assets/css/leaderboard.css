@@ -1,0 +1,82 @@
+.page-content{
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.winner{
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.profile-winner{
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    position: relative;
+}
+
+.winner img{
+    width: 80px;
+    height: 80px;
+}
+
+.winner-2 .profile-winner, .winner-3 .profile-winner{
+    margin-top: 20px;
+}
+
+.winner-1 img{
+    width: 100px;
+    height: 100px;
+}
+
+.winner-1 .profile-winner{
+    border: 3px solid var(--winner-color);
+}
+
+.winner-patch{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 100;
+    bottom: -20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.winner-text{
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    font-size: 14px;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+.winner-1 .winner-text{
+    background-color: var(--winner-color);
+}
+
+.info-winner{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nama h2{
+    font-family: var(--font-family-body) !important;
+}
+
+.prodi h3{
+    font-family: var(--font-family-body);
+}
+
+.point h1{
+    font-family: var(--font-family-body);
+}
