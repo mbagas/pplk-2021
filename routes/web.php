@@ -157,6 +157,7 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
+  Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'index']);
 });
 
 Route::get('/detailTugas', function () {
