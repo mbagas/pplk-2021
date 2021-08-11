@@ -187,7 +187,7 @@
                             <!-- cards start -->
                             @foreach($dataTugas as $data)
                             @if(!$data->status && ($data->tugas->end_time  >= date('d F')))
-                            <a href="{{ route('detailTugas', $data->tugas_id) }}">
+                            <a href="{{ route('detailTugas', $data) }}">
                                 <div class="tugas-list-card">
                                     <div class="tugas-list-score">
                                         {{-- <span class="tugas-main-text">0/100</span> --}}
@@ -226,7 +226,7 @@
                             <!-- cards start -->
                             @foreach($dataTugas as $data)
                             @if($data->status)
-                            <a href="#">
+                            <a href="{{ route('detailTugas', $data) }}">
                                 <div class="tugas-list-card">
                                     <div class="tugas-list-score">
                                         <span class="tugas-main-text">{{ $data->nilai }}/100</span>

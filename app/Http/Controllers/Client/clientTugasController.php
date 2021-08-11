@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Mengerjakan;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class clientTugasController extends Controller
 {
@@ -16,7 +17,28 @@ class clientTugasController extends Controller
     }
 
     public function show($id){
-        $tugasDetail = Tugas::where('id', $id)->firstOrFail();
-        return view('client.tugas.tugasDetail', compact('tugasDetail'));
+        $tugasDetail = Mengerjakan::with('tugas')->where('id', $id)->firstOrFail();
+        return view('client.tugas.tugasDetail', compact('tugasDetail', 'id'));
+    }
+
+    public function update(Request $request, $id){
+        $tugasDetail = Mengerjakan::with('tugas')->where('id', $id)->first();
+        dd($tugasDetail->users);
+        DB::transaction(function () use($request,$tugasDetail) {
+            if($request->hasFile('file')){
+                $tugasDetail->update([
+                    'file' =>url($request->file('file')->move($tugasDetail->tugas->judul, $tugasDetail->users->nama . '.' . $request->file('logo')->extension())),
+                    'status'  => 1
+                ]);
+            }
+
+            if($request->jawaban){
+                $tugasDetail->update([
+                    'jawaban' => $request->jawaban,
+                    'status'  => 1
+                ]);
+            }
+        });
+        return redirect()->route('tugasMaba.index')->with('sukses', 'Berhasil mengumpulkan tugas');
     }
 }

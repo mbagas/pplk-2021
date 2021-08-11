@@ -44,7 +44,7 @@
                 </a>
                 <h1 class="dTugas-top-title dTugas-title">
                     <!-- TUGAS Test buat link ke page detail-tugas.html -->
-                    {{ $tugasDetail->judul }}
+                    {{ $tugasDetail->tugas->judul }}
                 </h1>
                 <img src="{{ asset('assets') }}/images/laptop3d.png" class="dTugas-top-img">
                 
@@ -69,14 +69,14 @@
                 <div class="dTugas-body">
                     <h2 class="dTugas-body-title dTugas-title subheadline">Deskripsi</h2>
                     <P class="dTugas-body-text bodytext">
-                        {!! nl2br(e($tugasDetail->deskripsi)) !!}
+                        {!! nl2br(e($tugasDetail->tugas->deskripsi)) !!}
                     </P>
                 </div>
 
                 <div class="dTugas-body">
                     <h2 class="dTugas-body-title dTugas-title subheadline">Format Penamaan</h2>
                     <P class="dTugas-body-text bodytext">
-                        {{ $tugasDetail->format }}
+                        {{ $tugasDetail->tugas->format }}
                     </P>
                 </div>
 
@@ -89,7 +89,7 @@
                                 <p class="subheadline dTugas-title text-small">{{ $tugasDetail->judul }}.pdf</p>
                                 <p class="subheadline text-small">PDF</p>
                             </div>
-                            <a href="{{ $tugasDetail->file ?? '#' }}" onclick="alert('Downloading Materi....')">
+                            <a href="{{ $tugasDetail->tugas->file ?? '#' }}" onclick="alert('Downloading Materi....')">
                                 <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
                                     <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
@@ -100,42 +100,9 @@
                         </div>
                     </div>
 
-                    <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                        <img class="dTugas-material-img dTugas-img" src="{{ asset('assets') }}/images/jurusan-poster1.png">
-                        <div class="dTugas-material-info">
-                            <div class="dTugas-material-text">
-                                <p class="subheadline dTugas-title text-small">Referensi Lapor Komandan.pdf</p>
-                                <p class="subheadline text-small">PDF</p>
-                            </div>
-                            <a href="#" onclick="alert('Downloading Materi....')">
-                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
-                                    <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M16.2676 14.5796L14.3236 16.5316L12.3796 14.5796" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.4122 11.6592H18.0342C19.3909 11.6592 20.4902 12.7585 20.4902 14.1158V17.3718C20.4902 18.7252 19.3936 19.8218 18.0402 19.8218H10.6136C9.2569 19.8218 8.1569 18.7218 8.1569 17.3652L8.1569 14.1085C8.1569 12.7558 9.25424 11.6592 10.6069 11.6592H11.2349" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                    
 
-                    <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                        <img class="dTugas-material-img dTugas-img" src="../assets/images/jhonnysins.png">
-                        <div class="dTugas-material-info">
-                            <div class="dTugas-material-text">
-                                <p class="subheadline dTugas-title text-small">Cheat dapet pacar.pdf</p>
-                                <p class="subheadline text-small">PDF</p>
-                            </div>
-                            <a href="#" onclick="alert('Downloading Materi....')">
-                                <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
-                                    <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M16.2676 14.5796L14.3236 16.5316L12.3796 14.5796" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.4122 11.6592H18.0342C19.3909 11.6592 20.4902 12.7585 20.4902 14.1158V17.3718C20.4902 18.7252 19.3936 19.8218 18.0402 19.8218H10.6136C9.2569 19.8218 8.1569 18.7218 8.1569 17.3652L8.1569 14.1085C8.1569 12.7558 9.25424 11.6592 10.6069 11.6592H11.2349" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
+                    
                 </div>
 
                 <div class="dTugas-submisions">
@@ -210,122 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dTugas-attachment-wrapper">
-                            <div class="dTugas-attachment" onclick="alert('Opening file...')">
-                                <img class="dTugas-img dTugas-attachment-img" src="">
-                                <div class="dTugas-attachment-info">
-                                    <p class="subheadline dTugas-title text-small">Hero hyper paling op se-Land of dawn.pdf</p>
-                                    <p class="bodytext text-small">PDF</p>
-                                </div>
-                                <div class="dTugas-attachment-icon">
-                                    <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="2" cy="2" r="2" fill="#E0E0E0"/>
-                                        <circle cx="2" cy="8" r="2" fill="#E0E0E0"/>
-                                        <circle cx="2" cy="14" r="2" fill="#E0E0E0"/>
-                                    </svg>
-                                    <div class="dTugas-attachment-options-wrapper">
-                                        <div class="dTugas-attachment-options">
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M7.91624 4.08731L5.05452 6.97958L1.79972 4.94383C1.33338 4.65206 1.43038 3.94371 1.95786 3.78946L9.68561 1.52638C10.1686 1.38481 10.6163 1.83641 10.4728 2.321L8.18655 10.0434C8.02992 10.5716 7.3256 10.666 7.0366 10.1976L5.053 6.98009" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Share</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Download</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5.74405 1.39453H3.87455C2.33705 1.39453 1.37305 2.48303 1.37305 4.02403V8.18103C1.37305 9.72203 2.33255 10.8105 3.87455 10.8105H8.28655C9.82905 10.8105 10.7885 9.72203 10.7885 8.18103V6.16703" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41333 5.46049L8.14983 1.72399C8.61533 1.25899 9.36983 1.25899 9.83533 1.72399L10.4438 2.33249C10.9093 2.79799 10.9093 3.55299 10.4438 4.01799L6.68933 7.77249C6.48583 7.97599 6.20983 8.09049 5.92183 8.09049H4.04883L4.09583 6.20049C4.10283 5.92249 4.21633 5.65749 4.41333 5.46049Z" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.58203 2.30127L9.86503 4.58427" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Rename</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.66191 4.73438C8.66191 4.73438 8.39041 8.10188 8.23291 9.52038C8.15791 10.1979 7.73941 10.5949 7.05391 10.6074C5.74941 10.6309 4.44341 10.6324 3.13941 10.6049C2.47991 10.5914 2.06841 10.1894 1.99491 9.52388C1.83641 8.09288 1.56641 4.73438 1.56641 4.73438" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M9.354 3.12012H0.875" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.71931 3.11999C7.32681 3.11999 6.98881 2.84249 6.91181 2.45799L6.79031 1.84999C6.71531 1.56949 6.46131 1.37549 6.17181 1.37549H4.05531C3.76581 1.37549 3.51181 1.56949 3.43681 1.84999L3.31531 2.45799C3.23831 2.84249 2.90031 3.11999 2.50781 3.11999" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small delete">Delete</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dTugas-attachment-wrapper">
-                            <div class="dTugas-attachment" onclick="alert('Opening file...')">
-                                <img class="dTugas-img dTugas-attachment-img" src="">
-                                <div class="dTugas-attachment-info">
-                                    <p class="subheadline dTugas-title text-small">List nama dosen cowo tapi cantik.pdf</p>
-                                    <p class="bodytext text-small">PDF</p>
-                                </div>
-                                <div class="dTugas-attachment-icon">
-                                    <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="2" cy="2" r="2" fill="#E0E0E0"/>
-                                        <circle cx="2" cy="8" r="2" fill="#E0E0E0"/>
-                                        <circle cx="2" cy="14" r="2" fill="#E0E0E0"/>
-                                    </svg>
-                                    <div class="dTugas-attachment-options-wrapper">
-                                        <div class="dTugas-attachment-options">
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M7.91624 4.08731L5.05452 6.97958L1.79972 4.94383C1.33338 4.65206 1.43038 3.94371 1.95786 3.78946L9.68561 1.52638C10.1686 1.38481 10.6163 1.83641 10.4728 2.321L8.18655 10.0434C8.02992 10.5716 7.3256 10.666 7.0366 10.1976L5.053 6.98009" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Share</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Download</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5.74405 1.39453H3.87455C2.33705 1.39453 1.37305 2.48303 1.37305 4.02403V8.18103C1.37305 9.72203 2.33255 10.8105 3.87455 10.8105H8.28655C9.82905 10.8105 10.7885 9.72203 10.7885 8.18103V6.16703" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41333 5.46049L8.14983 1.72399C8.61533 1.25899 9.36983 1.25899 9.83533 1.72399L10.4438 2.33249C10.9093 2.79799 10.9093 3.55299 10.4438 4.01799L6.68933 7.77249C6.48583 7.97599 6.20983 8.09049 5.92183 8.09049H4.04883L4.09583 6.20049C4.10283 5.92249 4.21633 5.65749 4.41333 5.46049Z" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.58203 2.30127L9.86503 4.58427" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Rename</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.66191 4.73438C8.66191 4.73438 8.39041 8.10188 8.23291 9.52038C8.15791 10.1979 7.73941 10.5949 7.05391 10.6074C5.74941 10.6309 4.44341 10.6324 3.13941 10.6049C2.47991 10.5914 2.06841 10.1894 1.99491 9.52388C1.83641 8.09288 1.56641 4.73438 1.56641 4.73438" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M9.354 3.12012H0.875" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.71931 3.11999C7.32681 3.11999 6.98881 2.84249 6.91181 2.45799L6.79031 1.84999C6.71531 1.56949 6.46131 1.37549 6.17181 1.37549H4.05531C3.76581 1.37549 3.51181 1.56949 3.43681 1.84999L3.31531 2.45799C3.23831 2.84249 2.90031 3.11999 2.50781 3.11999" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small delete">Delete</span>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="dTugas-submisions-turnIn">
@@ -433,10 +285,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-inline dTugas-modal-form">
+                            <form action="{{route('tugasMaba.update', $tugasDetail)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
+                                @method('PUT')
+                                @csrf
                                 <div class="form-group">
                                     <label class="dTugas-modal-label subheadline" for="gallery-input">Pilih Foto/Video : </label>
-                                    <input class="form-control" type="file" accept="image/*,video/*" id="gallery-input" multiple>
+                                    <input class="form-control" name="file" type="file" accept="image/*,video/*" id="gallery-input" multiple>
                                 </div>
                                 <button class="btn dTugas-modal-submit" type="submit">Tambah</button>
                             </form>
@@ -453,10 +307,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-inline dTugas-modal-form">
+                            <form action="{{route('tugasMaba.update', $tugasDetail)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
+                                @method('PUT')
+                                @csrf
                                 <div class="form-group">
                                     <label class="dTugas-modal-label subheadline" for="docs-input">Pilih File : </label>
-                                    <input class="form-control" type="file" id="docs-input" multiple>
+                                    <input class="form-control" name="file" type="file" id="docs-input" multiple>
                                 </div>
                                 <button class="btn dTugas-modal-submit" type="submit">Tambah</button>
                             </form>
@@ -473,8 +329,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="form-inline dTugas-modal-form dTugas-modal-text-form">
-                                <textarea class="form-control" id="text-bodytext-input" placeholder="Jawaban"></textarea>
+                            <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form dTugas-modal-text-form">
+                                @method('PUT')
+                                @csrf
+                                <textarea class="form-control" name="jawaban" id="text-bodytext-input" placeholder="Jawaban">{{$tugasDetail->jawaban}}</textarea>
                                 <button class="btn dTugas-modal-submit" type="submit">Tambah</button>
                             </form>
                         </div>
