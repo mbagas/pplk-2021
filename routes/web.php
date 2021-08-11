@@ -139,8 +139,8 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
-  Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
-  Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
+  // Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
+  // Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
 
@@ -152,7 +152,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['Maba'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
-  Route::get('/tugasMaba', [clientTugasController::class, 'index'])->name('tugasMaba');
+  Route::resource('/tugasMaba', clientTugasController::class)->only(['index','show','update']);
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
