@@ -147,8 +147,8 @@
 .card-leaderboard{
     border-radius: 10px !important;
     height: 90px;   
-    padding-left: 100px !important;
-    padding-right: 100px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     justify-content: space-between;
