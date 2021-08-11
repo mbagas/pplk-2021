@@ -21,6 +21,7 @@
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/leaderboard.css"></link>
     </head>
     <body>
         <div class="main-wrapper">
@@ -136,17 +137,133 @@
             <!-- Content -->
             <div class="page-content container-fluid">
                 <div class="col-xl-6 desktop-view">
-                <div class="col-sm-12">
-                    <div class="info-card card justify-content-between " style="height: 160px;" >
-                            <div class="info-card-body" >
+                    <!-- <div class="col-sm-12">
+                        <div class="info-card card justify-content-between " style="height: 160px;" >
+                                <div class="info-card-body" >
 
-                                <h1 style="text-align: center">Coming Soon !</h1>
+                                    <h1 style="text-align: center">Coming Soon !</h1>
 
+
+                                </div>
+                            </div>
+                        </div>        
+                    </div>-->
+                    <div class="title-page">
+                        <h1>
+                            Leaderboard
+                        </h1>
+                    </div>
+
+                    <div class="top-3-winner row row-cols-3">
+                        <div class="winner-2 winner">
+                            <div class="profile-winner">
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <div class="winner-patch">
+                                    <h1 class="winner-text">
+                                        2
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="info-winner">
+                                <div class="nama">
+                                    <h2>
+                                        Dhifaf Athiyah Z
+                                    </h2>
+                                </div>
+
+                                <div class="prodi">
+                                    <h3>
+                                        Teknik Informatika
+                                    </h3>
+                                </div>
+
+                                <div class="point">
+                                    <h1>
+                                        6969
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="winner-1 winner">
+                            <div class="profile-winner">
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <div class="winner-patch">
+                                    <h1 class="winner-text">
+                                        1
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="info-winner">
+                                <div class="nama">
+                                    <h2>
+                                        Dhifaf Athiyah Z
+                                    </h2>
+                                </div>
+
+                                <div class="prodi">
+                                    <h3>
+                                        Teknik Informatika
+                                    </h3>
+                                </div>
+
+                                <div class="point">
+                                    <h1>
+                                        6969
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="winner-3 winner">
+                            <div class="profile-winner">
+                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
+                                <div class="winner-patch">
+                                    <h1 class="winner-text">
+                                        3
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="info-winner">
+                                <div class="nama">
+                                    <h2>
+                                        Dhifaf Athiyah Z
+                                    </h2>
+                                </div>
+
+                                <div class="prodi">
+                                    <h3>
+                                        Teknik Informatika
+                                    </h3>
+                                </div>
+
+                                <div class="point">
+                                    <h1>
+                                        6969
+                                    </h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="leaderboard-container">
+
+                        <div class="leaderboard-list">
+
+                            <div class="user-data">
 
                             </div>
+
+                            <div class="others-data">
+
+                            </div>
+
                         </div>
-                    </div>        
-                </div>                
+
+                    </div>
             </div>
         </div>
 
