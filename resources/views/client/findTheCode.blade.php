@@ -47,105 +47,23 @@
                             Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
                     </div>
                     <div class="row row-cols-3 g-3">
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
+                        @foreach ($games as $game)
+                        <a href="{{Route('')}}">
+                            <div class="col custom-mini-ftc-col">
+                                <div class="card-ftc">
+                                    <img class="rounded-ftc" width="100%" height="100" src="{{$game->gambar}}"
+                                        alt="a snow-capped mountain range" />
+                                    <div class="card-body-ftc">
+                                        <div class="card-title-ftc">
+                                            <h2>{{ $game->nama }}</h2>
+                                        </div>
+                                    </div> 
+                                </div>
                             </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col custom-mini-ftc-col">
-                            <div class="card-ftc">
-                                <img class="rounded-ftc" src="https://assets.codepen.io/6093409/mountains-1.jpg"
-                                    alt="a snow-capped mountain range" />
-                                <div class="card-body-ftc">
-                                    <div class="card-title-ftc">
-                                        <h2>Sepeda</h2>
-                                    </div>
-                                </div> 
-                            </div>
-                        </div>
+                        </a>
+                        @endforeach
+                        
+                        
                     </div>
                 </div>
             </div>
