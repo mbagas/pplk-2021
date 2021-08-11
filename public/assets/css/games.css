@@ -1,0 +1,26 @@
+.title-page{
+    margin-bottom: 40px;
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+.title-page h1{
+    font-size: 24px !important;
+}
+
+.page-content{
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    min-height: calc(100vh - 90px);
+}
+
+@media (max-width:1200px) {
+    .page-content{
+        margin-top: 20px;
+    }
+    
+    .title-page h1{
+        font-size: 20px !important;
+    }
+}

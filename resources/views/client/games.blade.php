@@ -21,38 +21,13 @@
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/games.css"></link>
     </head>
     <body>
         <div class="main-wrapper">
 
             <!-- Desktop Navabar top -->
             @include('client.menu')
-
-            <!-- Navbar -->
-            <div class="navbar p-0 d-lg-block d-xl-none">
-                <div class="container-fluid head-bar">
-                    <a class="pplk-logo navbar-brand" href="{{ route('home')}}">
-                        <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
-                    </a>
-                    <div class="head-menu row ">
-                        <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
-                            @csrf
-                        </form>
-                        <a class="head-menu-icon" href="#">
-                            <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
-                        </a>
-                        <a class="head-menu-icon" href="report-page.blade.php">
-                            <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
-                        </a>
-                        <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">
-                        </a>
-                    </div>
-                </div>
-        </div>
 
             <!-- FootBar -->
             <div class="navbar p-0 d-lg-block d-xl-none">
@@ -136,7 +111,7 @@
             <!-- Content -->
             <div class="page-content container-fluid">
                 <div class="col-xl-6 desktop-view">
-                <div class="col-sm-12">
+                <!-- <div class="col-sm-12">
                     <div class="info-card card justify-content-between " style="height: 160px;" >
                             <div class="info-card-body" >
 
@@ -145,7 +120,33 @@
 
                             </div>
                         </div>
-                    </div>        
+                    </div>-->
+                    <div class="title-page">
+                        <h1>
+                            Games
+                        </h1>
+                    </div>
+                    
+                    <div class="player-info">
+                        <div class="card rank-info">
+
+                        </div>
+
+                        <div class="card point-info">
+                            
+                        </div>
+                    </div>
+
+                    <div class="games-menu-container">
+                        <div class="card find-code">
+
+                        </div>
+
+                        <div class="card tebak-bangunan">
+
+                        </div>
+
+                    </div>
                 </div>                
             </div>
         </div>

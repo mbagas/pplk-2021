@@ -15,6 +15,10 @@
     padding-right: 26px;
 }
 
+.title-page h1{
+    font-size: 24px !important;
+}
+
 .winner{
     display: grid;
     place-items: center;
@@ -130,7 +134,7 @@
     width: 100%;
     padding: 30px 25px 20px 25px;
     border-radius: 15px 15px 0px 0px !important;
-    min-height: 100vh;
+    min-height: calc(100vh - 90px);
     margin-left: 0px;
     margin-right: 0px;
     background-color: var(--page-background-1);
@@ -179,6 +183,10 @@
 
 
 @media (max-width:1200px) {
+    .title-page h1{
+        font-size: 20px !important;
+    }
+
     .page-content{
         margin-top: 20px;
     }
