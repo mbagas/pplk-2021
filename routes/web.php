@@ -152,7 +152,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['Maba'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
-  Route::get('/tugasMaba', [clientTugasController::class, 'index'])->name('tugasMaba');
+  Route::resource('/tugasMaba', clientTugasController::class)->only(['index','show','update']);
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
