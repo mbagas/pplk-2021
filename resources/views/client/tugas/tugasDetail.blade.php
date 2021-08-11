@@ -37,7 +37,7 @@
                     <div class="topbg-circle c1"></div>
                     <div class="topbg-circle c2"></div>      
                 </div>
-                <a href="{{ route('tugas') }}" class="dTugas-back-btn btn">
+                <a href="{{ route('tugasMaba.index') }}" class="dTugas-back-btn btn">
                     <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5625 16.5832C7.5625 16.5832 1.4375 12.0938 1.4375 8.99984C1.4375 5.90692 7.5625 1.4165 7.5625 1.4165" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -86,7 +86,7 @@
                         <img class="dTugas-material-img dTugas-img" src="../assets/images/jurusan-poster1.png">
                         <div class="dTugas-material-info">
                             <div class="dTugas-material-text">
-                                <p class="subheadline dTugas-title text-small">{{ $tugasDetail->judul }}.pdf</p>
+                                <p class="subheadline dTugas-title text-small">{{ $tugasDetail->tugas->judul }}.pdf</p>
                                 <p class="subheadline text-small">PDF</p>
                             </div>
                             <a href="{{ $tugasDetail->tugas->file ?? '#' }}" onclick="alert('Downloading Materi....')">
@@ -119,12 +119,13 @@
 
                     <div class="dTugas-attachments">
                         <!-- TIAP ATTACHMENT HARUS PUNYA WRAPPER SENDIRI -->
+                        @if ($tugasDetail->file)
                         <div class="dTugas-attachment-wrapper">
                             <div class="dTugas-attachment" onclick="alert('Opening file...')">
                                 <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
                                 <div class="dTugas-attachment-info">
-                                    <p class="subheadline dTugas-title text-small">Keluh kesah kuliah onlen ospek jg onlen.pdf</p>
-                                    <p class="bodytext text-small">PDF</p>
+                                    <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
+                                    <p class="bodytext text-small">FILE</p>
                                 </div>
                                 <div class="dTugas-attachment-icon">
                                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,15 +135,8 @@
                                     </svg>
                                     <div class="dTugas-attachment-options-wrapper">
                                         <div class="dTugas-attachment-options">
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M7.91624 4.08731L5.05452 6.97958L1.79972 4.94383C1.33338 4.65206 1.43038 3.94371 1.95786 3.78946L9.68561 1.52638C10.1686 1.38481 10.6163 1.83641 10.4728 2.321L8.18655 10.0434C8.02992 10.5716 7.3256 10.666 7.0366 10.1976L5.053 6.98009" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Share</span>
-                                                </div>
-                                            </a>
-                                            <a>
+                                            
+                                            <a href="{{$tugasDetail->file}}">
                                                 <div class="dTugas-attachment-option">
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,37 +146,21 @@
                                                     <span class="text-small subheadline">Download</span>
                                                 </div>
                                             </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M5.74405 1.39453H3.87455C2.33705 1.39453 1.37305 2.48303 1.37305 4.02403V8.18103C1.37305 9.72203 2.33255 10.8105 3.87455 10.8105H8.28655C9.82905 10.8105 10.7885 9.72203 10.7885 8.18103V6.16703" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41333 5.46049L8.14983 1.72399C8.61533 1.25899 9.36983 1.25899 9.83533 1.72399L10.4438 2.33249C10.9093 2.79799 10.9093 3.55299 10.4438 4.01799L6.68933 7.77249C6.48583 7.97599 6.20983 8.09049 5.92183 8.09049H4.04883L4.09583 6.20049C4.10283 5.92249 4.21633 5.65749 4.41333 5.46049Z" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.58203 2.30127L9.86503 4.58427" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small subheadline">Rename</span>
-                                                </div>
-                                            </a>
-                                            <a>
-                                                <div class="dTugas-attachment-option">
-                                                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8.66191 4.73438C8.66191 4.73438 8.39041 8.10188 8.23291 9.52038C8.15791 10.1979 7.73941 10.5949 7.05391 10.6074C5.74941 10.6309 4.44341 10.6324 3.13941 10.6049C2.47991 10.5914 2.06841 10.1894 1.99491 9.52388C1.83641 8.09288 1.56641 4.73438 1.56641 4.73438" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M9.354 3.12012H0.875" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M7.71931 3.11999C7.32681 3.11999 6.98881 2.84249 6.91181 2.45799L6.79031 1.84999C6.71531 1.56949 6.46131 1.37549 6.17181 1.37549H4.05531C3.76581 1.37549 3.51181 1.56949 3.43681 1.84999L3.31531 2.45799C3.23831 2.84249 2.90031 3.11999 2.50781 3.11999" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                    <span class="text-small delete">Delete</span>
-                                                </div>
-                                            </a>
+
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        @endif
                     </div>
 
-                    <div class="dTugas-submisions-turnIn">
-                        <button id="turnInt" class="dTugas-turnIn-btn btn">Turn In</button>
-                        <button id="unsubmit" class="dTugas-turnIn-btn btn unsubmit d-none">Unsubmit</button>
+                    <div class="dTugas-body">
+                        <h2 class="dTugas-body-title dTugas-title subheadline">Jawaban Teks</h2>
+                        <P class="dTugas-body-text bodytext">
+                            {{ $tugasDetail->jawaban }}
+                        </P>
                     </div>
 
                 </div>
@@ -285,7 +263,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('tugasMaba.update', $tugasDetail)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
+                            <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
@@ -307,7 +285,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{route('tugasMaba.update', $tugasDetail)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
+                            <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST" enctype="multipart/form-data" class="form-inline dTugas-modal-form">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
