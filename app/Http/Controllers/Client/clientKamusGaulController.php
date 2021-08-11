@@ -11,9 +11,7 @@ class clientKamusGaulController extends Controller
 {
     //
     public function index(){
-        $kamusGauls = Cache::rememberForever('kamusGauls', function () {
-            return Kamusgaul::all();
-        });
+        $kamusGauls =  Kamusgaul::all();
         return view('client.kamusGaul', compact('kamusGauls'));
     }
 }
