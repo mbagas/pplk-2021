@@ -90,7 +90,7 @@
 
                     <div class="games-menu-container">
                         <div class="menu-list">
-                            <a class="card find-code">
+                            <a class="card find-code" href="{{ route('findCode')}}">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
@@ -114,7 +114,7 @@
                                 </div>
                             </a>
 
-                            <a class="card tebak-bangunan">
+                            <a class="card tebak-bangunan" href="tebakBangunan.blade.php">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
