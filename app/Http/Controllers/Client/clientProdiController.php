@@ -12,16 +12,16 @@ class clientProdiController extends Controller
 {
     //
     public function index(){
-        
+
         // $prodis = Cache::rememberForever('prodis', function () {
         //     return Prodi::with('ormawas')->get();
         // });
         $prodis = Prodi::with('ormawas')->get();
-        return view('client.prodi', compact('prodis'));
+        return view('client.prodi.prodi', compact('prodis'));
     }
 
     public function show(Ormawa $prodi){
         $dataProdi = Prodi::with('ormawas')->where('ormawas_id', $prodi->id)->firstOrFail();
-        return view('client.prodiDetail1', compact('prodi', 'dataProdi'));
+        return view('client.prodi.prodiDetail1', compact('prodi', 'dataProdi'));
     }
 }

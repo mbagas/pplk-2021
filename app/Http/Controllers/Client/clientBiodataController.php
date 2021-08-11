@@ -19,7 +19,7 @@ class clientBiodataController extends Controller
             $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
             $biodataUser->namaProdi = $ormawa->namaLengkap;
         }
-        return view('client.biodata',compact('biodataUser'));
+        return view('client.biodata.biodata',compact('biodataUser'));
     }
 
     public function edit($id){
@@ -27,8 +27,7 @@ class clientBiodataController extends Controller
         $prodi = Prodi::with('ormawas')->where('id', $editBiodata->prodis_id)->first();
         $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
         $editBiodata->namaProdi = $ormawa->namaLengkap;
-        $prodis = Prodi::all();
-        return view('client.editBiodata',compact('editBiodata', 'prodis'));
+        return view('client.biodata.editBiodata',compact('editBiodata'));
 
     }
 
@@ -40,8 +39,8 @@ class clientBiodataController extends Controller
                 'img'   => url($request->file('img')->move('fotoUser', $userData->id . '.' . $request->file('img')->extension()))
             ]);
         }
-       
-        
+
+
         return redirect('profile')->with('sukses','Foto profil Berhasil diganti');
     }
 }

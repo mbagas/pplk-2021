@@ -17,13 +17,13 @@ class clientHimpunanController extends Controller
         $himpunans = Cache::rememberForever('himpunans', function () {
             return Himpunan::with("ormawas")->get();
         });
-        return view('client.himpunan', compact('himpunans'));
+        return view('client.himpunan.himpunan', compact('himpunans'));
     }
 
     public function show(Ormawa $himpunan){
             $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
         	$dataVisiMisi = VisiMisi::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
         	$dataArtikel = Artikel::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
-        return view('client.himpunanDetail2',compact('dataHimpunan','himpunan','dataVisiMisi','dataArtikel'));
+        return view('client.himpunan.himpunanDetail2',compact('dataHimpunan','himpunan','dataVisiMisi','dataArtikel'));
     }
 }

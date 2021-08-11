@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <meta name="robots" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Title -->
         <title>WEB PPLK 2021 - Unit Kegiatan Mahasiswa</title>
 
@@ -34,7 +34,7 @@
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="36" height="36" rx="10" fill="white"/>
                             <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                            
+                        </svg>
                     </a>
                 </div>
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -61,8 +61,8 @@
                             <rect width="50" height="50" rx="10" fill="white"/>
                             <path d="M28.7285 35.5C28.7285 35.5 20.2702 29.284 20.2702 25C20.2702 20.7175 28.7285 14.5 28.7285 14.5" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                            
-                        </a>                                     
+
+                        </a>
                     </div>
                 </div>
 
@@ -104,14 +104,14 @@
                                     <path d="M12.0449 6.3252H17.8206" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99845 6.27573C7.99845 5.08805 7.02847 4.125 5.83223 4.125C4.636 4.125 3.66602 5.08805 3.66602 6.27573C3.66602 7.46342 4.636 8.42647 5.83223 8.42647C7.02847 8.42647 7.99845 7.46342 7.99845 6.27573Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M18.3324 15.1742C18.3324 13.9865 17.3632 13.0234 16.167 13.0234C14.97 13.0234 14 13.9865 14 15.1742C14 16.3619 14.97 17.3249 16.167 17.3249C17.3632 17.3249 18.3324 16.3619 18.3324 15.1742Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                                    
+                                </svg>
                             </a>
                         </div>
                     </div>
 
-                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">               
-                        @foreach ($ukms as $ukm) 
-                        <div class="col custom-mini-ukm-col">  
+                    <div class="row row-cols-3 g-3" style="padding-top: 10px;">
+                        @foreach ($ukms as $ukm)
+                        <div class="col custom-mini-ukm-col">
                             <div class="card">
                                 <div class="image">
                                     <img src="{{$ukm->logo ?? asset('assets/images/LogoItera.png')}} " alt="poster">
@@ -120,10 +120,10 @@
                                     <h6 class="card-title">{{$ukm->ormawas->namaSingkat}}</h6>
                                 </div>
                                 <a href="../ukmDetail/{{$ukm->ormawas->id}}" class="btn btn-primary rounded custom-more-btn">Learn More</a>
-                            </div>                            
+                            </div>
                         </div>
                         @endforeach
-                        
+
                         {{-- <div class="col custom-mini-ukm-col">
                             <div class="card">
                                 <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">

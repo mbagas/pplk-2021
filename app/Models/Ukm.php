@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ukm extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'ukms';
     protected $fillable = ['pembina', 'ketuaUmum', 'tahunBerdiri', 'logo', 'filosofiLogo', 'barcode', 'ormawas_id'];
 
