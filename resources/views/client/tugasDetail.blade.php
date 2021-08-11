@@ -37,7 +37,7 @@
                     <div class="topbg-circle c1"></div>
                     <div class="topbg-circle c2"></div>      
                 </div>
-                <a href="tugas.html" class="dTugas-back-btn btn">
+                <a href="{{ route('tugas') }}" class="dTugas-back-btn btn">
                     <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.5625 16.5832C7.5625 16.5832 1.4375 12.0938 1.4375 8.99984C1.4375 5.90692 7.5625 1.4165 7.5625 1.4165" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>

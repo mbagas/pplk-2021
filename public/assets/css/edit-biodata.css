@@ -1,4 +1,101 @@
-@media (max-width: 500px){
+.page-content{
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.bio-content{
+    height: 100% !important;
+    width: 100% !important;
+    padding-bottom: 0!important;
+    max-width: 100%;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bio-input{
+    margin-bottom: 20px;
+}
+
+.image-upload{
+    z-index: 100;
+}
+
+.head-menu-editbio {
+    margin-top: 20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-
+    bottom: 20px;
+}
+
+.bio-profile{
+    bottom: 20%;
+}
+
+.bio-profile img{
+    margin-bottom: 16px;
+}
+
+.bio-profile p{
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    text-align: center;
+    color: var(--black);
+}
+
+.icon-photo img{
+    position: absolute;
+    width: 2%;
+    margin-left: 12px;
+}
+
+.icon-photo img:hover, .icon-photo img:focus{
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+}
+
+.bio-form {
+    margin-top: 0px;    
+    min-height: unset;
+}
+
+.bio-input input{
+    color: var(--black)!important;
+    font-family: var(--font-family-body);
+}  
+
+.icon-dropdown {
+    position: absolute;
+    margin-top: 1.5rem;
+    margin-left: 62%;
+}
+
+.save-bio{
+    outline:none;
+    background-color: transparent;
+    border: none;
+}
+
+select {
+    font-family: var(--font-family-body) ;        
+    -webkit-appearance: none;        
+    border: none;
+    background: transparent;
+    border-bottom: 1.5px solid #E0E0E0;
+}
+
+@media (max-width: 1200px){
+    .bio-profile{
+        bottom: 10%;
+    }
+    .page-content{
+        margin-top: 0;
+    }
     .bio-content{
         height: 100% !important;
         width: 100% !important;
@@ -7,9 +104,7 @@
     }
 
     .head-menu {
-        margin-top: 1.5rem;
-        margin-left: 3rem;
-        margin-right: 3rem;
+        margin-top: 20px;
         margin-bottom: 20px;
     }
 
@@ -26,12 +121,17 @@
 
     .icon-photo img{
         position: absolute;
-        width: 8%;
+        width: 4%;
         margin-left: 12px;
     }
 
+    .icon-photo img:hover, .icon-photo img:focus{
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+    }
+
     .bio-form {
-        margin-top: 25px;    
+        margin-top: 0px;    
     }
 
     .bio-input input{
@@ -59,4 +159,28 @@
         border-bottom: 1.5px solid #E0E0E0;
     }
 
+}
+
+@media (max-width: 576px) {
+    .bio-content{
+        margin-bottom: 25%;
+    }
+    .head-menu-editbio{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .bio-form{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .icon-photo img{
+        width: 8%;
+    }
+
+    .page-content{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
 }
