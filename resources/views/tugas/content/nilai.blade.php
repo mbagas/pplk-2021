@@ -41,7 +41,7 @@
           <div class="mb-3 row">
             <label class="col-sm-2 col-form-label col-form-label-lg">File</label>
             <div class="col-sm-10">
-              <a href="{{ $submission->file }}">{{ $submission->users->nim }}_{{ $submission->tugas->judul }}</a>
+              <a href="{{ $submission->file }}">{{ $submission->users->kelompok }}_{{ $submission->users->nama }}_{{ $submission->tugas->judul }}</a>
             </div>
           </div>
 

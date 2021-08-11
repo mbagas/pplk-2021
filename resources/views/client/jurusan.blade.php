@@ -86,7 +86,8 @@
                     <div class="main-text">
                         <h2 class="jurusan-title-text">Kuliah di ITERA</h2>
                         <p>
-                            Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                        Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                        ITERA memiliki 3 jurusan yaitu Jurusan Teknologi Infrastruktur dan Kewilayahan (JTIK), Jurusan Teknologi Produksi dan Industri (JTPI), dan Jurusan Sains.
                         </p>
                     </div>
                     <!--Title Kedua-->                    

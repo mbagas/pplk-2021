@@ -153,7 +153,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('tugas')}}">
+                            <a href="{{ route('tugasMaba.index')}}">
                                 <svg class="icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M3.91016 13.0003C3.91016 20.5154 6.18299 23.0212 13.0004 23.0212C19.8189 23.0212 22.0907 20.5154 22.0907 13.0003C22.0907 5.48524 19.8189 2.97949 13.0004 2.97949C6.18299 2.97949 3.91016 5.48524 3.91016 13.0003Z"
@@ -239,7 +239,7 @@
                         <a href="{{ route('prodi') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Prodi ITERA</h5>
-                                <p class="card-text">Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan</p>
+                                <p class="card-text">Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
