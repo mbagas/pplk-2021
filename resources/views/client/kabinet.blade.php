@@ -127,9 +127,7 @@
                     </ul>
 
                     <div class="video-kabinet">
-                        <video class="video" controls>
-                            <source src="{{ asset('assets') }}/video/videodummykabinet.mp4" type="video/mp4">
-                        </video>
+                        <iframe class="video" height="100%" src="https://www.youtube.com/embed/gaSN9kda7d4?autoplay=1&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- Small Menu -->
                     <ul class="small-kabinet-menu nav nav-pills" id="pills-tab" role="tablist">
