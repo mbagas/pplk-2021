@@ -52,10 +52,10 @@
                             Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
                     </div>
                     <div class="row row-cols-3 g-3">
-                        <!-- @foreach ($games as $game)
-                        <a href="{{Route('')}}">
+                        @foreach ($games as $game)
+                        
                             <div class="col custom-mini-ftc-col">
-                                <div class="card-ftc">
+                                <a href="{{Route('')}}" class="card-ftc">
                                     <img class="rounded-ftc" width="100%" height="100" src="{{$game->gambar}}"
                                         alt="a snow-capped mountain range" />
                                     <div class="card-body-ftc">
@@ -63,12 +63,10 @@
                                             <h2>{{ $game->nama }}</h2>
                                         </div>
                                     </div> 
-                                </div>
+                                </a>
                             </div>
-                        </a>
-                        @endforeach -->
                         
-                        
+                        @endforeach
                     </div>
                 </div>
             </div>
