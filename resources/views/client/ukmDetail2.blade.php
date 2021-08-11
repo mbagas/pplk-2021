@@ -31,7 +31,7 @@
             <div class="navbar p-0 d-none d-xl-block d-xxl-block">
                 <div class="container-fluid head-desktop head-bar">
                     <div class="navbar-brand">
-                        <a class="pplk-logo " href="#">
+                        <a class="pplk-logo " href="{{ route('home')}}">
                             <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
                         </a>
                         <div class="search-bar w-100">

@@ -99,7 +99,7 @@
             <!-- Navbar -->
             <div class="navbar p-0 d-lg-block d-xl-none">
                 <div class="container-fluid head-bar">
-                    <a class="pplk-logo navbar-brand" href="#">
+                    <a class="pplk-logo navbar-brand" href="{{ route('home')}}">
                         <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="pplk-logo-img"/>
                     </a>
                     <div class="head-menu row ">
