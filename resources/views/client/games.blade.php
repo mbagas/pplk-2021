@@ -94,7 +94,7 @@
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
-                                        <!-- Progress Circle auto ke id="canvas-percent" -->
+                                        <!-- Progress Circle auto ke id="canvas-percent" tinggal kasih data di spannya-->
                                         <span id="canvas-percent" class="canvas-percent title">18</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
@@ -118,7 +118,7 @@
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
-                                        <!-- Progress Circle auto ke id="canvas-percent" -->
+                                        <!-- Progress Circle auto ke id="canvas-percent-2" tinggal kasih data di spannya-->
                                         <span id="canvas-percent-2" class="canvas-percent title">90</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
