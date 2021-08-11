@@ -23,11 +23,11 @@ class clientTugasController extends Controller
 
     public function update(Request $request, $id){
         $tugasDetail = Mengerjakan::with('tugas')->where('id', $id)->first();
-        dd($tugasDetail->users);
+
         DB::transaction(function () use($request,$tugasDetail) {
             if($request->hasFile('file')){
                 $tugasDetail->update([
-                    'file' =>url($request->file('file')->move($tugasDetail->tugas->judul, $tugasDetail->users->nama . '.' . $request->file('logo')->extension())),
+                    'file' => url($request->file('file')->move($tugasDetail->tugas->judul . '/' . $tugasDetail->users->kelompok,$tugasDetail->users->kelompok . '_' . $tugasDetail->users->nama . '_' . $tugasDetail->tugas->judul . '.' . $request->file('file')->extension())),
                     'status'  => 1
                 ]);
             }
