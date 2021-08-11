@@ -239,7 +239,7 @@
                         <a href="{{ route('prodi') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Prodi ITERA</h5>
-                                <p class="card-text">Pembangunan Program Studi di Institut Teknologi Sumatera akan dilakukan secara bertahap dengan pertimbangan</p>
+                                <p class="card-text">Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
