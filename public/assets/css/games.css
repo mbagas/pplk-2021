@@ -159,7 +159,7 @@
 
 .title{
     position: absolute;
-    right: 50%;
+    right: 49%;
     margin-bottom: 0 !important;
     color: var(--primary) !important;
     font-family: var(--font-family-body) !important;
@@ -169,7 +169,7 @@
 
 .bodytext{
     position: absolute;
-    right: 40%;
+    right: 35%;
     margin-bottom: 0 !important;
     color: var(--primary) !important;
     font-family: var(--font-family-body) !important;

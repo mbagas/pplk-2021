@@ -119,7 +119,7 @@
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent-2" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent-2" class="canvas-percent title"></span>
+                                        <span id="canvas-percent-2" class="canvas-percent title">100</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>
@@ -220,6 +220,10 @@
                 circle.lineWidth = '10'
                 circle.stroke()
         }
+        // var myFloat = (80/90)*100;
+        // var value = Math.trunc( myFloat );
+        
+        // document.getElementById("canvas-percent-2").innerHTML=value;
     </script>
     </body>
 </html>
