@@ -61,7 +61,7 @@
                         </div>
                         <div class="dTugas-tag">
                             <p class="bodytext text-small">Dates</p>
-                            <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail->end_time))}}</p>
+                            <p class="dTugas-tag-block bodytext text-small">{{date('d F', strtotime($tugasDetail->tugas->start_time))}} - {{date('d F H:i:s', strtotime($tugasDetail->tugas->end_time))}}</p>
                         </div>
                     </div>
                 </div>

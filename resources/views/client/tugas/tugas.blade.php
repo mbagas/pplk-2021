@@ -63,7 +63,7 @@
 
                     <!-- Info Kelompok dan Daplok -->
                     <div class="tugas-kelompok-card mx-auto">
-                        <img class="tugas-daplok-img photo-profile" src="{{ asset('assets') }}/images/jhonnysins.png" >
+                        <img class="tugas-daplok-img photo-profile" src="{{ asset('assets') }}/images/user_default.png" >
                         <div class="tugas-circle tugas-circle1">
                             <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 82C40.8691 82 74 48.8691 74 8C74 5.29704 73.8551 2.62792 73.5726 0H15C6.71573 0 0 6.71572 0 15V82Z" fill="#58B1E9"/>
@@ -161,7 +161,7 @@
                                     <div class="tugas-list-content">
                                         <div class="tugas-list-date">
                                             <p class="tugas-main-text">Due Date</p>
-                                            <p class="tugas-main-text">6 April</p>
+                                            <p class="tugas-main-text">{{date('d F H:i:s', strtotime($data->tugas->end_time))}}</p>
                                         </div>
                                         <div class="tugas-list-content-left">
                                             <div>
@@ -169,12 +169,12 @@
                                                     Assigned to You
                                                 </p>
                                                 <p class="tugas-list-title tugas-main-title">
-                                                    Tugas Membuat Laporan Pertanggung Jawaban
+                                                {{$data->tugas->judul}}
                                                 </p>
                                             </div>
                                             <div>
                                                 <p class="tugas-list-status tugas-main-text late">
-                                                    Turned In Late
+                                                    Turned In
                                                 </p>
                                             </div>
                                         </div>
