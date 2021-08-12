@@ -26,6 +26,7 @@ use App\Http\Controllers\Client\clientJurusanController;
 use App\Http\Controllers\Client\clientKabinetController;
 use App\Http\Controllers\Client\clientKamusGaulController;
 use App\Http\Controllers\Client\clientProdiController;
+use App\Http\Controllers\Client\clientSenatController;
 use App\Http\Controllers\Client\clientTugasController;
 use App\Http\Controllers\Client\clientUkmController;
 use App\Http\Controllers\Client\clientUptController;
@@ -131,6 +132,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
+  Route::get('/senat', [clientSenatController::class, 'index'])->name('senat');
 
 
   // Belum responsive
