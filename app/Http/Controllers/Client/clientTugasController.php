@@ -27,7 +27,7 @@ class clientTugasController extends Controller
         DB::transaction(function () use($request,$tugasDetail) {
             if($request->hasFile('file')){
                 $tugasDetail->update([
-                    'file' => url($request->file('file')->move($tugasDetail->tugas->judul . '/kelompok' . $tugasDetail->users->kelompok,$tugasDetail->users->kelompok . '_' . $tugasDetail->users->nama . '_' . $tugasDetail->tugas->judul . '.' . $request->file('file')->extension())),
+                    'file' => url($request->file('file')->move('tugas/'.$tugasDetail->tugas->judul . '/kelompok' . $tugasDetail->users->kelompok,$tugasDetail->users->kelompok . '_' . $tugasDetail->users->nama . '_' . $tugasDetail->tugas->judul . '.' . $request->file('file')->extension())),
                     'status'  => 1
                 ]);
             }
