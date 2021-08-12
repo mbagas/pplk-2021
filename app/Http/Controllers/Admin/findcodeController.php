@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class findCodeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
@@ -23,23 +19,12 @@ class findCodeController extends Controller
         return view("dashboard.game.findCode.index", compact('findCodes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
         return view("dashboard.game.findCode.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(FindCodeStoreRequest $request)
     {
         //
@@ -65,37 +50,13 @@ class findCodeController extends Controller
         return redirect()->route('dashboard.findCode.index')->with('sukses', 'Berhasil Menambah Data');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Game $findCode)
     {
         //
         $dataFindCode = FindCode::with('games')->where('games_id', $findCode->id)->first();
-        return view('dashboard.game.FindCode.edit', compact('dataFindCode', 'findCode'));
+        return view('dashboard.game.findCode.edit', compact('dataFindCode', 'findCode'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(FindCodeStoreRequest $request, Game $findCode)
     {
         //
@@ -121,12 +82,6 @@ class findCodeController extends Controller
         return redirect()->route('dashboard.findCode.index')->with('sukses', 'Berhasil Mengubah Data');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

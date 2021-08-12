@@ -11,33 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class tebakGedungController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $tebakGedungs = TebakGedung::with("games")->get();
-        return view('dashboard.game.tebakgedung.index', compact('tebakGedungs'));
+        return view('dashboard.game.tebakGedung.index', compact('tebakGedungs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('dashboard.game.tebakgedung.create');
+        return view('dashboard.game.tebakGedung.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(TebakGedungStoreRequest $request)
     {
         DB::transaction(function () use($request){
@@ -65,23 +50,6 @@ class tebakGedungController extends Controller
         return redirect()->route('dashboard.tebakGedung.index')->with('sukses', 'Berhasil Menambah Data');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\TebakGedung  $tebakGedung
-     * @return \Illuminate\Http\Response
-     */
-    public function show(TebakGedung $tebakGedung)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\TebakGedung  $tebakGedung
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Game $tebakGedung)
     {
         //
@@ -89,13 +57,6 @@ class tebakGedungController extends Controller
         return view('dashboard.game.TebakGedung.edit', compact('dataTebakGedung', 'tebakGedung'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TebakGedung  $tebakGedung
-     * @return \Illuminate\Http\Response
-     */
     public function update(TebakGedungStoreRequest $request, Game $tebakGedung)
     {
         DB::transaction(function () use($request, $tebakGedung){
@@ -114,18 +75,13 @@ class tebakGedungController extends Controller
 
             if($request->hasFile('gambar')){
                 $dataTebakGedung->update([
-                    'gambar' => url($request->file('gambar')->move('tebakGedung', $dataTebakGedung->nama . '.' . $request->file('gambar')->extension())),
+                    'gambar' => url($request->file('gambar')->move('tebakGedung', $dataTebakGedung->jawaban . '.' . $request->file('gambar')->extension())),
                 ]);
             }
         });
+        return redirect()->route('dashboard.tebakGedung.index')->with('sukses', 'Berhasil Mengubah Data');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\TebakGedung  $tebakGedung
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
