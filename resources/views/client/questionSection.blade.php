@@ -24,15 +24,17 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/question-section.css"></link>
 </head>
 <body>
-    <div class="bg">
-        <div class="bg1">
-            <div class="bg-circle c1"></div>
-            <div class="bg-circle c2"></div>
-        </div>
-        <div class="bg2"></div>
-    </div>
     <div class="main-wrapper">
-        <div class="page-content">
+        <!-- Desktop Navabar top -->
+        @include('client.menu')
+        <div class="page-content desktop col-xl-6">
+            <div class="bg">
+                <div class="bg1">
+                    <div class="bg-circle c1"></div>
+                    <div class="bg-circle c2"></div>
+                </div>
+                <div class="bg2"></div>
+            </div>
             <a href="tebak-gedung.html" class="back-btn">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="white"/>
