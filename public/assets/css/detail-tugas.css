@@ -180,7 +180,7 @@ a {
 }
 
 .dTugas-body {
-    margin: 10px 13px;
+    margin: 20px 13px;
 }
 
 .dTugas-body-title {
@@ -256,7 +256,7 @@ a {
 .dTugas-submisions-head {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .dTugas-submisions-head * {
@@ -276,6 +276,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
 .dTugas-attachment-wrapper {
@@ -694,6 +695,7 @@ a {
 
     .dTugas-body {
         margin: 10px 13px;
+        
     }
 
     .dTugas-body-title {

@@ -177,6 +177,11 @@ Route::get('/answer', function () {
   return view('client.answer');
 });
 
+Route::get('/report', function () {
+  return view('client.reportPage');
+});
+
+
 
 
 // Route::get('/game', function () {
