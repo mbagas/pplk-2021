@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>WEB PPLK 2021 - @yield('title')</title>
+        <title>WEB PPLK 2021 - Find The Code</title>
 
         <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 

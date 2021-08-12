@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>WEB PPLK 2021 - @yield('title')</title>
+        <title>WEB PPLK 2021 - Report</title>
 
         <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
@@ -18,65 +18,72 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/report.css">
     </head>
     <body>
         <div class="main-wrapper">
-            <nav class="navbar p-0">
-                <div class="container-fluid nav-back">
-                    <a class="navback-home" href="#">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="36" height="36" rx="10" fill="white"/>
-                            <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg> 
-                    </a>
-                </div>
-            </nav>
+            <!-- Desktop Navabar top -->
+            @include('client.menu')
             <!--Content-->
-            <div class="page-content">
-                <div class="card container-fluid">
-                    <div class="desc-text">
-                        <h2>Report Page</h2>
+            <div class="page-content container-fluid col-xl-6">
+                <!--NavBar-->
+                <nav class="navbar p-0">
+                    <div class="container-fluid nav-back">
+                        <a class="navback-home" href="#">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="36" height="36" rx="10" fill="white"/>
+                                <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 
+                        </a>
                     </div>
-                    <form class="col-sm-12 container-fluid m-sm-auto report-form fle" method="POST">
-                        <div class="row report-input">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" class="inputs">
+                </nav>
+                <div class="card container-fluid">
+                    <div class="main-content">
+                            <!--Title-->
+                        <div class="desc-text">
+                            <h2>Report Page</h2>
                         </div>
-                        <div class="row report-input">
-                            <label for="nim" class="form-label">NIM</label>
-                            <input type="text" class="inputs">
-                        </div>
-                        <div class="row report-input">
-                            <label for="prodi" class="form-label">Program Studi</label>
-                            <input type="text" class="inputs">
-                        </div>
-                        <div class="row report-input">
-                            <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="inputs">
-                        </div>
-                        <div class="row radio-input">
-                            <label for="kondisi">Kondisi</label>
-                            <p><input class="" type="radio" name="kondisi" value="sakit"> Sakit</p>
-                            <p><input class="" type="radio" name="kondisi" value="tidakSakit"> Tidak Sakit</p>
-                        </div>
-                        <div class="row report-input">
-                            <label for="sakit" class="form-label">Jika sakit, apa yang dikeluhkan?</label>
-                            <input type="text" class="fill">
-                        </div>
-                        <div class="row report-input">
-                            <label for="keluhan" class="form-label">Keluhan selain diatas</label>
-                            <textarea name="keluhan" id="keluhan" cols="30" rows="10" class="fill"></textarea>
-                        </div>
-                        <div class="col-sm-12 mt-4">
-                            <button name="submit" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary rounded custom-login-btn">
-                                Kirim Laporan
-                            </button>
-                        </div>
-                    </form>
-                </div> 
+                        <form class="col-sm-12 container-fluid m-sm-auto report-form fle" method="POST">
+                            <div class="row report-input">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="inputs">
+                            </div>
+                            <div class="row report-input">
+                                <label for="nim" class="form-label">NIM</label>
+                                <input type="text" class="inputs">
+                            </div>
+                            <div class="row report-input">
+                                <label for="prodi" class="form-label">Program Studi</label>
+                                <input type="text" class="inputs">
+                            </div>
+                            <div class="row report-input">
+                                <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
+                                <input type="text" class="inputs">
+                            </div>
+                            <div class="row radio-input">
+                                <label for="kondisi">Kondisi</label>
+                                <p><input class="" type="radio" name="kondisi" value="sakit"> Sakit</p>
+                                <p><input class="" type="radio" name="kondisi" value="tidakSakit"> Tidak Sakit</p>
+                            </div>
+                            <div class="row report-input">
+                                <label for="sakit" class="form-label">Jika sakit, apa yang dikeluhkan?</label>
+                                <input type="text" class="fill">
+                            </div>
+                            <div class="row report-input">
+                                <label for="keluhan" class="form-label">Keluhan selain diatas</label>
+                                <textarea name="keluhan" id="keluhan" cols="30" rows="10" class="fill"></textarea>
+                            </div>
+                            <div class="col-sm-12 mt-4">
+                                <button name="submit" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary rounded custom-login-btn">
+                                    Kirim Laporan
+                                </button>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
             </div>
             <div class="modal container-fluid" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
