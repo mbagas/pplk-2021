@@ -48,7 +48,7 @@ a:hover {
     margin-bottom: 15px;
     border-radius: 20px;
     width: 100%;
-    min-height: 307px;
+    min-height: 420px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -181,7 +181,7 @@ a:hover {
     .desktop{
         margin-top: 0px !important;
     }
-    
+
     .page-content {
         overflow-x: hidden;
         transition: all 300ms ease;
@@ -199,10 +199,12 @@ a:hover {
 
     .result {
         padding: 15px;
-        margin-top: 25px;
+        margin-top: 80px;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 15px;
         border-radius: 20px;
-        width: 100%;
+        width: 50%;
         min-height: 307px;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
         display: flex;
@@ -330,6 +332,13 @@ a:hover {
         background: linear-gradient(324.49deg, #63BCF4 -41.47%, #479FD7 156.85%);
         color: white;
         border: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .result{
+        width: 100%;
+        margin-top: 25px;
     }
 }
 
