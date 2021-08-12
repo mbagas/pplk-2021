@@ -165,6 +165,18 @@ Route::get('/detailTugas', function () {
   return view('client.tugasDetail');
 });
 
+Route::get('/tebakBangunan', function () {
+  return view('client.tebakGedung');
+});
+
+Route::get('/question', function () {
+  return view('client.questionSection');
+});
+
+Route::get('/answer', function () {
+  return view('client.answer');
+});
+
 
 
 // Route::get('/game', function () {

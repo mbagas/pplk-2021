@@ -128,8 +128,8 @@
 
                     
                     <!-- Content Artikel Here -->
-                    <ul class="small-kabinet-menu nav nav-pills" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation">
+                    <ul class="small-kabinet-menu nav nav-pills d-grid" style="place-items : center; justify-content: center !important;" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation" style="margin-left: auto; margin-right:auto;">
                             <button  data-bs-toggle="pill" data-bs-target="#filosofiLogo" class="nav-link active button-kabinet" aria-selected="true" role="tab">
                                 Deskripsi
                             </button>
@@ -148,34 +148,38 @@
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
                                                     <h2>Senat Keluarga Mahasiswa Itera</h2>
-                                                    <p> {{ $dataSenat->deskripsi }} </p>                                                </div>
+                                                    <p> {{ $dataSenat->deskripsi }} </p>                                                
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     
                                 </div>
-
-
-                </div>
-            </div>
-            <!--footer-->
-            <div class="footer-blue justify-content-around">
-                <div class="footer-blue-logo">
-                    <img src="../assets/images/logo-footer.png">
-                </div>
-                <div class="detail-info">
-                    <p>Copyright © 2016 UPT TIK -
-                        Institut Teknologi Sumatera (ITERA)</p>
-                    <p>https://sap.itera.ac.id</p>
-                    <p>Telepon : 07218030188 – 07218030189</p>
-                </div>
-                <div class="icon-sosmed">
-                    <img src="../assets/images/twiter.png">
-                    <img src="../assets/images/yutub.png">
-                    <img src="../assets/images/ige.png">                                     
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--footer-->
+        <div class="footer-blue justify-content-around">
+                    <div class="footer-blue-logo">
+                        <img src="../assets/images/logo-footer.png">
+                    </div>
+                    <div class="detail-info">
+                        <p>Copyright © 2016 UPT TIK -
+                            Institut Teknologi Sumatera (ITERA)</p>
+                        <p>https://sap.itera.ac.id</p>
+                        <p>Telepon : 07218030188 – 07218030189</p>
+                    </div>
+                    <div class="icon-sosmed">
+                        <img src="../assets/images/twiter.png">
+                        <img src="../assets/images/yutub.png">
+                        <img src="../assets/images/ige.png">                                     
+                    </div>
+                </div>
+</div>
+        
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
