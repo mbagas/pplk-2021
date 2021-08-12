@@ -41,9 +41,9 @@
               <td>{{$himpunan->ormawas->namaLengkap}}</td>
               <td>{{$himpunan->pembina}}</td>
               <td>{{$himpunan->ketuaHimpunan}}</td>
-              <td>{{$himpunan->logo}}</td>
-              <td>{{$himpunan->filosofiLogo}}</td>
-              <td>{{$himpunan->kodeWarna}}</td>
+              <td><img src="{{$himpunan->logo}}" widht="100" height="100"/></td>
+              <td>{{Str::limit($himpunan->filosofiLogo, 10)}}</td>
+              <td>{{Str::limit($himpunan->kodeWarna, 10)}}</td>
               <td>{{$himpunan->tahunBerdiri}}</td>
               <td class="manage-row">
                 <a href="{{route('dashboard.himpunan.edit', ['himpunan' => $himpunan->ormawas])}}" class="edit-button">
