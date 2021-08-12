@@ -35,6 +35,19 @@
     --thumbnail-photos: #E0E0E0;
     --winner-color: #FFA941;
 }
+/* 
+html {
+    width: 100vw;
+} */
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html{
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
 
 body{
     font-family: var(--font-family-title);
@@ -63,6 +76,10 @@ p{
     font-size: 16px;
     color: var(font-color-secondary);
 }
+/* 
+.scrollable-element {
+    scrollbar-width: none;
+} */
 
 .launch-logo{
     background-color: var(--page-background-1);
