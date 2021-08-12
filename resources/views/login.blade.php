@@ -35,7 +35,7 @@
 
             <div class="wrap-login justify-content-between">
                     <div class="m-sm-auto image-container">
-                        <img src="{{ asset('assets') }}/images/reading.png" alt="reading-image" class="login-image">
+                        <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="reading-image" class="login-image">
                     </div>
     
                     <div class="login-welcome-info">
