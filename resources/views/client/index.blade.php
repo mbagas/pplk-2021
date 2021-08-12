@@ -338,6 +338,7 @@
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="5" aria-label="Slide 6"></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
