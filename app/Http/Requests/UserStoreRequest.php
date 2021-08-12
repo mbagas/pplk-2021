@@ -30,7 +30,7 @@ class UserStoreRequest extends FormRequest
             'password_confirmation' => ['required_with:password', 'same:password', 'min:6'],
             'roles_id'              => ['integer', 'required'],
             'kelompok'              => ['integer', 'nullable'],
-            'nim'                   => ['string', 'nullable', 'min:9'],
+            'nim'                   => ['string', 'nullable', 'min:9','unique:users'],
             'instagram'             => ['string', 'nullable'],
             'prodis_id'             => ['integer', 'nullable']
         ];
