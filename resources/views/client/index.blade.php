@@ -116,7 +116,7 @@
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu" class="photo-profile">
+                            <img src="{{ asset('assets') }}/images/user_default.png" alt="notification-menu" class="photo-profile">
                         </a>
                     </div>
                 </div>
@@ -338,6 +338,7 @@
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="3" aria-label="Slide 4"></button>
                                     <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="5" aria-label="Slide 6"></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">

@@ -1033,7 +1033,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     .info-card-img-container{
         display: grid;
         place-items: center;
-        max-width: 80%;
+        max-width: 50%;
         height: 100%;
     }
 
