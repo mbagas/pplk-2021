@@ -96,7 +96,7 @@ class findCodeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(FindCodeStoreRequest $request, Game $findCode)
+    public function update(findCodeStoreRequest $request, Game $findCode)
     {
         //
         // dd($request);
