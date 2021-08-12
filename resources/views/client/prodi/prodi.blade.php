@@ -174,8 +174,10 @@
                         @if($data->jurusans_id == 2)
                         <div class="col custom-mini-prodi-col">
                             <div class="card">
-                                <img class="rounded" src="{{asset('logoProdi/'.$data->ormawas->namaSingkat.'.svg')}}"
-                                    alt="a snow-capped mountain range" />
+                                <div class="image">
+                                    <img class="rounded" src="{{asset('logoProdi/'.$data->ormawas->namaSingkat.'.svg')}}"
+                                        alt="a snow-capped mountain range" />
+                                </div>
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>
@@ -196,8 +198,10 @@
                         @if($data->jurusans_id == 1)
                         <div class="col custom-mini-prodi-col">
                             <div class="card">
-                                <img class="rounded" src="{{asset('logoProdi/'.$data->ormawas->namaSingkat.'.svg')}}"
-                                    alt="a snow-capped mountain range" />
+                                <div class="image">
+                                    <img class="rounded" src="{{asset('logoProdi/'.$data->ormawas->namaSingkat.'.svg')}}"
+                                        alt="a snow-capped mountain range"/>
+                                </div>
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>

@@ -126,6 +126,7 @@
 
                         {{-- <div class="col custom-mini-ukm-col">
                             <div class="card">
+                                
                                 <img src="{{ asset('assets') }}/images/logo-box.png" alt="poster">
                                 <div class="card-body">
                                     <h6 class="card-title">UKM PENCAK SILAT</h6>

@@ -230,7 +230,7 @@
 
                                     <h5 class="info-card-title">Guide PPLK</h5>
 
-                                    <p class="info-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit tellus varius sollicitudin ullamcorper tincidunt non magna venenatis. Est.</p>
+                                    <p class="info-card-text">...</p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -248,7 +248,7 @@
 
                                     <h5 class="info-card-title">Link Game</h5>
 
-                                    <p class="info-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit tellus varius sollicitudin ullamcorper tincidunt non magna venenatis. Est.</p>
+                                    <p class="info-card-text">...</p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -266,7 +266,7 @@
 
                                     <h5 class="info-card-title">Guide Game</h5>
 
-                                    <p class="info-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit tellus varius sollicitudin ullamcorper tincidunt non magna venenatis. Est.</p>
+                                    <p class="info-card-text">...</p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -284,7 +284,7 @@
 
                                     <h5 class="info-card-title">Link Jingle PPLK</h5>
 
-                                    <p class="info-card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hendrerit tellus varius sollicitudin ullamcorper tincidunt non magna venenatis. Est.</p>
+                                    <p class="info-card-text">...</p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -434,6 +434,21 @@
                                                     <div class="col">
                                                         <img src="{{ asset('assets') }}/mediapartner/20.png" alt="gambar-sponsor">
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card sponsor-card">
+                                            <div class="card sponsor-card container">
+                                                <div class="row row-cols-4">
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/21.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="{{ asset('assets') }}/mediapartner/22.png" alt="gambar-sponsor">
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

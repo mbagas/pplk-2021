@@ -89,7 +89,7 @@ h2{
     border-radius: 15px !important;
     box-shadow: 2px 1px 3px var(--grey); 
     height: 100% !important;    
-    min-height: 100% !important;  
+    min-height: 0 !important;  
     display: grid;
     width: 80% !important;
     place-items: center;             

@@ -149,7 +149,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 
-  Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
+ 
 });
 
 Route::middleware(['Maba'])->group(function () {

@@ -278,6 +278,12 @@
     box-shadow: 0px 5px 10px 5px rgba(57, 145, 201, 0.18);
 }
 
+.image img{
+    width: 150px;
+    height: 150px;
+}
+
+
 @media (max-width: 1200px){    
     .nav-back{
         display: flex;  
@@ -527,6 +533,14 @@
         transform: scale(1.03);
         box-shadow: 0px 5px 10px 5px rgba(57, 145, 201, 0.18);
     }
+}
+
+@media (max-width: 576px) {
+    .image img{
+        width: 85px;
+        height: 85px;
+    }
+    
 }
 
 @media (max-width: 360px) {
