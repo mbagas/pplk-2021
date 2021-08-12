@@ -60,11 +60,9 @@
                                 <label for="file-input">
                                     <img src="{{ asset('assets') }}/images/logo photo.png"/>
                                 </label>
-                                <input id="file-input" type="file" accept="image/*" name="img" id="img" value="{{$editBiodata->img}}"/>
+                                <input id="file-input" type="file" accept="image/*" name="img" id="img" value="{{$editBiodata->img}}" onchange="previewImg(this);"/>
                             </div>
-                                <!-- <input type="file"><img src="{{ asset('assets') }}/images/logo photo.png"></a> -->
-                                <!-- <img src="{{ asset('assets') }}/images/logo photo.png">-->
-                            <img src="{{ $editBiodata->img ?? asset('assets/images/jhonnysins.png')}}" alt="photo-profile" class="photo-profile">
+                            <img id="imgUser" src="{{ $editBiodata->img ?? asset('assets/images/user_default.png')}}" alt="photo-profile" class="photo-profile">
                             <p class="edit-profile">Edit Profile Photo</p>
                             <!-- <input type="file" name="img" id="img" value="{{$editBiodata->img}}"/> -->
                             <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,8 +91,23 @@
     </body>
 
          <!-- Required JS -->
-         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
-         <script src="{{ asset('assets') }}/js/custom.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
+    <script>
+        function previewImg(input){
+            if(input.files && input.files[0]){
+                var read = new FileReader();
+                read.onload = function (e){
+                    $('#imgUser').attr('src', e.target.result);
+                    $('#file-input').attr('value', e.target.result);
+                    id="file-input"
+                };
+                read.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+
+
 </html>
