@@ -69,6 +69,7 @@ a:hover {
     .desktop{
         margin-top: 0px !important;
     }
+    
     .page-content {
         overflow-x: hidden;
         transition: all 300ms ease;

@@ -25,7 +25,9 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <div class="page-content">
+        <!-- Desktop Navabar top -->
+        @include('client.menu')
+        <div class="page-content desktop col-xl-6">
             <a href="{{ route('home')}}" class="back-btn">
                 <svg height="36" width="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="url(#paint0_linear)"/>
