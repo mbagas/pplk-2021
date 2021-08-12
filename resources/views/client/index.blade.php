@@ -201,7 +201,7 @@
                             Kabinet KM ITERA
                         </a>
 
-                        <a href="" class="small-slide-menu-item justify-content-center last-item">
+                        <a href="{{ route('senat') }}" class="small-slide-menu-item justify-content-center last-item">
                             Senat KM ITERA
                         </a>
                     </div>
