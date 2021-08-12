@@ -161,25 +161,25 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'index']);
 });
 
-Route::get('/detailTugas', function () {
-  return view('client.tugasDetail');
-});
+// Route::get('/detailTugas', function () {
+//   return view('client.tugasDetail');
+// });
 
-Route::get('/tebakBangunan', function () {
-  return view('client.tebakGedung');
-});
+// Route::get('/tebakBangunan', function () {
+//   return view('client.tebakGedung');
+// });
 
-Route::get('/question', function () {
-  return view('client.questionSection');
-});
+// Route::get('/question', function () {
+//   return view('client.questionSection');
+// });
 
-Route::get('/answer', function () {
-  return view('client.answer');
-});
+// Route::get('/answer', function () {
+//   return view('client.answer');
+// });
 
-Route::get('/report', function () {
-  return view('client.reportPage');
-});
+// Route::get('/report', function () {
+//   return view('client.reportPage');
+// });
 
 
 
