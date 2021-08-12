@@ -15,7 +15,7 @@
     color: var(--primary) !important;                
 }
 
-a{
+a, a:hover{
     text-decoration: none;
     font-family: var(--font-family-title) !important;
     color: var(--font-color-primary);
@@ -44,6 +44,10 @@ a{
     border-radius: 10px !important;
     height: 100%;
     box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
+}
+
+.card-ftc:hover{
+    transform: scale(1.02);
 }
 
 .card-body-ftc {
