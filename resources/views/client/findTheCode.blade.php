@@ -56,8 +56,10 @@
                         
                             <div class="col custom-mini-ftc-col">
                                 <a href="#" class="card-ftc">
-                                    <img class="rounded-ftc" width="100%" height="100" src="{{$game->gambar}}"
-                                        alt="a snow-capped mountain range" />
+                                    <div class="image">
+                                        <img class="rounded-ftc" src="{{$game->gambar}}"
+                                            alt="a snow-capped mountain range" />
+                                    </div>
                                     <div class="card-body-ftc">
                                         <div class="card-title-ftc">
                                             <h2>{{ $game->nama }}</h2>
