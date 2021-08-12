@@ -64,7 +64,7 @@
                             </div>
                                 <!-- <input type="file"><img src="{{ asset('assets') }}/images/logo photo.png"></a> -->
                                 <!-- <img src="{{ asset('assets') }}/images/logo photo.png">-->
-                            <img src="{{ $editBiodata->img ?? asset('assets/images/jhonnysins.png')}}" alt="photo-profile" >
+                            <img src="{{ $editBiodata->img ?? asset('assets/images/jhonnysins.png')}}" alt="photo-profile" class="photo-profile">
                             <p class="edit-profile">Edit Profile Photo</p>
                             <!-- <input type="file" name="img" id="img" value="{{$editBiodata->img}}"/> -->
                             <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">

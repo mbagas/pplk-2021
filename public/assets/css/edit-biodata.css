@@ -25,6 +25,12 @@
     z-index: 100;
 }
 
+.photo-profile{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+
 .head-menu-editbio {
     margin-top: 20px;
     margin-left: 1rem;
