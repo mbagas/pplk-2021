@@ -11,17 +11,17 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../css/bootstrap.css"></link>
-        <link rel="stylesheet" href="../css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="../assets/images/Logopplk-clearbg.png" />
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
 
         <!-- Per Page Styling -->
-        <link rel="stylesheet" href="../css/index.css"></link>
-        <link rel="stylesheet" href="../css/question-section.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
+        <link rel="stylesheet" href="{{ asset('assets') }}/css/question-section.css"></link>
 </head>
 <body>
     <div class="bg">
@@ -51,7 +51,7 @@
                         <canvas id="question-canvas" height="70" width="70"></canvas>
                         <span id="canvas-time" class="question-time-span bodytext">16</span>
                     </div>
-                    <img src="../assets/images/jurusan-poster1.png" class="question-img">
+                    <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="question-img">
                     <div class="question-tag">
                         <span class="bodytext">Quiz 1</span>
                     </div>
@@ -60,6 +60,8 @@
                     </div>
                 </div>
                 <div class="answer">
+
+                    <!-- FORM BUAT JAWABAN (name harus sama semua <input/>) -->
                     <form>
                         <ul class="answer-options">
                             <li>
@@ -187,8 +189,8 @@
     </div>
     <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
-    <script src="../js/custom.js"></script>
-    <script src="../js/circleProgress.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
+    <script src="{{ asset('assets') }}/js/custom.js"></script>
+    <script src="{{ asset('assets') }}/js/circleProgress.js"></script>
 </body>
 </html>
