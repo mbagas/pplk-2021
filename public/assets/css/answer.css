@@ -183,18 +183,7 @@ a:hover {
     }
 
     .page-content {
-        overflow-x: hidden;
-        transition: all 300ms ease;
-        z-index: 90;
-        padding-top: 16px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 130px;
         min-height: 100vh;
-    }
-
-    .back-btn {
-        position: relative;
     }
 
     .result {
