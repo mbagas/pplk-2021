@@ -10,13 +10,13 @@
         <!-- Title -->
         <title>WEB PPLK 2021 - @yield('title')</title>
 
-        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
         <!-- Styling and logo -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png"></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
