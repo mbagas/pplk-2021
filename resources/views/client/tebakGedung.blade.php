@@ -25,7 +25,10 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <div class="page-content">
+
+        <!-- Desktop Navabar top -->
+        @include('client.menu')
+        <div class="page-content desktop col-xl-6">
             <a href="index.html" class="back-btn">
                 <svg height="36" width="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="url(#paint0_linear)"/>
@@ -42,19 +45,17 @@
                 <h1 class="title mx-auto text-center">Tebak Gambar</h1>
                 <p class="bodytext mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
             </div>
-            <div class="menu">
-                <div class="menu-row">
+            <div class="menu row row-cols-3">
+                <!-- for disini aja -->
                     <div class="menu-btn col-4">
                         <a href="question-section.html" class="menu-btn-a">1</a>
                     </div>
                     <div class="menu-btn col-4">
-                        <a class="menu-btn-a">2</a>
+                        <a href="question-section.html" class="menu-btn-a">2</a>
                     </div>
                     <div class="menu-btn col-4">
-                        <a class="menu-btn-a">3</a>
+                        <a href="question-section.html" class="menu-btn-a">3</a>
                     </div>
-                </div>
-                <div class="menu-row">
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">4</a>
                     </div>
@@ -64,8 +65,6 @@
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">6</a>
                     </div>
-                </div>
-                <div class="menu-row">
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">7</a>
                     </div>
@@ -75,8 +74,6 @@
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">9</a>
                     </div>
-                </div>
-                <div class="menu-row">
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">10</a>
                     </div>
@@ -86,15 +83,12 @@
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">12</a>
                     </div>
-                </div>
-                <div class="menu-row">
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">13</a>
                     </div>
                     <div class="menu-btn col-4">
                         <a class="menu-btn-a">14</a>
                     </div>
-                </div>
             </div>
         </div>
     </div>
