@@ -63,7 +63,7 @@
 
                     <!-- Info Kelompok dan Daplok -->
                     <div class="tugas-kelompok-card mx-auto">
-                        <img class="tugas-daplok-img" src="{{ asset('assets') }}/images/jhonnysins.png">
+                        <img class="tugas-daplok-img" src="{{ asset('assets') }}/images/jhonnysins.png" class="photo-profile">
                         <div class="tugas-circle tugas-circle1">
                             <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 82C40.8691 82 74 48.8691 74 8C74 5.29704 73.8551 2.62792 73.5726 0H15C6.71573 0 0 6.71572 0 15V82Z" fill="#58B1E9"/>

@@ -104,7 +104,7 @@
                     </a>
                     <div class="head-menu row ">
                         <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
+                            <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu" >
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
                             @csrf
@@ -116,7 +116,7 @@
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu">
+                            <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="notification-menu" class="photo-profile">
                         </a>
                     </div>
                 </div>
