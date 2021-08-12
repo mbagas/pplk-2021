@@ -119,7 +119,7 @@
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent-2" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent-2" class="canvas-percent title">90</span>
+                                        <span id="canvas-percent-2" class="canvas-percent title"></span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>

@@ -55,7 +55,7 @@
                         @foreach ($games as $game)
                         
                             <div class="col custom-mini-ftc-col">
-                                <a href="{{Route('')}}" class="card-ftc">
+                                <a href="#" class="card-ftc">
                                     <img class="rounded-ftc" width="100%" height="100" src="{{$game->gambar}}"
                                         alt="a snow-capped mountain range" />
                                     <div class="card-body-ftc">
