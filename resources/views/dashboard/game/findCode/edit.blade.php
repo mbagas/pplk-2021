@@ -42,7 +42,7 @@
 
                         <div class="col-sm-6">
                             <input type="file" accept="image/*" class="form-control" placeholder="Logo" name="gambar"
-                                id="gambar" value="{{ $dataFindCode->gambar }}" required disabled>
+                                id="gambar" value="{{ $dataFindCode->gambar }}" disabled>
                         </div>
                     </div>
                     <div class="mb-3 row">
