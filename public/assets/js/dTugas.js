@@ -2,7 +2,7 @@ console.log("JS-JQuery Running")
 
 // TURN IN Button
 $("#turnInt").click(function (e){
-    alert("Turden In :) ....")
+    alert("Turned In :) ....")
     $("#turnInt").toggleClass("d-none")
     $("#unsubmit").toggleClass("d-none")
 })
@@ -27,7 +27,7 @@ $(document).click(function (e) {
 
 $(".dTugas-attachment-option").click(function (e) {
     e.stopPropagation()
-    alert("PHP Processing... Clicked " + $(this).children("span").text())
+    alert("Processing " + $(this).children("span").text())
     $(".dTugas-attachment-options-wrapper").removeClass("dTugas-options-show")
 });
 
