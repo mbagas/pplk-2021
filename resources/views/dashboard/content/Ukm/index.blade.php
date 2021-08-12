@@ -27,6 +27,7 @@
                             <th>Nama Lengkap</th>
                             <th>Nama Pembina</th>
                             <th>Ketua Umum</th>
+                            <th>Logo</th>
                             <th>Tahun Berdiri</th>
                             <th>More</th>
                         </tr>
@@ -39,6 +40,7 @@
                             <td>{{$ukm->ormawas->namaLengkap}}</td>
                             <td>{{$ukm->pembina}}</td>
                             <td>{{$ukm->ketuaUmum}}</td>
+                            <td><img src="{{$ukm->logo}}" widht="100" height="100"/></td>
                             <td>{{$ukm->tahunBerdiri}}</td>
                             <td class="manage-row">
                                 <a href="{{route('dashboard.ukm.edit', ['ukm' => $ukm->ormawas])}}" class="edit-button">
