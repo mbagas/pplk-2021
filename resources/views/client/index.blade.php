@@ -47,6 +47,7 @@
 								<button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 								<button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="1" aria-label="Slide 2"></button>
 								<button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="3" aria-label="Slide 4"></button>
 							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active">
@@ -80,6 +81,19 @@
 												<div class="col">
                                                     <div class="image-sponsor">
 													    <img src="{{ asset('sponsor') }}/frisianflag.jpeg" alt="gambar-sponsor">
+                                                    </div>
+                                                </div>
+											</div>
+										</div>
+									</div>
+								</div>
+                                <div class="carousel-item">
+									<div class="card sponsor-card">
+										<div class="card sponsor-card container">
+											<div class="row row-cols-1">
+												<div class="col">
+                                                    <div class="image-sponsor">
+													    <img src="{{ asset('sponsor') }}/batiqa.jpeg" alt="gambar-sponsor">
                                                     </div>
                                                 </div>
 											</div>
@@ -145,7 +159,8 @@
                         <a href="{{ route('jurusan') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Jurusan ITERA</h5>
-                                <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda</p>
+                                <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                                    ITERA memiliki 3 jurusan yaitu Jurusan Teknologi Infrastruktur dan Kewilayahan (JTIK), Jurusan Teknologi Produksi dan Industri (JTPI), dan Jurusan Sains.</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -155,7 +170,7 @@
                         <a href="{{ route('ukm') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Unit Kegiatan Mahasiswa</h5>
-                                <p class="card-text">Unit Kegiatan Mahasiswa (UKM) adalah lembaga kemahasiswaan tempat....</p>
+                                <p class="card-text">UKM merupakan singkatan dari Unit Kegiatan Mahasiswa yang berfungsi sebagai wadah mahasiswa ITERA untuk mengekspresikan minat dan bakat masing masing mahasiswa. Terhitung ITERA memiliki kurang lebih 41 UKM aktif</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -165,7 +180,9 @@
                         <a href="{{ route('prodi') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Prodi ITERA</h5>
-                                <p class="card-text">Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang</p>
+                                <p class="card-text">
+                                    Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang penyelenggaraannya berdasarkan suatu kurikulum. Di dalam jurusan yang ada di ITERA memiliki 35 program studi yang membawahi jurusan masing-masing.
+                                </p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -175,7 +192,9 @@
                         <a href="{{ route('himpunan') }}" class="card justify-content-between big-menu-item last-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Himpunan ITERA</h5>
-                                <p class="card-text">Himpunan Mahasiswa Program Studi adalah Organisasi Kemahasiswaan sebagai Lembaga Eksekutif di tingkat Program Studi, yang hanya melaksanakan kegiatan penalaran dan keilmuan. </p>
+                                <p class="card-text">
+                                    Himpunan Mahasiswa ITERA merupakan kumpulan dari masing-masing mahasiswa program studi yang mana memiliki VISI dan MISI yang sama. Himpunan Mahasiswa bertujuan sebagai wadah mahasiswa dalam bidang ke ilmuan dan menampung semua aspirasi mahasiswa yang ada. Sampai saat ini sudah terdaftar kurang lebih 35 Himpunan Mahasiswa.
+                                </p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -230,7 +249,10 @@
 
                                     <h5 class="info-card-title">Guide PPLK</h5>
 
-                                    <p class="info-card-text">...</p>
+
+                                    <p class="info-card-text">
+                                    Guide PPLK merupakan pemandu bagi para mahasiswa/i baru untuk memberikan informasi yang ada di ITERA.
+                                    </p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -248,7 +270,9 @@
 
                                     <h5 class="info-card-title">Link Game</h5>
 
-                                    <p class="info-card-text">...</p>
+                                    <p class="info-card-text">
+                                        Berikut merupakan aplikasi game buatan mahasiswa/i ITERA khusus untuk PPLK yang bisa kalian mainkan.
+                                    </p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -266,7 +290,11 @@
 
                                     <h5 class="info-card-title">Guide Game</h5>
 
-                                    <p class="info-card-text">...</p>
+
+                                    <p class="info-card-text">
+                                    Guide Game merupakan pemandu game PPLK yang berguna dalam memandu, menemani, dan memberikan informasi kepada mahasiswa/i baru yang sedang bermain game PPLK.
+                                    </p>
+
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -282,11 +310,15 @@
                                 </div>
                                 <div class="info-card-body" >
 
-                                    <h5 class="info-card-title">Link Jingle PPLK</h5>
+                                    <h5 class="info-card-title">Link Anthem PPLK</h5>
 
-                                    <p class="info-card-text">...</p>
 
-                                    <a href="#" class="btn btn-primary custom-more-btn">
+                                    <p class="info-card-text">
+                                        Anthem PPLK merupakan Jingle khas PPLK ITERA berjudul Melodi Mimpi yang melambangkan dimulainya PPLK ITERA.
+                                    </p>
+
+
+                                    <a href="https://www.youtube.com/watch?v=RKr3EBT9v1I" class="btn btn-primary custom-more-btn">
                                         Learn More
                                     </a>
                                 </div>

@@ -27,18 +27,47 @@ class clientTugasController extends Controller
         DB::transaction(function () use($request,$tugasDetail) {
             if($request->hasFile('file')){
                 $tugasDetail->update([
-                    'file' => url($request->file('file')->move('tugas/' . $tugasDetail->tugas->judul . '/kelompok' . $tugasDetail->users->kelompok,$tugasDetail->users->kelompok . '_' . $tugasDetail->users->nama . '_' . $tugasDetail->tugas->judul . '.' . $request->file('file')->extension())),
-                    'status'  => 1
+                    'file' => url($request->file('file')->move('tugas/'.$tugasDetail->tugas->judul . '/kelompok' . $tugasDetail->users->kelompok,$tugasDetail->users->kelompok . '_' . $tugasDetail->users->nama . '_' . $tugasDetail->tugas->judul . '.' . $request->file('file')->extension()))
                 ]);
             }
 
             if($request->jawaban){
                 $tugasDetail->update([
-                    'jawaban' => $request->jawaban,
-                    'status'  => 1
+                    'jawaban' => $request->jawaban
                 ]);
             }
+
+            if($request->has('stts')){
+                $tugasDetail->update([
+                    'status' => $request->stts
+                ]);
+            }
+
+            if($request->hapusFile){
+                $tugasDetail->update([
+                    'file' => NULL
+                ]);
+            }
+
+            if($request->hapusJawaban){
+                $tugasDetail->update([
+                    'jawaban' => NULL
+                ]);
+            }
+
+
+
+
         });
-        return redirect()->route('tugasMaba.index')->with('sukses', 'Berhasil mengumpulkan tugas');
+        return redirect()->route('tugasMaba.show', $id)->with('sukses', 'Berhasil mengumpulkan tugas');
+    }
+    
+    public function turnin(Request $request, $id){
+        $tugasDetail = Mengerjakan::where('id', $id)->first();
+        DB::transaction(function () use($request,$tugasDetail) {
+            $tugasDetail->update([
+                'status' => $request->stts
+            ]);
+        });
     }
 }

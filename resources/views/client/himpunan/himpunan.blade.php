@@ -94,7 +94,8 @@
                 <div class="main-text">
                     <h2 class="prodi-title-text">Himpunan Institut Teknologi Sumatera</h2>
                     <p>
-                    Himpunan Mahasiswa ITERA merupakan kumpulan dari masing-masing mahasiswa program studi yang mana memiliki VISI dan MISI yang sama. Himpunan Mahasiswa bertujuan sebagai wadah mahasiswa dalam bidang ke ilmuan dan menampung semua aspirasi mahasiswa yang ada. Sampai saat ini sudah terdaftar kurang lebih 35 Himpunan Mahasiswa.                    </p>
+                    Himpunan Mahasiswa ITERA merupakan kumpulan dari masing-masing mahasiswa program studi yang mana memiliki VISI dan MISI yang sama. Himpunan Mahasiswa bertujuan sebagai wadah mahasiswa dalam bidang ke ilmuan dan menampung semua aspirasi mahasiswa yang ada. Sampai saat ini sudah terdaftar kurang lebih 35 Himpunan Mahasiswa.
+                </p>
                 </div>
 
                 <div class="row search-bar d-lg-flex d-xl-none">

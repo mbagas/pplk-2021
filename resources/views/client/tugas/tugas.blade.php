@@ -34,36 +34,14 @@
                 @include('client.footbar_mobile')
             </div>  
             <!-- Search bar -->
-            {{-- <div class="tugas-search">
-                <a class="tugas-search-icon" href="#">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12.7474" cy="12.7474" r="9.73761" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M19.5195 20.0259L23.3372 23.8337" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>           
-                </a>
-                <a  class="tugas-search-icon" href="#">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.9456 3.25C4.0095 3.25 3.25 4.02227 3.25 4.97294V5.98698C3.25 6.69118 3.51779 7.36838 3.9968 7.87775L9.24636 13.4597L9.24867 13.4562C10.2621 14.4937 10.8323 15.8962 10.8323 17.3586V22.3114C10.8323 22.6424 11.1786 22.8537 11.466 22.6976L14.4555 21.0685C14.9068 20.8221 15.1885 20.3432 15.1885 19.8233V17.3457C15.1885 15.8915 15.7506 14.4949 16.7548 13.4597L22.0044 7.87775C22.4822 7.36838 22.75 6.69118 22.75 5.98698V4.97294C22.75 4.02227 21.9917 3.25 21.0556 3.25H4.9456Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>   
-                </a>
-            </div> --}}
+
             <!-- Content -->
             <div class="tugas-content container-fluid">
                 <div class="col-xl-6 desktop-view">
-                    {{-- <div class="col-sm-12">
-                        <div class="info-card card justify-content-between " style="height: 160px;" >
-                            <div class="info-card-body" >
-
-                                <h1 style="text-align: center">Coming Soon !</h1>
-
-
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <!-- Info Kelompok dan Daplok -->
                     <div class="tugas-kelompok-card mx-auto">
-                        <img class="tugas-daplok-img photo-profile" src="{{ asset('assets') }}/images/user_default.png" >
+                        <img class="tugas-daplok-img photo-profile" src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" >
                         <div class="tugas-circle tugas-circle1">
                             <svg width="74" height="82" viewBox="0 0 74 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 82C40.8691 82 74 48.8691 74 8C74 5.29704 73.8551 2.62792 73.5726 0H15C6.71573 0 0 6.71572 0 15V82Z" fill="#58B1E9"/>
@@ -155,7 +133,7 @@
                             <a href="{{ route('tugasMaba.show', $data) }}">
                                 <div class="tugas-list-card">
                                     <div class="tugas-list-score">
-                                        <span class="tugas-main-text">{{ $data->nilai }}/100</span>
+                                        <span class="tugas-main-text">{{ $data->nilai ?? '0'}}/100</span>
                                     </div>
                                     <img class="tugas-list-image" src="{{ asset('assets') }}/images/LOGO PPLK.png">
                                     <div class="tugas-list-content">
