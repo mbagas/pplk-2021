@@ -191,19 +191,16 @@
     <!--footer-->
     <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                <img src="{{ $ukmData->logo }}">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
             </div>
             <div class="detail-info">
-                <p>Copyright © 2016 UPT TIK -
+                <p>Copyright © 2021 PPLK  -
                     Institut Teknologi Sumatera (ITERA)</p>
-                <p>{{ $ukmData->social_medias->website }}</p>
-                <p>Telepon : 07218030188 – 07218030189</p>
+                <p>{{ $ukm->socialmedias->website }}</p>
             </div>
             <div class="icon-sosmed">
-                <a href="{{ $ukmData->social_medias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
-                <a href="{{ $ukmData->social_medias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
-                
-                
+                <a href="{{ $ukm->socialmedias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
+                <a href="{{ $ukm->socialmedias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
             </div>
         </div>
     </body>

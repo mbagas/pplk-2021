@@ -247,20 +247,22 @@
             <!--footer-->
             <div class="footer-blue justify-content-around">
                 <div class="footer-blue-logo">
-                    <img src="../assets/images/logo-footer.png">
+                        <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
+                    </div>
+                    <div class="detail-info">
+                        <p>Copyright © 2021 PPLK -
+                            Institut Teknologi Sumatera (ITERA)</p>
+                        <p>https://km.itera.ac.id/</p>
+                    </div>
+                    <div class="icon-sosmed">
+                        <a href="#" >
+                            <img src="../assets/images/yutub.png">
+                        </a>                                   
+                        <a href="">
+                            <img src="../assets/images/ige.png">  
+                        </a>
+                    </div>
                 </div>
-                <div class="detail-info">
-                    <p>Copyright © 2016 UPT TIK -
-                        Institut Teknologi Sumatera (ITERA)</p>
-                    <p>https://sap.itera.ac.id</p>
-                    <p>Telepon : 07218030188 – 07218030189</p>
-                </div>
-                <div class="icon-sosmed">
-                    <img src="../assets/images/twiter.png">
-                    <img src="../assets/images/yutub.png">
-                    <img src="../assets/images/ige.png">                                     
-                </div>
-            </div>
         </div>
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

@@ -33,6 +33,7 @@ use App\Http\Controllers\Client\clientUptController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\Client\logoPplkController;
+use App\Http\Controllers\Client\reportController;
 use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -136,6 +137,7 @@ Route::middleware(['auth'])->group(function () {
 
 
   // Belum responsive
+  Route::get('/reportPage', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
@@ -163,25 +165,30 @@ Route::middleware(['Maba'])->group(function () {
 
 
 
-// Route::get('/tebakBangunan', function () {
-//   return view('client.tebakGedung');
-// });
+Route::get('/tebakBangunan', function () {
+  return view('client.tebakGedung');
+});
 
-// Route::get('/question', function () {
-//   return view('client.questionSection');
-// });
+Route::get('/question', function () {
+  return view('client.questionSection');
+});
 
-// Route::get('/answer', function () {
-//   return view('client.answer');
-// });
+Route::get('/answer', function () {
+  return view('client.answer');
+});
 
-// Route::get('/report', function () {
-//   return view('client.reportPage');
-// });
+Route::get('/report', function () {
+  return view('client.reportPage');
+});
 
 Route::get('/redeem', function () {
   return view('client.redeemCode');
 });
+
+Route::get('/senatt', function () {
+  return view('client.senat');
+});
+
 
 
 

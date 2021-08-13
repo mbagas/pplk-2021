@@ -68,7 +68,7 @@
                         <div class="first-headline">
                             
                             <div class="logo-prodi">
-                                <img src="{{ asset('assets') }}/images/LogoItera.png" alt="poster">
+                                <img src="{{asset('logoProdi/'.$dataProdi->ormawas->namaSingkat.'.svg')}}" alt="poster">
                             </div>          
 
                             <div class="name-prodi">
@@ -91,9 +91,7 @@
                         
                         <!--headline kedua-->
                         <div class="second-headline">
-                            <h2>Tentang Kami</h2>                                
-                            <p>{{ $dataProdi->ormawas->artikels->body }}</p>
-                        </div>
+                            <h2>Tentang Kami</h2>
                         
                         <!--headline ketiga-->
                         <div class="third-headline">
@@ -170,18 +168,16 @@
         <!--footer-->
         <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                <img src="{{ $dataProdi->logo }}">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
             </div>
             <div class="detail-info">
-                <p>Copyright © 2016 UPT TIK -
+                <p>Copyright © 2021 PPLK -
                     Institut Teknologi Sumatera (ITERA)</p>
-                <p>{{ $dataProdi->social_medias->website }}</p>
-                <p>Telepon : 07218030188 – 07218030189</p>
+                <p>{{ $prodi->socialmedias->website }}</p>
             </div>
             <div class="icon-sosmed">
-                <a href="{{ $dataProdi->social_medias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
-                <a href="{{ $dataProdi->social_medias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
-                                                     
+                <a href="{{ $prodi->socialmedias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
+                <a href="{{ $prodi->socialmedias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
             </div>
         </div>
     </body>
