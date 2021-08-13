@@ -318,6 +318,10 @@
 
 
 @media(max-width: 1200px){
+    #carouselVisiMisi{
+        width: 100%;
+    }
+    
     .navback-home img{
         width: 36px;
     }
