@@ -163,21 +163,21 @@ Route::middleware(['Maba'])->group(function () {
 
 
 
-// Route::get('/tebakBangunan', function () {
-//   return view('client.tebakGedung');
-// });
+Route::get('/tebakBangunan', function () {
+  return view('client.tebakGedung');
+});
 
-// Route::get('/question', function () {
-//   return view('client.questionSection');
-// });
+Route::get('/question', function () {
+  return view('client.questionSection');
+});
 
-// Route::get('/answer', function () {
-//   return view('client.answer');
-// });
+Route::get('/answer', function () {
+  return view('client.answer');
+});
 
-// Route::get('/report', function () {
-//   return view('client.reportPage');
-// });
+Route::get('/report', function () {
+  return view('client.reportPage');
+});
 
 Route::get('/redeem', function () {
   return view('client.redeemCode');

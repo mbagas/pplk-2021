@@ -89,7 +89,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                         <div class="modal-body">
-                            <img src="../assets/images/thumbs-up.png" alt="thumbs-up" class="thumbs-up">
+                            <img src="{{asset('assets')}}/images/thumbs-up.png" alt="thumbs-up" class="thumbs-up">
                             <h2>Terima Kasih!</h2>
                             <p>Laporan kamu telah 
                                 kami simpan. Silahkan 
