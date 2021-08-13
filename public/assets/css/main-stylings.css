@@ -9,9 +9,9 @@
 @import url("../../assets/icons/flaticon_1/flaticon_1.css");
 @import url("../../assets/icons/icomoon/icomoon.css");
 @import url("../../assets/icons/bootstrap-icons/font/bootstrap-icons.css");
-@import url(../vendor/animate/animate.min.css);
-@import url(../vendor/aos/css/aos.min.css);
-@import url(../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
+@import url("../vendor/animate/animate.min.css");
+@import url("../vendor/aos/css/aos.min.css");
+@import url("../vendor/perfect-scrollbar/css/perfect-scrollbar.css");
 
 :root {
     --primary: #3991C9;

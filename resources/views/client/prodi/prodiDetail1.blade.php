@@ -91,9 +91,7 @@
                         
                         <!--headline kedua-->
                         <div class="second-headline">
-                            <h2>Tentang Kami</h2>                                
-                            <p>{{ $dataProdi->ormawas->artikels->body }}</p>
-                        </div>
+                            <h2>Tentang Kami</{{ $dataProdi->logo }}
                         
                         <!--headline ketiga-->
                         <div class="third-headline">
@@ -175,12 +173,12 @@
             <div class="detail-info">
                 <p>Copyright © 2016 UPT TIK -
                     Institut Teknologi Sumatera (ITERA)</p>
-                <p>{{ $dataProdi->social_medias->website }}</p>
+                <p>{{ $prodi->socialmedias->website }}</p>
                 <p>Telepon : 07218030188 – 07218030189</p>
             </div>
             <div class="icon-sosmed">
-                <a href="{{ $dataProdi->social_medias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
-                <a href="{{ $dataProdi->social_medias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
+                <a href="{{ $prodi->socialmedias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
+                <a href="{{ $prodi->socialmedias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
                                                      
             </div>
         </div>

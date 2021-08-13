@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ormawa;
+use App\Models\SocialMedia;
 use App\Models\Ukm;
 
 class clientUkmController extends Controller
