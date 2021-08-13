@@ -171,17 +171,17 @@
         <!--footer-->
         <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                <img src="{{ $dataHimpunan->logo }}">
+                {{-- <img src="{{ $dataHimpunan->logo }}"> --}}
             </div>
             <div class="detail-info">
                 <p>Copyright © 2021 PPLK -
                     Institut Teknologi Sumatera (ITERA)</p>
-                <p>{{$dataHimpunan->soscial_medias->website}}</p>
+                <p>{{$himpunan->socialmedias->website}}</p>
 
             </div>
             <div class="icon-sosmed">
-                <a href="{{$dataHimpunan->soscial_medias->instagram}}"><img src="{{ asset('assets') }}/images/ige.png"></a>
-                <a href="{{$dataHimpunan->soscial_medias->youtube}}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
+                <a href="{{$himpunan->socialmedias->instagram}}"><img src="{{ asset('assets') }}/images/ige.png"></a>
+                <a href="{{$himpunan->socialmedias->youtube}}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
                 
             </div>
         </div>
