@@ -137,7 +137,7 @@ Route::middleware(['auth'])->group(function () {
 
 
   // Belum responsive
-  Route::get('/report', [reportController::class, 'index'])->name('reportPage');
+  Route::get('/reportPage', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
@@ -165,21 +165,21 @@ Route::middleware(['Maba'])->group(function () {
 
 
 
-// Route::get('/tebakBangunan', function () {
-//   return view('client.tebakGedung');
-// });
+Route::get('/tebakBangunan', function () {
+  return view('client.tebakGedung');
+});
 
-// Route::get('/question', function () {
-//   return view('client.questionSection');
-// });
+Route::get('/question', function () {
+  return view('client.questionSection');
+});
 
-// Route::get('/answer', function () {
-//   return view('client.answer');
-// });
+Route::get('/answer', function () {
+  return view('client.answer');
+});
 
-// Route::get('/report', function () {
-//   return view('client.reportPage');
-// });
+Route::get('/report', function () {
+  return view('client.reportPage');
+});
 
 Route::get('/redeem', function () {
   return view('client.redeemCode');
