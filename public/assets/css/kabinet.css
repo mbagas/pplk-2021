@@ -1,3 +1,9 @@
+.card-kabinet .card-text{
+    max-height: unset !important;
+    text-overflow: unset !important;
+    -webkit-line-clamp: unset !important;
+}
+
 .main-wrapper{
     position: unset;
 }
