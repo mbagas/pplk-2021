@@ -181,6 +181,10 @@ Route::get('/report', function () {
   return view('client.reportPage');
 });
 
+Route::get('/redeem', function () {
+  return view('client.redeemCode');
+});
+
 
 
 
