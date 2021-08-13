@@ -9,7 +9,7 @@ use App\Models\Senat;
 class clientSenatController extends Controller
 {
     public function index(){
-        $dataSenat = Senat::first();
+        $dataSenat = Senat::get();
         return view('client.senat', compact('dataSenat'));
     }
     

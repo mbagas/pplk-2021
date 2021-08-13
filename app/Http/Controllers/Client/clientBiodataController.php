@@ -24,9 +24,6 @@ class clientBiodataController extends Controller
 
     public function edit($id){
         $editBiodata = User::where('id', $id)->firstOrFail();
-        $prodi = Prodi::with('ormawas')->where('id', $editBiodata->prodis_id)->first();
-        $ormawa = Ormawa::where('id', $prodi->ormawas_id)->first();
-        $editBiodata->namaProdi = $ormawa->namaLengkap;
         return view('client.biodata.editBiodata',compact('editBiodata'));
 
     }

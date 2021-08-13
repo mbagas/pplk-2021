@@ -119,7 +119,7 @@
 
                     <div class="dTugas-attachments">
                         <!-- TIAP ATTACHMENT HARUS PUNYA WRAPPER SENDIRI -->
-                        @if ($tugasDetail->file)
+                        @if($tugasDetail->file)
                         <div class="dTugas-attachment-wrapper">
                             <div class="dTugas-attachment" onclick="alert('Opening file...')">
                                 <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
@@ -144,8 +144,64 @@
                                                         <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
                                                     <span class="text-small subheadline">Download</span>
+
                                                 </div>
                                             </a>
+                                            @if(!$tugasDetail->status)
+                                            <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST" id="deleteFile">
+                                                @method('PUT')
+                                                @csrf
+                                                <div class="dTugas-attachment-option" onclick="document.getElementById('deleteFile').submit();">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <span class="text-small subheadline">Hapus</span>
+                                                    <input name="hapusFile" value="1" hidden/>
+                                                </div>
+                                            </form>
+                                            @endif
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        @endif
+                        @if($tugasDetail->jawaban)
+                        <div class="dTugas-attachment-wrapper">
+                            <div class="dTugas-attachment" onclick="alert('Opening file...')">
+                                <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
+                                <div class="dTugas-attachment-info">
+                                    <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
+                                    <p class="bodytext text-small">{!! nl2br(e($tugasDetail->jawaban)) !!}</p>
+                                </div>
+                                <div class="dTugas-attachment-icon">
+                                    <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="2" cy="2" r="2" fill="#E0E0E0"/>
+                                        <circle cx="2" cy="8" r="2" fill="#E0E0E0"/>
+                                        <circle cx="2" cy="14" r="2" fill="#E0E0E0"/>
+                                    </svg>
+                                    <div class="dTugas-attachment-options-wrapper">
+                                        <div class="dTugas-attachment-options">
+                                            @if(!$tugasDetail->status)
+                                            <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST" id="deleteJawaban">
+                                                @method('PUT')
+                                                @csrf
+                                                <div class="dTugas-attachment-option" onclick="document.getElementById('deleteJawaban').submit();">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <span class="text-small subheadline">Hapus</span>
+                                                    <input name="hapusJawaban" value="1" hidden/>
+                                                </div>
+                                            </form>
+                                            @endif
 
 
                                         </div>
@@ -154,13 +210,24 @@
                             </div>
                         </div>
                         @endif
-                    </div>
-
-                    <div class="dTugas-body">
-                        <h2 class="dTugas-body-title dTugas-title subheadline">Jawaban Teks</h2>
-                        <P class="dTugas-body-text bodytext">
-                            {{ $tugasDetail->jawaban }}
-                        </P>
+                        @if($tugasDetail->file || $tugasDetail->jawaban)
+                        <form action="{{route('tugasMaba.update', $tugasDetail->id)}}" method="POST">
+                            @method('PUT')
+                            @csrf
+                            @if(!$tugasDetail->status)
+                            <div class="dTugas-submisions-turnIn">
+                                <button type="submit" id="turnInt" class="dTugas-turnIn-btn btn" @if(($tugasDetail->tugas->end_time  <= date('d F'))) disabled @endif>Turn in</button>
+                            </div>
+                            <input name="stts" value="1" hidden/>
+                            @else
+                            <div class="dTugas-submisions-turnIn">
+                                <button type="submit" id="unsubmit" class="dTugas-turnIn-btn btn" @if(($tugasDetail->tugas->end_time  <= date('d F'))) disabled @endif>Unsubmit</button>
+                            </div>
+                            <input name="stts" value="0" hidden/>
+                            @endif
+                        </form>
+                            
+                        @endif
                     </div>
 
                 </div>
@@ -197,8 +264,8 @@
                 <!-- SEMI-BLACK BACKGROUND --> </div>
                 <div class="dTugas-footer-submit">
                     <!-- footer-submit act as wrapper -->
-                    <div class="dTugas-footer-option">
-                        <button id="dTugas-footer-expand" class="dTugas-footer-btn btn">
+                    <div class="@if(!$tugasDetail->status) dTugas-footer-option @endif">
+                        <button @if(!$tugasDetail->status) id="dTugas-footer-expand" @endif class="dTugas-footer-btn btn">
                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.74104 1.38965V17.5687" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M17.839 9.4793H1.64453" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
