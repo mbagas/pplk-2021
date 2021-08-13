@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ormawa;
 use App\Models\SocialMedia;
+use Illuminate\Support\Facades\Cache;
 use App\Models\Ukm;
 
 class clientUkmController extends Controller
@@ -13,7 +14,9 @@ class clientUkmController extends Controller
     //
     public function index(){
 
-        $ukms = Ukm::with('ormawas')->get();
+        $ukms = Cache::rememberForever('ukms', function () {
+            return Ukm::with('ormawas')->get();
+        });
         return view('client.ukm.ukm',compact('ukms'));
     }
 
