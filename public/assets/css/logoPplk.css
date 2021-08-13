@@ -116,6 +116,7 @@ h2{
     width: 100% !important;
 }
 
+
 @media (max-width: 1200px) {
     .custom-divisi{
         width: 100% !important;
@@ -125,7 +126,7 @@ h2{
         width: 100%;
     }
     .card-title{
-        font-size: 13px;
+        font-size: 16px;
     }
     .nav-back {
         display: flex;

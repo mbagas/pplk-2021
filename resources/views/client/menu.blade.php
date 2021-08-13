@@ -89,7 +89,7 @@
         </div>
         <div class="head-menu row ">
             <a class="head-menu-profile" href="{{ route('biodata.index')}}">
-                <img src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" alt="notification-menu" class="photo-profile">
+                <img src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" alt="profile-pic" class="photo-profile">
             </a>
             <div class="username" style="font-size: 15px;">
                 {{ auth()->user()->nama }}
@@ -98,10 +98,10 @@
                 <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
             </a>
             <a class="head-menu-icon" href="#">
-                <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
+                <img src="{{ asset('assets') }}/images/messages.png" alt="report-menu">
             </a>
             <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <img src="{{ asset('assets') }}/images/logout.png" alt="notification-menu">
+                <img src="{{ asset('assets') }}/images/logout.png" alt="logout-menu">
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" hidden>
                 @csrf
