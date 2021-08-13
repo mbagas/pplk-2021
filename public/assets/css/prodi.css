@@ -292,255 +292,62 @@
     height: 150px;
 }
 
-@media (max-width: 1200px){    
-    .nav-back{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
-        z-index: 99;        
-    }
-
-    .nav-back a{        
-        position: absolute;
-        top: 36px;
-        color: var(--white) !important;                
-    }
-
-    .navback-home{
-        text-decoration: none; 
-        font-family: var(--font-family-body);
-    }
+@media (max-width: 1200px){ 
     
-    .carousel-item img {
-        width: 80%;    
-        top: -26px !important;
-        z-index: 1;
-        border-radius: 0 0 15px 15px;
-        filter: brightness(70%);
-    } 
-    
-    .carousel-inner .active{
-        background-color: transparent !important;
-        box-shadow: none !important;
-        background-image: none !important;
-    } 
-
-    .page-content {        
-        margin-top: 20px;     
-        padding-top: 0; 
-        padding-left: 26px;
-        padding-right: 26px;
-        min-height: calc(100vh - 90px); 
+    .page-content {
+        margin-top: 20px;
     }
-
-    .main-text { 
-        margin-bottom: 20px;
-    }
-
-    .prodi-title-text{     
-        font-family: var(--font-family-title); 
-        font-weight: 700 !important;
+    .prodi-title-text{
         font-size: 20px;
-        margin-bottom: 10px;
     }
 
-    .page-content p{        
-        font-weight: 300;
+    .page-content p{
         font-size: 10px;
-        line-height: 1.5;
-        color: var(--font-color-secondary);
     }
 
     .small-prodi-menu{
-        margin-top: 0px;
-        margin-bottom: 20px;
-        display: flex;
-        flex-wrap: unset;
         width: 100%;
-        justify-content:space-between !important;
     }
 
     .small-prodi-menu .nav-item button{   
-        display: grid;
-        place-items: center;      
-        font-weight: 600;
         width: 110px;    
         height: 40px;                  
-        font-family: var(--font-family-body);
-        font-size: 13px; 
-        text-align: center; 
-        color: var(--grey); 
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 5px;
-        padding-right: 5px; 
-        border: none;
-        outline: none;
-        background-color: transparent;
-        border-radius: 10px;
-    }
-
-    .active, .button-prodi:hover {
-        background-image: var(--gradient-1) !important;
-        color: var(--white) !important;
-        border-radius: 10px !important;
-        box-shadow: 0px 5px 10px 1px rgb(57 145 201 / 18%);        
-    }
-
-    .custom-card-prodi{
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
-
-    .tab-content .active{
-        background-color: transparent !important;
-        background-image: none !important;
-    }
-
-    .rounded{
-        border-radius: 10px !important;
+        font-size: 13px;
     }
 
     .custom-mini-prodi-col{
-        margin-top: 0px;
-        margin-bottom: 30px;
         min-height: 130px;
-    }
-
-    .custom-mini-prodi-col .card .image{
-        height: 100%;
     }
 
     .custom-mini-prodi-col .card{              
         display: flex; 
         flex-direction: column !important; 
-        height: relative; 
-        padding: 0px; 
-        border-radius: 10px !important;
         height: 100%;
         width: 100%;
-        box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
     }
 
     .custom-mini-prodi-col .card-body {    
         max-height: 60px;
-        width: 100%;
-        padding-top: 2px;
-        padding-left: 10px ;
-        padding-right: 20px ;
-        padding-bottom: 20px;
     }
 
     .custom-mini-prodi-col .card-title{
         padding-top: 3px;        
         font-size: 10px;
-        float: left;
-        color: var(--font-color-subheadline);
-        font-weight: bold;
-    }
-
-    .custom-mini-prodi-col .card-text{
-        margin-bottom: 0px;
-        width: 100%;  
-        display: flex;
-        max-height: 100%;
-        text-overflow: unset;
     }    
 
-    .slider2 {
-        padding-top: 10px;
-        padding-bottom: 5px;
-    }
-    .slider3 {
-        padding-top: 20px;
-        padding-bottom: 10px;
-    }
-    .slider1 {
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-    
-    .h6 {
-        text-align: left;
-    }
-    
     .custom-mini-prodi-col .card .custom-more-btn{
         width: 66px;
         height: 20px;
-        background-image: linear-gradient(#3991C9, #63BCF4);
-        border: none;
-        font-family: var(--font-family-body);
         font-size: 7px;
         font-weight: 200;
-        float: right;
-        border-radius: 6px !important;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
         transform: translate(-30%, 60%);
     }
 
-    .search-form {
-        position: relative;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
-        float: left;
-        width: 100%;
-    }
-    
-    .search-form .fa-search {
-        position: absolute;
-        left: 20px;
-        font-size: 20px;
-        color: #4A4A4A;
-    }
 
     .search-bar{
         margin-bottom: 30px !important;
     }
-    
-    .search-form-input {
-        height: 44px;
-        text-indent: 33px;
-        border-radius: 10px;
-        padding: 20px;
-        font-family: var(--font-family-body);
-        font-size: 13px;
-        color: #666666;
-        background-color: #E4E4E4;
-        width: 100%;
-    }
-    
-    .search-form-input:focus, .search-form-input:hover, .search-form-input:active  {
-        box-shadow: none;
-        border: solid 1px var(--primary);
-        box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, .1);
-        background-color: #E4E4E4;
-    }
 
-    .filter-search-button{
-        background-image: linear-gradient(#3991C9, #63BCF4);
-        border-radius: 10px;
-        border: none;
-        text-decoration: none;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
-    }
-
-    .filter-search-button:hover, .filter-search-button:active, .filter-search-button:focus{
-        background-color: var(--secondary);
-        transform: scale(1.03);
-        box-shadow: 0px 5px 10px 5px rgba(57, 145, 201, 0.18);
-    }
 }
 
 @media (max-width: 576px) {

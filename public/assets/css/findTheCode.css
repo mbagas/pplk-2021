@@ -99,16 +99,6 @@ a, a:hover{
 }
 
 @media(max-width: 1200px) {
-    .nav-back{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
-        z-index: 99;        
-    }
-
     .nav-back a{        
         position: absolute;
         top: 36px;
@@ -117,57 +107,9 @@ a, a:hover{
 
     .page-content {
         margin-top: 0px;
-        padding-top: 0px;
-        padding-left: 26px;
-        padding-right: 26px;
-    }
-
-    .custom-mini-ftc-col{
-        margin-top: 0px;
-        margin-bottom: 30px;
-        min-height: 130px;
-        max-width: 100%;
-    }
-
-    .card-ftc {
-        display: flex; 
-        flex-direction: column !important; 
-        height: relative; 
-        padding: 0px; 
-        border-radius: 10px !important;
-        height: 100%;
-        box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
-    }
-
-    .card-body-ftc {
-        max-height: 100%;
-        max-width: 100%;
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-    }
-
-    .headline-text {
-        margin-top: 90px;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .rounded-ftc {
-        border-radius: 10px !important;
-    }
-
-    .headline-text p {
-        font-size: 16px;
     }
 
     /* .card-ftc img {
         min-height: 90px;
     } */
-
-    .card-title-ftc h2 {
-        text-align: center;
-        font-size: 13px;
-    }
 }
