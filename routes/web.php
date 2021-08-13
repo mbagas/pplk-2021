@@ -161,6 +161,8 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'index']);
 });
 
+// ini route dummy ntar bersihin aja
+
 Route::get('/detailTugas', function () {
   return view('client.tugasDetail');
 });
@@ -179,6 +181,10 @@ Route::get('/answer', function () {
 
 Route::get('/report', function () {
   return view('client.reportPage');
+});
+
+Route::get('/redeem', function () {
+  return view('client.redeemCode');
 });
 
 
