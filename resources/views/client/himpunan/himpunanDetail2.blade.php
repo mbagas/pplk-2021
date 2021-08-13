@@ -86,11 +86,11 @@
                     </div>
                     <!--second headline-->
                     <div class="second-headline">
-                        <div class="artikel-himpunan">
+                        <div class="artikel-himpunan" >
                             <div class="artikel-image">
                                 <img src="{{ asset('assets') }}/images/jurusan-poster1.png">
                             </div>
-                            <div class="d-flex justify-content-between artikel-custom">
+                            <div class="d-flex justify-content-between artikel-custom" >
                                 <div class="artikel-1">
                                     <div class="artikel-title">
                                         <h2>{{ $dataHimpunan->ormawas->namaLengkap }}</h2>

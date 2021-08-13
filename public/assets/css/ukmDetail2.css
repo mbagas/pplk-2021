@@ -137,6 +137,7 @@
     font-family: var(--font-family-body);
     margin-left: 14px; 
     padding-right: 14px;
+    margin-bottom: 20px;
     color: var(--font-color-secondary);
 }
 
