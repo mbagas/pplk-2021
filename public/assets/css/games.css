@@ -26,7 +26,7 @@
 .games-menu-container{
     display: grid;
     place-items: center;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 100px);
 }
 
 .menu-list{
@@ -217,6 +217,12 @@
     .title-page h1{
         font-size: 20px !important;
     }
+    .games-menu-container{
+        display: grid;
+        place-items: center;
+        min-height: calc(100vh - 180px);
+    }
+    
 
 }
 
