@@ -111,7 +111,7 @@
                     <div class="col-md-9">
                         <select name="kelompok" class="form-control wide" tabindex="0" disabled id="kelompok">
                             <option value=""> Pilih Kelompok </option>
-                            @for ($i = 1; $i <= 100; $i++)
+                            @for ($i = 1; $i <= 140; $i++)
                                 <option value="{{$i}}">{{$i}} </option>
                             @endfor
                         </select>

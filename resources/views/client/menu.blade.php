@@ -54,7 +54,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('games')}}">
+                        <a href="#">
                             <svg class="icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.22461 2.40088C9.23185 3.17447 9.86582 3.795 10.6394 3.78776H11.7315C12.9261 3.77845 13.9034 4.73613 13.9199 5.93065V7.02175"
@@ -72,7 +72,7 @@
                     </li>
 
                     <li style="margin-left: 0;">
-                        <a href="{{ route('leaderboard')}}">
+                        <a href="#">
                             <svg class="icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M2.30078 12.0366C2.30078 4.73454 4.73552 2.2998 12.0376 2.2998C19.3397 2.2998 21.7745 4.73454 21.7745 12.0366C21.7745 19.3388 19.3397 21.7735 12.0376 21.7735C4.73552 21.7735 2.30078 19.3388 2.30078 12.0366Z"
@@ -97,7 +97,7 @@
             <a class="head-menu-icon" href="#">
                 <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
             </a>
-            <a class="head-menu-icon" href="{{ route('reportPage') }}">
+            <a class="head-menu-icon" href="#">
                 <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
             </a>
             <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

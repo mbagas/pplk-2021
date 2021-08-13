@@ -129,7 +129,7 @@
                             <div class="card-body">
                                 <h6 class="card-title">{{ $himpunan->ormawas->namaLengkap }}</h6>
                             </div>
-                            <a href="himpunanDetail/{{$himpunan->ormawas->id }}" class="btn btn-primary rounded custom-more-btn">Learn More</a>
+                            <a href="{{ route('himpunanDetail', $himpunan->ormawas->id) }}" class="btn btn-primary rounded custom-more-btn">Learn More</a>
                         </div>
                     </div>
                     @endforeach
