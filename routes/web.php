@@ -185,6 +185,11 @@ Route::get('/redeem', function () {
   return view('client.redeemCode');
 });
 
+Route::get('/senatt', function () {
+  return view('client.senat');
+});
+
+
 
 
 

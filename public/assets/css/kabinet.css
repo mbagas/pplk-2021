@@ -265,12 +265,13 @@
 }
 
 .footer-blue-logo{
-    width: 10%;     
+    width: unset;     
 }
 
 .footer-blue img {
-    width: unset;
-    border-radius: 20px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .footer-blue p{
@@ -281,7 +282,12 @@
 
 .detail-info{
     margin-left: 10px;
-    width: 40%;
+    width: 50%;
+}
+
+.detail-info p{
+    font-size: 13px;
+
 }
 
 .icon-sosmed{
@@ -293,7 +299,7 @@
 }
 
 .icon-sosmed img{
-    width: 25%;
+    width: 100%;
 }
 
 #filosofiLogo{
@@ -570,11 +576,6 @@
         height: 200px;
     }
 
-    .footer-blue img {
-        width: 100%;
-        border-radius: 20px;
-    }
-
     .footer-blue p{
         font-size: 8px; 
         margin-bottom: 0px;
@@ -582,8 +583,9 @@
     }
 
     .detail-info{   
-        margin-left: 10px;
+        width: 40%;
     }
+
 
     .icon-sosmed{
         display: flex;
@@ -592,8 +594,7 @@
         gap: 10px;
         width: 25%;
     }
-
     .icon-sosmed img{
-        width: 25%;
+        width: 100%;
     }
 }

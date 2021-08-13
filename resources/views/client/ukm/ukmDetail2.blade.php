@@ -197,7 +197,6 @@
                 <p>Copyright © 2021 PPLK  -
                     Institut Teknologi Sumatera (ITERA)</p>
                 <p>{{ $ukm->socialmedias->website }}</p>
-                <p>Telepon : 07218030188 – 07218030189</p>
             </div>
             <div class="icon-sosmed">
                 <a href="{{ $ukm->socialmedias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
