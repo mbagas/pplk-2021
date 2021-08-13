@@ -153,11 +153,11 @@
                                                 @csrf
                                                 <div class="dTugas-attachment-option" onclick="document.getElementById('deleteFile').submit();">
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M9.66191 4.73438C9.66191 4.73438 9.39041 8.10188 9.23291 9.52038C9.15791 10.1979 8.73941 10.5949 8.05391 10.6074C6.74941 10.6309 5.44341 10.6324 4.13941 10.6049C3.47991 10.5914 3.06841 10.1894 2.99491 9.52388C2.83641 8.09288 2.56641 4.73438 2.56641 4.73438" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M10.354 3.12012H1.875" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M8.71931 3.11999C8.32681 3.11999 7.98881 2.84249 7.91181 2.45799L7.79031 1.84999C7.71531 1.56949 7.46131 1.37549 7.17181 1.37549H5.05531C4.76581 1.37549 4.51181 1.56949 4.43681 1.84999L4.31531 2.45799C4.23831 2.84249 3.90031 3.11999 3.50781 3.11999" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
-                                                    <span class="text-small subheadline" style="color: red">Hapus</span>
+                                                    <span class="text-small subheadline">Hapus</span>
                                                     <input name="hapusFile" value="1" hidden/>
                                                 </div>
                                             </form>
@@ -193,11 +193,11 @@
                                                 @csrf
                                                 <div class="dTugas-attachment-option" onclick="document.getElementById('deleteJawaban').submit();">
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M9.66191 4.73438C9.66191 4.73438 9.39041 8.10188 9.23291 9.52038C9.15791 10.1979 8.73941 10.5949 8.05391 10.6074C6.74941 10.6309 5.44341 10.6324 4.13941 10.6049C3.47991 10.5914 3.06841 10.1894 2.99491 9.52388C2.83641 8.09288 2.56641 4.73438 2.56641 4.73438" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M10.354 3.12012H1.875" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
-                                                        <path d="M8.71931 3.11999C8.32681 3.11999 7.98881 2.84249 7.91181 2.45799L7.79031 1.84999C7.71531 1.56949 7.46131 1.37549 7.17181 1.37549H5.05531C4.76581 1.37549 4.51181 1.56949 4.43681 1.84999L4.31531 2.45799C4.23831 2.84249 3.90031 3.11999 3.50781 3.11999" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M6.05859 7.71803L6.05859 1.69751" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M7.51758 6.25415L6.05958 7.71816L4.60158 6.25415" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8.37705 4.06396H8.84355C9.86105 4.06396 10.6855 4.88847 10.6855 5.90647V8.34848C10.6855 9.36349 9.86305 10.186 8.84805 10.186L3.27805 10.186C2.26055 10.186 1.43555 9.36099 1.43555 8.34348V5.90097C1.43555 4.88647 2.25855 4.06396 3.27305 4.06396L3.74405 4.06396" stroke="#130F26" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>
                                                     </svg>
-                                                    <span class="text-small subheadline" style="color: red">Hapus</span>
+                                                    <span class="text-small subheadline">Hapus</span>
                                                     <input name="hapusJawaban" value="1" hidden/>
                                                 </div>
                                             </form>
