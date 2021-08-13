@@ -33,6 +33,7 @@ use App\Http\Controllers\Client\clientUptController;
 use App\Http\Controllers\Client\gameController;
 use App\Http\Controllers\Client\leaderBoardController;
 use App\Http\Controllers\Client\logoPplkController;
+use App\Http\Controllers\Client\reportController;
 use App\Http\Controllers\mengerjakanController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -136,6 +137,7 @@ Route::middleware(['auth'])->group(function () {
 
 
   // Belum responsive
+  Route::get('/report', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
