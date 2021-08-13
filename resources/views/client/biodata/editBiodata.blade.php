@@ -62,7 +62,9 @@
                                 </label>
                                 <input id="file-input" type="file" accept="image/*" name="img" id="img" value="{{$editBiodata->img}}" onchange="previewImg(this);"/>
                             </div>
+
                             <img id="imgUser" src="{{ $editBiodata->img ?? asset('assets/images/user_default.png')}}" alt="photo-profile" class="photo-profile">
+
                             <p class="edit-profile">Edit Profile Photo</p>
                             <!-- <input type="file" name="img" id="img" value="{{$editBiodata->img}}"/> -->
                             <svg width="23" height="3" viewBox="0 0 23 3" fill="none" xmlns="http://www.w3.org/2000/svg">

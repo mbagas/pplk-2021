@@ -161,9 +161,7 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'index']);
 });
 
-// Route::get('/detailTugas', function () {
-//   return view('client.tugasDetail');
-// });
+
 
 // Route::get('/tebakBangunan', function () {
 //   return view('client.tebakGedung');
@@ -180,6 +178,10 @@ Route::middleware(['Maba'])->group(function () {
 // Route::get('/report', function () {
 //   return view('client.reportPage');
 // });
+
+Route::get('/redeem', function () {
+  return view('client.redeemCode');
+});
 
 
 
