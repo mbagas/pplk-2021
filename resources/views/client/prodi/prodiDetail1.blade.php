@@ -68,7 +68,7 @@
                         <div class="first-headline">
                             
                             <div class="logo-prodi">
-                                <img src="{{ asset('assets') }}/images/LogoItera.png" alt="poster">
+                                <img src="{{asset('logoProdi/'.$dataProdi->ormawas->namaSingkat.'.svg')}}" alt="poster">
                             </div>          
 
                             <div class="name-prodi">
@@ -91,7 +91,7 @@
                         
                         <!--headline kedua-->
                         <div class="second-headline">
-                            <h2>Tentang Kami</{{ $dataProdi->logo }}
+                            <h2>Tentang Kami</h2>
                         
                         <!--headline ketiga-->
                         <div class="third-headline">
