@@ -72,24 +72,22 @@
                         <!-- <button type="submit">submit </button> -->
                         <div class="row bio-input">
                             <label class="form-label" for="email">Email</label>
-                            <input type="text" placeholder="Email" value="{{$editBiodata->email}}" >
+                            <input type="text" placeholder="Email" value="{{$editBiodata->email}}" disabled>
                         </div>
 
                         <div class="row bio-input">
                             <label class="form-label" for="nama">Nama</label>
-                            <input type="text" placeholder="Nama" value="{{$editBiodata->nama}}" >
+                            <input type="text" placeholder="Nama" value="{{$editBiodata->nama}}" disabled>
                         </div>
 
                         <div class="row bio-input">
                             <label class="form-label" for="nim">NIM</label>
-                            <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" >
+                            <input type="text" placeholder="Nomor Induk Mahasiswa" value="{{$editBiodata->nim}}" disabled>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-    </body>
-
          <!-- Required JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
@@ -107,6 +105,7 @@
             }
         }
     </script>
+    </body>
 
 
 

@@ -177,7 +177,7 @@
                                 <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
                                 <div class="dTugas-attachment-info">
                                     <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
-                                    <p class="bodytext text-small">{{ $tugasDetail->jawaban }}</p>
+                                    <p class="bodytext text-small">{!! nl2br(e($tugasDetail->jawaban)) !!}</p>
                                 </div>
                                 <div class="dTugas-attachment-icon">
                                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
