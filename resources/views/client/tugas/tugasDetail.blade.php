@@ -89,7 +89,7 @@
                                 <p class="subheadline dTugas-title text-small">{{ $tugasDetail->tugas->judul }}.pdf</p>
                                 <p class="subheadline text-small">PDF</p>
                             </div>
-                            <a href="{{ $tugasDetail->tugas->file ?? '#' }}" onclick="alert('Downloading Materi....')">
+                            <a class="dTugas-material-download" href="{{ $tugasDetail->tugas->file ?? '#' }}">
                                 <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle opacity="0.2" cx="14.2422" cy="14.2407" r="14" fill="#3991C9"/>
                                     <path d="M14.3229 16.5312L14.3229 8.50391" stroke="#3991C9" stroke-width="1.27932" stroke-linecap="round" stroke-linejoin="round"/>

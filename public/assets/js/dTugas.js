@@ -1,3 +1,4 @@
+ // SEMUA ONCLICK=ALERT(*) SAMA LOG YG DIBAWAH CUMAN BUAT DEBUGGING
 console.log("JS-JQuery Running")
 
 // TURN IN Button
@@ -12,6 +13,13 @@ $("#unsubmit").click(function (e){
     $("#turnInt").toggleClass("d-none")
     $("#unsubmit").toggleClass("d-none")
 })
+
+// MATERI OPTION
+$('.dTugas-material-download').click(function (e) { 
+    e.stopPropagation()
+    alert('Downloading Materi....')
+});
+
 
 // ATTACHMENT MENU
 $(".dTugas-attachment-icon").click(function (e) {
@@ -55,5 +63,3 @@ function dropContentSwitch() {
     $('#dTugas-footer-expand').toggleClass('dTugas-hidden')
     $('#dTugas-footer-collapse').toggleClass('dTugas-hidden')
 }
-
-// DETAIL TUGAS SUBMIT FROM APPLICATON
