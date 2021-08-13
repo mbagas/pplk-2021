@@ -159,7 +159,8 @@
                         <a href="{{ route('jurusan') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Jurusan ITERA</h5>
-                                <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda</p>
+                                <p class="card-text">Jurusan di ITERA setara dengan fakultas. Masing-masing jurusan memiliki program studi yang berbeda-beda. Semua program studi di ITERA merupakan kelompok Saintek (IPA) dimana ITERA hanya menerima siswa dari jurusan IPA pada SNMPTN. Meskipun demikian, siswa dari jurusan IPS masih dapat mendaftar ke ITERA melalui jalur SBMTPN dan memilih UTBK golongan Saintek.
+                                    ITERA memiliki 3 jurusan yaitu Jurusan Teknologi Infrastruktur dan Kewilayahan (JTIK), Jurusan Teknologi Produksi dan Industri (JTPI), dan Jurusan Sains.</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -169,7 +170,7 @@
                         <a href="{{ route('ukm') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Unit Kegiatan Mahasiswa</h5>
-                                <p class="card-text">Unit Kegiatan Mahasiswa (UKM) adalah lembaga kemahasiswaan tempat....</p>
+                                <p class="card-text">UKM merupakan singkatan dari Unit Kegiatan Mahasiswa yang berfungsi sebagai wadah mahasiswa ITERA untuk mengekspresikan minat dan bakat masing masing mahasiswa. Terhitung ITERA memiliki kurang lebih 41 UKM aktif</p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -179,7 +180,9 @@
                         <a href="{{ route('prodi') }}" class="card justify-content-between big-menu-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Prodi ITERA</h5>
-                                <p class="card-text">Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang</p>
+                                <p class="card-text">
+                                    Prodi merupakan singkatan dari Program Studi bertujuan sebagai pedoman jalannya pendidikan akademik yang penyelenggaraannya berdasarkan suatu kurikulum. Di dalam jurusan yang ada di ITERA memiliki 35 program studi yang membawahi jurusan masing-masing.
+                                </p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
@@ -189,7 +192,9 @@
                         <a href="{{ route('himpunan') }}" class="card justify-content-between big-menu-item last-item" >
                             <div class="card-body" >
                                 <h5 class="card-title">Himpunan ITERA</h5>
-                                <p class="card-text">Himpunan Mahasiswa Program Studi adalah Organisasi Kemahasiswaan sebagai Lembaga Eksekutif di tingkat Program Studi, yang hanya melaksanakan kegiatan penalaran dan keilmuan. </p>
+                                <p class="card-text">
+                                    Himpunan Mahasiswa ITERA merupakan kumpulan dari masing-masing mahasiswa program studi yang mana memiliki VISI dan MISI yang sama. Himpunan Mahasiswa bertujuan sebagai wadah mahasiswa dalam bidang ke ilmuan dan menampung semua aspirasi mahasiswa yang ada. Sampai saat ini sudah terdaftar kurang lebih 35 Himpunan Mahasiswa.
+                                </p>
                             </div>
                             <div class="card-img-container">
                                 <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">

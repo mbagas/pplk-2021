@@ -1,3 +1,4 @@
+
 .image-sponsor{
     display: flex;
     justify-content: center;
@@ -462,6 +463,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 .info-card-title{
     font-family: var(--font-family-body);
     font-size: 20px;
+    color: var(--font-color-subheadline);
     font-weight: 400;
 }
 
@@ -483,6 +485,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     overflow: hidden !important;
     text-overflow: ellipsis;
     -webkit-line-clamp: 5;
+    color: var(--font-color-subheadline);
 }
 
 .custom-more-btn{
