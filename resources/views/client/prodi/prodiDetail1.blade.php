@@ -168,7 +168,7 @@
         <!--footer-->
         <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                <img src="{{ $dataProdi->logo }}">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
             </div>
             <div class="detail-info">
                 <p>Copyright © 2016 UPT TIK -
@@ -179,7 +179,6 @@
             <div class="icon-sosmed">
                 <a href="{{ $prodi->socialmedias->instagram }}"><img src="{{ asset('assets') }}/images/ige.png"></a>
                 <a href="{{ $prodi->socialmedias->youtube }}"><img src="{{ asset('assets') }}/images/yutub.png"></a>
-                                                     
             </div>
         </div>
     </body>

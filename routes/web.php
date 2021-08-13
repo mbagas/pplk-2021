@@ -137,7 +137,7 @@ Route::middleware(['auth'])->group(function () {
 
 
   // Belum responsive
-  Route::get('/report', [reportController::class, 'index'])->name('reportPage');
+  Route::get('/reportPage', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
