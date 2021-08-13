@@ -285,32 +285,14 @@
 
 
 @media (max-width: 1200px){    
-    .nav-back{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
-        z-index: 99;        
-    }
 
     .nav-back a{        
-        position: absolute;
         top: 36px;
         color: var(--primary) !important;                
     }
 
-    .navback-home{
-        text-decoration: none; 
-        font-family: var(--font-family-body);
-    }
     .carousel-item img {
-        width: 100%;    
-        top: -26px !important;
-        z-index: 1;
-        border-radius: 0 0 15px 15px;
-        filter: brightness(70%);
+        width: 100%;
     } 
     
     .carousel-inner .active{
