@@ -37,7 +37,7 @@
 
             <!-- Content -->
             <div class="tugas-content container-fluid">
-                <div class="col-xl-6 desktop-view">s
+                <div class="col-xl-6 desktop-view">
 
                     <!-- Info Kelompok dan Daplok -->
                     <div class="tugas-kelompok-card mx-auto">
