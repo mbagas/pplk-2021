@@ -191,8 +191,15 @@
     height: 90px;
 }
 
+
 .footer-blue-logo{
-    width: 10%;     
+    width: unset;     
+}
+
+.footer-blue img {
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .small-himpunan-menu{
@@ -239,10 +246,6 @@
     background-image: none !important;
 }
 
-.footer-blue img {
-    width: unset;
-    border-radius: 20px;
-}
 
 .footer-blue p{
     font-size: 8px; 
@@ -250,9 +253,14 @@
     color: var(--white);
 }
 
-.detail-info{   
+.detail-info{
     margin-left: 10px;
-    width: 40%;
+    width: 50%;
+}
+
+.detail-info p{
+    font-size: 13px;
+
 }
 
 .icon-sosmed{
@@ -264,7 +272,7 @@
 }
 
 .icon-sosmed img{
-    width: 25%;
+    width: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -479,9 +487,6 @@
         align-items: center;
     }
 
-    .footer-blue-logo{
-        width: 10%;     
-    }
 
     .small-himpunan-menu{
         margin-top: 0px;
@@ -525,11 +530,6 @@
         background-image: none !important;
     }
 
-    .footer-blue img {
-        width: 100%;
-        border-radius: 20px;
-    }
-
     .footer-blue p{
         font-size: 8px; 
         margin-bottom: 0px;
@@ -537,7 +537,11 @@
     }
 
     .detail-info{   
-        margin-left: 10px;
+        width: 40%;
+    }
+    
+    .detail-info p{
+        font-size: 9px;
     }
 
     .icon-sosmed{
@@ -547,9 +551,8 @@
         gap: 10px;
         width: 25%;
     }
-
     .icon-sosmed img{
-        width: 25%;
+        width: 100%;
     }
 }
 
