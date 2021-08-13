@@ -13,7 +13,7 @@
 .bodytext {
     font-family: var(--font-family-body);
     font-weight: 400;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 a {
@@ -111,6 +111,9 @@ a:hover {
 }
 
 @media (max-width: 576px) {
+    .bodytext {
+        font-size: 13px;
+    }
     .menu{
         width: 100%;
     }
