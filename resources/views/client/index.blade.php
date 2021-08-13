@@ -249,8 +249,29 @@
 
                                     <h5 class="info-card-title">Guide PPLK</h5>
 
-                                    <p class="info-card-text">Guide PPLK merupakan pemandu bagi para mahasiswa/i baru untuk memberikan informasi yang ada di ITERA.
-                                        
+
+                                    <p class="info-card-text">
+                                    Guide PPLK merupakan pemandu bagi para mahasiswa/i baru untuk memberikan informasi yang ada di ITERA.
+                                    </p>
+
+                                    <a href="#" class="btn btn-primary custom-more-btn">
+                                        Learn More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12  col-xl-8">
+                            <div class="info-card card justify-content-between " style="height: 160px;" >
+                                <div class="info-card-img-container">
+                                    <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                </div>
+                                <div class="info-card-body" >
+
+                                    <h5 class="info-card-title">Link Game</h5>
+
+                                    <p class="info-card-text">
+                                        Berikut merupakan aplikasi game buatan mahasiswa/i ITERA khusus untuk PPLK yang bisa kalian mainkan.
                                     </p>
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
@@ -269,9 +290,11 @@
 
                                     <h5 class="info-card-title">Guide Game</h5>
 
+
                                     <p class="info-card-text">
                                     Guide Game merupakan pemandu game PPLK yang berguna dalam memandu, menemani, dan memberikan informasi kepada mahasiswa/i baru yang sedang bermain game PPLK.
                                     </p>
+
 
                                     <a href="#" class="btn btn-primary custom-more-btn">
                                         Learn More
@@ -289,9 +312,11 @@
 
                                     <h5 class="info-card-title">Link Anthem PPLK</h5>
 
+
                                     <p class="info-card-text">
                                         Anthem PPLK merupakan Jingle khas PPLK ITERA berjudul Melodi Mimpi yang melambangkan dimulainya PPLK ITERA.
                                     </p>
+
 
                                     <a href="https://www.youtube.com/watch?v=RKr3EBT9v1I" class="btn btn-primary custom-more-btn">
                                         Learn More

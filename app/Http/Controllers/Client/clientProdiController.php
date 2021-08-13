@@ -13,10 +13,9 @@ class clientProdiController extends Controller
     //
     public function index(){
 
-        // $prodis = Cache::rememberForever('prodis', function () {
-        //     return Prodi::with('ormawas')->get();
-        // });
-        $prodis = Prodi::with('ormawas')->get();
+        $prodis = Cache::rememberForever('prodis', function () {
+            return Prodi::with('ormawas')->get();
+        });
         return view('client.prodi.prodi', compact('prodis'));
     }
 
