@@ -455,7 +455,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 }
 
 .info-card-body{
-    max-width: 65%;
+    width: 65%;
     height: 100%;
 }
 
@@ -494,6 +494,8 @@ a.active, .active svg path, li:hover svg path,li a:hover {
     font-size: 16px;
     font-weight: 200;
     display: grid;
+    /* margin-right: auto;
+    margin-left: auto; */
     place-items: center;
     border-radius: 6px !important;
 }
