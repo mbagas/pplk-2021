@@ -22,6 +22,6 @@ class reportController extends Controller
             'kritikSaran' => $request->kritikSaran
         ]);
 
-        return redirect('report')->with('sukses');
+        return redirect('report')->with('sukses', 'sukses bosku!');
     }
 }

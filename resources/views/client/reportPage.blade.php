@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>WEB PPLK 2021 - Report</title>
+        <title>PPLK 2021 - Report</title>
 
         <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
 
@@ -20,6 +20,13 @@
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
 
+        @if(session('sukses'))
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#reportModal').modal('show');
+                });
+            </script>
+        @endif
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/report.css">
     </head>
@@ -46,7 +53,7 @@
                         <div class="desc-text">
                             <h2>Report Page</h2>
                         </div>
-                        <form class="col-sm-12 container-fluid m-sm-auto report-form fle" action="{{ route('reportPost') }}" method="POST" id="report">
+                        <form class="col-sm-12 container-fluid m-sm-auto report-form fle" action="{{ route('reportPost') }}" method="POST">
                             @csrf
                             <div class="row report-input">
                                 <label for="nama" class="form-label">Nama</label>
@@ -81,7 +88,7 @@
                             </div>
 
                             <div class="col-sm-12 mt-4">
-                                <button name="submit" type="submit" id="tes" class="btn btn-primary rounded custom-login-btn">
+                                <button name="submit" type="submit" class="btn btn-primary rounded custom-login-btn">
                                     Kirim Laporan
                                 </button>
                             </div>
@@ -89,13 +96,7 @@
                     </div> 
                 </div>
             </div>
-            @if(session('sukses'))
-            <script type="text/javascript">
-                $(document).ready(function() {
-    $('#reportModal').modal('show');
-});
-            </script>
-            @endif
+        
             <div class="modal container-fluid" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -107,13 +108,12 @@
                                 tunggu tanggapan dari kami. </p>
                         </div>
                         <div class="modal-back">
-                            <button class="close-button" data-bs-dismiss="modal" aria-label="Close">Kembali ke Awal</button>
+                            <a href="{{ route('home') }}"><button class="close-button">Home</button></a>
                         </div>
                   </div>
                 </div>
             </div>
         </div>
-        @csrf
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
