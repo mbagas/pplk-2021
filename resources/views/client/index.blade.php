@@ -130,7 +130,7 @@
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/user_default.png" alt="notification-menu" class="photo-profile">
+                            <img src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" alt="notification-menu" class="photo-profile">
                         </a>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                     <!-- Nama User -->
                     <div class="greetings">
                         <h1>
-                            Hi, {{ $dataUser->nama }}
+                            Hi, {{ auth()->user()->nama ?? 'guest' }}
                         </h1>
                         <p>
                             Mari kita kenal lebih dekat dengan PPLK ITERA
@@ -261,7 +261,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12  col-xl-8">
+                        <div class="col-sm-12  col-xl-8" hidden>
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
                                     <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
@@ -281,7 +281,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12  col-xl-8">
+                        <div class="col-sm-12  col-xl-8" hidden>
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
                                     <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">

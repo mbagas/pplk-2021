@@ -74,7 +74,7 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Misi</label>
             <div class="col-sm-9">
-              <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" disabled>{{ $himpunan->visimisis->misi }}</textarea>
+              <textarea class="form-control custom-txt-area misi" placeholder="Misi" name="misi" id="misi" rows="4" disabled>{{ $himpunan->visimisis->misi }}</textarea>
             </div>
           </div>
           <div class="mb-3 row">
@@ -87,13 +87,13 @@
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Filosofi Logo</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" value="{{ $dataHimpunan->filosofiLogo }}" disabled>
+              <textarea type="text" class="form-control" placeholder="Filosofi Logo" name="filosofiLogo" id="filosofiLogo" disabled>{{ $dataHimpunan->filosofiLogo }}</textarea>
             </div>
           </div>
           <div class="mb-3 row">
             <label class="col-sm-3 col-form-label">Deskripsi</label>
             <div class="col-sm-9 ">
-              <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" disabled>{{ $himpunan->artikels->body }}</textarea>
+              <textarea class="form-control custom-txt-area" placeholder="Deskripsi" name="deskripsi" id="deskripsi" rows="4" disabled>{{ $himpunan->artikels->body }}</textarea>
             </div>
           </div>
           <div class="accordion accordion-danger-solid" id="accordion-two">

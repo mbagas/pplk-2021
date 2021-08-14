@@ -75,7 +75,7 @@
 .redeem-input label {
     text-align: center;
     font: 400;
-    font-size: 13px;
+    font-size: 16px;
     color: gray;
 }
 
@@ -93,10 +93,22 @@
 @media(max-width: 1200px) {
     .page-content {
         margin-top: 20px;
-        padding-top: 20px;
+        padding-top: 0px;
     }
 
     .card-rc img {
         min-height: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-content{
+        margin-top: 0px;
+    }
+    .headline-text {
+        margin-top: 5   0px;
+    }
+    .redeem-input label {
+        font-size: 13px;
     }
 }

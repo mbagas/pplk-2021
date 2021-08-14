@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\tugasController;
 use App\Http\Controllers\Admin\findCodeController;
 use App\Http\Controllers\Admin\tebakGedungController;
+use App\Http\Controllers\Auth\guestController;
 use App\Http\Controllers\Client\clientHomeController;
 use App\Http\Controllers\Client\clientBiodataController;
 use App\Http\Controllers\Client\clientFindCodeController;
@@ -55,6 +56,7 @@ Route::get('/', [LoginController::class, 'showLoginForm']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/guest', [guestController::class, 'login'])->name('guest');
 
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
   // Ini Route yang hanya bisa diakses Role SuperAdmin
@@ -128,26 +130,17 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/home', [clientHomeController::class, 'index'])->name('home');
   Route::resource('/biodata', clientBiodataController::class)->only(['index','edit','update']);
   Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
-//  Route::resource('/dataUkm', clientUkmController::class)->only(['index','show','showQR']);
   Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
   Route::get('/dataProdi', [clientProdiController::class, 'index'])->name('prodi');
   Route::get('/prodiDetail/{prodi}', [clientProdiController::class, 'show'])->name('prodiDetail');
   Route::get('/senat', [clientSenatController::class, 'index'])->name('senat');
-
-
-  // Belum responsive
   Route::get('/reportPage', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
   Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
-  // Route::get('/tugas', [clientTugasController::class, 'index'])->name('tugas');
-  // Route::get('/tugas/{id}', [clientTugasController::class, 'show'])->name('detailTugas');
-  Route::get('/games', [gameController::class, 'index'])->name('games');
-  Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
-
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
 

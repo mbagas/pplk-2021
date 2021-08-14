@@ -158,7 +158,7 @@
                                 <div class="card-body">
                                     <h6 class="card-title">{{ $data->ormawas->namaLengkap }}</h6>
                                 </div>
-                            <a href="../prodiDetail/{{$data->ormawas->id}}" class="btn btn-primary rounded custom-more-btn">
+                            <a href="{{ route('prodiDetail', $data->ormawas_id) }}" class="btn btn-primary rounded custom-more-btn">
                                     Learn More
                             </a>
                             </div>

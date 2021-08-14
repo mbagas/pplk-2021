@@ -20,10 +20,11 @@ class clientHimpunanController extends Controller
         return view('client.himpunan.himpunan', compact('himpunans'));
     }
 
-    public function show(Ormawa $himpunan){
-            $dataHimpunan = Himpunan::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
-        	$dataVisiMisi = VisiMisi::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
-        	$dataArtikel = Artikel::with('ormawas')->where('ormawas_id', $himpunan->id)->firstOrFail();
-        return view('client.himpunan.himpunanDetail2',compact('dataHimpunan','himpunan','dataVisiMisi','dataArtikel'));
+    public function show($id){
+        $dataHimpunan = Cache::rememberForever('detailOrmawa'.$id, function () use ($id) {            
+            return Ormawa::with('himpunans', 'artikels', 'visimisis', 'socialmedias')->where('id', $id)->firstOrFail();
+        });
+        
+        return view('client.himpunan.himpunanDetail2',compact('dataHimpunan'));
     }
 }

@@ -20,13 +20,17 @@ class clientUkmController extends Controller
         return view('client.ukm.ukm',compact('ukms'));
     }
 
-    public function show(Ormawa $ukm){
-        $ukmData = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
-        return view('client.ukm.ukmDetail2', compact('ukm', 'ukmData'));
+    public function show($id){
+        $dataUkm = Cache::rememberForever('detailOrmawa'.$id, function () use ($id) {            
+            return Ormawa::with('ukms', 'artikels', 'visimisis', 'socialmedias')->where('id', $id)->firstOrFail();
+        });
+        return view('client.ukm.ukmDetail2', compact('dataUkm'));
     }
 
-    public function showQR(Ormawa $ukm){
-        $ukmData = Ukm::with('ormawas')->where('ormawas_id', $ukm->id)->firstOrFail();
-        return view('client.ukm.ukmBarcode', compact('ukm', 'ukmData'));
+    public function showQR($id){
+        $dataUkm = Cache::rememberForever('detailOrmawa'.$id, function () use ($id) {            
+            return Ormawa::with('ukms')->where('id', $id)->firstOrFail();
+        });
+        return view('client.ukm.ukmBarcode', compact('dataUkm'));
     }
 }
