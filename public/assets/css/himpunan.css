@@ -285,57 +285,22 @@
 
 
 @media (max-width: 1200px){    
-    .nav-back{
-        display: flex;  
-        top: 0;       
-        padding-left: 25px;
-        padding-right: 25px;   
-        border-radius: 15px !important;
-        overflow: hidden;
-        z-index: 99;        
-    }
 
     .nav-back a{        
-        position: absolute;
         top: 36px;
         color: var(--primary) !important;                
     }
 
-    .navback-home{
-        text-decoration: none; 
-        font-family: var(--font-family-body);
-    }
     .carousel-item img {
-        width: 100%;    
-        top: -26px !important;
-        z-index: 1;
-        border-radius: 0 0 15px 15px;
-        filter: brightness(70%);
-    } 
-    
-    .carousel-inner .active{
-        background-color: transparent !important;
-        box-shadow: none !important;
-        background-image: none !important;
+        width: 100%;
     } 
 
     .page-content {        
         margin-top: 20px;     
-        padding-top: 0; 
-        padding-left: 26px;
-        padding-right: 26px; 
-        min-height: calc(100vh - 90px);
-    }
-
-    .main-text { 
-        margin-bottom: 20px;
     }
 
     .himpunan-title-text{     
-        font-family: var(--font-family-title); 
-        font-weight: 700 !important;
         font-size: 20px;
-        margin-bottom: 10px;
     }
 
     .page-content p{        
@@ -398,8 +363,6 @@
     }
 
     .custom-mini-himpunan-col{
-        margin-top: 0px;
-        margin-bottom: 30px;
         min-height: 130px;
     }
 
@@ -408,10 +371,6 @@
         display: flex; 
         flex-direction: column !important; 
         height: relative; 
-        padding: 0px; 
-        border-radius: 10px !important;
-        height: 100%;
-        box-shadow: 0px 3px 8px 1px rgb(0 0 0 / 10%);
     }
 
     .custom-mini-himpunan-col .card .image{                
@@ -430,108 +389,18 @@
     .custom-mini-himpunan-col .card-title{
         padding-top: 3px;        
         font-size: 9px;
-        float: left;
-        color: var(--font-color-subheadline);
-        font-weight: bold;
     }
 
-    .custom-mini-himpunan-col  .card-text{
-        margin-bottom: 0px;
-        width: 100%;  
-        display: flex;
-        max-height: 100%;
-        text-overflow: unset;
-    }    
-
-    .slider2 {
-        padding-top: 10px;
-        padding-bottom: 5px;
-    }
-    .slider3 {
-        padding-top: 20px;
-        padding-bottom: 10px;
-    }
-    .slider1 {
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-    
-    .h6 {
-        text-align: left;
-    }
-    
     .custom-mini-himpunan-col .card .custom-more-btn{
         width: 66px;
         height: 20px;
-        background-image: linear-gradient(#3991C9, #63BCF4);
-        border: none;
-        font-family: var(--font-family-body);
         font-size: 7px;
         font-weight: 50;
-        float: right;
-        border-radius: 6px !important;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-30%, 60%);
-    }
-
-    .search-form {
-        position: relative;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
-        float: left;
-        width: 100%;
-    }
-    
-    .search-form .fa-search {
-        position: absolute;
-        left: 20px;
-        font-size: 20px;
-        color: #4A4A4A;
     }
 
     .search-bar{
         margin-top: 0px;
         margin-bottom: 30px;
-    }
-    
-    .search-form-input {
-        height: 44px;
-        text-indent: 33px;
-        border-radius: 10px;
-        padding: 20px;
-        font-family: var(--font-family-body);
-        font-size: 13px;
-        color: #666666;
-        background-color: #E4E4E4;
-        width: 100%;
-    }
-    
-    .search-form-input:focus, .search-form-input:hover, .search-form-input:active  {
-        box-shadow: none;
-        border: solid 1px var(--primary);
-        box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, .1);
-        background-color: #E4E4E4;
-    }
-
-    .filter-search-button{
-        background-image: linear-gradient(#3991C9, #63BCF4);
-        border-radius: 10px;
-        border: none;
-        text-decoration: none;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        margin: 0 auto;
-        align-items: center;
-    }
-
-    .filter-search-button:hover, .filter-search-button:active, .filter-search-button:focus{
-        background-color: var(--secondary);
-        transform: scale(1.03);
-        box-shadow: 0px 5px 10px 5px rgba(57, 145, 201, 0.18);
     }
 }
 
