@@ -340,7 +340,7 @@
 
     .page-content p{        
         font-weight: 300;
-        font-size: 10px;
+        font-size: 13px;
         line-height: 1.5;
         color: var(--font-color-secondary);
     }

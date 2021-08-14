@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         splash.classList.add('display-none');
         login.classList.add('display');
         bg.classList.add('display');     
-    }, 1000);
+    }, 2500);
 })
 
 jQuery(function($) {

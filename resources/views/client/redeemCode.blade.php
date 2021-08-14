@@ -30,7 +30,7 @@
             <!--Content-->
                 <div class="page-content container-fluid col-xl-6">
                     <div class=" desktop">                    
-                         <!--Navbar-->
+                        <!--Navbar-->
                         <nav class="navbar p-0">
                             <div class="container-fluid nav-back">
                                 <a class="navback-home" href="#">

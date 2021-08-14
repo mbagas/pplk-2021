@@ -113,3 +113,9 @@ a, a:hover{
         min-height: 90px;
     } */
 }
+
+@media (max-width: 576px) {
+    .headline-text p {
+        font-size: 13px;
+    }
+}
