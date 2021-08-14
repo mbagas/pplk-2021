@@ -125,37 +125,13 @@ h2{
     .custom-divisi img{
         width: 100%;
     }
+
     .card-title{
         font-size: 16px;
     }
-    .nav-back {
-        display: flex;
-        top: 0;
-        padding-left: 25px;
-        padding-right: 25px;
-        overflow: hidden;
-        z-index: 99;
-    }
-    
-    .nav-back a {
-        position: absolute;
-        top: 20px;
-        color: #fefefe;
-    }
-    
-    .navback-home {
-        text-decoration: none;
-        font-family: var(--font-family-body);
-    }
     
     .page-content {
-        margin-top: 0px !important;
-        padding-top: 0px;
-        background-color: var(--primary);
-    }
-
-    .page-content .card {
-        margin-top: 90px;
+        margin-top: 0px !important;        
     }
 
     .main-content{
