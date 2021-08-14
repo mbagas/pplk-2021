@@ -97,7 +97,7 @@
             <a class="head-menu-icon" href="#">
                 <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
             </a>
-            <a class="head-menu-icon" href="#">
+            <a class="head-menu-icon" href="{{ route('report') }}">
                 <img src="{{ asset('assets') }}/images/messages.png" alt="report-menu">
             </a>
             <a class="head-menu-icon" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

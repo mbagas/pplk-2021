@@ -140,7 +140,7 @@
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
                         </a>
-                        <a class="head-menu-icon" href="#">
+                        <a class="head-menu-icon" href="{{ route('report') }}">
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="{{ route('biodata.index') }}">
