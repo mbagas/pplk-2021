@@ -60,7 +60,7 @@
 
                     <div class="first-headline">
                         <div class="logo-kabinet">
-                            <img src="{{$dataKabinet[0]->logo}}" alt="Kabinet-logo">
+                            <img src="{{$dataKabinet->logo}}" alt="Kabinet-logo">
                         </div>
                         <div class="name-kabinet">
                             <h2>KM ITERA</h2>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="ketua">
                                     <h6>Ketua KM</h6>
-                                    <p>{{$dataKabinet[0]->presiden}}</p>
+                                    <p>{{$dataKabinet->presiden}}</p>
                                 </div>
                                 <div class="dies-natalis">
                                     <h6>Dies Natalis</h6>
@@ -157,11 +157,11 @@
                                     <div class="carousel-item active">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="{{$dataKabinet[0]->logo}}" alt="poster">
+                                                <img src="{{$dataKabinet->logo}}" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
-                                                    <p>{{$dataKabinet[0]->filosofiLogo}}</p>
+                                                    <p>{{$dataKabinet->filosofiLogo}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -241,7 +241,7 @@
                                     <div class="carousel-item active">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="{{$dataKabinet[0]->organigram}}" alt="poster">
+                                                <img src="{{$dataKabinet->organigram}}" alt="poster">
                                             </div>
                                             
                                         </div>
