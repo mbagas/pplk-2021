@@ -15,7 +15,7 @@ $("#unsubmit").click(function (e){
 })
 
 // MATERI OPTION
-$('.dTugas-material-download').click(function (e) { 
+$('.dTugas-material-download').children("a").click(function (e) { 
     e.stopPropagation()
     alert('Downloading Materi....')
 });
