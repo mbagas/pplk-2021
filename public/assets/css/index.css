@@ -76,6 +76,10 @@
     transition: all 300ms ease;
 }
 
+.head-desktop .head-menu.row {
+    flex-wrap: nowrap;
+}
+
 .head-desktop .navbar-brand{
     padding: 0;
     margin: 0;

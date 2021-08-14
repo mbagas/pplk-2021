@@ -27,14 +27,6 @@ $(window).scroll(function() {
     else {
         $(".head-bar").removeClass("scrolled");
     }
-
-    // Tugas Scroll
-    if (scroll > 100) {
-        $(".tugas-search").addClass("scrolled");
-    }
-    else {
-        $(".tugas-search").removeClass("scrolled");
-    }
 });
 $('#myTable').DataTable({
     "oLanguage": {
