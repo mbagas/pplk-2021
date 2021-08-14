@@ -248,16 +248,6 @@
                                     </div>
                                     
                                 </div>
-                                <button class="carousel-control-prev fun-fact-prev" type="button" data-bs-target="#carouselFilosofiLogo" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="circle"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next fun-fact-next" type="button" data-bs-target="#carouselFilosofiLogo" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="circle"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
                             </div>
                         </div>
                     </div>

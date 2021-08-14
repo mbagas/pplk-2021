@@ -320,6 +320,10 @@
     place-items: center;
 }
 
+#organigram .logo-filosofi{
+    padding: 0px;
+}
+
 #carouselFilosofiLogo{
     width: 80%;
 }
