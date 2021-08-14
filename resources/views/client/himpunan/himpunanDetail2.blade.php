@@ -124,7 +124,7 @@
                         <!--Content 1-->
                         <div class="tab-pane active justify-content-center"  role="tabpanel" id="filosofi">
                             <div class="card custom-himpunan w-100">
-                                <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
+                                <img src="{{ $dataHimpunan->himpunans->logo }}" class="card-img-top">
                                 <div class="card-body">
                                     <h2 class="card-title">
                                         Filosofi Logo
