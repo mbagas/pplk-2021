@@ -49,7 +49,7 @@
                     <!--NavBack Mobile-->
                     <div class="navbar-cust-himp p-0 d-lg-block d-xl-none">
                         <div class="nav-back">
-                            <a class="navback-home" href="{{ route('ukm') }}">
+                            <a class="navback-home" href="{{ route('himpunan') }}">
                                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="36" height="36" rx="10" fill="white"/>
                                     <path d="M20.5625 25.5833C20.5625 25.5833 14.4375 21.094 14.4375 18C14.4375 14.907 20.5625 10.4166 20.5625 10.4166" stroke="#070A15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -124,7 +124,7 @@
                         <!--Content 1-->
                         <div class="tab-pane active justify-content-center"  role="tabpanel" id="filosofi">
                             <div class="card custom-himpunan w-100">
-                                <img src="{{ $dataHimpunan->logo }}" class="card-img-top">
+                                <img src="{{ $dataHimpunan->himpunans->logo }}" class="card-img-top">
                                 <div class="card-body">
                                     <h2 class="card-title">
                                         Filosofi Logo
@@ -171,7 +171,7 @@
         <!--footer-->
         <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                {{-- <img src="{{ $dataHimpunan->logo }}"> --}}
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
             </div>
             <div class="detail-info">
                 <p>Copyright © 2021 PPLK -

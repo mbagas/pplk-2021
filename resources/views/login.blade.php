@@ -43,7 +43,7 @@
                         <p>Mulai perjalananmu sekarang!</p>
                     </div>
 
-                    <form class="login-form m-sm-auto" method="POST" action="{{ route('login') }}">
+                    <form class="login-form m-sm-auto" method="POST" action="{{ route('loginPost') }}">
                     @csrf
                         <span class="wrap-input-login d-block fs-24 pb-3 text-black op7">
                             Login
@@ -83,7 +83,9 @@
                             </button>
                         </div>
                     </form>
+                    
                     <div class="col-md-12 forget-password flex-column">
+                        <a href="{{ route('guest') }}" style="text-decoration: none;"><p>Masuk sebagai <strong>Guest</strong></p></a>
                         <p>Lupa Password? <strong>Lapor Daplok!</strong></p>
                     </div>
                 </div>

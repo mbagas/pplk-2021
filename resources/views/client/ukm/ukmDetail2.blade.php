@@ -178,7 +178,7 @@
                                         Misi
                                     </h2>
                                     <p class="card-text">
-                                        {{ $dataUkm->visimisis->misi }}
+                                        {!! nl2br(e($dataUkm->visimisis->misi)) !!}
                                     </p>
                                 </div>
                             </div>

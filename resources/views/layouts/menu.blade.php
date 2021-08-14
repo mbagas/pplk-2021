@@ -22,6 +22,12 @@
           <span class="nav-text">Dashboard </span>
         </a>
       </li>
+      <li>
+        <a href="{{ route('home') }}" class="ai-icon" aria-expanded="true">
+          <i class="fa fa-home"></i>
+          <span class="nav-text">Home PPLK </span>
+        </a>
+      </li>
       <!-- Akun Mahasiswa -->
       <li>
         <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

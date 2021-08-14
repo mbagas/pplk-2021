@@ -54,15 +54,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'showLoginForm']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/', [LoginController::class, 'login'])->name('login');
+Route::post('/', [LoginController::class, 'login'])->name('loginPost');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/guest', [guestController::class, 'login'])->name('guest');
 
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
   // Ini Route yang hanya bisa diakses Role SuperAdmin
-
-  // SUDAH DI OPTIMIZE (routing)
-  Route::get('/', [dashboardController::class, 'index'])->name('index');
 
   // SUDAH DI OPTIMIZE (routing)
   Route::get('/', [dashboardController::class, 'index'])->name('index');
@@ -127,8 +124,8 @@ Route::middleware(['auth'])->group(function () {
   // Ini Route yang hanya bisa diakses Role Maba
 
   // Sudah responsive
-  Route::get('/home', [clientHomeController::class, 'index'])->name('home');
   Route::resource('/biodata', clientBiodataController::class)->only(['index','edit','update']);
+  Route::get('/home', [clientHomeController::class, 'index'])->name('home');
   Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
   Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
@@ -157,30 +154,29 @@ Route::middleware(['Maba'])->group(function () {
 });
 
 
+// Route::get('/tebakBangunan', function () {
+//   return view('client.tebakGedung');
+// });
 
-Route::get('/tebakBangunan', function () {
-  return view('client.tebakGedung');
-});
+// Route::get('/question', function () {
+//   return view('client.questionSection');
+// });
 
-Route::get('/question', function () {
-  return view('client.questionSection');
-});
+// Route::get('/answer', function () {
+//   return view('client.answer');
+// });
 
-Route::get('/answer', function () {
-  return view('client.answer');
-});
+// Route::get('/report', function () {
+//   return view('client.reportPage');
+// });
 
-Route::get('/report', function () {
-  return view('client.reportPage');
-});
+// Route::get('/redeem', function () {
+//   return view('client.redeemCode');
+// });
 
-Route::get('/redeem', function () {
-  return view('client.redeemCode');
-});
-
-Route::get('/senatt', function () {
-  return view('client.senat');
-});
+// Route::get('/senatt', function () {
+//   return view('client.senat');
+// });
 
 
 

@@ -60,7 +60,7 @@
 
                     <div class="first-headline">
                         <div class="logo-kabinet">
-                            <img src="{{ asset('kabinet') }}/logo-km.png" alt="Kabinet-logo">
+                            <img src="{{ asset('kabinet') }}/kabinetkmlogo2021.png" alt="Kabinet-logo">
                         </div>
                         <div class="name-kabinet">
                             <h2>KM ITERA</h2>
@@ -151,7 +151,7 @@
                                     <div class="carousel-item active">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="{{ asset('kabinet') }}/logo-km.png" alt="poster">
+                                                <img src="{{ asset('kabinet') }}/kabinetkmlogo2021.png" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
@@ -164,7 +164,7 @@
                                     <div class="carousel-item">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="{{ asset('kabinet') }}/logo.png" alt="poster">
+                                                <img src="{{ asset('kabinet') }}/kabinetkmlogo2021.png" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
