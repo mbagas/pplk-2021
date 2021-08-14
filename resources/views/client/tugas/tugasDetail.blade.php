@@ -173,11 +173,11 @@
                         @endif
                         @if($tugasDetail->jawaban)
                         <div class="dTugas-attachment-wrapper">
-                            <div class="dTugas-attachment" onclick="alert('Opening file...')">
+                            <div class="dTugas-attachment" >
                                 <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
-                                <div class="dTugas-attachment-info">
+                                <div class="dTugas-attachment-info" data-bs-toggle="modal" data-bs-target="#jawaban">
                                     <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
-                                    <p class="bodytext text-small">{!! nl2br(e($tugasDetail->jawaban)) !!}</p>
+                                    <p class="bodytext text-small">TEKS</p>
                                 </div>
                                 <div class="dTugas-attachment-icon">
                                     <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -380,6 +380,19 @@
                                 <textarea class="form-control" name="jawaban" id="text-bodytext-input" placeholder="Jawaban">{{$tugasDetail->jawaban}}</textarea>
                                 <button class="btn dTugas-modal-submit" type="submit">Tambah</button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal dTugas-modal" id="jawaban" data-bs-backdrop="static" aria-labelledby="dTugas-modal-text-ARIAlabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content dTugas-modal-content">
+                        <div class="modal-header">
+                            <span class="modal-title dTugas-modal-title subheadline" id="dTugas-modal-text-ARIAlabel">Answer</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {!! nl2br(e($tugasDetail->jawaban)) !!}
                         </div>
                     </div>
                 </div>

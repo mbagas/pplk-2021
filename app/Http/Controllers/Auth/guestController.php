@@ -12,7 +12,7 @@ class guestController extends Controller
     public function login()
     {
         if (!Auth::check()) {
-            Auth::loginUsingId(0);
+            Auth::loginUsingId(5440);
         }
         return redirect()->route('home');
     }

@@ -60,7 +60,7 @@
 
                     <div class="first-headline">
                         <div class="logo-kabinet">
-                            <img src="{{ asset('kabinet') }}/logo-km.png" alt="Kabinet-logo">
+                            <img src="{{$dataKabinet[0]->logo}}" alt="Kabinet-logo">
                         </div>
                         <div class="name-kabinet">
                             <h2>KM ITERA</h2>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="ketua">
                                     <h6>Ketua KM</h6>
-                                    <p>Danny Fahreza</p>
+                                    <p>{{$dataKabinet[0]->presiden}}</p>
                                 </div>
                                 <div class="dies-natalis">
                                     <h6>Dies Natalis</h6>
@@ -141,7 +141,13 @@
                             <button  data-bs-toggle="pill" data-bs-target="#visiMisi" class="nav-link button-kabinet" aria-selected="false" role="tab">
                                 Visi & Misi
                             </button>
-                        </li>                  
+                        </li>      
+                        
+                        <li class="nav-item" role="presentation">
+                            <button  data-bs-toggle="pill" data-bs-target="#organigram" class="nav-link button-kabinet" aria-selected="false" role="tab">
+                                Organigram
+                            </button>
+                        </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <!--Content-pills1-->
@@ -151,29 +157,16 @@
                                     <div class="carousel-item active">
                                         <div class="content-kabinet">
                                             <div class="logo-filosofi">
-                                                <img src="{{ asset('kabinet') }}/logo-km.png" alt="poster">
+                                                <img src="{{$dataKabinet[0]->logo}}" alt="poster">
                                             </div>
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
-                                                    <h2>Tangan</h2>
-                                                    <p>Dua Tangan, yang mewakili Seribu Tangan, atau sasrabahu yang berarti saling membantu, bekerja sama, dan besinergi meraih masa depan.</p>
+                                                    <p>{{$dataKabinet[0]->filosofiLogo}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="carousel-item">
-                                        <div class="content-kabinet">
-                                            <div class="logo-filosofi">
-                                                <img src="{{ asset('kabinet') }}/logo.png" alt="poster">
-                                            </div>
-                                            <div class="card-filosofi">
-                                                <div class="filosofi-text">
-                                                    <h2>Tangan</h2>
-                                                    <p>Dua Tangan, yang mewakili Seribu Tangan, atau sasrabahu yang berarti saling membantu, bekerja sama, dan besinergi meraih masa depan.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <button class="carousel-control-prev fun-fact-prev" type="button" data-bs-target="#carouselFilosofiLogo" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -237,6 +230,32 @@
                                 </button>
                                 <button class="carousel-control-next kabinet-next" type="button" data-bs-target="#carouselVisiMisi" data-bs-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        {{-- section organigram --}}
+                        <div class="tab-pane active body-content justify-content-center" role="tabpanel" id="organigram">
+                            <div id="carouselFilosofiLogo" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="content-kabinet">
+                                            <div class="logo-filosofi">
+                                                <img src="{{$dataKabinet[0]->organigram}}" alt="poster">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <button class="carousel-control-prev fun-fact-prev" type="button" data-bs-target="#carouselFilosofiLogo" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="circle"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next fun-fact-next" type="button" data-bs-target="#carouselFilosofiLogo" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="circle"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
