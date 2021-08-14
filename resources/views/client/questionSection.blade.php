@@ -53,7 +53,7 @@
                         <canvas id="question-canvas" height="70" width="70"></canvas>
                         <span id="canvas-time" class="question-time-span bodytext">16</span>
                     </div>
-                    <img src="{{ asset('assets') }}/assets/images/jurusan-poster1.png" class="question-img">
+                    <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="question-img">
                     <div class="question-tag">
                         <span class="bodytext">Quiz 1</span>
                     </div>
