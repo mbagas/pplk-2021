@@ -171,7 +171,7 @@
         <!--footer-->
         <div class="footer-blue justify-content-around">
             <div class="footer-blue-logo">
-                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png">
+                <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" >
             </div>
             <div class="detail-info">
                 <p>Copyright © 2021 PPLK -
