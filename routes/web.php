@@ -55,13 +55,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'showLoginForm']);
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login'])->name('loginPost');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/guest', [guestController::class, 'login'])->name('guest');
 
 Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(function () {
-  // Ini Route yang hanya bisa diakses Role SuperAdmin
-
-  // SUDAH DI OPTIMIZE (routing)
   Route::get('/', [dashboardController::class, 'index'])->name('index');
   Auth::routes();
   Route::resource('user', userController::class)->except('show');
@@ -77,23 +73,14 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::resource('kabinet', kabinetController::class)->except('show');
   Route::resource('findCode', findCodeController::class)->except(['show']);
   Route::resource('tebakGedung', tebakGedungController::class)->except(['show']);
-
-  // Route::get('/data-mahasiswa', [dataMahasiswa::class, 'index'])->name('data-mahasiswa');
-  // Route::post('/create', [dataMahasiswa::class, 'addMahasiswa'])->name('addMahasiswa');
-
   Route::get('/files/{types}/{id}', [FileManager::class, 'DownloadFile'])->name('file.Download');
-
   Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
-
   Route::resource('tugas', tugasController::class);
   Route::resource('submissions', submissionController::class);
   Route::resource('maba', mengerjakanController::class);
 });
 
 Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa')->group(function () {
-  // Ini Route yang hanya bisa diakses Role Ormawa
-
-
   Route::get('/', [ormawaController::class, 'index'])->name('index');
   Route::resource('prodi', prodiController::class)->only(['update']);
   Route::resource('ukm', ukmController::class)->only(['update']);
@@ -101,8 +88,6 @@ Route::middleware(['Ormawa'])->name('dashboardOrmawa.')->prefix('dashboardOrmawa
 });
 
 Route::middleware(['DaplokMentor'])->name('dashboardDaplokMentor.')->prefix('dashboardDaplokMentor')->group(function () {
-  // Ini Route yang hanya bisa diakses Role DaplokMentor
-
   Route::get('/', [userController::class, 'index'])->name('index');
   Route::resource('user', userController::class)->except('show');
   Route::resource('submissions', submissionController::class)->only(['index']);
@@ -113,19 +98,13 @@ Route::middleware(['Tugas'])->name('dashboardTugas.')->prefix('dashboardTugas')-
   Route::get('/', [tugasController::class, 'index'])->name('index');
   Route::resource('tugas', tugasController::class);
   Route::resource('submissions', submissionController::class);
-  // Ini Route yang hanya bisa diakses Role Tugas
 });
 
-Route::middleware(['Pendanaan'])->group(function () {
-  // Ini Route yang hanya bisa diakses Role Pendanaan
-});
+
 
 Route::middleware(['auth'])->group(function () {
-  // Ini Route yang hanya bisa diakses Role Maba
-
-  // Sudah responsive
-  Route::resource('/biodata', clientBiodataController::class)->only(['index','edit','update']);
   Route::get('/home', [clientHomeController::class, 'index'])->name('home');
+  Route::resource('/biodata', clientBiodataController::class)->only(['index','edit','update']);
   Route::get('/dataUkm', [clientUkmController::class, 'index'])->name('ukm');
   Route::get('/ukmDetail/{ukm}', [clientUkmController::class, 'show'])->name('ukmDetail');
   Route::get('/jurusan', [clientJurusanController::class, 'index'])->name('jurusan');
@@ -135,17 +114,17 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/reportPage', [reportController::class, 'index'])->name('reportPage');
   Route::get('/upt', [clientUptController::class, 'index'])->name('dataUpt');
   Route::get('/logoPPLK', [logoPplkController::class, 'index'])->name('logoPPLK');
-  Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet'); // nopal gapaham dan belum ngerti susunan kabinet
+  Route::get('/dataKabinet', [clientKabinetController::class, 'index'])->name('kabinet');
   Route::get('/kamus', [clientKamusGaulController::class, 'index'])->name('kamus');
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
-
- 
+  Route::get('/report', )[reportController::class, 'index'])->name('report');
+  Route::post('/report', [reportController::class, 'store'])->name('reportPost');
+  Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 Route::middleware(['Maba'])->group(function () {
-  // Ini Route yang hanya bisa diakses Role Maba
   Route::resource('/tugasMaba', clientTugasController::class)->only(['index','show','update']);
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
@@ -166,10 +145,6 @@ Route::middleware(['Maba'])->group(function () {
 //   return view('client.answer');
 // });
 
-Route::get('/report', function () {
-  return view('client.reportPage');
-});
-Route::post('/report', [reportController::class, 'store'])->name('reportPost');
 
 // Route::get('/redeem', function () {
 //   return view('client.redeemCode');
