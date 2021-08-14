@@ -19,7 +19,7 @@ function arcMove(){
         deg -= degPerSec/fps
         c.clearRect(0,0,cnv.width,cnv.height)
         time = deg/degPerSec
-        cnvTime.innerHTML = time.toFixed()
+        cnvTime.innerHTML = Math.abs(time.toFixed())
 
         // Draw Progress
         c.beginPath()
