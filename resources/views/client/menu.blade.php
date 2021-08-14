@@ -92,7 +92,7 @@
                 <img src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" alt="notification-menu" class="photo-profile">
             </a>
             <div class="username" style="font-size: 15px;">
-                {{ auth()->user()->nama }}
+                {{ auth()->user()->nama ?? 'guest'}}
             </div>
             <a class="head-menu-icon" href="#">
                 <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">

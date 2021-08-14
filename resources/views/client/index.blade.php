@@ -147,7 +147,7 @@
                     <!-- Nama User -->
                     <div class="greetings">
                         <h1>
-                            Hi, {{ auth()->user()->nama }}
+                            Hi, {{ auth()->user()->nama ?? 'guest' }}
                         </h1>
                         <p>
                             Mari kita kenal lebih dekat dengan PPLK ITERA
