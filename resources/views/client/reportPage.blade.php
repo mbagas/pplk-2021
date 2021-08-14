@@ -46,23 +46,21 @@
                         <div class="desc-text">
                             <h2>Report Page</h2>
                         </div>
-                        <form class="col-sm-12 container-fluid m-sm-auto report-form fle" method="POST">
+                        <form class="col-sm-12 container-fluid m-sm-auto report-form fle" action="{{ route('reportPost') }}" method="POST" id="report">
+                            @csrf
                             <div class="row report-input">
                                 <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="inputs">
+                                <input type="text" class="inputs" name="nama">
                             </div>
                             <div class="row report-input">
-                                <label for="nim" class="form-label">NIM</label>
-                                <input type="text" class="inputs">
+                                <label for="instagram" class="form-label">Instagram</label>
+                                <input type="text" class="inputs" name="instagram">
                             </div>
                             <div class="row report-input">
-                                <label for="prodi" class="form-label">Program Studi</label>
-                                <input type="text" class="inputs">
+                                <label for="noHp" class="form-label">No Telepon</label>
+                                <input type="text" class="inputs" name="noHp">
                             </div>
-                            <div class="row report-input">
-                                <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
-                                <input type="text" class="inputs">
-                            </div>
+
                             <div class="row radio-input">
                                 <label for="kondisi">Kondisi</label>
                                 <p><input class="" type="radio" name="kondisi" value="sakit"> Sakit</p>
@@ -74,10 +72,16 @@
                             </div>
                             <div class="row report-input">
                                 <label for="keluhan" class="form-label">Keluhan selain diatas</label>
-                                <textarea name="keluhan" id="keluhan" cols="30" rows="10" class="fill"></textarea>
+                                <textarea id="keluhan" cols="30" rows="10" class="fill"></textarea>
                             </div>
+
+                            <div class="row report-input">
+                                <label for="keluhan" class="form-label">Kritik & Saran Platform PPLK</label>
+                                <textarea name="kritikSaran" cols="30" rows="7" class="fill"></textarea>
+                            </div>
+
                             <div class="col-sm-12 mt-4">
-                                <button name="submit" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary rounded custom-login-btn">
+                                <button name="submit" type="submit" id="tes" class="btn btn-primary rounded custom-login-btn">
                                     Kirim Laporan
                                 </button>
                             </div>
@@ -85,7 +89,14 @@
                     </div> 
                 </div>
             </div>
-            <div class="modal container-fluid" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            @if(session('sukses'))
+            <script type="text/javascript">
+                $(document).ready(function() {
+    $('#reportModal').modal('show');
+});
+            </script>
+            @endif
+            <div class="modal container-fluid" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                         <div class="modal-body">
@@ -102,6 +113,7 @@
                 </div>
             </div>
         </div>
+        @csrf
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>

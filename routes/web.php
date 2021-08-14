@@ -166,9 +166,10 @@ Route::middleware(['Maba'])->group(function () {
 //   return view('client.answer');
 // });
 
-// Route::get('/report', function () {
-//   return view('client.reportPage');
-// });
+Route::get('/report', function () {
+  return view('client.reportPage');
+});
+Route::post('/report', [reportController::class, 'store'])->name('reportPost');
 
 // Route::get('/redeem', function () {
 //   return view('client.redeemCode');
