@@ -311,6 +311,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
 .card img{
     width: 100%;
+    object-fit: contain;
 }
 
 .big-menu-item{
