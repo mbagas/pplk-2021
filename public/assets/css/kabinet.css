@@ -316,6 +316,10 @@
     place-items: center;
 }
 
+#organigram {
+    place-items: center;
+}
+
 #carouselFilosofiLogo{
     width: 80%;
 }
@@ -365,8 +369,8 @@
     }
 
     .small-kabinet-menu .nav-item button{   
-        min-width: 150px;    
-        max-height: 40px;                  
+        width: 90px;
+        height: 100%;
         font-size: 13px; 
     }
 

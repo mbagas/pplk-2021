@@ -235,7 +235,7 @@
                             </div>
                         </div>
                         {{-- section organigram --}}
-                        <div class="tab-pane active body-content justify-content-center" role="tabpanel" id="organigram">
+                        <div class="tab-pane body-content justify-content-center" role="tabpanel" id="organigram">
                             <div id="carouselFilosofiLogo" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
