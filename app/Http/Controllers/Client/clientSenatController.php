@@ -11,7 +11,7 @@ class clientSenatController extends Controller
 {
     public function index(){
         $dataSenat = Cache::rememberForever('dataSenat', function () {
-            return Senat::get();
+            return Senat::all();
         });
         return view('client.senat', compact('dataSenat'));
     }

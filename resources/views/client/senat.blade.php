@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="ketua">
                                     <h6>Ketua Senat</h6>
-                                    <p></p>
+                                    <p>{{$dataSenat[0]->ketua}}</p>
                                 </div>
                                 <div class="dies-natalis">
                                     <h6>Dies Natalis</h6>
@@ -148,7 +148,7 @@
                                             <div class="card-filosofi">
                                                 <div class="filosofi-text">
                                                     <h2>Senat Keluarga Mahasiswa Itera</h2>
-                                                    <p> </p>                                                
+                                                    <p>{{$dataSenat[0]->deskripsi}} </p>                                                
                                                 </div>
                                             </div>
                                         </div>
