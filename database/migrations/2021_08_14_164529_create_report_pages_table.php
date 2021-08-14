@@ -17,6 +17,7 @@ class CreateReportPagesTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nim')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('kontak')->nullable();
             $table->text('kritikSaran');
             $table->timestamps();
