@@ -212,6 +212,7 @@
 .image img{
     width: 150px;
     height: 150px;
+    object-fit: contain;
 }
 
 @media(max-width: 1200px) {
