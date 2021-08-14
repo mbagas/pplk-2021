@@ -119,7 +119,7 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/ukmDetail/{ukm}/QRcode', [clientUkmController::class, 'showQR'])->name('ukmQR');
   Route::get('/dataHimpunan', [clientHimpunanController::class, 'index'])->name('himpunan');
   Route::get('/himpunanDetail/{himpunan}', [clientHimpunanController::class, 'show'])->name('himpunanDetail');
-  Route::get('/report', )[reportController::class, 'index'])->name('report');
+  Route::get('/report', [reportController::class, 'index'])->name('report');
   Route::post('/report', [reportController::class, 'store'])->name('reportPost');
   Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
