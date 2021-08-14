@@ -378,6 +378,11 @@
 }
 
 @media (max-width: 576px) {
+
+    .logo-kabinet img{
+        width: 60%;
+    }
+
     #carouselFilosofiLogo{
         width: 100%;
     }
