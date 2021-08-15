@@ -79,7 +79,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        {{$scores[1]->skor}} Point
+                                        {{$scores[1]->skor}} Points
                                     </h1>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        {{ $scores[0]->skor }} Point
+                                        {{ $scores[0]->skor }} Points
                                     </h1>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
 
                                 <div class="point">
                                     <h1>
-                                        {{ $scores[2]->skor }} Point
+                                        {{ $scores[2]->skor }} Points
                                     </h1>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
                                 </div>
                                 <div class="point">
                                     <h1>
-                                        {{ $selfScore->skor }} point
+                                        {{ $selfScore->skor }} Points
                                     </h1>
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                                 </div>
                                 <div class="point">
                                     <h1>
-                                        {{$score->skor}} point
+                                        {{$score->skor}} Points
                                     </h1>
                                 </div>
                             </div>

@@ -188,6 +188,16 @@
     width: 40%;
 }
 
+.user-data .point{
+    width: 15%;
+    text-align: center;
+}
+
+.others-data .point{
+    width: 15%;
+    text-align: center;
+}
+
 
 @media (max-width:1200px) {
     .title-page h1{
