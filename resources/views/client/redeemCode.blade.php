@@ -33,7 +33,7 @@
                          <!--Navbar-->
                         <nav class="navbar p-0">
                             <div class="container-fluid nav-back">
-                                <a class="navback-home" href="#">
+                                <a class="navback-home" href="{{ route('findCode')}}">
                                     <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
                                         <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
