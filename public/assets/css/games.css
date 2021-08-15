@@ -293,3 +293,9 @@
         font-size: 10px !important;
     }
 }
+
+@media (max-width: 360px){
+    .menu-list .card {
+        height: 150px;
+    }
+}
