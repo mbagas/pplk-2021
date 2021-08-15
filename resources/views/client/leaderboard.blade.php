@@ -57,7 +57,7 @@
                     <div class="top-3-winner row row-cols-3">
                         <div class="winner-2 winner">
                             <div class="profile-winner">
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                <img src="{{ $scores[1]->user->img }}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         2
@@ -67,19 +67,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        Dhifaf Athiyah Z
+                                        {{ $scores[1]->user->nama }}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        Teknik Informatika
+                                        {{$scores[1]->user->prodis->ormawas->namaLengkap}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        6969 Point
+                                        {{$scores[1]->skor}} Point
                                     </h1>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 <div class="crown">
                                     <img src="{{ asset('assets') }}/images/crown.png" alt="crown" class="crown-img"/>
                                 </div>
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                <img src="{{ $scores[0]->user->img }}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         1
@@ -101,19 +101,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        Dhifaf Athiyah Z
+                                        {{ $scores[0]->user->nama }}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        Teknik Informatika
+                                        {{$scores[0]->user->prodis->ormawas->namaLengkap}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        6969 Point
+                                        {{ $scores[0]->skor }} Point
                                     </h1>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
 
                         <div class="winner-3 winner">
                             <div class="profile-winner">
-                                <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                <img src="{{ $scores[2]->user->img }}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         3
@@ -132,19 +132,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        Dhifaf Athiyah Z
+                                        {{ $scores[2]->user->nama }}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        Teknik Informatika
+                                        {{$scores[2]->user->prodis->ormawas->namaLengkap}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        6969 Point
+                                        {{ $scores[2]->skor }} Point
                                     </h1>
                                 </div>
                             </div>
@@ -159,174 +159,65 @@
                             <div class="card user-data card-leaderboard">
                                 <div class="number-rank">
                                     <h2>
-                                        1
+                                        ?
                                     </h2>
                                 </div>
                                 <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                    <img src="{{ $selfScore->user->img }}" alt="profile-img" />
                                 </div>
                                 <div class="profile-info">
                                     <div class="nama">
                                         <h2>
-                                            Dhifaf Athiyah Z
+                                            {{ $selfScore->user->nama }}
                                         </h2>
                                     </div>
 
                                     <div class="prodi">
                                         <h3>
-                                            Teknik Informatika
+                                            {{$selfScore->user->prodis->ormawas->namaLengkap}}
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="point">
                                     <h1>
-                                        6969 point
+                                        {{ $selfScore->skor }} point
                                     </h1>
                                 </div>
                             </div>
                             <!-- nilai yang lain for dari sini -->
+                            @foreach ($scores as $score)
                             <div class="card others-data card-leaderboard">
                                 <div class="number-rank">
                                     <h2>
-                                        1
+                                        {{$loop->iteration}}
                                     </h2>
                                 </div>
                                 <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                    <img src="{{ $score->user->img }}" />
                                 </div>
                                 <div class="profile-info">
                                     <div class="nama">
                                         <h2>
-                                            Dhifaf Athiyah Z
+                                            {{$score->user->nama}}
                                         </h2>
                                     </div>
 
                                     <div class="prodi">
                                         <h3>
-                                            Teknik Informatika
+                                            {{$score->user->prodis->ormawas->namaLengkap}}
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="point">
                                     <h1>
-                                        6969 point
+                                        {{$score->skor}} point
                                     </h1>
                                 </div>
                             </div>
+                            @endforeach
+                            
 
-                            <div class="card others-data card-leaderboard">
-                                <div class="number-rank">
-                                    <h2>
-                                        1
-                                    </h2>
-                                </div>
-                                <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
-                                </div>
-                                <div class="profile-info">
-                                    <div class="nama">
-                                        <h2>
-                                            Dhifaf Athiyah Z
-                                        </h2>
-                                    </div>
-
-                                    <div class="prodi">
-                                        <h3>
-                                            Teknik Informatika
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="point">
-                                    <h1>
-                                        6969 point
-                                    </h1>
-                                </div>
-                            </div>
-
-                            <div class="card others-data card-leaderboard">
-                                <div class="number-rank">
-                                    <h2>
-                                        1
-                                    </h2>
-                                </div>
-                                <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
-                                </div>
-                                <div class="profile-info">
-                                    <div class="nama">
-                                        <h2>
-                                            Dhifaf Athiyah Z
-                                        </h2>
-                                    </div>
-
-                                    <div class="prodi">
-                                        <h3>
-                                            Teknik Informatika
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="point">
-                                    <h1>
-                                        6969 point
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="card others-data card-leaderboard">
-                                <div class="number-rank">
-                                    <h2>
-                                        1
-                                    </h2>
-                                </div>
-                                <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
-                                </div>
-                                <div class="profile-info">
-                                    <div class="nama">
-                                        <h2>
-                                            Dhifaf Athiyah Z
-                                        </h2>
-                                    </div>
-
-                                    <div class="prodi">
-                                        <h3>
-                                            Teknik Informatika
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="point">
-                                    <h1>
-                                        6969 point
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="card others-data card-leaderboard">
-                                <div class="number-rank">
-                                    <h2>
-                                        1
-                                    </h2>
-                                </div>
-                                <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
-                                </div>
-                                <div class="profile-info">
-                                    <div class="nama">
-                                        <h2>
-                                            Dhifaf Athiyah Z
-                                        </h2>
-                                    </div>
-
-                                    <div class="prodi">
-                                        <h3>
-                                            Teknik Informatika
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="point">
-                                    <h1>
-                                        6969 point
-                                    </h1>
-                                </div>
-                            </div>
+                            
 
                         </div>
 

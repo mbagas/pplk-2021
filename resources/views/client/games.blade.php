@@ -80,7 +80,7 @@
                                         Points
                                     </h5>
                                     <h2>
-                                        1699 Points
+                                     {{$score}} Points
                                     </h2>
                                 </div>
 
@@ -104,7 +104,7 @@
                                         Find The Code
                                     </h2>
                                     <h3>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et a diam egestas faucibu
+                                        Redeem code sesuai barang yang sudah kamu dapatkan pada game ITERA ADVENTURE disini.
                                     </h3>
                                 </div>
                                 <div class="arrow-next">
@@ -128,7 +128,7 @@
                                         Tebak Bangunan
                                     </h2>
                                     <h3>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et a diam egestas faucibu
+                                        Pilih nama gedung yang sesuai dengan gambar, berdasarkan informasi yang kamu dapat dari ITERA ADVENTURE.
                                     </h3>
                                 </div>
                                 <div class="arrow-next">

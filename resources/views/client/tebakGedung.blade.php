@@ -49,7 +49,7 @@
                 <!-- for disini aja -->
                 @foreach ($games as $game)
                     <div class="menu-btn col-4">
-                        <a href="{{Route('playTebakGedung', $game->games_id)}}" class="menu-btn-a">{{$loop->iteration}} {{$game->games_id}}</a>
+                        <a href="{{Route('playTebakGedung', $game->games_id)}}" class="menu-btn-a">{{$loop->iteration}}</a>
                     </div>
                 @endforeach
                     
