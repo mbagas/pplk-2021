@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="poin-text">
                                     <h5>
-                                        Rank
+                                        Points
                                     </h5>
                                     <h2>
                                         1699 Points
