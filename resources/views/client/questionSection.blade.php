@@ -17,7 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png"></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="bg2"></div>
             </div>
-            <a href="tebak-gedung.html" class="back-btn">
+            <a href="{{ route('tebakGedung')}}" class="back-btn">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="white"/>
                     <path d="M20.5625 25.5832C20.5625 25.5832 14.4375 21.0938 14.4375 17.9998C14.4375 14.9069 20.5625 10.4165 20.5625 10.4165" stroke="url(#paint0_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

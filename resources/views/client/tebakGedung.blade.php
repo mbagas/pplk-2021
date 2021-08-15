@@ -29,7 +29,7 @@
         <!-- Desktop Navabar top -->
         @include('client.menu')
         <div class="page-content desktop col-xl-6">
-            <a href="index.html" class="back-btn">
+            <a href="{{ route('games')}}" class="back-btn">
                 <svg height="36" width="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="url(#paint0_linear)"/>
                     <path d="M20.5625 25.5832C20.5625 25.5832 14.4375 21.0938 14.4375 17.9998C14.4375 14.9069 20.5625 10.4165 20.5625 10.4165" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
