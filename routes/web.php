@@ -129,7 +129,8 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games', [gameController::class, 'index'])->name('games');
   Route::get('/leaderboard', [leaderBoardController::class, 'index'])->name('leaderboard');
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
-  Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'index']);
+  Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'show'])->name('playFindCode');
+  Route::post('/games/findCode/redeem/{findCode}', [clientFindCodeController::class, 'submit'])->name('redeem');
 });
 
 

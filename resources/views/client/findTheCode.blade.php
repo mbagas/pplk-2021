@@ -50,12 +50,21 @@
                         <h2>Find The Code</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
+                            @if (session('sukses'))
+                            <div class="alert alert-success">
+                                {{ session('sukses') }}
+                            </div>
+                            @elseif (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                            @endif
                     </div>
                     <div class="row row-cols-3 g-3">
                         @foreach ($games as $game)
                         
                             <div class="col custom-mini-ftc-col">
-                                <a href="#" class="card-ftc">
+                                <a href="{{route('playFindCode', $game->games_id)}}" class="card-ftc">
                                     <div class="image">
                                         <img class="rounded-ftc" src="{{$game->gambar}}"
                                             alt="a snow-capped mountain range" />

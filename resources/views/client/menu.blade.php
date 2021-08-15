@@ -54,7 +54,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="{{route('games')}}">
                             <svg class="icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M9.22461 2.40088C9.23185 3.17447 9.86582 3.795 10.6394 3.78776H11.7315C12.9261 3.77845 13.9034 4.73613 13.9199 5.93065V7.02175"

@@ -18,12 +18,27 @@ class clientFindCodeController extends Controller
         $gamePlayed = DB::table('scores')->where('users_id', Auth()->user()->id)->pluck('games_id');
         $findCodes = Game::where('kategoriGame_id', 1)->pluck('id');
         $gameAllow = $findCodes->diff($gamePlayed);
-        $games = FindCode::whereIn('games_id', $gameAllow)->get();
+        $games = FindCode::with('games')->whereIn('games_id', $gameAllow)->get();
         // dd($games);
         return view('client.findTheCode', compact('games'));
     }
 
-    public function show(FindCode $findCode){
-        
+    public function show($id){
+        $dataGame = Game::with('FindCode')->where('id', $id)->first();
+        return view('client.redeemCode', compact('dataGame'));
+    }
+
+    public function submit(Request $request, Game $findCode){
+        // dd($findCode);
+        if($request->code == $findCode->FindCode->code){
+            Score::create([
+                'users_id' => Auth()->user()->id,
+                'games_id' => $findCode->id,
+                'skor'     => $findCode->skor
+            ]);
+            return redirect()->route('findCode')->with('sukses', 'code berhasil di redeem');
+            
+        }
+        return redirect()->route('findCode')->with('error', 'code gagal di redeem');
     }
 }
