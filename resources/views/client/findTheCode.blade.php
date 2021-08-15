@@ -48,8 +48,7 @@
                     </nav>
                     <div class="headline-text">
                         <h2>Find The Code</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
+                        <p>Redeem code sesuai barang yang sudah kamu dapatkan pada game ITERA ADVENTURE disini.</p>
                             @if (session('sukses'))
                             <div class="alert alert-success">
                                 {{ session('sukses') }}
