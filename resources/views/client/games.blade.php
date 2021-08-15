@@ -114,7 +114,7 @@
                                 </div>
                             </a>
 
-                            <a class="card tebak-bangunan" href="tebakBangunan.blade.php">
+                            <a class="card tebak-bangunan" href="{{route('tebakGedung')}}">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">

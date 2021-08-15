@@ -46,27 +46,32 @@
                 <p class="result-tag bodytext">Quiz Selesai</p>
                 <!-- Jawaban Benar/Salah pake js kecuali kalo mau dirubah -->
                 <!-- Jawab Benar -->
+
                 <div id="result-benar" class="result-info">
                     <span class="title selamat0">Selamat</span>
                     <span class="bodytext selamat1">Kamu menjawab dengan benar</span>
                 </div>
-                <!-- Jawab Salah -->
+
+                    <!-- Jawab Salah -->
                 <div id="result-salah" class="result-info d-none">
                     <span class="title selamat0 selamat2">Yahhh</span>
                     <span class="bodytext selamat1">Kamu menjawab dengan salah</span>
                 </div>
+
+                
+                
                 <p class="result-text title">Kamu mendapatkan nilai</p>
                 <div class="result-points-wrapper">
                     <canvas id="result-canvas" height="144" width="144" class="result-canvas"></canvas>
                     <div class="result-canvas-text">
                         <!-- Progress Circle auto ke id="canvas-percent" -->
-                        <span id="canvas-percent" class="canvas-percent title">43</span>
+                        <span id="canvas-percent" class="canvas-percent title">{{$score->skor}}</span>
                         <span class="canvas-text bodytext">Points</span>
                     </div>
                 </div>
             </div>
             <div class="result-buttons">
-                <a href="index.html" class="result-buttons-btn bodytext blue">Selesai</a>
+                <a href="{{route('tebakGedung')}}" class="result-buttons-btn bodytext blue">Selesai</a>
                 <a href="leaderboard.html" class="result-buttons-btn bodytext">Leaderboard</a>
             </div>
             

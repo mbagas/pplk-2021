@@ -53,7 +53,7 @@
                         <canvas id="question-canvas" height="70" width="70"></canvas>
                         <span id="canvas-time" class="question-time-span bodytext">16</span>
                     </div>
-                    <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="question-img">
+                    <img src="{{ $dataGame->TebakGedung->gambar }}" class="question-img">
                     <div class="question-tag">
                         <span class="bodytext">Quiz 1</span>
                     </div>
@@ -64,12 +64,14 @@
                 <div class="answer">
 
                     <!-- FORM BUAT JAWABAN (name harus sama semua <input/>) -->
-                    <form>
+                    <form action="{{Route('submit', $dataGame)}}" method="POST">
+                        @method('POST')
+                        @csrf
                         <ul class="answer-options">
                             <li>
-                                <input id="a" type="radio" name="ans" value="a">
+                                <input id="a" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil1}}">
                                 <label for="a">
-                                    <span class="option-name bodytext">GEDUNG A</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil1}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -96,9 +98,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="b" type="radio" name="ans" value="b">
+                                <input id="b" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil2}}">
                                 <label for="b">
-                                    <span class="option-name bodytext">GEDUNG B</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil2}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -125,9 +127,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="c" type="radio" name="ans" value="c">
+                                <input id="c" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil3}}">
                                 <label for="c">
-                                    <span class="option-name bodytext">GEDUNG C</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil3}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -154,9 +156,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="d" type="radio" name="ans" value="d">
+                                <input id="d" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil4}}">
                                 <label for="d">
-                                    <span class="option-name bodytext">GEDUNG D</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil4}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -183,7 +185,7 @@
                                 </label>
                             </li>
                         </ul>
-                        <button class="answer-submit btn bodytext">Submit</button>
+                        <button type="submit" class="answer-submit btn bodytext">Submit</button>
                     </form>
                 </div>
             </div>

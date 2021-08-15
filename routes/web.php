@@ -29,6 +29,7 @@ use App\Http\Controllers\Client\clientKamusGaulController;
 use App\Http\Controllers\Client\clientProdiController;
 use App\Http\Controllers\Client\clientSenatController;
 use App\Http\Controllers\Client\clientTugasController;
+use App\Http\Controllers\Client\clientTebakGedungController;
 use App\Http\Controllers\Client\clientUkmController;
 use App\Http\Controllers\Client\clientUptController;
 use App\Http\Controllers\Client\gameController;
@@ -131,6 +132,10 @@ Route::middleware(['Maba'])->group(function () {
   Route::get('/games/findCode', [clientFindCodeController::class, 'index'])->name('findCode');
   Route::get('/games/findCode/{findCode}', [clientFindCodeController::class, 'show'])->name('playFindCode');
   Route::post('/games/findCode/redeem/{findCode}', [clientFindCodeController::class, 'submit'])->name('redeem');
+  Route::get('/games/tebakGedung', [clientTebakGedungController::class, 'index'])->name('tebakGedung');
+  Route::get('/games/tebakGedung/{tebakGedung}', [clientTebakGedungController::class, 'show'])->name('playTebakGedung');
+  Route::post('/games/tebakGedung/submit/{tebakGedung}', [clientTebakGedungController::class, 'submit'])->name('submit');
+  Route::get('/games/tebakGedung/hasil/{score}', [clientTebakGedungController::class, 'result'])->name('result');
 });
 
 

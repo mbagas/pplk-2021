@@ -42,53 +42,18 @@
                 </svg>
             </a>
             <div class="container">
-                <h1 class="title mx-auto text-center">Tebak Gambar</h1>
+                <h1 class="title mx-auto text-center">Tebak Gedung</h1>
                 <p class="bodytext mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
             </div>
             <div class="menu row row-cols-3">
                 <!-- for disini aja -->
+                @foreach ($games as $game)
                     <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">1</a>
+                        <a href="{{Route('playTebakGedung', $game->games_id)}}" class="menu-btn-a">{{$loop->iteration}} {{$game->games_id}}</a>
                     </div>
-                    <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">2</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">3</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">4</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">5</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">6</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">7</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">8</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">9</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">10</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">11</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">12</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">13</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">14</a>
-                    </div>
+                @endforeach
+                    
+                    
             </div>
         </div>
     </div>
