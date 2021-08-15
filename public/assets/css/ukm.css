@@ -212,6 +212,7 @@
 .image img{
     width: 150px;
     height: 150px;
+    object-fit: contain;
 }
 
 @media(max-width: 1200px) {
@@ -229,7 +230,7 @@
     }
 
     .page-content p{                
-        font-size: 10px;        
+        font-size: 13px;        
     }
 
     .custom-mini-ukm-col{        

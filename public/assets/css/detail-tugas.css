@@ -116,22 +116,22 @@ a {
 
 .dTugas-top-title {
     width: 60%;
-    margin-top: 15%;
+    /* margin-top: 15%; */
     line-height: 114%;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 .dTugas-top-img {
     /* object-fit: cover;
     object-position: center; */
-    bottom: 18%;
+    bottom: 2%;
     right: 6%;
     position: absolute;
     /* height: 183px;
     width: 183px; */
     /* height: 44.2vw; */
-    width: 240px;
-    height: 240px;
+    width: 320px;
+    height: 320px;
     z-index: -1;
 }
 
@@ -166,7 +166,7 @@ a {
 }
 
 .dTugas-tag p {
-    margin-bottom: 0;
+    margin-bottom: 2px;
     white-space: nowrap;
 }
 
@@ -367,7 +367,7 @@ a {
 }
 
 .dTugas-attachment-option:hover {
-    background-color: #E0E0E0;
+    background-color: var(--thumbnail-photos);
 }
 
 .delete {
@@ -565,132 +565,22 @@ a {
         margin-top: 0px;
         width: 100%;
     }
-
-    .page-content{
-        margin-top: 0px !important;
-    }
     
     .dTugas-top {
-        position: relative;
-        padding: 16px 42px 30px;
         min-height: 200px;
-        background-color: var(--primary);
-        overflow: visible;
-    }
-
-    .dTugas-top::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 99%;
-        height: 10%;
-        width: 100%;
-        background-color: var(--primary);
-        z-index: -3;
-    }
-
-    .dTugas-top-bg {
-        top: 0;
-        left: 0;
-        position: absolute;
-        z-index: -2;
-        width: 100%;
-        height: 110%;
-        overflow: hidden;
-    }
-
-    .topbg-circle {
-        position: absolute;
-        border-radius: 50%;
-        background: linear-gradient(324.49deg, #63BCF4 -41.47%, #479FD7 156.85%);
-    }
-
-    .topbg-circle.c1{
-        width: 172px;
-        height: 172px;
-        left: -86px;
-        top: -20px;
-    }
-
-    .topbg-circle.c2{
-        width: 174px;
-        height: 174px;
-        right: -67px;
-        bottom: -50px;
-    }
-
-    .dTugas-back-btn {
-        margin-bottom: 17px;
-        background-color: var(--page-background-1);
-        border-radius: 10px;
-        height: 36px;
-        width: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .dTugas-top-title {
         width: 60%;
-        line-height: 114%;
         margin-bottom: 0;
     }
 
     .dTugas-top-img {
-        /* object-fit: cover;
-        object-position: center; */
-        bottom: 8px;
+        bottom: -10px;
         right: 28px;
         position: absolute;
-        /* height: 183px;
-        width: 183px; */
-        /* height: 50%; */
-        width: 30%;
-        z-index: -1;
-    }
-    
-    .d-tTugas-mainContent {
-        padding-top: 10px;
-        padding-bottom: 110px;
-        position: relative;
-        border-radius: 15px;
-        background-color: var(--page-background-1);
-        position: relative;
-    }
-
-    .dTugas-head {
-        margin: 10px 17px;
-    }
-
-    .dTugas-main-title{
-        color: #174461;
-        
-    }
-
-    .dTugas-tags {
-        margin: 10px -7.5px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .dTugas-tag {
-        margin: 0 7.5px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .dTugas-tag p {
-        margin-bottom: 0;
-        white-space: nowrap;
-    }
-
-    .dTugas-tag-block {
-        font-size: 10px;
-        text-align: center;
-        padding: 0px 9px;
-        line-height: 26px;
-        background-color: #D2EDFF;
-        border-radius: 3px;
+        width: 207px;
+        height: 207px;
     }
 
     .dTugas-body {
@@ -698,376 +588,33 @@ a {
         
     }
 
-    .dTugas-body-title {
-        margin-bottom: 5px;
-    }
-
     .dTugas-body-text {
         font-size: 13px;
     }
 
-    .dTugas-materials-slider {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 0px;
-        padding-right: 26px;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin-right: -26px;
-        gap: 10px;
-    }
-
-    .dTugas-materials-slider::-webkit-scrollbar {
-        display: none;
-    }
-
-    .dTugas-material {
-        flex: 0 0 auto;
-        border-radius: 10px;
-        overflow: hidden;
-        height: 58px;
-        width: 212px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        box-shadow: 0 5px 8px 1px rgba(0, 0, 0, 0.08);
-    }
-
-    .dTugas-material-img {
-        width: 63px;
-        height: 58px;
-    }
-
-    .dTugas-material-info {
-        height: 100%;
-        width: 100%;
-        padding: 0 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    .dTugas-material-text {
-        width: 91px;
-        margin-right: 10px;
-    }
-
-    .dTugas-material-text * {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin: 0;
-    }
-
-    .dTugas-submision {
-        margin: 10px 10px;
-    }
-
     .dTugas-submisions-head {
-        display: flex;
-        align-items: center;
         margin: 10px 0;
-    }
-
-    .dTugas-submisions-head * {
-        margin-bottom: 0;
-    }
-
-    .dTugas-submisions-head-icon {
-        margin: 0 10px;
-    }
-
-    .dTugas-submisions-title {
-        font-size: 16px;
-    }
-
-    .dTugas-attachments {
-        margin: 10px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .dTugas-attachment-wrapper {
-        position: relative;
-    }
-
-    .dTugas-attachment {
-        border-radius: 10px;
-        overflow: hidden;
-        height: 58px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        box-shadow: 0 5px 8px 1px rgba(0, 0, 0, 0.08);
-    }
-
-    .dTugas-attachment-img {
-        width: 63px;
-        height: 58px;
-    }
-
-    .dTugas-attachment-info {
-        height: 100%;
-        width: 0;
-        flex: 1;
-        position: relative;
-        margin: 0 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
-    .dTugas-attachment-info p {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin-bottom: 0;
-    }
-
-    .dTugas-attachment-icon {
-        width: 40px;
-        height: 100%;
-        right: 0;
-        margin: 0 0px;
-        justify-self: flex-end;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .dTugas-attachment-options-wrapper {
-        display: none;
-        overflow: hidden;
     }
 
     .dTugas-attachment-options {
-        position: absolute;
-        bottom: 10px;
-        right: 0px;
         width: 102px;
-        padding: 6px;
-        background-color: white;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 5px 8px 1px rgba(0, 0, 0, 0.08);
-    }
-    
-    .dTugas-options-show  {
-        display: block;
-        animation: dTugas-fade 0.2s;
-    }
-
-    .dTugas-attachment-options a {
-        flex: 1;
-    }
-
-    .dTugas-attachment-option {
-        padding: 7px 1px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        border-radius: 5px;
-        font-family: var(--font-family-body);
-    }
-
-    .dTugas-attachment-option:hover {
-        background-color: #E0E0E0;
-    }
-
-    .delete {
-        color: red;
-    }
-
-    .dTugas-attachment-option * {
-        margin: 0 5px;
-    }
-
-    .dTugas-attachment-option span {
-        font-weight: 600;
-    }
-
-    .dTugas-submisions-turnIn {
-        margin: 10px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dTugas-turnIn-btn {
-        background-color: var(--primary);
-        width: 100%;
-        margin: 5px 0;
-        border-radius: 10px;
-        text-align: center;
-        font-family: var(--font-family-body);
-        font-weight: 600;
-        color: white;
-    }
-
-    .unsubmit {
-        background-color: white;
-        color: var(--primary);
-        border: 1px solid var(--primary);
     }
 
     .dTugas-footer {
-        position: relative;
-        z-index: 99;
         position: fixed;
-        bottom: 0;
-        height: 85px;
-        width: 100%;
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 30px;
-        border-radius: 20px 20px 0 0;
-        box-shadow: 0 -5px 8px 1px rgba(0, 0, 0, 0.08);
-    }
-
-    .dTugas-footer-contact {
-        display: flex;
-        align-items: center;
-        margin: 0 10px;
-    }
-
-    .dTugas-footer-contact-text {
-        margin: 0 10px;
-    }
-
-    .dTugas-footer-contact-text p {
-        margin-bottom: 0;
-    }
-
-    .dTugas-footer-submit {
-        margin: 0 10px;
-        position: relative;
-        display: inline-block;
-    }
-
-    .dTugas-footer-btn {
-        height: 43px;
-        width: 43px;
-        border-radius: 50%;
-        background: linear-gradient(324.49deg, #63BCF4 -41.47%, #479FD7 156.85%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .dTugas-footer-option {
-        width: 43px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dTugas-footer-dropContent-wrapper {
-        display: none;
-        overflow: hidden;
-    }
-
-    .dTugas-footer-dropContent {
-        bottom: 100%;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-    .dTugas-footer-option-text {
-        margin-top: 5px;
-        margin-bottom: 6px;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    #drop-bg {
-        background-color: rgba(0, 0, 0, 0.25);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-    }
-
-    .dTugas-hidden {
-        display: none;
-    }
-
-    .dTugas-show {
-        display: block;
-        animation: dTugas-fade 0.2s ease;
-    }
-
-    .dTugas-modal {
-        animation: dTugas-fade 0.5s ease-out;
-    }
-
-    .dTugas-modal-title {
-        font-weight: 600;
-        font-size: 20px;
-    }
-
-    .dTugas-modal-text-form *{
-        margin: 10px 0;
-    }
-
-    #text-bodytext-input {
-        height: 150px;
-    }
-
-    .dTugas-modal-submit {
-        margin-top: 10px;
-        background-color: var(--primary);
-        color: white;
-        border-radius: 10px;
-        align-self: flex-end;
-        justify-self: flex-end;
-    }
-
-    .dTugas-modal-content {
-        border-radius: 10px;
-    }
-
-    .dTugas-modal-form {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* index.css OVERIDE */
-    .modal-body {
-        min-height: 200px;
-        height: 100%;
-    }
-
-    /* KEYFRAMES */
-
-    @keyframes dTugas-fade {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
     }
 
 }
 
 @media (max-width:576px) {
     .dTugas-top-img {
-        bottom: -10px;
-        width: 50%;
-        right: -10px;
+        right: 0px;
     }
 }
     
+@media (max-width:320px) {
+    .dTugas-top-img {
+        width: 173px;
+        height: 173px;
+    }
+}

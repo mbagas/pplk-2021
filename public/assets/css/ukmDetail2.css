@@ -137,6 +137,7 @@
     font-family: var(--font-family-body);
     margin-left: 14px; 
     padding-right: 14px;
+    margin-bottom: 20px;
     color: var(--font-color-secondary);
 }
 
@@ -213,7 +214,7 @@
 }
 
 .footer-blue-logo{
-    width: 10%;     
+    width: unset;     
 }
 
 .small-ukm-menu{
@@ -261,8 +262,9 @@
 }
 
 .footer-blue img {
-    width: unset;
-    border-radius: 20px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .footer-blue p{
@@ -273,7 +275,12 @@
 
 .detail-info{   
     margin-left: 10px;
-    width: 40%;
+    width: 50%;
+}
+
+.detail-info p{
+    font-size: 13px;
+
 }
 
 .icon-sosmed{
@@ -285,7 +292,7 @@
 }
 
 .icon-sosmed img{
-    width: 25%;
+    width: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -395,16 +402,20 @@
         font-size: 13px;        
     }
 
-    .footer-blue img {
-        width: 100%;        
-    }
-
     .icon-sosmed{        
         width: 25%;
     }
 
     .icon-sosmed img{
-        width: 25%;
+        width: 100%;
+    }
+    .detail-info{   
+        width: 40%;
+    }
+    
+    .detail-info p{
+        font-size: 9px;
+    
     }
 }
 

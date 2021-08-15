@@ -104,7 +104,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label col-form-label-lg">Misi</label>
                     <div class="col-sm-9">
-                        <textarea type="text" name="misi" class="form-control custom-text-area misi @error('misi') is-invalid @enderror" id="misi" disabled>{{ $prodiData->ormawas->visiMisis->misi }}</textarea>
+                        <textarea type="text" name="misi" class="form-control custom-text-area misi @error('misi') is-invalid @enderror" id="misi" rows="4" disabled>{{ $prodiData->ormawas->visiMisis->misi }}</textarea>
                         @error('misi')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -150,7 +150,7 @@
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Deskripsi</label>
                     <div class="col-sm-9">
-                        <textarea class="form-control custom-txt-area @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" disabled>{{ $prodiData->ormawas->artikels->body }}</textarea>
+                        <textarea class="form-control custom-txt-area @error('deskripsi') is-invalid @enderror" name="deskripsi" id="deskripsi" rows="4" disabled>{{ $prodiData->ormawas->artikels->body }}</textarea>
                         @error('deskripsi')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

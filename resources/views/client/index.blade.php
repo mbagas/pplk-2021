@@ -48,6 +48,7 @@
 								<button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="1" aria-label="Slide 2"></button>
 								<button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carouselSponsor" data-bs-slide-to="4" aria-label="Slide 5"></button>
 							</div>
 							<div class="carousel-inner">
 								<div class="carousel-item active">
@@ -100,6 +101,19 @@
 										</div>
 									</div>
 								</div>
+								<div class="carousel-item">
+									<div class="card sponsor-card">
+										<div class="card sponsor-card container">
+											<div class="row row-cols-1">
+												<div class="col">
+                                                    <div class="image-sponsor">
+													    <img src="{{ asset('sponsor') }}/hotelPelangi.jpeg" alt="gambar-sponsor">
+                                                    </div>
+                                                </div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
                     </div>
@@ -126,11 +140,11 @@
                         <a class="head-menu-icon" href="#">
                             <img src="{{ asset('assets') }}/images/notification.png" alt="notification-menu">
                         </a>
-                        <a class="head-menu-icon" href="report-page.blade.php">
+                        <a class="head-menu-icon" href="{{ route('report') }}">
                             <img src="{{ asset('assets') }}/images/messages.png" alt="notification-menu">
                         </a>
                         <a class="head-menu-profile" href="{{ route('biodata.index') }}">
-                            <img src="{{ asset('assets') }}/images/user_default.png" alt="notification-menu" class="photo-profile">
+                            <img src="{{ auth()->user()->img ?? asset('assets/images/user_default.png') }}" alt="profile-pic" class="photo-profile">
                         </a>
                     </div>
                 </div>
@@ -147,7 +161,7 @@
                     <!-- Nama User -->
                     <div class="greetings">
                         <h1>
-                            Hi, {{ $dataUser->nama }}
+                            Hi, {{ auth()->user()->nama ?? 'guest' }}
                         </h1>
                         <p>
                             Mari kita kenal lebih dekat dengan PPLK ITERA
@@ -261,7 +275,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12  col-xl-8">
+                        <div class="col-sm-12  col-xl-8" hidden>
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
                                     <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
@@ -281,7 +295,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-12  col-xl-8">
+                        <div class="col-sm-12  col-xl-8" hidden>
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
                                     <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">

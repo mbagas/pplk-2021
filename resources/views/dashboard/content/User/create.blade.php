@@ -509,7 +509,7 @@
                                 <select name="kelompok" class="form-control wide" tabindex="0" required>
                                     @if(Auth::user()->roles_id == 1)
                                         <option value="">Pilih Kelompok </option>
-                                        @for ($i = 1; $i <= 100; $i++)
+                                        @for ($i = 1; $i <= 140; $i++)
                                             <option value="{{$i}}">{{$i}} </option>
                                         @endfor
                                     @else

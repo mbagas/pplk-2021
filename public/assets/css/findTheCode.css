@@ -87,10 +87,15 @@ a, a:hover{
     background-color: #fff;
 }
 
+.card-ftc .image {
+    display: grid;
+    place-items: center;
+}
+
 .card-ftc img{
-    max-width: 100%;
-    max-height: 100%;
-    display: block; 
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
 }
 
 .card-title-ftc h2 {
@@ -112,4 +117,15 @@ a, a:hover{
     /* .card-ftc img {
         min-height: 90px;
     } */
+}
+
+@media (max-width: 576px) {
+    .headline-text p {
+        font-size: 13px;
+    }
+
+    .card-ftc img{
+        width: 85px;
+        height: 85px;
+    }
 }

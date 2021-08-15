@@ -11,8 +11,11 @@ use Illuminate\Support\Facades\DB;
 
 class clientBiodataController extends Controller
 {
-    //
+
     public function index(){
+        if(auth()->user()->id == 5440){
+            return redirect('home');
+        }
         $biodataUser = User::where('id',auth()->user()->id)->firstOrFail();
         if($biodataUser->prodis_id != NULL){
             $prodi = Prodi::with('ormawas')->where('id', $biodataUser->prodis_id)->first();

@@ -76,6 +76,10 @@
     transition: all 300ms ease;
 }
 
+.head-desktop .head-menu.row {
+    flex-wrap: nowrap;
+}
+
 .head-desktop .navbar-brand{
     padding: 0;
     margin: 0;
@@ -307,6 +311,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
 .card img{
     width: 100%;
+    object-fit: contain;
 }
 
 .big-menu-item{
@@ -1059,7 +1064,7 @@ a.active, .active svg path, li:hover svg path,li a:hover {
 
     .info-card-text{
         font-family: var(--font-family-body);
-        font-size: 8px;
+        font-size: 10px;
         font-weight: 300;
         width: 100%;  
         height:55%;
