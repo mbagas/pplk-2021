@@ -8,6 +8,7 @@
         <meta name="robots" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
+        @include('pwa.head')
         <!-- Title -->
         <title>PPLK 2021 - Login</title>
 
@@ -80,10 +81,26 @@
                 <div class="col-sm-12 forget-password flex-column">
                     <p>Lupa Password? <strong>Lapor Daplok!</strong></p>
                 </div>
+                
+
+                <div id="install-app">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>Install App PPLK di Homescreen kamu.</b></p>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <a href="#" id="installApp" class="btn btn-success custom-login-btn">Install</a>
+                                <a href="#" id="cancelInstallApp" class="btn ">Nanti</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
         <!-- Required JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
         <script src="{{ asset('assets') }}/js/custom.js"></script>
+        @include('pwa.setup')
     </body>
 </html>

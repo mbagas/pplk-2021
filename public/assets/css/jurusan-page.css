@@ -212,3 +212,10 @@
     } 
 
 }
+
+@media (max-width: 360px){
+    .small-jurusan-menu .nav-item button {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -29,7 +29,7 @@
         <!-- Desktop Navabar top -->
         @include('client.menu')
         <div class="page-content desktop col-xl-6">
-            <a href="index.html" class="back-btn">
+            <a href="{{ route('games')}}" class="back-btn">
                 <svg height="36" width="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="url(#paint0_linear)"/>
                     <path d="M20.5625 25.5832C20.5625 25.5832 14.4375 21.0938 14.4375 17.9998C14.4375 14.9069 20.5625 10.4165 20.5625 10.4165" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -42,53 +42,18 @@
                 </svg>
             </a>
             <div class="container">
-                <h1 class="title mx-auto text-center">Tebak Gambar</h1>
-                <p class="bodytext mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
+                <h1 class="title mx-auto text-center">Tebak Gedung</h1>
+                <p class="bodytext mx-auto text-center">Pilih nama gedung yang sesuai dengan gambar, berdasarkan informasi yang kamu dapat dari ITERA ADVENTURE.</p>
             </div>
             <div class="menu row row-cols-3">
                 <!-- for disini aja -->
+                @foreach ($games as $game)
                     <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">1</a>
+                        <a href="{{Route('playTebakGedung', $game->games_id)}}" class="menu-btn-a">{{$loop->iteration}}</a>
                     </div>
-                    <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">2</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a href="question-section.html" class="menu-btn-a">3</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">4</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">5</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">6</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">7</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">8</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">9</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">10</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">11</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">12</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">13</a>
-                    </div>
-                    <div class="menu-btn col-4">
-                        <a class="menu-btn-a">14</a>
-                    </div>
+                @endforeach
+                    
+                    
             </div>
         </div>
     </div>

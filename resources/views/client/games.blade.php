@@ -57,14 +57,14 @@
                         <div class="col-6">
                             <div class="card rank-info ">
                                 <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                    <img src="{{Auth()->user()->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 </div>
                                 <div class="rank-text">
                                     <h5>
-                                        Rank
+                                        Nama
                                     </h5>
                                     <h2>
-                                        169
+                                        {{Auth()->user()->nama}}
                                     </h2>
                                 </div>
                             </div>
@@ -77,10 +77,10 @@
                                 </div>
                                 <div class="poin-text">
                                     <h5>
-                                        Rank
+                                        Points
                                     </h5>
                                     <h2>
-                                        1699 Points
+                                     {{$score}} Points
                                     </h2>
                                 </div>
 
@@ -95,7 +95,7 @@
                                     <canvas id="result-canvas" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent" class="canvas-percent title">18</span>
+                                        <span id="canvas-percent" class="canvas-percent title">{{round((($totalFindCode-$gameFindCode)/$totalFindCode)*100)}}</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@
                                         Find The Code
                                     </h2>
                                     <h3>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et a diam egestas faucibu
+                                        Redeem code sesuai barang yang sudah kamu dapatkan pada game ITERA ADVENTURE disini.
                                     </h3>
                                 </div>
                                 <div class="arrow-next">
@@ -114,12 +114,12 @@
                                 </div>
                             </a>
 
-                            <a class="card tebak-bangunan" href="tebakBangunan.blade.php">
+                            <a class="card tebak-bangunan" href="{{route('tebakGedung')}}">
                                 <div class="result-points-wrapper">
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent-2" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent-2" class="canvas-percent title">100</span>
+                                        <span id="canvas-percent-2" class="canvas-percent title">{{round((($totalTebakGedung-$gameTebakGedung)/$totalTebakGedung)*100)}}</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                                         Tebak Bangunan
                                     </h2>
                                     <h3>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et a diam egestas faucibu
+                                        Pilih nama gedung yang sesuai dengan gambar, berdasarkan informasi yang kamu dapat dari ITERA ADVENTURE.
                                     </h3>
                                 </div>
                                 <div class="arrow-next">

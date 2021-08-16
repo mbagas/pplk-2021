@@ -37,9 +37,10 @@
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="col-12 modal-title text-center" id="sponsorModalLabel">
+                        <h2 class="modal-title text-center" id="sponsorModalLabel">
                             Sponsored By
                         </h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="carouselSponsor" class="carousel slide sponsor-carousel" data-bs-ride="carousel" data-bs-interval="1500">
@@ -177,7 +178,7 @@
                                     ITERA memiliki 3 jurusan yaitu Jurusan Teknologi Infrastruktur dan Kewilayahan (JTIK), Jurusan Teknologi Produksi dan Industri (JTPI), dan Jurusan Sains.</p>
                             </div>
                             <div class="card-img-container">
-                                <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                                <img src="{{ asset('assets') }}/images/jurusanlust.PNG" class="card-img-right" alt="...">
                             </div>
                         </a>
 
@@ -187,7 +188,7 @@
                                 <p class="card-text">UKM merupakan singkatan dari Unit Kegiatan Mahasiswa yang berfungsi sebagai wadah mahasiswa ITERA untuk mengekspresikan minat dan bakat masing masing mahasiswa. Terhitung ITERA memiliki kurang lebih 41 UKM aktif</p>
                             </div>
                             <div class="card-img-container">
-                                <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                                <img src="{{ asset('assets') }}/images/ukmilust.png" class="card-img-right" alt="...">
                             </div>
                         </a>
 
@@ -199,7 +200,7 @@
                                 </p>
                             </div>
                             <div class="card-img-container">
-                                <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                                <img src="{{ asset('assets') }}/images/prodiilust.png" class="card-img-right" alt="...">
                             </div>
                         </a>
 
@@ -211,7 +212,7 @@
                                 </p>
                             </div>
                             <div class="card-img-container">
-                                <img src="{{ asset('assets') }}/images/jurusan-main-menu-logo.png" class="card-img-right" alt="...">
+                                <img src="{{ asset('assets') }}/images/himpunanlust.PNG" class="card-img-right" alt="...">
                             </div>
                         </a>
                     </div>
@@ -253,22 +254,22 @@
                             </div>
                         </div>
 
-                        <!-- Info terbaru content card -->
+                         <!--Info terbaru content card -->
                         <div class="col-sm-12 col-xl-8">
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
-                                    <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                    <img src="{{ asset('assets') }}/images/booklet.png" class="info-card-img-left" alt="...">
                                 </div>
                                 <div class="info-card-body" >
 
-                                    <h5 class="info-card-title">Guide PPLK</h5>
+                                    <h5 class="info-card-title">Buku panduan dan materi peserta</h5>
 
 
                                     <p class="info-card-text">
-                                    Guide PPLK merupakan pemandu bagi para mahasiswa/i baru untuk memberikan informasi yang ada di ITERA.
+                                    Booklet ini merupakan pemandu bagi para mahasiswa/i baru, untuk mempermudah kalian dalam mengerjakan tugas.
                                     </p>
 
-                                    <a href="#" class="btn btn-primary custom-more-btn">
+                                    <a href="https://drive.google.com/file/d/1wADIwZbNZaA9uUB1FeyQhJDl9Z4am1rP/view?usp=sharing" class="btn btn-primary custom-more-btn" target="_blank">
                                         Learn More
                                     </a>
                                 </div>
@@ -320,7 +321,7 @@
                         <div class="col-sm-12  col-xl-8">
                             <div class="info-card card justify-content-between " style="height: 160px;" >
                                 <div class="info-card-img-container">
-                                    <img src="{{ asset('assets') }}/images/logo-rebahan.png" class="info-card-img-left" alt="...">
+                                    <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" class="info-card-img-left" alt="...">
                                 </div>
                                 <div class="info-card-body" >
 
@@ -332,7 +333,7 @@
                                     </p>
 
 
-                                    <a href="https://www.youtube.com/watch?v=RKr3EBT9v1I" class="btn btn-primary custom-more-btn">
+                                    <a href="https://www.youtube.com/watch?v=RKr3EBT9v1I" target="_blank" class="btn btn-primary custom-more-btn">
                                         Learn More
                                     </a>
                                 </div>

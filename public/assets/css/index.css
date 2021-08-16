@@ -1,4 +1,5 @@
 
+
 .image-sponsor{
     display: flex;
     justify-content: center;
@@ -15,6 +16,7 @@
 .carousel-item .card{
     flex-direction: column;
 }
+
 .main-wrapper{
     height: 100%;
     width: 100%;
@@ -1254,5 +1256,30 @@ a.active, .active svg path, li:hover svg path,li a:hover {
         height: 8px;
         border-radius: 50%;
         background-color: #C4C4C4;
+    }
+}
+
+@media (max-width:360px) {
+    .footer-bar li{
+        width: 25px;
+    }
+
+    .footer-bar a{
+        font-size: 8px;
+    }
+
+    .winner img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .winner-1 img {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .crown img {
+        width: 25px !important;
+        height: 17px !important;
     }
 }

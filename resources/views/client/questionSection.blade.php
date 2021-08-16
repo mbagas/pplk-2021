@@ -17,7 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/assets/images/Logopplk-clearbg.png"></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="bg2"></div>
             </div>
-            <a href="tebak-gedung.html" class="back-btn">
+            <a href="{{ route('tebakGedung')}}" class="back-btn">
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="white"/>
                     <path d="M20.5625 25.5832C20.5625 25.5832 14.4375 21.0938 14.4375 17.9998C14.4375 14.9069 20.5625 10.4165 20.5625 10.4165" stroke="url(#paint0_linear)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -53,7 +53,7 @@
                         <canvas id="question-canvas" height="70" width="70"></canvas>
                         <span id="canvas-time" class="question-time-span bodytext">16</span>
                     </div>
-                    <img src="{{ asset('assets') }}/images/jurusan-poster1.png" class="question-img">
+                    <img src="{{ $dataGame->TebakGedung->gambar }}" class="question-img">
                     <div class="question-tag">
                         <span class="bodytext">Quiz 1</span>
                     </div>
@@ -64,12 +64,14 @@
                 <div class="answer">
 
                     <!-- FORM BUAT JAWABAN (name harus sama semua <input/>) -->
-                    <form>
+                    <form action="{{Route('submit', $dataGame)}}" id="tebak" method="POST">
+                        @method('POST')
+                        @csrf
                         <ul class="answer-options">
                             <li>
-                                <input id="a" type="radio" name="ans" value="a">
+                                <input id="a" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil1}}">
                                 <label for="a">
-                                    <span class="option-name bodytext">GEDUNG A</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil1}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -96,9 +98,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="b" type="radio" name="ans" value="b">
+                                <input id="b" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil2}}">
                                 <label for="b">
-                                    <span class="option-name bodytext">GEDUNG B</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil2}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -125,9 +127,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="c" type="radio" name="ans" value="c">
+                                <input id="c" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil3}}">
                                 <label for="c">
-                                    <span class="option-name bodytext">GEDUNG C</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil3}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -154,9 +156,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input id="d" type="radio" name="ans" value="d">
+                                <input id="d" type="radio" name="ans" value="{{$dataGame->TebakGedung->pil4}}">
                                 <label for="d">
-                                    <span class="option-name bodytext">GEDUNG D</span>
+                                    <span class="option-name bodytext">{{$dataGame->TebakGedung->pil4}}</span>
                                     <span class="checkmark checked">
                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="11" cy="11" r="11" fill="url(#paint0_linear)"/>
@@ -183,7 +185,7 @@
                                 </label>
                             </li>
                         </ul>
-                        <button class="answer-submit btn bodytext">Submit</button>
+                        <button type="submit" id="btnSubmit" class="answer-submit btn bodytext">Submit</button>
                     </form>
                 </div>
             </div>
@@ -194,5 +196,32 @@
     <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
     <script src="{{ asset('assets') }}/js/custom.js"></script>
     <script src="{{ asset('assets') }}/js/circleProgress.js"></script>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date(Date.now() + 20000).getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            $('#tebak').submit();
+        }
+        }, 1000);
+    </script>
 </body>
 </html>

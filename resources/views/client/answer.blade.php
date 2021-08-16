@@ -17,7 +17,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
-        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
+        <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" ></link>
 
         <!-- Per Page Styling -->
         <link rel="stylesheet" href="{{ asset('assets') }}/css/index.css"></link>
@@ -28,7 +28,7 @@
         <!-- Desktop Navabar top -->
         @include('client.menu')
         <div class="page-content desktop col-xl-6">
-            <a href="{{ route('home')}}" class="back-btn">
+            <a href="{{ route('tebakGedung')}}" class="back-btn">
                 <svg height="36" width="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="36" height="36" rx="10" fill="url(#paint0_linear)"/>
                     <path d="M20.5625 25.5832C20.5625 25.5832 14.4375 21.0938 14.4375 17.9998C14.4375 14.9069 20.5625 10.4165 20.5625 10.4165" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -46,28 +46,33 @@
                 <p class="result-tag bodytext">Quiz Selesai</p>
                 <!-- Jawaban Benar/Salah pake js kecuali kalo mau dirubah -->
                 <!-- Jawab Benar -->
+
                 <div id="result-benar" class="result-info">
                     <span class="title selamat0">Selamat</span>
                     <span class="bodytext selamat1">Kamu menjawab dengan benar</span>
                 </div>
-                <!-- Jawab Salah -->
+
+                    <!-- Jawab Salah -->
                 <div id="result-salah" class="result-info d-none">
                     <span class="title selamat0 selamat2">Yahhh</span>
                     <span class="bodytext selamat1">Kamu menjawab dengan salah</span>
                 </div>
+
+                
+                
                 <p class="result-text title">Kamu mendapatkan nilai</p>
                 <div class="result-points-wrapper">
                     <canvas id="result-canvas" height="144" width="144" class="result-canvas"></canvas>
                     <div class="result-canvas-text">
                         <!-- Progress Circle auto ke id="canvas-percent" -->
-                        <span id="canvas-percent" class="canvas-percent title">43</span>
+                        <span id="canvas-percent" class="canvas-percent title">{{$score->skor}}</span>
                         <span class="canvas-text bodytext">Points</span>
                     </div>
                 </div>
             </div>
             <div class="result-buttons">
-                <a href="index.html" class="result-buttons-btn bodytext blue">Selesai</a>
-                <a href="leaderboard.html" class="result-buttons-btn bodytext">Leaderboard</a>
+                <a href="{{route('tebakGedung')}}" class="result-buttons-btn bodytext blue">Selesai</a>
+                <a href="{{route('leaderboard')}}" class="result-buttons-btn bodytext">Leaderboard</a>
             </div>
             
         </div>
@@ -86,7 +91,7 @@
         var posX = cnv.width/2
         var posY = cnv.height/2
         var percent = cnvPercent.innerHTML
-        var radPercent = 360/100 // Persentase per 360
+        var radPercent = 360/50 // Persentase per 360
         var res = radPercent * 64
 
         c.lineCap = "round"

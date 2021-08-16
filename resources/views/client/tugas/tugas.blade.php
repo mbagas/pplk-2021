@@ -90,7 +90,7 @@
                         <div class="tab-pane active tugas-list" role="tabpanel" id="new-task">
                             <!-- cards start -->
                             @foreach($dataTugas as $data)
-                            @if(!$data->status && ($data->tugas->end_time  >= date('d F')))
+                            @if(!$data->status && ($data->tugas->start_time  <= date("Y-m-d H:i:s")) && ($data->tugas->end_time  >= date("Y-m-d H:i:s")))
                             <a href="{{ route('tugasMaba.show', $data) }}">
                                 <div class="tugas-list-card">
                                     <div class="tugas-list-score">

@@ -7,7 +7,9 @@
         <meta name="author" content="" />
         <meta name="robots" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+        @include('pwa.head')
+
+        <script src="{{ asset('assets') }}/js/jquery-3.6.0.min.js"></script>
         <!-- Title -->
         <title>Login Web PPLK 2021</title>
 
@@ -16,15 +18,23 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/bootstrap.css"></link>
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
+
+        <script>
+            $(document).ready(function(){
+                setTimeout(()=>{
+                    $("#install-app").css('display', 'block');
+                }, 2600);
+            });
+        </script>
     </head>
-    
 <body>
      <!-- Splash Screen -->
      <div class="launch-logo">
         <img src="{{ asset('assets') }}/images/Logopplk-clearbg.png" alt="launch-logo-pplk" class="launch-logo-image fade"/>
     </div>
-
+    
     <div class="login-page">
+        @include('pwa.popup')
             <!-- bakcground -->
             <div class="bg-container d-none d-xl-block d-xxl-block">
                 <img src="{{ asset('assets') }}/images/wavey-bg.png" alt="wavey-bg" class="wavey-bg">
@@ -95,6 +105,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
         <script src="{{ asset('assets') }}/js/custom.js"></script>
+        @include('pwa.setup')
 </body>
 
 </html>

@@ -33,7 +33,7 @@
                          <!--Navbar-->
                         <nav class="navbar p-0">
                             <div class="container-fluid nav-back">
-                                <a class="navback-home" href="#">
+                                <a class="navback-home" href="{{ route('findCode')}}">
                                     <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect y="0.0587158" width="36" height="34.5131" rx="10" fill="url(#paint0_linear)"/>
                                         <path d="M20.5625 24.5854C20.5625 24.5854 14.4375 20.2815 14.4375 17.3153C14.4375 14.3501 20.5625 10.0452 20.5625 10.0452" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,17 +51,20 @@
                             <h2>Find The Code</h2>
                         </div>
                         <div class="card-rc">
-                            <img  class="rounded-rc" src="../assets/images/LOGO PPLK.png" alt="">
+                            <img  class="rounded-rc" src="{{$dataGame->FindCode->gambar}}" alt="">
                             <div class="card-body-rc">
                                 <div class="headline-text">
-                                    <h2>Sepeda</h2>
+                                    <h2>{{$dataGame->FindCode->nama}}</h2>
                                 </div>
                             </div>
                         </div>
+                        <form action="{{route('redeem', $dataGame)}}" method="POST">
+                            @method('POST')
+                            @csrf
                         <div class="mt-4">
                             <div class="row redeem-input justify-content-center">
                                 <label for="">Redeem</label>
-                                <input type="text">
+                                <input name="code" type="text">
                             </div>
                         </div>
                         <div class="col-12 mt-4">
@@ -69,6 +72,7 @@
                                 Kirim Kode
                             </button>
                         </div>
+                        </form>
                     </div>
                 </div>
         </div>

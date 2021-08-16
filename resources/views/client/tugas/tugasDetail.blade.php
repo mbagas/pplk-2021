@@ -83,7 +83,7 @@
                 <div class="dTugas-materials-slider">
 
                     <div class="dTugas-material" onclick="alert('Opening Materi....')">
-                        <img class="dTugas-material-img dTugas-img" src="../assets/images/jurusan-poster1.png">
+                        <img class="dTugas-material-img dTugas-img" src="../assets/images/task.png">
                         <div class="dTugas-material-info">
                             <div class="dTugas-material-text">
                                 <p class="subheadline dTugas-title text-small">{{ $tugasDetail->tugas->judul }}.pdf</p>
@@ -122,7 +122,7 @@
                         @if($tugasDetail->file)
                         <div class="dTugas-attachment-wrapper">
                             <div class="dTugas-attachment" onclick="alert('Opening file...')">
-                                <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
+                                <img class="dTugas-img dTugas-attachment-img" src="../assets/images/task-complete.png">
                                 <div class="dTugas-attachment-info">
                                     <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
                                     <p class="bodytext text-small">FILE</p>
@@ -174,7 +174,7 @@
                         @if($tugasDetail->jawaban)
                         <div class="dTugas-attachment-wrapper">
                             <div class="dTugas-attachment" >
-                                <img class="dTugas-img dTugas-attachment-img" src="../assets/images/jurusan-poster3.png">
+                                <img class="dTugas-img dTugas-attachment-img" src="../assets/images/task-complete.png">
                                 <div class="dTugas-attachment-info" data-bs-toggle="modal" data-bs-target="#jawaban">
                                     <p class="subheadline dTugas-title text-small">{{$tugasDetail->users->kelompok}}_{{$tugasDetail->users->nama}}_{{$tugasDetail->tugas->judul}}</p>
                                     <p class="bodytext text-small">TEKS</p>
