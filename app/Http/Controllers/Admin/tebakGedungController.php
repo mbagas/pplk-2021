@@ -35,7 +35,7 @@ class tebakGedungController extends Controller
 
             $tebakgedung = TebakGedung::create(
                 [
-                    'gambar' => url($request->file('gambar')->move('tebakGedung', $request->jawaban . '.' . $request->file('gambar')->extension())),
+                    'gambar' => url($request->file('gambar')->move('tebakGedung', $game->id . '.' . $request->file('gambar')->extension())),
                     'pil1' => $request->pil1,
                     'pil2' => $request->pil2,
                     'pil3' => $request->pil3,
@@ -75,7 +75,7 @@ class tebakGedungController extends Controller
 
             if($request->hasFile('gambar')){
                 $dataTebakGedung->update([
-                    'gambar' => url($request->file('gambar')->move('tebakGedung', $dataTebakGedung->jawaban . '.' . $request->file('gambar')->extension())),
+                    'gambar' => url($request->file('gambar')->move('tebakGedung', $tebakGedung->id . '.' . $request->file('gambar')->extension())),
                 ]);
             }
         });

@@ -91,7 +91,7 @@
         var posX = cnv.width/2
         var posY = cnv.height/2
         var percent = cnvPercent.innerHTML
-        var radPercent = 360/100 // Persentase per 360
+        var radPercent = 360/50 // Persentase per 360
         var res = radPercent * 64
 
         c.lineCap = "round"

@@ -57,7 +57,7 @@
                     <div class="top-3-winner row row-cols-3">
                         <div class="winner-2 winner">
                             <div class="profile-winner">
-                                <img src="{{ $scores[1]->user->img }}" alt="profile-img" />
+                                <img src="{{ $scores[1]->user->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         2
@@ -67,19 +67,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        {{ $scores[1]->user->nama }}
+                                        {{ $scores[1]->user->nama ?? "???"}}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        {{$scores[1]->user->prodis->ormawas->namaLengkap}}
+                                        {{$scores[1]->user->prodis->ormawas->namaLengkap ?? "???"}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        {{$scores[1]->skor}} Points
+                                        {{$scores[1]->skor ?? "???"}} Points
                                     </h1>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 <div class="crown">
                                     <img src="{{ asset('assets') }}/images/crown.png" alt="crown" class="crown-img"/>
                                 </div>
-                                <img src="{{ $scores[0]->user->img }}" alt="profile-img" />
+                                <img src="{{ $scores[0]->user->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         1
@@ -101,19 +101,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        {{ $scores[0]->user->nama }}
+                                        {{ $scores[0]->user->nama ?? "???"}}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        {{$scores[0]->user->prodis->ormawas->namaLengkap}}
+                                        {{$scores[0]->user->prodis->ormawas->namaLengkap ?? "???"}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        {{ $scores[0]->skor }} Points
+                                        {{ $scores[0]->skor ?? "???"}} Points
                                     </h1>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
 
                         <div class="winner-3 winner">
                             <div class="profile-winner">
-                                <img src="{{ $scores[2]->user->img }}" alt="profile-img" />
+                                <img src="{{ $scores[2]->user->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 <div class="winner-patch">
                                     <h1 class="winner-text">
                                         3
@@ -132,19 +132,19 @@
                             <div class="info-winner">
                                 <div class="nama">
                                     <h2>
-                                        {{ $scores[2]->user->nama }}
+                                        {{ $scores[2]->user->nama ?? "???"}}
                                     </h2>
                                 </div>
 
                                 <div class="prodi">
                                     <h3>
-                                        {{$scores[2]->user->prodis->ormawas->namaLengkap}}
+                                        {{$scores[2]->user->prodis->ormawas->namaLengkap ?? "???"}}
                                     </h3>
                                 </div>
 
                                 <div class="point">
                                     <h1>
-                                        {{ $scores[2]->skor }} Points
+                                        {{ $scores[2]->skor ?? "???"}} Points
                                     </h1>
                                 </div>
                             </div>
@@ -159,28 +159,28 @@
                             <div class="card user-data card-leaderboard">
                                 <div class="number-rank">
                                     <h2>
-                                        ?
+                                        
                                     </h2>
                                 </div>
                                 <div class="profile-pic">
-                                    <img src="{{ $selfScore->user->img }}" alt="profile-img" />
+                                    <img src="{{ $selfScore->user->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 </div>
                                 <div class="profile-info">
                                     <div class="nama">
                                         <h2>
-                                            {{ $selfScore->user->nama }}
+                                            {{ $selfScore->user->nama ?? "???"}}
                                         </h2>
                                     </div>
 
                                     <div class="prodi">
                                         <h3>
-                                            {{$selfScore->user->prodis->ormawas->namaLengkap}}
+                                            {{$selfScore->user->prodis->ormawas->namaLengkap ?? "???"}}
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="point">
                                     <h1>
-                                        {{ $selfScore->skor }} Points
+                                        {{ $selfScore->skor ?? "???"}} Points
                                     </h1>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                                     </h2>
                                 </div>
                                 <div class="profile-pic">
-                                    <img src="{{ $score->user->img }}" />
+                                    <img src="{{ $score->user->img ?? asset('assets/images/user_default.png')}}" />
                                 </div>
                                 <div class="profile-info">
                                     <div class="nama">

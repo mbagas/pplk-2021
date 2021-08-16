@@ -57,14 +57,14 @@
                         <div class="col-6">
                             <div class="card rank-info ">
                                 <div class="profile-pic">
-                                    <img src="{{ asset('assets') }}/images/jhonnysins.png" alt="profile-img" />
+                                    <img src="{{Auth()->user()->img ?? asset('assets/images/user_default.png')}}" alt="profile-img" />
                                 </div>
                                 <div class="rank-text">
                                     <h5>
-                                        Rank
+                                        Nama
                                     </h5>
                                     <h2>
-                                        169
+                                        {{Auth()->user()->nama}}
                                     </h2>
                                 </div>
                             </div>
