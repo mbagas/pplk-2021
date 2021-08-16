@@ -22,7 +22,7 @@
         <script>
             $(document).ready(function(){
                 setTimeout(()=>{
-                    $("#pwaModal").modal('show');
+                    $("#install-app").css('display', 'block');
                 }, 2600);
             });
         </script>
