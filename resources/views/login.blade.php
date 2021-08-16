@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <meta name="robots" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+        @include('pwa.head')
         <!-- Title -->
         <title>Login Web PPLK 2021</title>
 
@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
     </head>
-    
+    @include('pwa.popup')
 <body>
      <!-- Splash Screen -->
      <div class="launch-logo">
@@ -95,6 +95,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="{{ asset('assets') }}/js/bootstrap.bundle.js"></script>
         <script src="{{ asset('assets') }}/js/custom.js"></script>
+        @include('pwa.setup')
 </body>
 
 </html>
