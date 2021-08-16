@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="{{ asset('assets') }}/css/main-stylings.css"></link>
         <link rel="shortcut icon" type="image/png" href="{{ asset('assets') }}/images/Logopplk-clearbg.png" />
     </head>
-    @include('pwa.popup')
 <body>
      <!-- Splash Screen -->
      <div class="launch-logo">
@@ -88,6 +87,8 @@
                         <a href="{{ route('guest') }}" style="text-decoration: none;"><p>Masuk sebagai <strong>Guest</strong></p></a>
                         <p>Lupa Password? <strong>Lapor Daplok!</strong></p>
                     </div>
+
+                    @include('pwa.popup')
                 </div>
         </div>
 
