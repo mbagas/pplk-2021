@@ -43,7 +43,7 @@
             </a>
             <div class="container">
                 <h1 class="title mx-auto text-center">Tebak Gedung</h1>
-                <p class="bodytext mx-auto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar morbi augue at sed montes, malesuada velit. Diam.</p>
+                <p class="bodytext mx-auto text-center">Pilih nama gedung yang sesuai dengan gambar, berdasarkan informasi yang kamu dapat dari ITERA ADVENTURE.</p>
             </div>
             <div class="menu row row-cols-3">
                 <!-- for disini aja -->

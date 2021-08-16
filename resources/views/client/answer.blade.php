@@ -72,7 +72,7 @@
             </div>
             <div class="result-buttons">
                 <a href="{{route('tebakGedung')}}" class="result-buttons-btn bodytext blue">Selesai</a>
-                <a href="leaderboard.html" class="result-buttons-btn bodytext">Leaderboard</a>
+                <a href="{{route('leaderboard')}}" class="result-buttons-btn bodytext">Leaderboard</a>
             </div>
             
         </div>
