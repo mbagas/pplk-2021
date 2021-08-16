@@ -37,9 +37,10 @@
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="col-12 modal-title text-center" id="sponsorModalLabel">
+                        <h2 class="modal-title text-center" id="sponsorModalLabel">
                             Sponsored By
                         </h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div id="carouselSponsor" class="carousel slide sponsor-carousel" data-bs-ride="carousel" data-bs-interval="1500">

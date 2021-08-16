@@ -118,6 +118,10 @@ p{
     width: 100%;
 }
 
+.display{
+    display: block;
+}
+
 .bg-container {
     display: none;
 }
@@ -254,6 +258,14 @@ p{
     font-size: 15px;
     font-weight: 400;
     margin-bottom: 2rem;
+}
+
+.pwa{
+    background-image: linear-gradient(#3991C9, #63BCF4);
+}
+
+.pwa-content{
+    border-radius: 15px !important;
 }
 
 .forget-password{
