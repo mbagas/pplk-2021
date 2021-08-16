@@ -95,7 +95,7 @@
                                     <canvas id="result-canvas" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent" class="canvas-percent title">18</span>
+                                        <span id="canvas-percent" class="canvas-percent title">{{round((($totalFindCode-$gameFindCode)/$totalFindCode)*100)}}</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                     <canvas id="result-canvas-2" class="result-canvas"></canvas>
                                     <div class="result-canvas-text">
                                         <!-- Progress Circle auto ke id="canvas-percent-2" tinggal kasih data di spannya-->
-                                        <span id="canvas-percent-2" class="canvas-percent title">100</span>
+                                        <span id="canvas-percent-2" class="canvas-percent title">{{round((($totalTebakGedung-$gameTebakGedung)/$totalTebakGedung)*100)}}</span>
                                         <span class="canvas-text bodytext">%</span>
                                     </div>
                                 </div>
