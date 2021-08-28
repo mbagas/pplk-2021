@@ -7,15 +7,25 @@ use App\Models\Tugas;
 use App\Models\Mengerjakan;
 use App\Models\Parameter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class submissionController extends Controller
 {
     //
+    
+
     public function index(){
+        $tugass = Tugas::all();
+        return view('tugas.content.submissionSelection', compact('tugass'));
+        
+    }
+
+    public function submissionSelection($id){
+
         if(auth()->user()->roles_id == 3){
             $submissions = Mengerjakan::with('users', 'tugas')->where('kelompok', auth()->user()->kelompok)->orderBy('tugas_id', 'ASC')->get();
         }else{
-            $submissions = Mengerjakan::with('users', 'tugas')->orderBy('tugas_id', 'ASC')->get();
+            $submissions = Mengerjakan::with('users', 'tugas')->where('tugas_id', $id)->orderBy('tugas_id', 'ASC')->get();
         }
         
         return view('tugas.content.submissions', compact('submissions'));

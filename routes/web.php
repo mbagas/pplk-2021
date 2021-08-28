@@ -77,6 +77,7 @@ Route::middleware(['Admin'])->name('dashboard.')->prefix('dashboard')->group(fun
   Route::get('/files/{types}/{id}', [FileManager::class, 'DownloadFile'])->name('file.Download');
   Route::get('/tugas/{id}/submissions', [tugasController::class, 'pengerjaan'])->name('tugas.submissions');
   Route::resource('tugas', tugasController::class);
+  Route::get('submissionSelection/{id}', [submissionController::class, 'submissionSelection'])->name('submissionSelect');
   Route::resource('submissions', submissionController::class);
   Route::resource('maba', mengerjakanController::class);
 });
@@ -99,6 +100,7 @@ Route::middleware(['Tugas'])->name('dashboardTugas.')->prefix('dashboardTugas')-
   Route::get('/', [tugasController::class, 'index'])->name('index');
   Route::resource('tugas', tugasController::class);
   Route::resource('submissions', submissionController::class);
+  Route::get('/submissionSelection/{tugas}', [submissionController::class, 'submissionSelection'])->name('submi');
 });
 
 
