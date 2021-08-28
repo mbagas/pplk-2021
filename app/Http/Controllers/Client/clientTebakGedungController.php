@@ -29,21 +29,27 @@ class clientTebakGedungController extends Controller
 
     public function submit(Request $request, Game $tebakGedung){
         // dd($tebakGedung);
-        if($request->ans == $tebakGedung->TebakGedung->jawaban){
-            $score = Score::create([
-                'users_id' => Auth()->user()->id,
-                'games_id' => $tebakGedung->id,
-                'skor'     => $tebakGedung->skor
-            ]);
+        $check = Score::where('users_id', Auth()->user()->id)->where('games_id', $tebakGedung->id)->count();
+        // dd($check);
+        if($check == 0){
+            if($request->ans == $tebakGedung->TebakGedung->jawaban){
+                $score = Score::create([
+                    'users_id' => Auth()->user()->id,
+                    'games_id' => $tebakGedung->id,
+                    'skor'     => $tebakGedung->skor
+                ]);
+            }
+            else{
+                $score = Score::create([
+                    'users_id' => Auth()->user()->id,
+                    'games_id' => $tebakGedung->id,
+                    'skor'     => 0
+                ]);
+            }
+            return redirect()->route('result', $score);
         }
-        else{
-            $score = Score::create([
-                'users_id' => Auth()->user()->id,
-                'games_id' => $tebakGedung->id,
-                'skor'     => 0
-            ]);
-        }
-        return redirect()->route('result', $score);
+        $score = 0;
+        return redirect()->route('tebakGedung');
     }
 
     public function result(Score $score){

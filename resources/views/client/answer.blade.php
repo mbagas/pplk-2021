@@ -65,7 +65,7 @@
                     <canvas id="result-canvas" height="144" width="144" class="result-canvas"></canvas>
                     <div class="result-canvas-text">
                         <!-- Progress Circle auto ke id="canvas-percent" -->
-                        <span id="canvas-percent" class="canvas-percent title">{{$score->skor}}</span>
+                        <span id="canvas-percent" class="canvas-percent title">{{$score->skor ?? "Anda submit lebih dari 1 kali"}}</span>
                         <span class="canvas-text bodytext">Points</span>
                     </div>
                 </div>

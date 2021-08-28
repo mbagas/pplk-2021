@@ -30,19 +30,24 @@ class clientFindCodeController extends Controller
 
     public function submit(Request $request, Game $findCode){
         // dd($findCode);
-        if($request->code == $findCode->FindCode->code){
-            $start = strtotime("21th august 2021");
-            $submit = strtotime("now");
-            $totalSkor = $findCode->skor + ($findCode->skor * round(($start-$submit)/10000)/100);
-            // dd(round($totalSkor));
-            Score::create([
-                'users_id' => Auth()->user()->id,
-                'games_id' => $findCode->id,
-                'skor'     => round($totalSkor)
-            ]);
-            return redirect()->route('findCode')->with('sukses', 'code berhasil di redeem');
-            
+        $check = Score::where('users_id', Auth()->user()->id)->where('games_id', $findCode->id)->count();
+        if($check == 0){
+            if($request->code == $findCode->FindCode->code){
+                $start = strtotime("21th august 2021");
+                $submit = strtotime("now");
+                $totalSkor = $findCode->skor + ($findCode->skor * round(($start-$submit)/10000)/100);
+                // dd(round($totalSkor));
+                Score::create([
+                    'users_id' => Auth()->user()->id,
+                    'games_id' => $findCode->id,
+                    'skor'     => round($totalSkor)
+                ]);
+                return redirect()->route('findCode')->with('sukses', 'code berhasil di redeem');
+                
+            }
+            return redirect()->route('findCode')->with('error', 'code gagal di redeem');
         }
-        return redirect()->route('findCode')->with('error', 'code gagal di redeem');
+        return redirect()->route('findCode')->with('error', 'Anda meredeem terlalu banyak');
+        
     }
 }
